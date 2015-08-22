@@ -63,7 +63,7 @@ class XXE {
   public static void main(String[] args) throws ParserConfigurationException,
       SAXException, IOException {
 
-    try (FileInputStream fis = new FileInputStream("evil.xml")) {
+    try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
       receiveXMLStreamBad(fis, new DefaultHandler());
     } catch (IOException ex) {
       System.err.println("Malformed URL Exception: " + ex);
@@ -73,7 +73,7 @@ class XXE {
       }
     }
     
-    try (FileInputStream fis = new FileInputStream("evil.xml")) {
+    try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
       receiveXMLStream(fis, new DefaultHandler());
     } catch (IOException ex) {
       System.err.println("Malformed URL Exception: " + ex);

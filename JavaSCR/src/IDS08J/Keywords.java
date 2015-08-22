@@ -38,7 +38,7 @@ public class Keywords {
 		// Construct regex dynamically from user string
 		String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)";
 		Pattern keywordPattern = Pattern.compile(regex);
-		try (FileInputStream fis = new FileInputStream("C:\\Users\\rcs\\workspace\\JavaSCR\\src\\IDS08J\\log.txt")) {
+		try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt")) {
 			FileChannel channel = fis.getChannel();
 			// Get the file's size and map it into memory
 			long size = channel.size();
