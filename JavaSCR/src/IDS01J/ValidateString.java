@@ -29,9 +29,7 @@ import java.util.regex.Matcher;
 public class ValidateString {
 	
 	public static String NormalizeandValidate(String s) {
-		// Normalize
-		s = Normalizer.normalize(s, Form.NFKC);
-		
+
 		// Validate
 		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
 		Matcher matcher = pattern.matcher(s);
@@ -41,12 +39,15 @@ public class ValidateString {
 		} else {
 			System.out.println("input valid");
 		}
+		
+		// Normalize
+		s = Normalizer.normalize(s, Form.NFKC);
 
 		return s;
 	}
 	
 	public static void main(String[] args) {
-		// Assume s is user controlled
+		// Assume input is user controlled
 		// \uFE64 is normalized to < and \uFE65 is normalized to > using the
 		// NFKC normalization form
 		String input = "\uFE64" + "script" + "\uFE65";
