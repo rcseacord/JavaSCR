@@ -89,7 +89,7 @@ public class OnlineStore {
         throw s;
       }
     };
-    StreamSource ss = new StreamSource(new File("schema.xsd"));
+    StreamSource ss = new StreamSource(new File("src/IDS16J/schema.xsd"));
     try {
       Schema schema = sf.newSchema(ss);
       SAXParserFactory spf = SAXParserFactory.newInstance();
