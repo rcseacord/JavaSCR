@@ -30,20 +30,50 @@ public class ShortSet {
 	
 		HashSet<Short> s = new HashSet<Short>();
 		for (int i = 0; i < 10; i++) {
-			s.add((short) i);
+			s.add(i);
 			s.remove(i); // tries to remove an Integer
-		}
-		System.out.println(s.size());
-		s.clear();
-
-		for (int i = 0; i < 10; i++) {
-			s.add((short)i);
-			// remove a Short
-			if (s.remove((short)i) == false) {
-				// EXP00-J. Do not ignore values returned by methods
-				System.err.println("Error removing " + i);
-			}
 		}
 		System.out.println(s.size());
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*s.clear();
+
+for (int i = 0; i < 10; i++) {
+	s.add((short)i);
+	// remove a Short
+	if (s.remove((short)i) == false) {
+		// EXP00-J. Do not ignore values returned by methods
+		System.err.println("Error removing " + i);
+	}
+}
+System.out.println(s.size());*/
