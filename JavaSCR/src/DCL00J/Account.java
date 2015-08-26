@@ -29,6 +29,9 @@ public class Account {
 	private static final int deposit = (int) (Math.random() * 100);
 	
 	// Class variable is initialized to a new instance of the Cycle class
+	// The initialization of c is placed lexically after the initialization 
+	// of deposit so that it also occurs temporally after deposit is fully 
+	// initialized.
 	private static final Account c = new Account();
 
 	public Account() {
