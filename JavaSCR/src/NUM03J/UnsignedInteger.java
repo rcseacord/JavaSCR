@@ -43,7 +43,7 @@ public class UnsignedInteger {
 	public static void main(String[] args) {
 		try {
 			// create output stream from file
-			FileOutputStream os = new FileOutputStream("c:\\Temp\\test.txt");		
+			FileOutputStream os = new FileOutputStream("test.txt");		
 	
 			dos = new DataOutputStream(os);	
 			
@@ -52,7 +52,7 @@ public class UnsignedInteger {
 			dos.writeInt(0xFFFFFFFF); // 4294967295
 	
 			// create input stream from file input stream
-			FileInputStream is = new FileInputStream("c:\\Temp\\test.txt");
+			FileInputStream is = new FileInputStream("test.txt");
 			
 			// create data input stream
 			DataInputStream dis = new DataInputStream(is);
