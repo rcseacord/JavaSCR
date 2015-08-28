@@ -24,7 +24,7 @@ package STR01J;
 
 public class TrimString {
 
-	public static String trimBad(String string) {
+	public static String trim(String string) {
 		char ch;
 		int i;
 		for (i = 0; i < string.length(); i += 1) {
@@ -36,26 +36,63 @@ public class TrimString {
 		return string.substring(i);
 	}
 
-	public static String trim(String string) {
-		int ch;
-		int i;
-		for (i = 0; i < string.length(); i += Character.charCount(ch)) {
-			ch = string.codePointAt(i);
-			if (!Character.isLetter(ch)) {
-				break;
-			}
-		}
-		return string.substring(i);
-	}
-
 	public static void main(String[] args) {
 		String str = new String("Aß東𐐀001");
 
-		String s = trimBad(str);
-		System.out.println(s);
-
-		s = trim(str);
+		String s = trim(str);
 		System.out.println(s);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*public static String trim(String string) {
+	int ch;
+	int i;
+	for (i = 0; i < string.length(); i += Character.charCount(ch)) {
+		ch = string.codePointAt(i);
+		if (!Character.isLetter(ch)) {
+			break;
+		}
+	}
+	return string.substring(i);
+}*/
