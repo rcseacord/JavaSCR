@@ -78,11 +78,24 @@ public class safeArithmetic {
 	static public void main(String[] args) {
 		try {
 			System.out.println(safeAdd(5, 10));
-			System.out.println(5 + Integer.MAX_VALUE);
+		} catch (ArithmeticException ae) {
+			System.err.println("ArithmeticException: " + ae.getMessage());
+		}
+		
+		System.out.println(5 + Integer.MAX_VALUE);
+		
+		try {
 			System.out.println(safeAdd(5, Integer.MAX_VALUE));
 		} catch (ArithmeticException ae) {
 			System.err.println("ArithmeticException: " + ae.getMessage());
-			System.exit(1);
+		}		
+		
+		System.out.println(-5 + Integer.MIN_VALUE);
+		
+		try {
+			System.out.println(safeAdd(-5, Integer.MIN_VALUE));
+		} catch (ArithmeticException ae) {
+			System.err.println("ArithmeticException: " + ae.getMessage());
 		}
 	}
 }
