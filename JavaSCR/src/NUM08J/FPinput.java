@@ -26,23 +26,6 @@ public class FPinput {
 
 	static double currentBalance; // User's cash balance
 
-	static void doDepositWrong(String userInput) {
-		double val = 0;
-		try {
-			val = Double.valueOf(userInput);
-		} catch (NumberFormatException e) {
-			System.err.println("input format error");
-			return;
-		}
-
-		if (val >= Double.MAX_VALUE - currentBalance) {
-			System.err.println("input range error");
-			return;
-		}
-		System.err.println("updating balance");
-		currentBalance += val;
-	}
-
 	static void doDeposit(String userInput) {
 		double val = 0;
 		try {
@@ -52,16 +35,6 @@ public class FPinput {
 			return;
 		}
 
-		if (Double.isInfinite(val)) {
-			System.err.println("input infinity error");
-			return;
-		}
-
-		if (Double.isNaN(val)) {
-			System.err.println("input NaN error");
-			return;
-		}
-
 		if (val >= Double.MAX_VALUE - currentBalance) {
 			System.err.println("input range error");
 			return;
@@ -70,13 +43,70 @@ public class FPinput {
 		currentBalance += val;
 	}
 
+
 	public static void main(String[] args) {
-		doDepositWrong("-Infinity");
-		doDepositWrong("Infinity");
-		doDepositWrong("NaN");
 		doDeposit("-Infinity");
 		doDeposit("Infinity");
 		doDeposit("NaN");
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*static void doDeposit(String userInput) {
+	double val = 0;
+	try {
+		val = Double.valueOf(userInput);
+	} catch (NumberFormatException e) {
+		System.err.println("input format error");
+		return;
+	}
+
+	if (Double.isInfinite(val)) {
+		System.err.println("input infinity error");
+		return;
+	}
+
+	if (Double.isNaN(val)) {
+		System.err.println("input NaN error");
+		return;
+	}
+
+	if (val >= Double.MAX_VALUE - currentBalance) {
+		System.err.println("input range error");
+		return;
+	}
+	System.err.println("updating balance");
+	currentBalance += val;
+}*/
