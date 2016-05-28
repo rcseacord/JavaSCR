@@ -30,7 +30,7 @@ public class ShortSet {
 	
 		HashSet<Short> s = new HashSet<Short>();
 		for (int i = 0; i < 10; i++) {
-			s.add(i);
+//			s.add(i);
 			s.remove(i); // tries to remove an Integer
 		}
 		System.out.println(s.size());
