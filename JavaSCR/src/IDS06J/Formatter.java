@@ -29,24 +29,21 @@ public class Formatter {
 
 	static Calendar c = new GregorianCalendar(1995, GregorianCalendar.MAY, 23);
 
+	// args[0] should contain the credit card expiration date
+	// but can contain either %1$tm, %1$te or %1$tY as malicious arguments
 	public static void main(String[] args) {
-		// args[0] should contain the credit card expiration date
-		// but can contain either %1$tm, %1$te or %1$tY as malicious arguments
 
+		// First argument prints 05 (May), second prints 23 (day) and third
+		// prints 1995 (year)
 		System.out
 				.format(args[0]
 						+ " did not match! HINT: It was issued on %1$terd of some month%n",
 						c);
 
-		// First argument prints 05 (May), second prints 23 (day) and third
-		// prints 1995 (year)
-		
+		// Conversion specifications are now inert
 		System.out
 				.format("%s did not match! HINT: It was issued on %terd of some month%n",
 						args[0], c);
-
-		// Conversion specifications are now inert
-
 	}
 
 }
