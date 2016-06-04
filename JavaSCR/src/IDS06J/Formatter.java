@@ -35,15 +35,10 @@ public class Formatter {
 
 		// First argument prints 05 (May), second prints 23 (day) and third
 		// prints 1995 (year)
-		System.out
-				.format(args[0]
-						+ " did not match! HINT: It was issued on %1$terd of some month%n",
-						c);
+		System.out.format(args[0] + " did not match! HINT: It was issued on %1$terd of some month%n", c);
 
 		// Conversion specifications are now inert
-		System.out
-				.format("%s did not match! HINT: It was issued on %terd of some month%n",
-						args[0], c);
+		System.out.format("%s did not match! HINT: It was issued on %terd of some month%n", args[0], c);
 	}
 
 }

@@ -126,11 +126,13 @@ public class OnlineStore {
       }
     }
     
+    // *** RETURN TO SLIDES *** 
+    
     try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
         BufferedOutputStream bos = new BufferedOutputStream(baos)) {
       createXMLStreamDTD(bos, "1");
       createXMLStreamDTD(bos, "1</quantity><price>1.0</price><quantity>1");
-    } catch (Exception ex) {
+    } catch (IOException ex) {
       System.err.println("thrown exception: " + ex.toString());
       Throwable[] suppressed = ex.getSuppressed();
       for (int i = 0; i < suppressed.length; i++) {
