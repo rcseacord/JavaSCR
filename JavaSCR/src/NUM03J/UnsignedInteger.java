@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2015 Secure Coding Institute
+// Copyright (c) 2016 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -32,28 +32,35 @@ public class UnsignedInteger {
 
 	private static DataOutputStream dos;
 
+	// @return int read from specified DataInputStream
 	public static int getIntegerWrong(DataInputStream dis) throws IOException {
 		return dis.readInt();
 	}
 
+	// @return long read from specified DataInputStream
 	public static long getInteger(DataInputStream dis) throws IOException {
+		// The readInt() method assumes signed values and returns a signed int;
+		// the return value is converted to a long by sign extension. The code
+		// uses an & operation to mask off the upper 32 bits of the long,
+		// producing a value in the range of a 32-bit unsigned integer, as
+		// intended.
 		return dis.readInt() & 0xFFFFFFFFL; // mask with 32 one-bits
 	}
 
 	public static void main(String[] args) {
 		try {
 			// create output stream from file
-			FileOutputStream os = new FileOutputStream("test.txt");		
-	
-			dos = new DataOutputStream(os);	
-			
-			// write out two identical "pretend" unsigned int values 
+			FileOutputStream os = new FileOutputStream("test.txt");
+
+			dos = new DataOutputStream(os);
+
+			// write out two identical "pretend" unsigned int values
 			dos.writeInt(0xFFFFFFFF); // 4294967295
 			dos.writeInt(0xFFFFFFFF); // 4294967295
-	
+
 			// create input stream from file input stream
 			FileInputStream is = new FileInputStream("test.txt");
-			
+
 			// create data input stream
 			DataInputStream dis = new DataInputStream(is);
 
@@ -62,8 +69,7 @@ public class UnsignedInteger {
 
 			long long_a = getInteger(dis);
 			System.out.println("correct value = " + long_a);
-		} 
-		catch (IOException e) {
+		} catch (IOException e) {
 			// if any I/O error occurs
 			System.err.println("IOException " + e.getMessage());
 		}

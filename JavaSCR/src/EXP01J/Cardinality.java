@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2015 Secure Coding Institute
+// Copyright (c) 2016 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ import java.util.List;
 public class Cardinality {
 
 	// returns the number of occurrences of Object obj in Collection col.
-	public static int cardinality(Object obj, final Collection<?> col) {
+	public static int cardinality(Object obj, final Collection<String> col) {
 		int count = 0;
 		if (col == null) {
 			return count;
