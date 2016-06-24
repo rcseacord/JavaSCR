@@ -31,15 +31,15 @@ public class ArrayEquals {
 		int[] arr2 = new int[20]; // initialized to 0
 		
 		// Object.equals() compares array references; not contents.
-		System.out.println(arr1.equals(arr2)); // false
+		System.out.println(arr1.equals(arr2)); 
 		
 		// Use the two-argument Arrays.equals() method to 
 		// compare the contents of two arrays.
-		System.out.println(Arrays.equals(arr1, arr2)); // true
+		System.out.println(Arrays.equals(arr1, arr2)); 
 		
 		// Use the reference equality operators 
 		// to compare references.
-		System.out.println(arr1 == arr2); // false
+		System.out.println(arr1 == arr2); 
 	}
 
 }

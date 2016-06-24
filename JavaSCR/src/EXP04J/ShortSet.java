@@ -27,11 +27,10 @@ import java.util.HashSet;
 public class ShortSet {
 
 	public static void main(String[] args) {
-	
 		HashSet<Short> s = new HashSet<Short>();
 		for (int i = 0; i < 10; i++) {
 //			s.add(i);
-			s.remove(i); // tries to remove an Integer
+			s.remove(i); 
 		}
 		System.out.println(s.size());
 	}
@@ -67,7 +66,8 @@ public class ShortSet {
 
 
 /*s.clear();
-
+	public static void main(String[] args) {
+		HashSet<Short> s = new HashSet<Short>();
 for (int i = 0; i < 10; i++) {
 	s.add((short)i);
 	// remove a Short
@@ -77,3 +77,14 @@ for (int i = 0; i < 10; i++) {
 	}
 }
 System.out.println(s.size());*/
+
+/*
+	public static void main(String[] args) {
+HashSet<Short> s = new HashSet<Short>();
+for (Short i = 0; i < 10; i++) {
+	s.add(i);
+	s.remove(i); // tries to remove an Integer
+}
+System.out.println(s.size());
+}
+*/

@@ -41,7 +41,13 @@ public class Conversions {
 
 	public static void fpToIntWrong(float f) {
 		short s = (short) f;
-		System.out.println("s = " + s);
+		System.out.println("(short) s = " + s);
+		
+		int i = (int) f;
+		System.out.println("(int) i = " + i);
+		
+		long l = (long) f;
+		System.out.println("(long) l = " + l);
 	}
 
 	public static void fpToInt(float f) throws ArithmeticException {

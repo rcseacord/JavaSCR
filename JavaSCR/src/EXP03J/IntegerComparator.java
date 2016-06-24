@@ -48,6 +48,9 @@ public class IntegerComparator {
 				+ cmpWrong.compare(2147483647, 2147483647));
 		System.out.println("cmpWrong greater than: "
 				+ cmpWrong.compare(2147483647, 2147483646));
+		
+		System.out.println("cmpWrong equal to with memoized value: "
+				+ cmpWrong.compare(7, 7));
 
 		System.out.println("cmp less than: "
 				+ cmp.compare(2147483646, 2147483647));
@@ -55,6 +58,9 @@ public class IntegerComparator {
 				+ cmp.compare(2147483647, 2147483647));
 		System.out.println("cmp greater than: "
 				+ cmp.compare(2147483647, 2147483646));
+		
+		System.out.println("cmp equal to with memoized value: "
+				+ cmpWrong.compare(7, 7));
 
 		// Constructors for class Boolean return distinct objects.
 		Boolean b1 = new Boolean("true");
