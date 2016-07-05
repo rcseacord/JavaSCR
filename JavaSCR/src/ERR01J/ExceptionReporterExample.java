@@ -25,16 +25,30 @@ package ERR01J;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ExceptionReporterExample {
 
 	private static FileInputStream fis;
+	
+	private static final Logger log = Logger.getLogger(ExceptionReporterExample.class.getName());
+	static ExceptionReporter er = new ExceptionReporter();
 
+	// Exception reporter that logs the exception
+	private static final Reporter logException = new Reporter() {
+		public void report(Throwable t) {
+			log.log(Level.SEVERE, t.toString(), t);
+			System.exit(-1);
+		}
+	};
+	
+	static Reporter old_reporter = er.setExceptionReporter(logException);
+	
 	public static void main(String[] args) throws FileNotFoundException {
 		try {
 			setFis(new FileInputStream(System.getenv("APPDATA") + "\\" + args[0]));
-		} catch (IOException ioex) {
-			ExceptionReporter er = new ExceptionReporter();
+		} catch (IOException ioex) {		
 			er.reportException(ioex);
 			// Recover from the exception...
 		}
