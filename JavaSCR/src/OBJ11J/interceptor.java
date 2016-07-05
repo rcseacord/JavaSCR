@@ -22,6 +22,9 @@
 
 package OBJ11J;
 
+// An attacker can exploit this code by extending the bankOperations class 
+// and overriding the finalize() method. 
+
 public class interceptor extends bankOperations {
 	private static interceptor stealInstance = null;
 

@@ -22,7 +22,7 @@
 
 package OBJ11J;
 
-//Invoke class and gain access to restricted features
+// Invoke class and gain access to restricted features
 public class attackerApp { 
 
 	public static void main(String[] args) {

@@ -65,7 +65,7 @@ public class ShortSet {
 
 
 
-/*s.clear();
+/*
 	public static void main(String[] args) {
 		HashSet<Short> s = new HashSet<Short>();
 for (int i = 0; i < 10; i++) {

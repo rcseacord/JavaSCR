@@ -25,6 +25,7 @@ package OBJ11J;
 public class bankOperations {
 	// Constructor throws a SecurityException when SSN verification fails.
 	public bankOperations() {
+		// Perform social security number (SSN) verification  
 		if (!performSSNVerification()) {
 			throw new SecurityException("Access Denied!");
 			// The garbage collector waits to grab the object
