@@ -29,7 +29,7 @@ import java.util.regex.Matcher;
 public class ValidateString {
 	
 	public static String NormalizeandValidate(String s) {
-		
+
 		// Validate
 		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
 		Matcher matcher = pattern.matcher(s);
@@ -39,7 +39,7 @@ public class ValidateString {
 		} else {
 			System.out.println("input valid");
 		}
-
+		
 		// Normalize
 		s = Normalizer.normalize(s, Form.NFKC);
 

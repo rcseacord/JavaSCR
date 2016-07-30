@@ -45,6 +45,7 @@ class badCloneExample implements Cloneable {
 		for (int i = 0; i < cookies.length; i++) {
 			cookies[i].setValue("" + i * 2);
 		}
+		return;
 	}
 	
 	void printValues() { // Overridable
@@ -52,6 +53,7 @@ class badCloneExample implements Cloneable {
 		for (int i = 0; i < cookies.length; i++) {
 			System.out.println(cookies[i].getValue());
 		}
+		return;
 	}
 
 	HttpCookie[] deepCopy() {

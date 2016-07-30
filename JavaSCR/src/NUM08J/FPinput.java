@@ -35,14 +35,31 @@ public class FPinput {
 			return;
 		}
 
+		// Returns true if the argument is a finite floating-point value; 
+		// returns false otherwise (for NaN and infinity arguments).
+		if (!Double.isFinite(val)) {
+			System.err.println("value is not finite");
+			return;
+		}
+
+		if (Double.isInfinite(val)) {
+			System.err.println("input is infinite");
+			return;
+		}
+		
+		if (Double.isNaN(val)) {
+			System.err.println("input is NaN");
+			return;
+		}
+
 		if (val >= Double.MAX_VALUE - currentBalance) {
 			System.err.println("input range error");
 			return;
 		}
 		System.err.println("updating balance");
 		currentBalance += val;
-	}
 
+	}
 
 	public static void main(String[] args) {
 		doDeposit("-Infinity");
@@ -84,29 +101,28 @@ public class FPinput {
 
 
 
-/*static void doDeposit(String userInput) {
-	double val = 0;
-	try {
-		val = Double.valueOf(userInput);
-	} catch (NumberFormatException e) {
-		System.err.println("input format error");
-		return;
-	}
+/*
+		// Returns true if the argument is a finite floating-point value; 
+		// returns false otherwise (for NaN and infinity arguments).
+		if (!Double.isFinite(val)) {
+			System.err.println("value is not finite");
+			return;
+		}
 
-	if (Double.isInfinite(val)) {
-		System.err.println("input infinity error");
-		return;
-	}
+		if (Double.isInfinite(val)) {
+			System.err.println("input is infinite");
+			return;
+		}
+		
+		if (Double.isNaN(val)) {
+			System.err.println("input is NaN");
+			return;
+		}
 
-	if (Double.isNaN(val)) {
-		System.err.println("input NaN error");
-		return;
-	}
-
-	if (val >= Double.MAX_VALUE - currentBalance) {
-		System.err.println("input range error");
-		return;
-	}
-	System.err.println("updating balance");
-	currentBalance += val;
+		if (val >= Double.MAX_VALUE - currentBalance) {
+			System.err.println("input range error");
+			return;
+		}
+		System.err.println("updating balance");
+		currentBalance += val;
 }*/

@@ -27,6 +27,7 @@ import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigInteger;
 
 public class UnsignedInteger {
 
@@ -46,6 +47,11 @@ public class UnsignedInteger {
 		// intended.
 		return dis.readInt() & 0xFFFFFFFFL; // mask with 32 one-bits
 	}
+	
+	// @return long read from specified DataInputStream
+	public static long getULong(DataInputStream dis) throws IOException {
+		return dis.readLong();
+	}
 
 	public static void main(String[] args) {
 		try {
@@ -55,6 +61,8 @@ public class UnsignedInteger {
 			dos = new DataOutputStream(os);
 
 			// write out two identical "pretend" unsigned int values
+			dos.writeInt(0xFFFFFFFF); // 4,294,967,295
+			dos.writeInt(0xFFFFFFFF); // 4294967295
 			dos.writeInt(0xFFFFFFFF); // 4294967295
 			dos.writeInt(0xFFFFFFFF); // 4294967295
 
@@ -69,6 +77,15 @@ public class UnsignedInteger {
 
 			long long_a = getInteger(dis);
 			System.out.println("correct value = " + long_a);
+			
+			// answer should be 18446744073709551615UL
+			Long long_bi = getULong(dis);
+			BigInteger bi = new BigInteger(long_bi.toString());
+			// add 2^^64 if the sign bit is set
+			if (bi.testBit(63)) 
+				bi = bi.add(new BigInteger("2").pow(64));
+			System.out.println("bi = " + bi);	
+			
 		} catch (IOException e) {
 			// if any I/O error occurs
 			System.err.println("IOException " + e.getMessage());

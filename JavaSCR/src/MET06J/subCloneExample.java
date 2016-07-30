@@ -38,22 +38,27 @@ class subCloneExample extends badCloneExample {
 		return clone;
 	}
 
-	void doSomething() { // Erroneously executed
+/*  Malicious override
+	void doSomething() { 
+		// Erroneously called from badClone::clone()
 		System.out.println("subCloneExample::doSomething");
 		for (int i = 0; i < cookies.length; i++) {
 			cookies[i].setDomain(i + ".foo.com");
 		}
+		return;
 	}
-
+*/
+	
 	void printValues() { // Overridable
 		System.out.println("subCloneExample::printValues");
 		for (int i = 0; i < cookies.length; i++) {
 			System.out.println(cookies[i].getValue());
 		}
+		return;
 	}
 
 	public static void main(String[] args) throws CloneNotSupportedException {
-		HttpCookie[] hc = new HttpCookie[20];
+		HttpCookie[] hc = new HttpCookie[5];
 		for (int i = 0; i < hc.length; i++) {
 			hc[i] = new HttpCookie("cookie" + i, "0");
 		}

@@ -35,7 +35,6 @@ class account {
 		return false;
 	}
 
-	// added in later release
 	/*
 	boolean overdraft() {
 		balance += 300; // Add 300 in case there is an overdraft

@@ -34,7 +34,6 @@ class listUtility {
 	}
 
 	// Correctly typed object added to parameterized list.
-
 	/*
 	private static void addToList(List<String> list, String obj) {
 		list.add(obj); // Unchecked warning }

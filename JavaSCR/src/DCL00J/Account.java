@@ -47,7 +47,7 @@ public class Account {
 	private final int balance;
 
 	// Deposit initialized at runtime
-	private static final int deposit = (int) (Math.random() * 100);
+	private static final int deposit = (int) (Math.random() * 100) + 10;
 	
 	// Class variable is initialized to a new instance of the Account class
 	// The initialization of c is placed lexically after the initialization 
