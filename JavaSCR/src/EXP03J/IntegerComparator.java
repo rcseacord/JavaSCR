@@ -70,6 +70,16 @@ public class IntegerComparator {
 			System.out.println("Never equal");
 		}
 
+		// When comparing a primitive to a boxed value the latter is unboxed.
+		if (b1 == (boolean)b2) { // always equal
+			System.out.println("Equal for the same values");
+		}
+		
+		b2 = false;
+		if (b1 == (boolean)b2) { // always equal
+			System.out.println("Not equal for different values");
+		}
+		
 		// The values of autoboxed Boolean variables may be compared using the
 		// reference equality operators because Java guarantees that the 
 		// Boolean type is fully memoized.
@@ -83,7 +93,12 @@ public class IntegerComparator {
 		if (b1 == b2) { // always equal
 			System.out.println("Always equal");
 		}
-
+		
+		Boolean b = new Boolean("true");
+		if (b == true) { 
+			System.out.println("Always equal");
+		}
+		
 	}
 
 }
