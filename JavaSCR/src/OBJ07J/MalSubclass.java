@@ -22,54 +22,37 @@
 
 package OBJ07J;
 
-class sensitiveClass {
-	private char[] filename;
-	private Boolean shared = false;
-
-	sensitiveClass(String filename) {
-		this.filename = filename.toCharArray();
+class MalSubclass extends SensitiveClass implements Cloneable {
+	protected MalSubclass(String filename) {
+		super(filename);
 	}
 
-	// When a client requests a String instance by invoking the get() method,
-	// the shared flag is set. To maintain the array's consistency with the
-	// returned String object, operations that can modify the array are
-	// subsequently prohibited.
-	final String get() {
-		if (!shared) {
-			shared = true;
-			return String.valueOf(filename);
-		} else {
-			throw new IllegalStateException("Failed to get instance");
+	@Override
+	public MalSubclass clone() { // Well-behaved clone() method
+		MalSubclass s = null;
+		try {
+			s = (MalSubclass) super.clone();
+		} catch (CloneNotSupportedException e) {
+			System.err.println("not cloneable");
 		}
+		return s;
 	}
-
-	// The replace() method will not replace all elements of the array with
-	// an x when the shared flag is set.
-	final void replace() {
-		if (!shared) {
-			for (int i = 0; i < filename.length; i++) {
-				filename[i] = 'x';
-			}
-		}
-	}
-	
-	final void printFilename() {
-		System.out.println(String.valueOf(filename));
-	}
-	
-	// Prevent subclasses from being made cloneable by defining a final clone()
-	// method that always fails.
-	/*
-	public final sensitiveClass clone() throws CloneNotSupportedException {
-		throw new CloneNotSupportedException();
-	}
-	*/
 
 	public static void main(String[] args) {
-		sensitiveClass ms1 = new sensitiveClass("password.txt");
+		// Java's cloning feature provides a way to circumvent the sharing
+		// constraint even though SensitiveClass does not implement the
+		// Cloneable interface.
+		MalSubclass ms1 = new MalSubclass("file.txt");
+		MalSubclass ms2 = ms1.clone(); // Creates a copy by cloning ms1
 		String s = ms1.get(); // Returns filename
 		System.out.println(s); // Filename is "file.txt"
-		ms1.replace(); // Attempts to replaces all characters with 'x'
-		ms1.printFilename(); // Filename unchanged
+		// Because the second instance ms2 does not have its shared flag set to
+		// true, it is possible to alter the first instance ms1 using the
+		// replace() method.
+		ms2.replace(); // Replaces all characters with 'x'
+		// ms1.get() and ms2.get() will subsequently return filename =
+		// 'xxxxxxxx'
+		ms1.print(); // Filename becomes 'xxxxxxxx'
+		ms2.print(); // Filename becomes 'xxxxxxxx'
 	}
 }
