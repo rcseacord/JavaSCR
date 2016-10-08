@@ -27,10 +27,13 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+
 public class Cardinality {
 
 	// returns the number of occurrences of Object obj in Collection col.
-	public static int cardinality(Object obj, final Collection<?> col) {
+	public static int cardinality(@Nullable Object obj, final Collection<?> col) {
 		int count = 0;
 		if (col == null) {
 			return count;
@@ -48,8 +51,9 @@ public class Cardinality {
 		return count;
 	}
 
-	public static void main(String[] args) {
-		List<String> myList = new ArrayList<String>();
+	public static void main() {
+		// a non-null List of nullable Strings
+		@NonNull List<@Nullable String> myList = new ArrayList<@Nullable String>();
 		myList.add("Java");
 		myList.add("C");
 		myList.add(null);
@@ -80,7 +84,7 @@ public class Cardinality {
 
 // returns the number of occurrences of Object obj in Collection col.
 /*
-public static int cardinality(Object obj, final Collection<?> col) {
+public static int cardinality(@Nullable Object obj, final Collection<?> col) {
 	int count = 0;
 	if (col == null) {
 		return count;
