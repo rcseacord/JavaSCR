@@ -22,19 +22,25 @@
 
 package OBJ11J;
 
-// Invoke class and gain access to restricted features
-public class attackerApp { 
+public class BankOperations {
+	// Constructor throws a SecurityException when SSN verification fails.
+	public BankOperations() {
+		// Perform social security number (SSN) verification  
+		if (!performSSNVerification()) {
+			throw new SecurityException("Access Denied!");
+			// The garbage collector waits to grab the object
+			// reference. However, the object cannot be garbage-collected
+			// until after the finalizer completes its execution.
+		}
+	}
 
-	public static void main(String[] args) {
-		interceptor i = interceptor.get(); // Stolen instance
+	// Returns true if data entered is valid, else false
+	// Assume that the attacker always enters an invalid SSN
+	private boolean performSSNVerification() {
+		return false;
+	}
 
-		// Can store the stolen object even though this should have printed
-		// "Invalid Object!"
-		storage.store(i);
-
-		// Now invoke any instance method of BankOperations class
-		i.greet();
-
-		userApp.main(args); // Invoke the original UserApp
+	public void greet() {
+		System.out.println("Welcome user! You may now use all the features.");
 	}
 }

