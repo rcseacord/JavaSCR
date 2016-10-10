@@ -29,7 +29,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Hashtable;
 
-class goodSerialHasher {
+class GoodSerialHasher {
   public static void main(String[] args)
                      throws IOException, ClassNotFoundException {
 	// The type of the key value has been changed to an Integer object. 

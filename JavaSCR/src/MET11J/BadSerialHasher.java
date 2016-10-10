@@ -29,11 +29,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Hashtable;
 
-class badSerialHasher {
+class BadSerialHasher {
 	  public static void main(String[] args)
 	                     throws IOException, ClassNotFoundException {
-	    Hashtable<myKey,String> ht = new Hashtable<myKey, String>();
-	    myKey key = new myKey();
+	    Hashtable<MyKey,String> ht = new Hashtable<MyKey, String>();
+	    MyKey key = new MyKey();
 	    ht.put(key, "Value");
 	    System.out.println("Entry: " + ht.get(key));
 	    // Retrieve using the key, works
@@ -47,8 +47,8 @@ class badSerialHasher {
 	    // Deserialize the Hashtable object
 	    FileInputStream fis = new FileInputStream("hashdata.ser");
 	    ObjectInputStream ois = new ObjectInputStream(fis);
-	    Hashtable<myKey, String> ht_in =
-	        (Hashtable<myKey, String>)ois.readObject();
+	    Hashtable<MyKey, String> ht_in =
+	        (Hashtable<MyKey, String>)ois.readObject();
 	    ois.close();
 	 
 	    if (ht_in.contains("Value"))

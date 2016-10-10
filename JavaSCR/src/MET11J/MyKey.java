@@ -24,7 +24,16 @@ package MET11J;
 
 import java.io.Serializable;
 
-class myKey implements Serializable {
+class MyKey implements Serializable {
+
+	/**
+	 * The serialization runtime associates with each serializable class a
+	 * version number, called a serialVersionUID, which is used during
+	 * deserialization to verify that the sender and receiver of a serialized
+	 * object have loaded classes for that object that are compatible with
+	 * respect to serialization.
+	 */
+	private static final long serialVersionUID = -1723490604407166154L;
 
 	// Does not override hashCode()
 	/*
@@ -34,7 +43,7 @@ class myKey implements Serializable {
 	 */
 
 	public boolean equals(Object o) {
-		if (!(o instanceof myKey)) {
+		if (!(o instanceof MyKey)) {
 			return false;
 		}
 		return true;
