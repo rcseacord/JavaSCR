@@ -25,9 +25,19 @@ package ERR01J;
 import java.security.BasicPermission;
 
 final class ExceptionReporterPermission extends BasicPermission {
+	/**
+	 * The serialization runtime associates with each serializable class a
+	 * version number, called a serialVersionUID, which is used during
+	 * deserialization to verify that the sender and receiver of a serialized
+	 * object have loaded classes for that object that are compatible with
+	 * respect to serialization.
+	 */
+	private static final long serialVersionUID = 4829447732533464256L;
+	
 	public ExceptionReporterPermission(String permName) {
 		super(permName); 
 	} 
+	
 	// Even though the actions parameter is ignored, 
 	// this constructor has to be defined 
 	public ExceptionReporterPermission(String permName, String actions) { 
