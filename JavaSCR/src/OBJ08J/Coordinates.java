@@ -22,7 +22,7 @@
 
 package OBJ08J;
 
-class InnerClass {
+class Coordinates {
 
 	private int x = 42;
 	private int y = 24;

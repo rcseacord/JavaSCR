@@ -29,17 +29,17 @@ public class Spy {
 
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
-		InnerClass ic = new InnerClass();
+		Coordinates ic = new Coordinates();
 	    System.out.println(ic.getX());
 		
-		final Method methods[] = InnerClass.class.getDeclaredMethods();
+		final Method methods[] = Coordinates.class.getDeclaredMethods();
 
 		// Enumerate methods
 		for (int i = 0; i < methods.length; ++i) {
 			System.out.println("Method: " + methods[i]);
 		}
 		
-	    Method m = InnerClass.class.getDeclaredMethod("access$0", InnerClass.class);
+	    Method m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class);
 	    Integer x = (Integer) m.invoke(null, ic);
 	    
 	    System.out.println(x);
