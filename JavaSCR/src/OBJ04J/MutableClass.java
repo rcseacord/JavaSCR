@@ -24,20 +24,28 @@ package OBJ04J;
 
 import java.util.Date;
 
-public class mutableClass {
-	public final class MutableClass {
-		private Date date;
-
-		public MutableClass(Date d) {
-			this.date = d;
+class MutableClass implements Cloneable {
+	
+	  private final Date date;
+	  private MutableClass(Date d) { 
+	    this.date = new Date(d.getTime());  
+	  }
+	  
+	  public Date getDate() {
+	    return (Date) date.clone(); 
+	  }
+	  public static MutableClass newInstance( 
+	                               MutableClass mc)  {
+	    return new MutableClass(mc.getDate());
+	  }
+	
+	public static void main(String[] args) {
+		MutableClass mc = new MutableClass(new Date());
+		if (mc instanceof Cloneable) {
+			System.out.println("true");
 		}
-
-		public void setDate(Date d) {
-			this.date = d;
-		}
-
-		public Date getDate() {
-			return date;
+		else {
+			System.out.println("false");
 		}
 	}
 }
