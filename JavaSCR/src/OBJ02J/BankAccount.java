@@ -22,25 +22,40 @@
 
 package OBJ02J;
 
-class account {
-	// Maintains all banking-related data such as account balance
-	private double balance = 100;
-
+public class BankAccount extends Account {
+	// Subclass handles authentication
+	@Override
 	boolean withdraw(double amount) throws IllegalAccessException {
-		if ((balance - amount) >= 0) {
-			balance -= amount;
-			System.out.println("Withdrawal successful. The balance is : " + balance);
-			return true;
+		if (!securityCheck()) {
+			throw new IllegalAccessException();
 		}
+		return super.withdraw(amount);
+	}
+
+	private final boolean securityCheck() {
+		// Check that account management may proceed
 		return false;
 	}
 
-	/*
-	boolean overdraft() {
-		balance += 300; // Add 300 in case there is an overdraft
-		System.out.println("Added back-up amount. The balance is :" + balance);
-		return true;
-	}
-	*/
+	public static void main(String[] args) {
+		Account account = new BankAccount();
+		// Enforce security manager check
+		boolean result = false;
+		try {
+			result = account.withdraw(200.0);
+		} catch (IllegalAccessException e) {
+			System.err.println("Withdrawal failed.");
+			e.printStackTrace();
+		}
+		System.out.println("Withdrawal successful? " + result);
 
+		// Client uses new overdraft method.
+		/*
+		if (!result) {
+			result = account.overdraft();
+		}
+		//
+		System.out.println("Withdrawal successful? " + result);
+		*/
+	}
 }
