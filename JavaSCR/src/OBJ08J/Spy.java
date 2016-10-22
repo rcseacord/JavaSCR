@@ -39,9 +39,9 @@ public class Spy {
 			System.out.println("Method: " + methods[i]);
 		}
 		
-	    Method m = InnerClass.class.getDeclaredMethod("access$0", InnerClass.class, int.class);
-	    m.invoke(null, ic, 42);
+	    Method m = InnerClass.class.getDeclaredMethod("access$0", InnerClass.class);
+	    Integer x = (Integer) m.invoke(null, ic);
 	    
-	    System.out.println(ic.getX());
+	    System.out.println(x);
 	}
 }

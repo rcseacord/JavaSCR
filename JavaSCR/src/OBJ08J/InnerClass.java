@@ -23,16 +23,21 @@
 package OBJ08J;
 
 class InnerClass {
-    private int x = 10;
 
-    public class Inner {
+	private int x = 42;
+	private int y = 24;
 
-        public void setX() {
-            x = 5;
-        }
-    }
-
-    public int getX() {
-        return x;
-    }
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public class Point {
+		public void getPoint() {
+			System.out.println("(" + x + "," + y + ")");
+		}
+	}
 }
