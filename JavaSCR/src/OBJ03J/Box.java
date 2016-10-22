@@ -1,6 +1,7 @@
 package OBJ03J;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  * @param <T> the type of the value being boxed
  */
 
-@SuppressWarnings("unchecked")
+// @SuppressWarnings("unchecked")
 
 public class Box<T> {
     // T stands for "Type"
@@ -43,6 +44,19 @@ public class Box<T> {
 		if (intBox.getClass() == stringBox.getClass()) {
 			System.out.println("intBox.getClass() == stringBox.getClass()");
 		}
+		
+		Box<Number> box = new Box<Number>();
+		box.set(new Integer(10));   // OK
+		box.set(new Double(10.1));  // OK
+
 	}
+	
+	static String m(List<String>... strLists) {
+		 Object[] array = strLists;
+		 List<Integer> tmpList = Arrays.asList(42);
+		 array[0] = tmpList;
+		 String s = strLists[0].get(0);
+		 return s;
+		}
     
 }
