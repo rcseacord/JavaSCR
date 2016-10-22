@@ -2,7 +2,7 @@ package OBJ01J;
 
 import java.lang.reflect.Field;
 
-public class privReflection {
+public class PrivReflection {
 	public static void main(String args[]) throws Exception {
 		// Returns an array of Field objects reflecting 
 		// all the fields declared by the class (including private)
