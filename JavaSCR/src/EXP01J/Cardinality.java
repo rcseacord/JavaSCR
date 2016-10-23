@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -35,9 +36,6 @@ public class Cardinality {
 	// returns the number of occurrences of Object obj in Collection col.
 	public static int cardinality(@Nullable Object obj, final Collection<?> col) {
 		int count = 0;
-		if (col == null) {
-			return count;
-		}
 		Iterator<?> it = col.iterator();
 		while (it.hasNext()) {
 			Object elt = it.next();
@@ -51,17 +49,15 @@ public class Cardinality {
 		return count;
 	}
 
-	public static void main() {
+	public static void main(String[] args) {
 		// a non-null List of nullable Strings
 		@NonNull List<@Nullable String> myList = new ArrayList<@Nullable String>();
 		myList.add("Java");
 		myList.add("C");
 		myList.add(null);
 		myList.add("C++");
-		System.out.println("Cardinality of myList: "
-				+ cardinality("C", myList));
-		System.out.println("Cardinality of myList: "
-				+ cardinality(null, myList));
+		System.out.println("Cardinality of myList: " + cardinality("C", myList));
+		System.out.println("Cardinality of myList: " + cardinality(null, myList));
 	}
 
 }
@@ -92,8 +88,7 @@ public static int cardinality(@Nullable Object obj, final Collection<?> col) {
 	Iterator<?> it = col.iterator();
 	while (it.hasNext()) {
 		Object elt = it.next();
-		if ((null == obj && null == elt)
-				|| (null != obj && obj.equals(elt))) {
+		if (Objects.equals(obj, elt))  {
 			count++;
 		}
 	}
