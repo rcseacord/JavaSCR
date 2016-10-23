@@ -20,8 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package OBJ08J;
+package OBJ08JA;
 
+import OBJ08J.Coordinates;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -30,7 +31,9 @@ public class Spy {
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
 		Coordinates ic = new Coordinates();
+		
 	    System.out.println(ic.getX());
+	    System.out.println(ic.getY());
 		
 		final Method methods[] = Coordinates.class.getDeclaredMethods();
 
@@ -40,8 +43,12 @@ public class Spy {
 		}
 		
 	    Method m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class);
-	    Integer x = (Integer) m.invoke(null, ic);
-	    
+	    // m.setAccessible(true);
+	    Integer x = (Integer) m.invoke(null, ic);   
 	    System.out.println(x);
+	    
+	    m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class);
+	    Integer y = (Integer) m.invoke(null, ic);
+	    System.out.println(y);
 	}
 }

@@ -22,22 +22,31 @@
 
 package OBJ08J;
 
-class Coordinates {
+public class Coordinates {
 
 	private int x = 42;
 	private int y = 24;
 
-	public int getX() {
-		return x;
+	// anonymous class
+	Point p = new Point() {
+		@SuppressWarnings("unused")
+		public int getPointY() {
+			return y;
+		}
+	};
+
+	// Inner class
+	private class Point {
+		private int getPointX() {
+			return x;
+		}
 	}
-	
+
+	public int getX() {
+		return p.getPointX();
+	}
+
 	public int getY() {
 		return y;
-	}
-	
-	public class Point {
-		public void getPoint() {
-			System.out.println("(" + x + "," + y + ")");
-		}
 	}
 }
