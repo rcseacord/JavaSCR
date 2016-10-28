@@ -60,7 +60,7 @@ public class UnsignedInteger {
 
 			dos = new DataOutputStream(os);
 
-			// write out two identical "pretend" unsigned int values
+			// write out "unsigned int" values
 			dos.writeInt(0xFFFFFFFF); // 4,294,967,295
 			dos.writeInt(0xFFFFFFFF); // 4294967295
 			dos.writeInt(0xFFFFFFFF); // 4294967295
