@@ -40,14 +40,21 @@ public class Conversions {
 	}
 
 	public static void fpToIntWrong(float f) {
+		// Converted to int then narrowed to short
 		short s = (short) f;
 		System.out.println("(short) s = " + s);
 		
+		// Converted to Integer.MAX_VALUE
 		int i = (int) f;
-		System.out.println("(int) i = " + i);
+		if (i == Integer.MAX_VALUE) {
+			System.out.println("i = Integer.MAX_VALUE");
+		}
 		
+		// Converted to Long.MAX_VALUE
 		long l = (long) f;
-		System.out.println("(long) l = " + l);
+		if (l == Long.MAX_VALUE) {
+			System.out.println("l = Long.MAX_VALUE");
+		}
 	}
 
 	public static void fpToInt(float f) throws ArithmeticException {
@@ -68,6 +75,7 @@ public class Conversions {
 		}
 		
 		// Floating-Point to Integer Conversion
+		System.out.println(Float.MAX_VALUE);
 		fpToIntWrong(Float.MAX_VALUE);
 		try {
 			fpToInt(Float.MAX_VALUE);
