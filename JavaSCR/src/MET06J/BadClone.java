@@ -24,46 +24,46 @@ package MET06J;
 
 import java.net.HttpCookie;
 
-class subCloneExample extends badCloneExample {
+class BadClone implements Cloneable {
+	HttpCookie[] cookies;
 
-	subCloneExample(HttpCookie[] c) {
-		super(c);
-		System.out.println("subCloneExample::ctor");
+	BadClone(HttpCookie[] c) {
+			cookies = c;
 	}
 
 	public Object clone() throws CloneNotSupportedException {
-		System.out.println("subCloneExample::clone");
-		final subCloneExample clone = (subCloneExample) super.clone();
+		final BadClone clone = (BadClone) super.clone();
+		// Invokes overridable method!!!
 		clone.doSomething();
+		// deepCopy() is called after doSomething()
+		clone.cookies = clone.deepCopy();
 		return clone;
 	}
 
-/*  Malicious override
-	void doSomething() { 
-		// Erroneously called from badClone::clone()
-		System.out.println("subCloneExample::doSomething");
+	// This overridden method sets the value of the cookies
+	void doSomething() { // Overridable
+		// Initializes hc to correct values
 		for (int i = 0; i < cookies.length; i++) {
-			cookies[i].setDomain(i + ".foo.com");
-		}
-		return;
-	}
-*/
-	
-	void printValues() { // Overridable
-		System.out.println("subCloneExample::printValues");
-		for (int i = 0; i < cookies.length; i++) {
-			System.out.println(cookies[i].getValue());
+			cookies[i].setValue("" + i * 2);
 		}
 		return;
 	}
 
-	public static void main(String[] args) throws CloneNotSupportedException {
-		HttpCookie[] hc = new HttpCookie[5];
-		for (int i = 0; i < hc.length; i++) {
-			hc[i] = new HttpCookie("cookie" + i, "0");
+	void printValues() { // Overridable
+		for (int i = 0; i < cookies.length; i++) {
+			System.out.println("value: " + cookies[i].getValue() + ", domain:" + cookies[i].getDomain());
 		}
-		badCloneExample bc = new subCloneExample(hc);
-		bc.clone();
-		bc.printValues();
+		return;
+	}
+
+	HttpCookie[] deepCopy() {
+		// Deep copy
+		HttpCookie[] cookiesCopy = new HttpCookie[cookies.length];
+
+		for (int i = 0; i < cookies.length; i++) {
+			// Manually create a copy of each element in array
+			cookiesCopy[i] = (HttpCookie) cookies[i].clone();
+		}
+		return cookiesCopy;
 	}
 }

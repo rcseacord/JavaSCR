@@ -24,52 +24,36 @@ package MET06J;
 
 import java.net.HttpCookie;
 
-class badCloneExample implements Cloneable {
-	HttpCookie[] cookies;
+class SubCloneExample extends BadClone {
 
-	badCloneExample(HttpCookie[] c) {
-		System.out.println("badCloneExample::ctor");
-		cookies = c;
+	SubCloneExample(HttpCookie[] c) {
+		super(c);
 	}
 
 	public Object clone() throws CloneNotSupportedException {
-		System.out.println("badCloneExample::clone");
-		final badCloneExample clone = (badCloneExample) super.clone();
-		clone.doSomething(); // Invokes overridable method
-		clone.cookies = clone.deepCopy();
+		final SubCloneExample clone = (SubCloneExample) super.clone();
+		clone.doSomething();
 		return clone;
 	}
 
-	void doSomething() { // Overridable
-		System.out.println("badCloneExample::doSomething");
+/*  Malicious override sets the values of the domain names. 
+	void doSomething() { 
+		// Erroneously called from badClone::clone()
+		// Objects are modified before deep copy occurs
 		for (int i = 0; i < cookies.length; i++) {
-			cookies[i].setValue("" + i * 2);
+			cookies[i].setDomain(i + ".foo.com");
 		}
 		return;
 	}
-	
-	void printValues() { // Overridable
-		System.out.println("badCloneExample::printValues");
-		for (int i = 0; i < cookies.length; i++) {
-			System.out.println(cookies[i].getValue());
+*/
+	public static void main(String[] args) throws CloneNotSupportedException {
+		HttpCookie[] hc = new HttpCookie[5];
+		// Cookie values initialized to "0"
+		for (int i = 0; i < hc.length; i++) {
+			hc[i] = new HttpCookie("cookie" + i, "0");
 		}
-		return;
-	}
-
-	HttpCookie[] deepCopy() {
-		System.out.println("badCloneExample::deepCopy");
-		if (cookies == null) {
-			throw new NullPointerException();
-		}
-
-		// Deep copy
-		HttpCookie[] cookiesCopy = new HttpCookie[cookies.length];
-
-		for (int i = 0; i < cookies.length; i++) {
-			// Manually create a copy of each element in array
-			cookiesCopy[i] = (HttpCookie) cookies[i].clone();
-		}
-		return cookiesCopy;
-
+		BadClone bc = new SubCloneExample(hc);
+		bc.clone();
+		bc.printValues();
 	}
 }
