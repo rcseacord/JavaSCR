@@ -35,27 +35,11 @@ public class FPinput {
 			return;
 		}
 
-		// Returns true if the argument is a finite floating-point value; 
-		// returns false otherwise (for NaN and infinity arguments).
-		if (!Double.isFinite(val)) {
-			System.err.println("value is not finite");
-			return;
-		}
-
-		if (Double.isInfinite(val)) {
-			System.err.println("input is infinite");
-			return;
-		}
-		
-		if (Double.isNaN(val)) {
-			System.err.println("input is NaN");
-			return;
-		}
-
 		if (val >= Double.MAX_VALUE - currentBalance) {
 			System.err.println("input range error");
 			return;
 		}
+		
 		System.err.println("updating balance");
 		currentBalance += val;
 
