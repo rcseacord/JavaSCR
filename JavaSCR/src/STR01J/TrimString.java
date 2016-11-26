@@ -37,10 +37,10 @@ public class TrimString {
 	}
 
 	public static void main(String[] args) {
-		String str = new String("Aß東𐐀001");
-
-		String s = trim(str);
-		System.out.println(s);
+		String s1 = trim("Aß東𐐀001");
+		System.out.println(s1);
+		String s2 = trim("𐐀𐐀𐐀𐐀𐐀𐐀𐐀𐐀1");
+		System.out.println(s2);
 	}
 
 }
@@ -85,14 +85,21 @@ public class TrimString {
 
 
 
-/*public static String trim(String string) {
-	int ch;
-	int i;
-	for (i = 0; i < string.length(); i += Character.charCount(ch)) {
-		ch = string.codePointAt(i);
-		if (!Character.isLetter(ch)) {
-			break;
-		}
-	}
-	return string.substring(i);
-}*/
+/*
+    public static String trim(String string) {
+        int i = 0;
+        // For each code point in string. The codePoints() method returns  
+        // a stream of code point values from this sequence.
+        // Any surrogate pairs encountered in the sequence are combined as  
+        // if by Character.toCodePoint and the result is passed to the stream. 
+        for (int ch : (Iterable<Integer>)string.codePoints()::iterator) {
+            // determine if code point is character
+            if (!Character.isLetter(ch)) {
+                break;
+            }
+            i++;
+        }     
+        // return the substring from 0 to the index offset by i code points
+        return string.substring(string.offsetByCodePoints(0, i));
+     }
+*/
