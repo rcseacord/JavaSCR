@@ -99,7 +99,7 @@ public class TrimString {
             }
             i++;
         }     
-        // return the substring from 0 to the index offset by i code points
+        // offsetByCodePoints returns the ith code point 
         return string.substring(string.offsetByCodePoints(0, i));
      }
 */
