@@ -84,7 +84,7 @@ public class UnsignedInteger {
 			// add 2^^64 if the sign bit is set
 			if (bi.testBit(63)) 
 				bi = bi.add(new BigInteger("2").pow(64));
-			System.out.println("bi = " + bi);	
+			System.out.println("bi = " + bi);		
 			
 		} catch (IOException e) {
 			// if any I/O error occurs
@@ -93,3 +93,45 @@ public class UnsignedInteger {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// Java SE 8
+// Convert to unsigned string with a radix value of 10
+System.out.println("Unsigned Integer Max Value = " + Integer.toUnsignedString(int_a));
+System.out.println("Unsigned Long Max Value = " + Long.toUnsignedString(long_bi));
+
+// Convert to unsigned long and then print
+long_a = Integer.toUnsignedLong(int_a);
+System.out.println("Unsigned Integer Max Value =  " + long_a);
+*/
