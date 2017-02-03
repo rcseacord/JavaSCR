@@ -59,8 +59,6 @@ public class IntegerComparator {
 		System.out.println("cmp greater than: "
 				+ cmp.compare(2147483647, 2147483646));
 		
-		System.out.println("cmp equal to with memoized value: "
-				+ cmpWrong.compare(7, 7));
 
 		// Constructors for class Boolean return distinct objects.
 		Boolean b1 = new Boolean("true");
@@ -76,7 +74,7 @@ public class IntegerComparator {
 		}
 		
 		b2 = false;
-		if (b1 == (boolean)b2) { // always equal
+		if (b1 == (boolean)b2) { // always 
 			System.out.println("Not equal for different values");
 		}
 		
@@ -94,6 +92,11 @@ public class IntegerComparator {
 			System.out.println("Always equal");
 		}
 		
+		// The following is equivalent to:
+		// if (new Boolean("true")) {
+		//   System.out.println("Always equal");
+		// }
+
 		Boolean b = new Boolean("true");
 		if (b == true) { 
 			System.out.println("Always equal");
