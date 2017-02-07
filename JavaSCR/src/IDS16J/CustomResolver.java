@@ -38,7 +38,7 @@ class CustomResolver implements EntityResolver {
       return new InputSource(entityPath);
     } else {
       // Disallow unknown entities by returning a blank path
-      return new InputSource(); 
+      return new InputSource(""); 
     }
   }
 }
