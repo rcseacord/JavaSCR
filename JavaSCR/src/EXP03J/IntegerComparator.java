@@ -59,7 +59,6 @@ public class IntegerComparator {
 		System.out.println("cmp greater than: "
 				+ cmp.compare(2147483647, 2147483646));
 		
-
 		// Constructors for class Boolean return distinct objects.
 		Boolean b1 = new Boolean("true");
 		Boolean b2 = new Boolean("true");
@@ -92,10 +91,9 @@ public class IntegerComparator {
 			System.out.println("Always equal");
 		}
 		
-		// The following is equivalent to:
-		// if (new Boolean("true")) {
-		//   System.out.println("Always equal");
-		// }
+		// The object b is being unboxed because the value on the right
+		// of the == is a primitive type (boolean).  So the comparison
+		// is always comparing the primitive value true with itself.
 
 		Boolean b = new Boolean("true");
 		if (b == true) { 
