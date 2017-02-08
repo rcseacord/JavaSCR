@@ -34,86 +34,80 @@ import java.util.regex.Pattern;
 
 public class LogSearch {
 
-  public static void FindLogEntryBad(String search) {
-    // Construct regex dynamically from user string
-    String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)";
-    Pattern searchPattern = Pattern.compile(regex);
-    try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt")) {
-      FileChannel channel = fis.getChannel();
-      // Get the file's size and map it into memory
-      long size = channel.size();
-      final MappedByteBuffer mappedBuffer = channel.map(
-          FileChannel.MapMode.READ_ONLY, 0, size);
+	public static void FindLogEntryBad(String search) {
+		// Construct regex dynamically from user string
+		String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)";
+		Pattern searchPattern = Pattern.compile(regex);
+		try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt")) {
+			FileChannel channel = fis.getChannel();
+			// Get the file's size and map it into memory
+			long size = channel.size();
+			final MappedByteBuffer mappedBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, size);
 
-      Charset charset = Charset.forName("ISO-8859-15");
-      final CharsetDecoder decoder = charset.newDecoder();
-      // Read file into char buffer
-      CharBuffer log = decoder.decode(mappedBuffer);
-      Matcher logMatcher = searchPattern.matcher(log);
-      while (logMatcher.find()) {
-        String match = logMatcher.group();
-        if (!match.isEmpty()) {
-          System.out.println(match);
-        }
-      }
-    } catch (IOException ex) {
-      System.err.println("thrown exception: " + ex.toString());
-      Throwable[] suppressed = ex.getSuppressed();
-      for (int i = 0; i < suppressed.length; i++) {
-        System.err.println("suppressed exception: " + suppressed[i].toString());
-      }
-    }
-    return;
-  }
+			Charset charset = Charset.forName("ISO-8859-15");
+			final CharsetDecoder decoder = charset.newDecoder();
+			// Read file into char buffer
+			CharBuffer log = decoder.decode(mappedBuffer);
+			Matcher logMatcher = searchPattern.matcher(log);
+			while (logMatcher.find()) {
+				String match = logMatcher.group();
+				if (!match.isEmpty()) {
+					System.out.println(match);
+				}
+			}
+		} catch (IOException ex) {
+			System.err.println("thrown exception: " + ex.toString());
+			Throwable[] suppressed = ex.getSuppressed();
+			for (int i = 0; i < suppressed.length; i++) {
+				System.err.println("suppressed exception: " + suppressed[i].toString());
+			}
+		}
+		return;
+	}
 
-  public static void FindLogEntry(String search) {
-    // Sanitize search string
-    StringBuilder sb = new StringBuilder(search.length());
-    for (int i = 0; i < search.length(); ++i) {
-      char ch = search.charAt(i);
-      if (Character.isLetterOrDigit(ch) || ch == ' ' || ch == '\'') {
-        sb.append(ch);
-      }
-    }
-    search = sb.toString();
+	public static void FindLogEntryQuote(String search) {
+		// Construct regex dynamically from user string
+		String regex = "(.*? +public\\[\\d+\\] +.*" + Pattern.quote(search) + ".*)";
+		Pattern searchPattern = Pattern.compile(regex);
+		try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt")) {
+			FileChannel channel = fis.getChannel();
+			// Get the file's size and map it into memory
+			long size = channel.size();
+			final MappedByteBuffer mappedBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, size);
 
-    // Construct regex dynamically from user string
-    String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)";
-    Pattern searchPattern = Pattern.compile(regex);
+			Charset charset = Charset.forName("ISO-8859-15");
+			final CharsetDecoder decoder = charset.newDecoder();
+			// Read file into char buffer
+			CharBuffer log = decoder.decode(mappedBuffer);
+			Matcher logMatcher = searchPattern.matcher(log);
+			while (logMatcher.find()) {
+				String match = logMatcher.group();
+				if (!match.isEmpty()) {
+					System.out.println(match);
+				}
+			}
+		} catch (IOException ex) {
+			System.err.println("thrown exception: " + ex.toString());
+			Throwable[] suppressed = ex.getSuppressed();
+			for (int i = 0; i < suppressed.length; i++) {
+				System.err.println("suppressed exception: " + suppressed[i].toString());
+			}
+		}
+		return;
+	}
 
-    // Open log file and search using search pattern
-    try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt")) {
-      FileChannel channel = fis.getChannel();
-      // Get the file's size and map it into memory
-      long size = channel.size();
-      final MappedByteBuffer mappedBuffer = channel.map(
-          FileChannel.MapMode.READ_ONLY, 0, size);
+	public static void main(String[] args) {
+		String arg = ".*)|(.*";
+		System.out.println("FindLogEntryBad(arg)");
+		FindLogEntryBad(arg); // matches everything
+		System.out.println("++++++++++++++++++++++");
 
-      Charset charset = Charset.forName("ISO-8859-15");
-      final CharsetDecoder decoder = charset.newDecoder();
-      // Read file into char buffer
-      CharBuffer log = decoder.decode(mappedBuffer);
-      Matcher logMatcher = searchPattern.matcher(log);
-      while (logMatcher.find()) {
-        String match = logMatcher.group();
-        if (!match.isEmpty()) {
-          System.out.println(match);
-        }
-      }
-    } catch (IOException ex) {
-      System.err.println("thrown exception: " + ex.toString());
-      Throwable[] suppressed = ex.getSuppressed();
-      for (int i = 0; i < suppressed.length; i++) {
-        System.err.println("suppressed exception: " + suppressed[i].toString());
-      }
-    }
-    return;
-  }
+		System.out.println("FindLogEntryQuote(arg)");
+		FindLogEntryQuote(arg); // matches nothing
+		System.out.println("++++++++++++++++++++++");
 
-  public static void main(String[] args) {
-    FindLogEntryBad(args[0]);
-    System.out.println("++++++++++++++++++++++");
-    FindLogEntry(args[0]);
-  }
-
+		System.out.println("FindLogEntryQuote(\"\")");
+		FindLogEntryQuote(""); // matches lines containing "public"
+		System.out.println("++++++++++++++++++++++");
+	}
 }
