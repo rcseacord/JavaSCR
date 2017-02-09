@@ -86,6 +86,8 @@ public class UnsignedInteger {
 				bi = bi.add(new BigInteger("2").pow(64));
 			System.out.println("bi = " + bi);		
 			
+			//---------- Add code here -----------------------------
+			
 		} catch (IOException e) {
 			// if any I/O error occurs
 			System.err.println("IOException " + e.getMessage());
@@ -131,7 +133,7 @@ public class UnsignedInteger {
 System.out.println("Unsigned Integer Max Value = " + Integer.toUnsignedString(int_a));
 System.out.println("Unsigned Long Max Value = " + Long.toUnsignedString(long_bi));
 
-// Convert to unsigned long and then print
-long_a = Integer.toUnsignedLong(int_a);
-System.out.println("Unsigned Integer Max Value =  " + long_a);
+// Divide Integer.MAX_VALUE by int_a (signed and unsigned)
+System.out.println("Signed quotient = " + Integer.MAX_VALUE / int_a);
+System.out.println("Unsigned quotient = " + Integer.divideUnsigned(Integer.MAX_VALUE, int_a));
 */
