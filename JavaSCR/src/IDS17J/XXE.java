@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2017 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -36,51 +36,59 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
 class XXE {
-  private static void receiveXMLStreamBad(InputStream inStream,
-      DefaultHandler defaultHandler) throws ParserConfigurationException,
-      SAXException, IOException {
-    SAXParserFactory factory = SAXParserFactory.newInstance();
-    SAXParser saxParser = factory.newSAXParser();
-    saxParser.parse(inStream, defaultHandler);
-  }
-  
-  private static void receiveXMLStream(InputStream inStream,
-      DefaultHandler defaultHandler) throws ParserConfigurationException,
-      SAXException, IOException {
-    SAXParserFactory factory = SAXParserFactory.newInstance();
-    SAXParser saxParser = factory.newSAXParser();
+	private static void receiveXMLStreamBad(InputStream inStream, DefaultHandler defaultHandler)
+			throws ParserConfigurationException, SAXException, IOException {
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		SAXParser saxParser = factory.newSAXParser();
+		saxParser.parse(inStream, defaultHandler);
+	}
 
-    // Create an XML reader to set the entity resolver.
-    XMLReader reader = saxParser.getXMLReader();
-    reader.setEntityResolver(new CustomResolver());
-    reader.setContentHandler(defaultHandler);
+	private static void receiveXMLStream(InputStream inStream, DefaultHandler defaultHandler)
+			throws ParserConfigurationException, SAXException, IOException {
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		SAXParser saxParser = factory.newSAXParser();
 
-    InputSource is = new InputSource(inStream);
-    reader.parse(is);
-  }
+		// Create an XML reader to set the entity resolver.
+		XMLReader reader = saxParser.getXMLReader();
+		reader.setEntityResolver(new CustomResolver());
+		reader.setContentHandler(defaultHandler);
 
+		InputSource is = new InputSource(inStream);
+		reader.parse(is);
+	}
 
-  public static void main(String[] args) throws ParserConfigurationException,
-      SAXException, IOException {
+	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
-    try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
-      receiveXMLStreamBad(fis, new DefaultHandler());
-    } catch (IOException ex) {
-      System.err.println("Malformed URL Exception: " + ex);
-      Throwable[] suppressed = ex.getSuppressed();
-      for (int i = 0; i < suppressed.length; i++) {
-        System.err.println("suppressed exception: " + suppressed[i].toString());
-      }
-    }
-    
-    try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
-      receiveXMLStream(fis, new DefaultHandler());
-    } catch (IOException ex) {
-      System.err.println("Malformed URL Exception: " + ex);
-      Throwable[] suppressed = ex.getSuppressed();
-      for (int i = 0; i < suppressed.length; i++) {
-        System.err.println("suppressed exception: " + suppressed[i].toString());
-      }
-    }
-  }
+		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
+			receiveXMLStreamBad(fis, new DefaultHandler());
+		} 
+		catch (SAXException | IOException ex) {
+			System.err.println(ex);
+			Throwable[] suppressed = ex.getSuppressed();
+			for (int i = 0; i < suppressed.length; i++) {
+				System.err.println("suppressed exception: " + suppressed[i].toString());
+			}
+		}
+
+		try (FileInputStream fis = new FileInputStream("src/IDS17J/good.xml")) {
+			receiveXMLStream(fis, new DefaultHandler());
+		} catch (SAXException | IOException ex) {
+			System.err.println(ex);
+			Throwable[] suppressed = ex.getSuppressed();
+			for (int i = 0; i < suppressed.length; i++) {
+				System.err.println("suppressed exception: " + suppressed[i].toString());
+			}
+		}
+		
+		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
+			receiveXMLStream(fis, new DefaultHandler());
+		} 
+		catch (SAXException | IOException ex) {
+			System.err.println(ex);
+			Throwable[] suppressed = ex.getSuppressed();
+			for (int i = 0; i < suppressed.length; i++) {
+				System.err.println("suppressed exception: " + suppressed[i].toString());
+			}
+		}
+	}
 }
