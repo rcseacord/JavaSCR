@@ -86,6 +86,24 @@ public class TrimString {
 
 
 /*
+    // Fast solution 
+  	public static String trim(String string) {
+		boolean nonLetterFound = false;
+		StringBuilder sb = new StringBuilder(string.length());
+		for (int ch : (Iterable<Integer>) string.codePoints()::iterator) {
+			if (nonLetterFound) {
+				sb.appendCodePoint(ch);
+			} else {
+				if (!Character.isLetter(ch)) {
+					nonLetterFound = true;
+					sb.appendCodePoint(ch);
+				}
+			}
+		}
+		return sb.toString();
+	}
+	
+	// Simpler solution 
     public static String trim(String string) {
         int i = 0;
         // For each code point in string. The codePoints() method returns  
