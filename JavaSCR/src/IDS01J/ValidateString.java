@@ -37,7 +37,7 @@ public class ValidateString {
 			// Found black listed tag
 			throw new IllegalStateException();
 		} else {
-			System.out.println("input valid");
+			System.out.println("valid input");
 		}
 		
 		// Normalize
@@ -56,3 +56,72 @@ public class ValidateString {
 		System.out.println("normalized string: " + input);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ public class ValidateString {
+	
+	public static Boolean NormalizeandValidate(String s) {
+		// Normalize
+		s = Normalizer.normalize(s, Form.NFKC);
+
+		// Validate
+		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
+		Matcher matcher = pattern.matcher(s);
+		if (matcher.find()) {
+			// Found black listed tag
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	public static void main(String[] args) {
+		// Assume input is user controlled
+		// \uFE64 is normalized to < and \uFE65 is normalized to > using the
+		// NFKC normalization form
+		String input = "\uFE64" + "script" + "\uFE65";
+		System.out.println("unnormalized string: " + input);
+		Boolean valid = NormalizeandValidate(input);
+		if (valid) {
+		  System.out.println("valid string: " + input);
+		}
+	} // end main
+} // end class ValidateString
+*/
