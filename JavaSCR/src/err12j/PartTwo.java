@@ -1,30 +1,49 @@
 package err12j;
 
-import java.util.Date;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Calendar;
 
 public final class PartTwo implements Cloneable {
-	private final Date date; // final field
-  private Whole parent;
+  private static final CopyOption[] options = { StandardCopyOption.COPY_ATTRIBUTES };
+  private static final Charset charset = Charset.forName("US-ASCII");
+  private static final String s = "File ID";
+  private final Path filepath;
+  private BufferedWriter writer;
 
-	public PartTwo(Date d) {
-		this.date = new Date(d.getTime()); // Copy in
-	}
-
-	public Date getDate() {
-		return (Date) date.clone(); // Copy and return
-	}
-
-  public void setParent(Whole Source) {
-    this.parent = Source;
+  public PartTwo(Path pathname) throws IOException {
+    filepath = pathname;
+    writer = Files.newBufferedWriter(filepath, charset);
+    writer.write(s, 0, s.length());
+    writer.flush();
   }
-	
-	public PartTwo clone() {
-		Date d = (Date) date.clone();
-		return new PartTwo(d);
-	}
-	
-  public void dispose() {
-    // TODO
+
+  public void setNow(Calendar rightNow) throws IOException {
+    writer.write(rightNow.toString());  
+    writer.flush();
+    // throw new IOException("injected fault");
   }
-	
+  
+  // copy constructor
+  public PartTwo(PartTwo p2) throws IOException {
+    filepath = Paths.get(p2.filepath + "copy");
+    Files.copy(p2.filepath, filepath, options);
+    writer = Files.newBufferedWriter(filepath, charset);
+  }
+
+  public void close() throws IOException {
+    try {
+      writer.close();
+    } finally {
+      writer = null;
+      Files.delete(filepath);
+    }
+  }
+
 }

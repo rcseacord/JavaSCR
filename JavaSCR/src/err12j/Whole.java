@@ -1,17 +1,21 @@
 package err12j;
 
-import java.util.Date;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Calendar;
 
 public class Whole {
 
   private PartOne p1;
   private PartTwo p2;
 
-  public Whole(Date date1, Date date2) {
-    p1 = new PartOne(date1);
-    p2 = new PartTwo(date2);
+  public Whole(Path path1, Path path2) throws IOException {
+    p1 = new PartOne(path1);
+    p2 = new PartTwo(path2);
   }
-  
+
   public Whole(PartOne pone, PartTwo ptwo) {
     p1 = pone;
     p2 = ptwo;
@@ -25,16 +29,17 @@ public class Whole {
     return p2;
   }
 
-  public Whole clone(Whole Source) {
-    PartOne t1 = Source.getp1().clone();
-    if (t1 != null) {  // not necessary for clone 
+  public Whole copy(Whole Source) throws IOException {
+    PartOne t1 = new PartOne(Source.getp1());
+    if (t1 != null) { // not necessary for copy constructor
       try {
-        PartTwo t2 = Source.getp2().clone();
-        if (t2 != null) {  // not necessary for clone
+        PartTwo t2 = new PartTwo(Source.getp2());
+        if (t2 != null) { // not necessary for copy constructor
           try {
             // methods that might throw
-            t1.setParent(this);
-            t2.setParent(this);
+            Calendar rightNow = Calendar.getInstance();
+            t1.setNow(rightNow);
+            t2.setNow(rightNow);
 
             // ********************************
             // This is the pivotal point of the
@@ -47,36 +52,47 @@ public class Whole {
 
             // Commit the change to the system state.
             // Importantly it won't throw.
-            PartOne swap1 = t1;
-            t1 = p1;
-            p1 = swap1;
-            PartTwo swap2 = t2;
-            t2 = p2;
-            p2 = swap2;
+            p1 = t1;
+            t1 = null;
+            p2 = t2;
+            t2 = null;
+
           } finally {
-            // either frees the original
-            // resources or of the
-            // temporary - depending
-            // whether we passed the
+            // frees the temporary if we passed the
             // pivot uneventfully.
-            t2.dispose();
+            if (t2 != null)
+              t2.close();
           }
         }
       } finally {
-        // either frees the original
-        // resources or of the temporary
-        // - depending whether we
-        // passed the pivot uneventfully.
-        t1.dispose();
+        // frees the temporary if we passed the
+        // pivot uneventfully.
+        if (t1 != null)
+          t1.close();
       }
     } // t1 not null
     return new Whole(p1, p2);
   } // clone method
 
   public static void main(String[] args) {
-    Whole a = new Whole(new Date(), new Date());
-    System.out.println(a.toString());
-    Whole b = a.clone(a);
-    System.out.println(b.toString());
-  }
+    try {
+      Whole a = new Whole(Paths.get("p1"), Paths.get("p2"));
+      System.out.println(a.toString());
+      Whole b = a.copy(a);
+      System.out.println(b.toString());
+    } 
+    catch (IOException e) {
+      e.printStackTrace();
+    } 
+    finally {
+      String[] files = { "p1", "p2", "p1copy", "p2copy" };
+      for (String file : files) {
+        try {
+          Files.delete(Paths.get(file));
+        } catch (IOException e) {
+          System.err.println("Couldn't delete file " + file);
+        }
+      } // end for
+    } // end finally
+  } // end main
 } // end class Whole
