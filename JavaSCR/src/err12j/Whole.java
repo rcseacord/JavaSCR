@@ -74,22 +74,31 @@ public class Whole {
 
             // Commit the change to the system state.
             // Importantly it won't throw.
+            /* Copy
             p1 = t1;
             t1 = null;
             p2 = t2;
             t2 = null;
+            */
+            // Move
+            PartOne swap1 = t1;
+            t1 = p1;
+            p1 = swap1;
+            PartTwo swap2 = t2;
+            t2 = p2;
+            p2 = swap2;
 
           } finally {
             // frees the temporary if we passed the
             // pivot uneventfully.
-            if (t2 != null)
+            // if (t2 != null)
               t2.close();
           }
         }
       } finally {
         // frees the temporary if we passed the
         // pivot uneventfully.
-        if (t1 != null)
+        // if (t1 != null)
           t1.close();
       }
     } // t1 not null
