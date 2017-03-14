@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="JavaSCR">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JavaSCR.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../../../Documents/NCC Training/Java Course/checker-qual.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="Account">
+        <java classname="DCL00J.Account" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="ArrayEquals">
+        <java classname="EXP02J.ArrayEquals" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="AttackerApp">
+        <java classname="OBJ11J.AttackerApp" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="badCreditCard">
+        <java classname="MET09J.badCreditCard" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="BankAccount">
+        <java classname="OBJ02J.BankAccount" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="BitwiseAndArithmetic">
+        <java classname="NUM01J.BitwiseAndArithmetic" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Box">
+        <java classname="OBJ03J.Box" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Cardinality">
+        <java classname="EXP01J.Cardinality" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="caseInsensitiveString">
+        <java classname="MET08J.caseInsensitiveString" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="caseInsensitiveStringGood">
+        <java classname="MET08J.caseInsensitiveStringGood" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="compNaN">
+        <java classname="NUM07J.compNaN" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Conversions">
+        <java classname="NUM12J.Conversions" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Cycle">
+        <java classname="DCL00J.Cycle" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="DenormalizedNumbers">
+        <java classname="NUM05J.DenormalizedNumbers" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Dimensions">
+        <java classname="ERR03J.Dimensions" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="divideException">
+        <java classname="ERR08J.divideException" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="divideExceptionGood">
+        <java classname="ERR08J.divideExceptionGood" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="ExceptionExample">
+        <java classname="ERR01J.ExceptionExample" failonerror="true" fork="yes">
+            <arg line="NotThere.exe"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="ExceptionReporterExample">
+        <java classname="ERR01J.ExceptionReporterExample" failonerror="true" fork="yes">
+            <arg line="NonExistantFile.txt"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Formatter">
+        <java classname="IDS06J.Formatter" failonerror="true" fork="yes">
+            <arg line="&quot;%1$tm %1$te,%1$tY&quot;"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="FPinput">
+        <java classname="NUM08J.FPinput" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="goodCreditCard">
+        <java classname="MET09J.goodCreditCard" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="InsiderThreat">
+        <java classname="OBJ08J.InsiderThreat" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="IntegerComparator">
+        <java classname="EXP03J.IntegerComparator" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="IntToFPConverions">
+        <java classname="NUM13J.IntToFPConverions" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Keywords">
+        <java classname="IDS08J.Keywords" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="LambdaScopeTest">
+        <java classname="OBJ08J.LambdaScopeTest" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Leak">
+        <java classname="obj14j.Leak" failonerror="true" fork="yes">
+            <jvmarg line="-Djava.security.manager"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="listUtility">
+        <java classname="OBJ03J.listUtility" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="LogSearch">
+        <java classname="IDS08J.LogSearch" failonerror="true" fork="yes">
+            <arg line=".*)|(.*"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="LongSet">
+        <java classname="EXP04J.LongSet" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="MalSubclass">
+        <java classname="OBJ07J.MalSubclass" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="MethodCallStack">
+        <java classname="err00j.MethodCallStack" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="MutableClass">
+        <java classname="OBJ04J.MutableClass" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="newInstance">
+        <java classname="ERR06J.NewInstance" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="OnlineStore">
+        <java classname="IDS16J.OnlineStore" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="overridable">
+        <java classname="MET05J.overridable" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="PrivReflection">
+        <java classname="OBJ01J.PrivReflection" failonerror="true" fork="yes">
+            <jvmarg line="-Djava.security.manager"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Program">
+        <java classname="err11j.Program" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="ReadString">
+        <java classname="STR00J.ReadString" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="ReDoS">
+        <java classname="IDS08J.ReDoS" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="safeArithmetic">
+        <java classname="NUM00J.safeArithmetic" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="SecureUnzip">
+        <java classname="ids04j.SecureUnzip" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="SensitiveClass">
+        <java classname="OBJ07J.SensitiveClass" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="ShortSet">
+        <java classname="EXP04J.ShortSet" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Spy (1)">
+        <java classname="OBJ08JA.Spy" failonerror="true" fork="yes">
+            <jvmarg line="-Djava.security.manager"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Spy (2)">
+        <java classname="obj14j.Spy" failonerror="true" fork="yes">
+            <jvmarg line="-Djava.security.manager"/>
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Spy">
+        <java classname="OBJ08J.Spy" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="subClass">
+        <java classname="MET12J.subClass" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="SubCloneExample">
+        <java classname="MET06J.SubCloneExample" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="TagFilter">
+        <java classname="IDS11J.TagFilter" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="TrimString">
+        <java classname="STR01J.TrimString" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="UIDemo">
+        <java classname="NUM03J.UIDemo" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="UnsafeVarargs">
+        <java classname="OBJ03J.UnsafeVarargs" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="UnsignedInteger">
+        <java classname="NUM03J.UnsignedInteger" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="UserApp">
+        <java classname="OBJ11J.UserApp" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="ValidateString">
+        <java classname="IDS01J.ValidateString" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="Whole">
+        <java classname="err12j.Whole" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="WholeTwR">
+        <java classname="err12j.WholeTwR" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="xCard">
+        <java classname="MET08J.xCard" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="xCardGood">
+        <java classname="MET08J.xCardGood" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+    <target name="XXE">
+        <java classname="IDS17J.XXE" failonerror="true" fork="yes">
+            <classpath refid="JavaSCR.classpath"/>
+        </java>
+    </target>
+</project>
