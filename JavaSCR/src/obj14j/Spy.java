@@ -26,11 +26,9 @@ public class Spy {
           for (int j = 0; j < length; j++) {
             System.out.println(Array.get(array, j));
           }
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | IllegalAccessException e) {
           e.printStackTrace();
-        } catch (IllegalAccessException e) {
-          e.printStackTrace();
-        }
+        } 
       }
     }
   } // end main
