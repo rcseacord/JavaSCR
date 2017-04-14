@@ -27,13 +27,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.security.GeneralSecurityException;
 import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
 import java.security.SecureRandom;
 import java.security.Signature;
 import java.security.SignatureException;
@@ -46,25 +44,23 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SealedObject;
 
-import org.bouncycastle.util.test.SimpleTestResult;
-
-public class MapSerializer {
-  public static SerializableMap<String, Integer> buildMap() {
-    SerializableMap<String, Integer> map = new SerializableMap<String, Integer>();
-    map.setData("John Doe", new Integer(123456789));
-    map.setData("Richard Roe", new Integer(246813579));
+class MapSerializer {
+  private static SerializableMap<String, String> buildMap() {
+    SerializableMap<String, String> map = new SerializableMap<String, String>();
+    map.setData("John Doe", new String("012-34-5678"));
+    map.setData("Jane Doe", new String("987-65-4321"));
     return map;
   }
 
-  public static void InspectMap(SerializableMap<String, Integer> map) {
-    System.out.println("John Doe's number is " + map.getData("John Doe"));
-    System.out.println("Richard Roe's number is " + map.getData("Richard Roe"));
+  private static void InspectMap(SerializableMap<String, String> map) {
+    System.out.println("John Doe CC#: " + map.getData("John Doe"));
+    System.out.println("Jane Doe CC#: " + map.getData("Jane Doe"));
   }
 
   @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     // Build map
-    SerializableMap<String, Integer> map = buildMap();
+    SerializableMap<String, String> map = buildMap();
 
     try {
     // Generate signing public/private key pair & sign map
@@ -102,7 +98,7 @@ public class MapSerializer {
       System.err.println("Map failed verification");
     }
     
-    map = (SerializableMap<String, Integer>) signedMap.getObject();
+    map = (SerializableMap<String, String>) signedMap.getObject();
     }
     catch (InvalidKeyException | NoSuchAlgorithmException | 
         ClassNotFoundException | IOException | BadPaddingException | 
