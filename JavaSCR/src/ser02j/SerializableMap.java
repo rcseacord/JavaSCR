@@ -28,10 +28,10 @@ import java.util.Map;
 
 class SerializableMap<K, V> implements Serializable {
   final static long serialVersionUID = -2648720192864531932L;
-  private Map<K, V> map;
+  final private Map<K, V> map;
 
   public SerializableMap() {
-    map = new HashMap<K, V>();
+    map = new HashMap<>();
   }
 
   public Object getData(K key) {

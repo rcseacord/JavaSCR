@@ -26,7 +26,7 @@ import OBJ08J.Coordinates;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class InsiderThreat {
+class InsiderThreat {
 
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
@@ -37,8 +37,8 @@ public class InsiderThreat {
 		final Method methods[] = Coordinates.class.getDeclaredMethods();
 
 		// Enumerate methods
-		for (int i = 0; i < methods.length; ++i) {
-			System.out.println("Method: " + methods[i]);
+		for (Method method : methods) {
+			System.out.println("Method: " + method);
 		}
 		
 	    Method m = Coordinates.class.getDeclaredMethod("access$1", Coordinates.class);
@@ -51,8 +51,8 @@ public class InsiderThreat {
 		final Method lmethods[] = LambdaScopeTest.class.getDeclaredMethods();
 
 		// Enumerate methods
-		for (int i = 0; i < lmethods.length; ++i) {
-			System.out.println("Method: " + lmethods[i]);
+		for (Method lmethod : lmethods) {
+			System.out.println("Method: " + lmethod);
 		}
 		
 	    m = LambdaScopeTest.class.getDeclaredMethod("access$0", LambdaScopeTest.class);

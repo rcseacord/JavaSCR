@@ -22,13 +22,13 @@
 
 package NUM13J;
 
-public class IntToFPConverions {
+class IntToFPConverions {
 
-	public static int subFloatFromIntWrong(int op1, float op2) {
+	private static int subFloatFromIntWrong(int op1, float op2) {
 		return op1 - (int) op2;
 	}
 
-	public static int subFloatFromInt(int op1, float op2)
+	private static int subFloatFromInt(int op1, float op2)
 			throws ArithmeticException {
 
 		// The significand can store at most 23 bits

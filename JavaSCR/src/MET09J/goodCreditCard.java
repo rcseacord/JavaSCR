@@ -25,11 +25,11 @@ package MET09J;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class goodCreditCard {
+final class goodCreditCard {
 	  private final int number;
 	   
-	  public goodCreditCard(int number) {
-	    this.number = number;
+	  private goodCreditCard(int number) {
+		  this.number = number;
 	  }
 	 
 	  public boolean equals(Object o) {
@@ -53,7 +53,7 @@ public final class goodCreditCard {
 	  }
 	 
 	  public static void main(String[] args) {
-	    Map<goodCreditCard, String> m = new HashMap<goodCreditCard, String>();
+	    Map<goodCreditCard, String> m = new HashMap<>();
 	    m.put(new goodCreditCard(100), "4111111111111111");
 	    System.out.println(m.get(new goodCreditCard(100)));
 	  }

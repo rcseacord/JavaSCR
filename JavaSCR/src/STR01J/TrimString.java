@@ -22,9 +22,9 @@
 
 package STR01J;
 
-public class TrimString {
+class TrimString {
 
-	public static String trim(String string) {
+	private static String trim(String string) {
 		char ch;
 		int i;
 		for (i = 0; i < string.length(); i += 1) {

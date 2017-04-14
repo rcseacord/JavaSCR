@@ -47,10 +47,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ProcessElems {
+class ProcessElems {
 
 	public static void main(String[] args) {
-		List<String> myList = new ArrayList<String>();
+		List<String> myList = new ArrayList<>();
 		Iterator<String> i = myList.iterator();
 		myList.add("Java");
 		myList.add(null);

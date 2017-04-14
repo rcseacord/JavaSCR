@@ -24,7 +24,7 @@ package err13j;
 
 import java.io.IOException;
 
-public class DefaultUncaughtExceptionHandler {
+class DefaultUncaughtExceptionHandler {
   
   public static void main(String... args) throws IOException {
     // Register a default uncaught exception handler for your program.

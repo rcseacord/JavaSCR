@@ -23,8 +23,8 @@
 package MET08J;
 
 class xCard extends card {
-	  private String type;
-	  public xCard(int number, String type) {
+	  final private String type;
+	  private xCard(int number, String type) {
 	    super(number);
 	    this.type = type;
 	  }

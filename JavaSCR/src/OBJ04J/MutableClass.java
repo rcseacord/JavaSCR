@@ -31,7 +31,7 @@ class MutableClass implements Cloneable {
 	    this.date = new Date(d.getTime());  
 	  }
 	  
-	  public Date getDate() {
+	  private Date getDate() {
 	    return (Date) date.clone(); 
 	  }
 	  public static MutableClass newInstance( 

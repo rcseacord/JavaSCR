@@ -24,6 +24,7 @@ package MET12J;
 
 class baseClass {
 	protected void finalize() throws Throwable {
+		super.finalize();
 		System.out.println("Superclass finalize!");
 		// Calls the doLogic() method, which happens to be overridden in the
 		// SubClass. This resurrects a reference to SubClass that not only

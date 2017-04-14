@@ -24,12 +24,12 @@ package MET08J;
 
 
 class xCardGood {
-  private String type;
+  final private String type;
   
   // Composition: private card field added
-  private card card; 
+  final private card card;
  
-  public xCardGood(int number, String type) {
+  private xCardGood(int number, String type) {
     card = new card(number);
     this.type = type;
   }

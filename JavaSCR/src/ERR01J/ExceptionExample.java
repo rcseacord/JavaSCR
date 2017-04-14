@@ -25,7 +25,7 @@ package ERR01J;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class ExceptionExample { 
+class ExceptionExample {
 
 	static FileInputStream fis;
 
@@ -37,7 +37,7 @@ public class ExceptionExample {
 		return fis;
 	}
 
-	public static void setFis(FileInputStream fis) {
+	private static void setFis(FileInputStream fis) {
 		ExceptionExample.fis = fis;
 	}
 

@@ -24,9 +24,9 @@ package OBJ06J;
 
 import java.net.HttpCookie;
 
-public final class mutableInputs {
+final class mutableInputs {
 
-	void doLogic(HttpCookie cookie) {
+	private void doLogic(HttpCookie cookie) {
 		System.out.println("Do stuff");
 	}
 

@@ -26,10 +26,10 @@ import ERR01J.ExceptionReporter;
 
 class Dimensions {
 	private int l, w, h;
-	static public final int PAD = 2;
+	private static final int PAD = 2;
 	static public final int MAX_DIM = 12;
 
-	public Dimensions(int l, int w, int h) {
+	private Dimensions(int l, int w, int h) {
 		this.l = l;
 		this.w = w;
 		this.h = h;
@@ -58,7 +58,7 @@ class Dimensions {
 		}
 	}
 	
-	protected  int getVolumePackageGood(int weight) {
+	private int getVolumePackageGood(int weight) {
 			try {
 			if (weight <= 0 || weight > 20) 
 				throw new IllegalArgumentException();

@@ -19,12 +19,8 @@ class Box<T> {
     public T get() { return t; }
     
 	public static void main(String[] args) {
-		Box<Integer> integerBox = new Box<Integer>();
+		Box<Integer> integerBox = new Box<>(); 	// Java 7 Type Inference
 		integerBox.set(1);
-
-		// Java 7 Type Inference
-		Box<Integer> intBox = new Box<>();  
-		intBox.set(2);
 		
 		// If the actual type argument is omitted, a raw type of Box<T> is created:
 		Box rawBox = new Box();
@@ -45,8 +41,10 @@ class Box<T> {
 			System.out.println("intBox.getClass() == stringBox.getClass()");
 		}
 		
-		Box<Number> box = new Box<Number>();
+		Box<Number> box = new Box<>();
+		//noinspection UnnecessaryBoxing
 		box.set(new Integer(10));   // OK
+		//noinspection UnnecessaryBoxing
 		box.set(new Double(10.1));  // OK
 
 	}

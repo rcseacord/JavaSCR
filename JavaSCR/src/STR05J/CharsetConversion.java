@@ -27,9 +27,7 @@ import java.nio.CharBuffer;
 import java.nio.charset.CharacterCodingException;
 import java.nio.ByteBuffer;
 import java.nio.charset.CharsetDecoder;
-import java.nio.charset.MalformedInputException;
 import java.nio.charset.StandardCharsets;
-import java.nio.charset.UnmappableCharacterException;
 
 class CharsetConversion {
 
@@ -56,15 +54,8 @@ class CharsetConversion {
       charBuffer = decoder.decode(byteBuffer);
       s = charBuffer.toString();
       System.out.println(s);
-    } catch (IllegalStateException e) {
-      e.printStackTrace();
-    } catch (MalformedInputException e) {
-      e.printStackTrace();
-    } catch (UnmappableCharacterException e) {
-      e.printStackTrace();
-    } catch (CharacterCodingException e) {
+    } catch (IllegalStateException | CharacterCodingException e) {
       e.printStackTrace();
     }
   }
-
 }

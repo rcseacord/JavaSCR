@@ -3,7 +3,7 @@ package obj14j;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-public class Leak {
+class Leak {
   private static final int Bx41 = 0x41;
   private static final int Bx42 = 0x42;
   private static final int Bx43 = 0x43;

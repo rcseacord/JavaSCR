@@ -1,17 +1,17 @@
 // The MIT License (MIT)
-// 
-// Copyright (c) 2016 Robert C. Seacord
-// 
+//
+// Copyright (c) 2017 Robert C. Seacord
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -29,15 +29,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
 
-public class UnsignedInteger {
+class UnsignedInteger {
 
 	// @return int read from specified DataInputStream
-	public static int getIntegerWrong(DataInputStream dis) throws IOException {
+	private static int getIntegerWrong(DataInputStream dis) throws IOException {
 		return dis.readInt();
 	}
 
 	// @return long read from specified DataInputStream
-	public static long getInteger(DataInputStream dis) throws IOException {
+	private static long getInteger(DataInputStream dis) throws IOException {
 		// The readInt() method assumes signed values and returns a signed int;
 		// the return value is converted to a long by sign extension. The code
 		// uses an & operation to mask off the upper 32 bits of the long,
@@ -47,7 +47,7 @@ public class UnsignedInteger {
 	}
 	
 	// @return long read from specified DataInputStream
-	public static long getULong(DataInputStream dis) throws IOException {
+	private static long getULong(DataInputStream dis) throws IOException {
 		return dis.readLong();
 	}
 

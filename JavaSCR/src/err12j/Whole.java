@@ -28,30 +28,30 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Calendar;
 
-public class Whole {
+class Whole {
 
   private PartOne p1;
   private PartTwo p2;
 
-  public Whole(Path path1, Path path2) throws IOException {
+  private Whole(Path path1, Path path2) throws IOException {
     p1 = new PartOne(path1);
     p2 = new PartTwo(path2);
   }
 
-  public Whole(PartOne pone, PartTwo ptwo) {
+  private Whole(PartOne pone, PartTwo ptwo) {
     p1 = pone;
     p2 = ptwo;
   }
 
-  public PartOne getp1() {
+  private PartOne getp1() {
     return p1;
   }
 
-  public PartTwo getp2() {
+  private PartTwo getp2() {
     return p2;
   }
 
-  public Whole copy(Whole Source) throws IOException {
+  private Whole copy(Whole Source) throws IOException {
     PartOne t1 = new PartOne(Source.getp1());
     if (t1 != null) { // not necessary for copy constructor
       try {

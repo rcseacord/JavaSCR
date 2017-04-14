@@ -42,7 +42,7 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class OnlineStore {
+class OnlineStore {
 
 	private static void createXMLStreamBad(final BufferedOutputStream outStream, final String quantity)
 			throws IOException {
@@ -117,8 +117,8 @@ public class OnlineStore {
 		} catch (Exception ex) {
 			System.err.println("thrown exception: " + ex.toString());
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		}
 
@@ -130,8 +130,8 @@ public class OnlineStore {
 		} catch (IOException ex) {
 			System.err.println("thrown exception: " + ex.toString());
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		} // end catch (IOException ex)
 
@@ -143,8 +143,8 @@ public class OnlineStore {
 		} catch (IOException ex) {
 			System.err.println("thrown exception: " + ex.toString());
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		} // end catch (IOException ex)
 		
@@ -156,8 +156,8 @@ public class OnlineStore {
 		} catch (Exception ex) {
 			System.err.println("thrown exception: " + ex.toString());
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		} // end catch (IOException ex)	
 		
@@ -169,8 +169,8 @@ public class OnlineStore {
 		} catch (Exception ex) {
 			System.err.println("thrown exception: " + ex.toString());
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		} // end catch (IOException ex)	
 		

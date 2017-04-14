@@ -24,22 +24,14 @@ package EXP03J;
 
 import java.util.Comparator;
 
-public class IntegerComparator {
+class IntegerComparator {
 
 	// The == and != operators should not be used to compare boxed primitives.
-	private static Comparator<Integer> cmpWrong = new Comparator<Integer>() {
-		public int compare(Integer i, Integer j) {
-			return i < j ? -1 : (i == j ? 0 : 1);
-		}
-	};
+	final private static Comparator<Integer> cmpWrong = (i, j) -> i < j ? -1 : (i == j ? 0 : 1);
 
 	// The comparison operators <, >, <=, or >=, cause automatic unboxing
 	// of primitive values.
-	private static Comparator<Integer> cmp = new Comparator<Integer>() {
-		public int compare(Integer i, Integer j) {
-			return i < j ? -1 : (i > j ? 1 : 0);
-		}
-	};
+	final private static Comparator<Integer> cmp = (i, j) -> i < j ? -1 : (i > j ? 1 : 0);
 
 	public static void main(String[] args) {
 		System.out.println("cmpWrong less than: "

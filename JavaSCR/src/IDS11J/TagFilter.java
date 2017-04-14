@@ -27,9 +27,9 @@ import java.text.Normalizer.Form;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TagFilter {
+class TagFilter {
 
-	public static String filterStringBad(String str) {
+	private static String filterStringBad(String str) {
 		String s = Normalizer.normalize(str, Form.NFKC);
 
 		// Validate input
@@ -44,7 +44,7 @@ public class TagFilter {
 		return s;
 	}
 
-	public static String filterString(String str) {
+	private static String filterString(String str) {
 		String s = Normalizer.normalize(str, Form.NFKC);
 
 		// Replaces all noncharacter code points with Unicode U+FFFD

@@ -32,9 +32,9 @@ import java.nio.charset.CharsetDecoder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LogSearch {
+class LogSearch {
 
-	public static void FindLogEntryBad(String search) {
+	private static void FindLogEntryBad(String search) {
 		// Construct regex dynamically from user string
 		String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)";
 		Pattern searchPattern = Pattern.compile(regex);
@@ -58,13 +58,13 @@ public class LogSearch {
 		} catch (IOException ex) {
 			System.err.println("thrown exception: " + ex.toString());
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		}
 	}
 
-	public static void FindLogEntryQuote(String search) {
+	private static void FindLogEntryQuote(String search) {
 		// Construct regex dynamically from user string
 		String regex = "(.*? +public\\[\\d+\\] +.*" + Pattern.quote(search) + ".*)";
 		Pattern searchPattern = Pattern.compile(regex);
@@ -88,8 +88,8 @@ public class LogSearch {
 		} catch (IOException ex) {
 			System.err.println("thrown exception: " + ex.toString());
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		}
 	}

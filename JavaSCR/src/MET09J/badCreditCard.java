@@ -44,7 +44,7 @@ final class badCreditCard {
 	  }
 	 
 	  public static void main(String[] args) {
-	    Map<badCreditCard, String> m = new HashMap<badCreditCard, String>();
+	    Map<badCreditCard, String> m = new HashMap<>();
 	    m.put(new badCreditCard(100), "4111111111111111");
 	    // The expected retrieved value is 4111111111111111; 
 	    // the actual retrieved value is null.

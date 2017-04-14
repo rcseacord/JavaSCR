@@ -1,11 +1,11 @@
 package OBJ03J;
 
-public class UnsafeVarargs {
-	static <T> T[] asArray(T... args) {
+class UnsafeVarargs {
+	private static <T> T[] asArray(T... args) {
 		return args;
 	}
 
-	static <T> T[] arrayOfTwo(T a, T b) {
+	private static <T> T[] arrayOfTwo(T a, T b) {
 		return asArray(a, b);
 	}
 

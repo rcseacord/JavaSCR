@@ -24,11 +24,11 @@ package OBJ08J;
 
 public class Coordinates {
 
-	private int x = 42;
-	private int y = 24;
+	final private int x = 42;
+	final private int y = 24;
 
 	// anonymous class
-	Point p = new Point() {
+	final Point p = new Point() {
 		@SuppressWarnings("unused")
 		public int getPointY() {
 			return y;

@@ -2,8 +2,8 @@ package err11j;
 
 import java.sql.*;
 
-public class DatabaseUtils {
+class DatabaseUtils {
     public static void executeQuery(String sql) throws SQLException {
-        throw new SQLException("Oopsie!");
+        throw new SQLException("Oopsie!" + sql);
     }
 }

@@ -24,11 +24,11 @@ package STR00J;
 
 import java.io.UnsupportedEncodingException;
 
-public class ReadString {
+class ReadString {
 	
 	public static void main(String[] args) {
-		String str = new String();
-		int offset = 0;
+		String str = "";
+		int offset; // initialized to zero
 
 		// A = 41 Ω = CE  A9   語  = E8  AA  9E  
 		// Ugaritic letter delta = F0 90 8E 84  
@@ -60,7 +60,7 @@ public class ReadString {
 			}
 			
 			// Read UTF-16 Data from 4 byte buffer
-			str = new String();
+			str = "";
 			for (offset = 0; offset < utf16_data.length; offset += 4) {
 				str += new String(utf16_data, offset, 4, "UTF-16");
 			}

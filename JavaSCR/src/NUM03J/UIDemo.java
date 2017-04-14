@@ -1,6 +1,6 @@
 package NUM03J;
 
-public class UIDemo
+class UIDemo
 {
    public static void main(String[] args)
    {

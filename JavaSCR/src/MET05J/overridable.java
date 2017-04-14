@@ -22,7 +22,7 @@
 
 package MET05J;
 
-public class overridable {
+class overridable {
 	  public static void main(String[] args) {
 	    superClass bc = new superClass();
 	    // Prints "superclass"

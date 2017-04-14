@@ -1,6 +1,6 @@
 package METOOJ;
 
-public final class ElementaryParticle {
+final class ElementaryParticle {
 
 	@SuppressWarnings("unused")
 	private String fName;

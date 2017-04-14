@@ -65,8 +65,8 @@ class XXE {
 		catch (SAXException | IOException ex) {
 			System.err.println(ex);
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		}
 
@@ -75,8 +75,8 @@ class XXE {
 		} catch (SAXException | IOException ex) {
 			System.err.println(ex);
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		}
 		
@@ -86,8 +86,8 @@ class XXE {
 		catch (SAXException | IOException ex) {
 			System.err.println(ex);
 			Throwable[] suppressed = ex.getSuppressed();
-			for (int i = 0; i < suppressed.length; i++) {
-				System.err.println("suppressed exception: " + suppressed[i].toString());
+			for (Throwable aSuppressed : suppressed) {
+				System.err.println("suppressed exception: " + aSuppressed.toString());
 			}
 		}
 	}
