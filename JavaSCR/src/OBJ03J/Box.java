@@ -11,11 +11,11 @@ import java.util.List;
 
 // @SuppressWarnings("unchecked")
 
-public class Box<T> {
+class Box<T> {
     // T stands for "Type"
     private T t;
 
-    public void set(T t) { this.t = t; }
+    void set(T t) { this.t = t; }
     public T get() { return t; }
     
 	public static void main(String[] args) {

@@ -43,7 +43,7 @@
 
 package DCL00J;
 
-public class Account {
+class Account {
 	private final int balance;
 
 	// Deposit initialized at runtime
@@ -55,7 +55,7 @@ public class Account {
 	// initialized.
 	private static final Account c = new Account();
 
-	public Account() {
+	private Account() {
 		// Calculate the account balance by subtracting the 
 		// processing fee from the deposited amount.
 		balance = deposit - 10; 

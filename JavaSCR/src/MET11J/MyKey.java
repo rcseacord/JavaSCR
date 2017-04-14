@@ -43,10 +43,7 @@ class MyKey implements Serializable {
 	 */
 
 	public boolean equals(Object o) {
-		if (!(o instanceof MyKey)) {
-			return false;
-		}
-		return true;
+		return o instanceof MyKey;
 	}
 
 }

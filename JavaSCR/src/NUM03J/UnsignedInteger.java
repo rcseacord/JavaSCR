@@ -31,8 +31,6 @@ import java.math.BigInteger;
 
 public class UnsignedInteger {
 
-	private static DataOutputStream dos;
-
 	// @return int read from specified DataInputStream
 	public static int getIntegerWrong(DataInputStream dis) throws IOException {
 		return dis.readInt();
@@ -58,7 +56,7 @@ public class UnsignedInteger {
 			// create output stream from file
 			FileOutputStream os = new FileOutputStream("test.txt");
 
-			dos = new DataOutputStream(os);
+			DataOutputStream dos = new DataOutputStream(os);
 
 			// write out "unsigned int" values
 			dos.writeInt(0xFFFFFFFF); // 4,294,967,295

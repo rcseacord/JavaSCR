@@ -25,7 +25,7 @@ package MET06J;
 import java.net.HttpCookie;
 
 class BadClone implements Cloneable {
-	HttpCookie[] cookies;
+	private HttpCookie[] cookies;
 
 	BadClone(HttpCookie[] c) {
 			cookies = c;
@@ -46,17 +46,15 @@ class BadClone implements Cloneable {
 		for (int i = 0; i < cookies.length; i++) {
 			cookies[i].setValue("" + i * 2);
 		}
-		return;
 	}
 
 	void printValues() { // Overridable
 		for (int i = 0; i < cookies.length; i++) {
 			System.out.println("value: " + cookies[i].getValue() + ", domain:" + cookies[i].getDomain());
 		}
-		return;
 	}
 
-	HttpCookie[] deepCopy() {
+	private HttpCookie[] deepCopy() {
 		// Deep copy
 		HttpCookie[] cookiesCopy = new HttpCookie[cookies.length];
 

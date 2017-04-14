@@ -62,7 +62,6 @@ public class LogSearch {
 				System.err.println("suppressed exception: " + suppressed[i].toString());
 			}
 		}
-		return;
 	}
 
 	public static void FindLogEntryQuote(String search) {
@@ -93,7 +92,6 @@ public class LogSearch {
 				System.err.println("suppressed exception: " + suppressed[i].toString());
 			}
 		}
-		return;
 	}
 
 	public static void main(String[] args) {

@@ -22,7 +22,7 @@
 
 package OBJ02J;
 
-public class BankAccount extends Account {
+class BankAccount extends Account {
 	// Subclass handles authentication
 	@Override
 	boolean withdraw(double amount) throws IllegalAccessException {
@@ -32,7 +32,7 @@ public class BankAccount extends Account {
 		return super.withdraw(amount);
 	}
 
-	private final boolean securityCheck() {
+	private boolean securityCheck() {
 		// Check that account management may proceed
 		return false;
 	}

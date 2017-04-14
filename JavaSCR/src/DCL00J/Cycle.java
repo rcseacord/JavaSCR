@@ -23,7 +23,7 @@
 
 package DCL00J;
 
-public class Cycle {
+class Cycle {
 	private final int balance;
 
 	// Class variable is initialized to a new instance of the Cycle class
@@ -32,7 +32,7 @@ public class Cycle {
 	// Deposit initialized at runtime
 	private static final int deposit = (int) (Math.random() * 100) + 10;
 
-	public Cycle() {
+	private Cycle() {
 		// Calculate the account balance by subtracting the
 		// processing fee from the deposited amount.
 		balance = deposit - 10;

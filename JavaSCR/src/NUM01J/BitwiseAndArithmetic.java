@@ -22,21 +22,21 @@
 
 package NUM01J;
 
-public class BitwiseAndArithmetic {
+class BitwiseAndArithmetic {
 
 	// The >>>= operator is a logical right shift; it fills the leftmost  
 	// bits with zeroes, regardless of the number's original sign.
-	static int divideLogicalRightShift(int x) {
+	private static int divideLogicalRightShift(int x) {
 		return x >>>= 2;
 	}
 	
 	// Arithmetic right shift truncates the resulting value towards negative 
 	// infinity, whereas integer division truncates toward zero.
-	static int divideArithmeticRightShift(int x) {
+	private static int divideArithmeticRightShift(int x) {
 		return x >>= 2;
 	}
 	
-	static int divide(int x) {
+	private static int divide(int x) {
 		return x /= 4;
 	}
 

@@ -24,7 +24,7 @@ package EXP02J;
 
 import java.util.Arrays;
 
-public class ArrayEquals {
+class ArrayEquals {
 
 	public static void main(String[] args) {
 		int[] arr1 = new int[20]; // initialized to 0
@@ -34,7 +34,7 @@ public class ArrayEquals {
 		System.out.println(arr1.equals(arr2)); 
 		
 		// Use the two-argument Arrays.equals() method to 
-		// compare the contents of two arrays.
+		// compare the contents of two arrays.
 		System.out.println(Arrays.equals(arr1, arr2)); 
 		
 		// Use the reference equality operators 

@@ -31,7 +31,7 @@ import java.nio.charset.MalformedInputException;
 import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnmappableCharacterException;
 
-public class CharsetConversion {
+class CharsetConversion {
 
   /*
    * static CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder(); public

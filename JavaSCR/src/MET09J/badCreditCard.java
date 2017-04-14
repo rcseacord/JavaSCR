@@ -25,10 +25,10 @@ package MET09J;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class badCreditCard {
+final class badCreditCard {
 	  private final int number;
 	 
-	  public badCreditCard(int number) {
+	  private badCreditCard(int number) {
 	    this.number = number;
 	  }
 	 

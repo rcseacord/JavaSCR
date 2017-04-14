@@ -28,10 +28,10 @@ package MET08J;
 // case-insensitive strings. Consequently, the CaseInsensitiveString.equals() method 
 // should not attempt to interoperate with objects of the String class.
 
-public final class caseInsensitiveString {
+final class caseInsensitiveString {
 	private String s;
 
-	public caseInsensitiveString(String s) {
+	private caseInsensitiveString(String s) {
 		if (s == null) {
 			throw new NullPointerException();
 		}

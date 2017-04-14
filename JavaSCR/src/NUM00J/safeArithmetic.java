@@ -25,7 +25,7 @@ package NUM00J;
 import java.lang.Integer;
 
 public class safeArithmetic {
-	static final int safeAdd(int left, int right) throws ArithmeticException {
+	static int safeAdd(int left, int right) throws ArithmeticException {
 		if (right > 0 ? left > Integer.MAX_VALUE - right
 				: left < Integer.MIN_VALUE - right) {
 			throw new ArithmeticException("Integer overflow");
@@ -33,7 +33,7 @@ public class safeArithmetic {
 		return left + right;
 	}
 
-	static final int safeSubtract(int left, int right)
+	static int safeSubtract(int left, int right)
 			throws ArithmeticException {
 		if (right > 0 ? left < Integer.MIN_VALUE + right
 				: left > Integer.MAX_VALUE + right) {
@@ -42,7 +42,7 @@ public class safeArithmetic {
 		return left - right;
 	}
 
-	static final int safeMultiply(int left, int right)
+	static int safeMultiply(int left, int right)
 			throws ArithmeticException {
 		if (right > 0 ? left > Integer.MAX_VALUE / right
 				|| left < Integer.MIN_VALUE / right
@@ -54,21 +54,21 @@ public class safeArithmetic {
 		return left * right;
 	}
 
-	static final int safeDivide(int left, int right) throws ArithmeticException {
+	static int safeDivide(int left, int right) throws ArithmeticException {
 		if ((left == Integer.MIN_VALUE) && (right == -1)) {
 			throw new ArithmeticException("Integer overflow");
 		}
 		return left / right;
 	}
 
-	static final int safeNegate(int a) throws ArithmeticException {
+	static int safeNegate(int a) throws ArithmeticException {
 		if (a == Integer.MIN_VALUE) {
 			throw new ArithmeticException("Integer overflow");
 		}
 		return -a;
 	}
 
-	static final int safeAbs(int a) throws ArithmeticException {
+	static int safeAbs(int a) throws ArithmeticException {
 		if (a == Integer.MIN_VALUE) {
 			throw new ArithmeticException("Integer overflow");
 		}

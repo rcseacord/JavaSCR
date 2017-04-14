@@ -30,10 +30,10 @@ import java.util.List;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
-public class Cardinality {
+class Cardinality {
 
 	// returns the number of occurrences of Object obj in Collection col.
-	public static int cardinality(@Nullable Object obj, final Collection<?> col) {
+	private static int cardinality(@Nullable Object obj, final Collection<?> col) {
 		int count = 0;
 		Iterator<?> it = col.iterator();
 		while (it.hasNext()) {

@@ -25,9 +25,9 @@ package STR03J;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 
-public class ByteToString {
+class ByteToString {
 
-  public static BigInteger StringToBigInteger(String s) {
+  private static BigInteger StringToBigInteger(String s) {
     String ns = null;
     try {
       byte[] byteArray = s.getBytes("UTF-8");

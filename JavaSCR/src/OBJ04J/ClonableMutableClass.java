@@ -5,7 +5,7 @@ import java.util.Date;
 public final class ClonableMutableClass implements Cloneable {
 	  private final Date date; // final field
 	  
-	  public ClonableMutableClass(Date d) {
+	  private ClonableMutableClass(Date d) {
 	    this.date = new Date(d.getTime());  // Copy in
 	  }
 	  

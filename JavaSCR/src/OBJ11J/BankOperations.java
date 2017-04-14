@@ -22,7 +22,7 @@
 
 package OBJ11J;
 
-public class BankOperations {
+class BankOperations {
 	// Constructor throws a SecurityException when SSN verification fails.
 	public BankOperations() {
 		// Perform social security number (SSN) verification  

@@ -23,5 +23,5 @@
 package ERR01J;
 
 public interface Reporter {
-	public void report(Throwable t);
+	void report(Throwable t);
 }

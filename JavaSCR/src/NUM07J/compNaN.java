@@ -22,10 +22,10 @@
 
 package NUM07J;
 
-public class compNaN {
+class compNaN {
 
 	public static void main(String[] args) {
-		// Do not perform a direct comparisons with NaN
+		// Do not perform a direct comparisons withï¿½NaN
 		double x = 0.0;
 		double result = Math.cos(1 / x); // returns NaN
 		// comparison is always false!
@@ -33,7 +33,7 @@ public class compNaN {
 			System.out.println("result is NaN");
 		}
 
-		// Use the isNaN() method to check whether the specified value is NaN
+		// Use theï¿½isNaN() method to check whether the specified value isï¿½NaN
 		if (Double.isNaN(result)) {
 			System.out.println("result is NaN");
 		}

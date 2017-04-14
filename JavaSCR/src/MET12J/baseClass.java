@@ -33,7 +33,7 @@ class baseClass {
 		doLogic();
 	}
 
-	public void doLogic() throws Throwable {
+	void doLogic() throws Throwable {
 		System.out.println("This is super-class!");
 	}
 }

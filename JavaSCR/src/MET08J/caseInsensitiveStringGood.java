@@ -22,10 +22,10 @@
 
 package MET08J;
 
-public final class caseInsensitiveStringGood {
+final class caseInsensitiveStringGood {
   private String s;
  
-  public caseInsensitiveStringGood(String s) {
+  private caseInsensitiveStringGood(String s) {
     if (s == null) {
       throw new NullPointerException();
     }

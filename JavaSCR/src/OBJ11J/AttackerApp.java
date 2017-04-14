@@ -23,7 +23,7 @@
 package OBJ11J;
 
 // Invoke class and gain access to restricted features
-public class AttackerApp { 
+class AttackerApp {
 
 	public static void main(String[] args) {
 		Interceptor i = Interceptor.get(); // Stolen instance

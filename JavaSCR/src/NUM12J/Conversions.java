@@ -22,14 +22,14 @@
 
 package NUM12J;
 
-public class Conversions {
+class Conversions {
 
-	public static void narrowIntToByteWrong(int i) {
+	private static void narrowIntToByteWrong(int i) {
 		byte b = (byte) i; // b has value -128
 		System.out.println("b = " + b);
 	}
 
-	public static void narrowIntToByte(int i) throws ArithmeticException {
+	private static void narrowIntToByte(int i) throws ArithmeticException {
 		// check if i is within byte range
 		if ((i < Byte.MIN_VALUE) || (i > Byte.MAX_VALUE)) {
 			throw new ArithmeticException("Int value is out of range");
@@ -39,7 +39,7 @@ public class Conversions {
 		System.out.println("b = " + b);
 	}
 
-	public static void fpToIntWrong(float f) {
+	private static void fpToIntWrong(float f) {
 		// Converted to int then narrowed to short
 		short s = (short) f;
 		System.out.println("(short) s = " + s);
@@ -57,7 +57,7 @@ public class Conversions {
 		}
 	}
 
-	public static void fpToInt(float f) throws ArithmeticException {
+	private static void fpToInt(float f) throws ArithmeticException {
 		if ((f < Short.MIN_VALUE) || (f > Short.MAX_VALUE)) {
 			  throw new ArithmeticException ("Float value is out of range");
 			}
