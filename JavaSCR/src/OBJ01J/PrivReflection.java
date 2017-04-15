@@ -26,6 +26,14 @@ import java.lang.reflect.Field;
 
 public class PrivReflection {
 	public static void main(String args[]) throws Exception {
+    SecurityManager sm = System.getSecurityManager();
+    if (sm != null) {
+      System.out.println("Security manager installed.");
+    }
+    else {
+      System.out.println("No security manager.");
+    }
+	  
 		// Returns an array of Field objects reflecting 
 		// all the fields declared by the class (including private)
 		final Field fields[] = FieldTest.class.getDeclaredFields();
