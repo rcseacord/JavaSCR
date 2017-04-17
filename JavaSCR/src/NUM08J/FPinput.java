@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2017 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -34,6 +34,11 @@ public class FPinput {
 			System.err.println("input format error");
 			return;
 		}
+		
+		if (!Double.isFinite(val)) {
+			System.err.println("value is not finite");
+			return;
+		}
 
 		if (val >= Double.MAX_VALUE - currentBalance) {
 			System.err.println("input range error");
@@ -49,6 +54,9 @@ public class FPinput {
 		doDeposit("-Infinity");
 		doDeposit("Infinity");
 		doDeposit("NaN");
+		doDeposit("-infinity");
+		doDeposit("infinity");
+		doDeposit("nan");
 	}
 
 }
