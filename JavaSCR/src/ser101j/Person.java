@@ -32,7 +32,7 @@ import java.util.Objects;
 
 enum Gender {
   MALE, FEMALE
-}
+} 
 
 public class Person implements java.io.Serializable {
 
