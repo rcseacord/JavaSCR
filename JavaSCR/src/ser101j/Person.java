@@ -34,7 +34,7 @@ enum Gender {
 } 
 
 public class Person implements java.io.Serializable {
-  private static final long serialVersionUID = 9043182744481133479L;
+//  private static final long serialVersionUID = 9043182744481133479L;
   private String firstName;
   private String lastName;
   private String socialSecurity;
