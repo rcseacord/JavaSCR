@@ -51,7 +51,7 @@ public class Person implements java.io.Serializable {
 
   public String getFirstName() {
     return firstName;
-  }
+  } 
 
   public String getLastName() {
     return lastName;
