@@ -19,8 +19,8 @@ class Box<T> {
     public T get() { return t; }
     
 	public static void main(String[] args) {
-		Box<Integer> integerBox = new Box<>(); 	// Java 7 Type Inference
-		integerBox.set(1);
+		Box<Integer> intBox = new Box<>(); 	// Java 7 Type Inference
+		intBox.set(1);
 		
 		// If the actual type argument is omitted, a raw type of Box<T> is created:
 		Box rawBox = new Box();
