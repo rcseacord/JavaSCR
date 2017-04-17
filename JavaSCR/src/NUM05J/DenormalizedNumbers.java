@@ -22,7 +22,7 @@
 
 package NUM05J;
 
-public class DenormalizedNumbers {
+class DenormalizedNumbers {
 
 	public static void main(String[] args) {
 		float x = 1/3.0f;

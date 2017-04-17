@@ -32,13 +32,13 @@ package OBJ08J;
 
 import java.util.function.Consumer;
  
-public class LambdaScopeTest {
+class LambdaScopeTest {
  
-    private int x = 42;
+    final private int x = 42;
  
     class FirstLevel {
  
-        private int x = 1;
+        final private int x = 1;
  
         void methodInFirstLevel(int x) {
              

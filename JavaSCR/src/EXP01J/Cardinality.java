@@ -22,10 +22,7 @@
 
 package EXP01J;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -35,9 +32,7 @@ class Cardinality {
 	// returns the number of occurrences of Object obj in Collection col.
 	private static int cardinality(@Nullable Object obj, final Collection<?> col) {
 		int count = 0;
-		Iterator<?> it = col.iterator();
-		while (it.hasNext()) {
-			Object elt = it.next();
+		for (Object elt : col) {
 			// Because membership in the collection is checked using
 			// the expression obj.equals(elt), a null pointer dereference
 			// is guaranteed whenever obj is null and elt is not null.

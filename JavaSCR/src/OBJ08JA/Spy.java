@@ -26,7 +26,7 @@ import OBJ08J.Coordinates;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class Spy {
+class Spy {
 
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
@@ -38,8 +38,8 @@ public class Spy {
 		final Method methods[] = Coordinates.class.getDeclaredMethods();
 
 		// Enumerate methods
-		for (int i = 0; i < methods.length; ++i) {
-			System.out.println("Method: " + methods[i]);
+		for (Method method : methods) {
+			System.out.println("Method: " + method);
 		}
 		
 	    Method m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class);

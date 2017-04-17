@@ -26,9 +26,9 @@ import java.text.Normalizer.Form;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class ValidateString {
+class ValidateString {
 	
-	public static String NormalizeandValidate(String s) {
+	private static String NormalizeandValidate(String s) {
 
 		// Validate
 		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets

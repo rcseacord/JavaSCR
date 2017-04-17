@@ -2,7 +2,7 @@ package err11j;
 
 import java.sql.*;
 
-public class EmployeeDAO {
+class EmployeeDAO {
 	public void list() throws DAOException {
 		try {
 			DatabaseUtils.executeQuery("SELECT");

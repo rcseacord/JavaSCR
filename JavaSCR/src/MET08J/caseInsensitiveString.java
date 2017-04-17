@@ -43,11 +43,7 @@ final class caseInsensitiveString {
 		if (o instanceof caseInsensitiveString) {
 			return s.equalsIgnoreCase(((caseInsensitiveString)o).s);
 		}
-
-		if (o instanceof String) {
-			return s.equalsIgnoreCase((String)o);
-		}
-		return false;
+		return o instanceof String && s.equalsIgnoreCase((String)o);
 	}
 
 	// Comply with MET09-J

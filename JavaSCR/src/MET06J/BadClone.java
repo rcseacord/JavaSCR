@@ -49,8 +49,8 @@ class BadClone implements Cloneable {
 	}
 
 	void printValues() { // Overridable
-		for (int i = 0; i < cookies.length; i++) {
-			System.out.println("value: " + cookies[i].getValue() + ", domain:" + cookies[i].getDomain());
+		for (HttpCookie cookie : cookies) {
+			System.out.println("value: " + cookie.getValue() + ", domain:" + cookie.getDomain());
 		}
 	}
 

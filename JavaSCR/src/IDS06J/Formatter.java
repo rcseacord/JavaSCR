@@ -25,9 +25,9 @@ package IDS06J;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class Formatter {
+class Formatter {
 
-	static Calendar c = new GregorianCalendar(1995, GregorianCalendar.MAY, 23);
+	final private static Calendar c = new GregorianCalendar(1995, GregorianCalendar.MAY, 23);
 
 	// args[0] should contain the credit card expiration date
 	// but can contain either %1$tm, %1$te or %1$tY as malicious arguments

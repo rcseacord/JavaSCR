@@ -1,8 +1,8 @@
 package err11j;
 
-public class Employer {
+class Employer {
 	 
-    private EmployeeDAO dao;
+    final private EmployeeDAO dao;
  
     public Employer(EmployeeDAO dao) {
         this.dao = dao;
@@ -12,7 +12,7 @@ public class Employer {
         try {
             dao.list();
         } catch (DAOException ex) {
-            throw new EmployeeException("Can't find employee");
+            throw new EmployeeException("Can't find employee " + keyword);
         }
     }
 }

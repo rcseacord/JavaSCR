@@ -24,10 +24,10 @@ package EXP04J;
 
 import java.util.HashSet;
 
-public class ShortSet {
+class ShortSet {
 
 	public static void main(String[] args) {
-		HashSet<Short> s = new HashSet<Short>();
+		HashSet<Short> s = new HashSet<>();
 		for (int i = 0; i < 10; i++) {
 //			s.add(i);
 			s.remove(i); 

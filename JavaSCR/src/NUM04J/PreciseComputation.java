@@ -22,7 +22,7 @@
 
 package NUM04J;
 
-public class PreciseComputation {
+class PreciseComputation {
 
 	public static void main(String[] args) {
 		int dollar = 100;

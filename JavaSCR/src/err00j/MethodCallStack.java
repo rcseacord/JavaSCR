@@ -2,7 +2,7 @@ package err00j;
 
 import java.lang.UnsupportedOperationException;
 
-public class MethodCallStack {
+class MethodCallStack {
 
 	public static void main(String[] args) {
 		System.out.println("Enter main()");
@@ -15,7 +15,7 @@ public class MethodCallStack {
 		System.out.println("Exit main()");
 	}
 
-	public static void methodA() {
+	private static void methodA() {
 		System.out.println("Enter methodA()");
 		try {
 			  methodB();
@@ -26,7 +26,7 @@ public class MethodCallStack {
 		System.out.println("Exit methodA()");
 	}
 
-	public static void methodB() {
+	private static void methodB() {
 		System.out.println("Enter methodB()");
 		try {
 			  methodC();
@@ -37,7 +37,7 @@ public class MethodCallStack {
 		System.out.println("Exit methodB()");
 	}
 
-	public static void methodC() {
+	private static void methodC() {
 		System.out.println("Enter methodC()");
 		try {
 		  methodD();
@@ -48,7 +48,7 @@ public class MethodCallStack {
 		System.out.println("Exit methodC()");
 	}
 	
-	public static void methodD() {
+	private static void methodD() {
 		System.out.println("Enter methodD()");
 		throw new UnsupportedOperationException();
 		// unreachable

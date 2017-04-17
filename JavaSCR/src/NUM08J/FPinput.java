@@ -22,12 +22,12 @@
 
 package NUM08J;
 
-public class FPinput {
+class FPinput {
 
-	static double currentBalance; // User's cash balance
+	private static double currentBalance; // User's cash balance
 
-	static void doDeposit(String userInput) {
-		double val = 0;
+	private static void doDeposit(String userInput) {
+		double val; // initialized to zero
 		try {
 			val = Double.valueOf(userInput);
 		} catch (NumberFormatException e) {

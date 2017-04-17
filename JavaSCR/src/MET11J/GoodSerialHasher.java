@@ -33,8 +33,8 @@ class GoodSerialHasher {
   public static void main(String[] args)
                      throws IOException, ClassNotFoundException {
 	// The type of the key value has been changed to an Integer object. 
-    Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
-    ht.put(new Integer(1), "Value");
+    Hashtable<Integer, String> ht = new Hashtable<>();
+    ht.put(1, "Value");
     System.out.println("Entry: " + ht.get(1)); // Retrieve using the key
  
     // Serialize the Hashtable object

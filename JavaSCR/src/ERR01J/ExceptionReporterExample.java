@@ -28,20 +28,18 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ExceptionReporterExample {
+class ExceptionReporterExample {
 
 	private static FileInputStream fis;
 	
 	private static final Logger log = Logger.getLogger(ExceptionReporterExample.class.getName());
-	static ExceptionReporter er = new ExceptionReporter();
+	final private static ExceptionReporter er = new ExceptionReporter();
 
 	// Exception reporter that logs the exception
-	private static final Reporter logException = new Reporter() {
-		public void report(Throwable t) {
-			log.log(Level.SEVERE, t.toString(), t);
-			System.exit(-1);
-		}
-	};
+	private static final Reporter logException = t -> {
+        log.log(Level.SEVERE, t.toString(), t);
+        System.exit(-1);
+    };
 	
 	static Reporter old_reporter = er.setExceptionReporter(logException);
 	
@@ -59,7 +57,7 @@ public class ExceptionReporterExample {
 		return fis;
 	}
 
-	public static void setFis(FileInputStream fis) {
+	private static void setFis(FileInputStream fis) {
 		ExceptionExample.fis = fis;
 	}
 

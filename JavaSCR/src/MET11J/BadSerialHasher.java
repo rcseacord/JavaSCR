@@ -32,7 +32,7 @@ import java.util.Hashtable;
 class BadSerialHasher {
 	  public static void main(String[] args)
 	                     throws IOException, ClassNotFoundException {
-	    Hashtable<MyKey,String> ht = new Hashtable<MyKey, String>();
+	    Hashtable<MyKey,String> ht = new Hashtable<>();
 	    MyKey key = new MyKey();
 	    ht.put(key, "Value");
 	    System.out.println("Entry: " + ht.get(key));

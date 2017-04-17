@@ -1,6 +1,6 @@
 package IDS08J;
 
-public class ReDoS {
+class ReDoS {
 	public static void main(String[] args) {
 		final String a002 = "aa"; // two 'a'
 		final String a003 = "aaa";  // three 'a'

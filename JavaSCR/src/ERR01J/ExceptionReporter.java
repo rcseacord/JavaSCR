@@ -26,11 +26,7 @@ public class ExceptionReporter {
 
 	// Exception reporter that prints the exception
 	// to the console (used as default)
-	private static final Reporter PrintException = new Reporter() {
-		public void report(Throwable t) {
-			System.err.println(t.toString());
-		}
-	};
+	private static final Reporter PrintException = t -> System.err.println(t.toString());
 
 	// Stores the default reporter
 	// The current reporter can be changed by the user

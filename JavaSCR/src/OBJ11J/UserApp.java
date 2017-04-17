@@ -22,7 +22,7 @@
 
 package OBJ11J;
 
-public class UserApp {
+class UserApp {
 	public static void main(String[] args) {
 		BankOperations bo;
 		try {

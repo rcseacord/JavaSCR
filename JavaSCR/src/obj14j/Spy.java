@@ -3,7 +3,7 @@ package obj14j;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 
-public class Spy {
+class Spy {
   public static void main(String[] args) {
     SecurityManager sm = System.getSecurityManager();
     if (sm != null) {
@@ -17,18 +17,18 @@ public class Spy {
     final Field fields[] = Leak.class.getDeclaredFields();
 
     // Enumerate fields
-    for (int i = 0; i < fields.length; ++i) {
-      System.out.println("Field: " + fields[i]);
-      if (fields[i].getType().isArray()) {
+    for (Field field : fields) {
+      System.out.println("Field: " + field);
+      if (field.getType().isArray()) {
         try {
-          Object array = fields[i].get("keyBytes".getClass());
+          Object array = field.get("keyBytes".getClass());
           int length = Array.getLength(array);
           for (int j = 0; j < length; j++) {
             System.out.println(Array.get(array, j));
           }
         } catch (IllegalArgumentException | IllegalAccessException e) {
           e.printStackTrace();
-        } 
+        }
       }
     }
   } // end main

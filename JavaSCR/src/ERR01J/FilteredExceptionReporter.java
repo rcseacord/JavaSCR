@@ -24,7 +24,7 @@ package ERR01J;
 
 import java.util.logging.Logger;
 
-public class FilteredExceptionReporter extends ExceptionReporter {
+class FilteredExceptionReporter extends ExceptionReporter {
 	private static final Logger logger = Logger.getLogger("com.organization.Log");
 
 	/*

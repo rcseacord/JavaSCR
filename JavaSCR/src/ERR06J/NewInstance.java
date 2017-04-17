@@ -24,14 +24,14 @@ package ERR06J;
 
 import java.io.IOException;
 
-public class NewInstance {
+class NewInstance {
   private static Throwable throwable;
 
-  public NewInstance() throws Throwable {
+  private NewInstance() throws Throwable {
     throw throwable;
   }
 
-  public static synchronized void undeclaredThrow(Throwable throwable) {
+  private static synchronized void undeclaredThrow(Throwable throwable) {
     // These exceptions should not be passed
     if (throwable instanceof IllegalAccessException || throwable instanceof InstantiationException) {
       // Unchecked, no declaration required

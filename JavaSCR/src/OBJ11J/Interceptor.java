@@ -48,7 +48,8 @@ public class Interceptor extends BankOperations {
 
 	// attacker's finalizer obtains and stores a reference by using the this
 	// keyword.
-	public void finalize() {
+	public void finalize() throws Throwable {
+		super.finalize();
 		synchronized (Interceptor.class) {
 			stealInstance = this;
 			Interceptor.class.notify();

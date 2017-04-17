@@ -23,7 +23,7 @@
 package OBJ07J;
 
 class SensitiveClass {
-	private char[] filename;
+	final private char[] filename;
 	private Boolean shared = false;
 
 	SensitiveClass(String filename) {

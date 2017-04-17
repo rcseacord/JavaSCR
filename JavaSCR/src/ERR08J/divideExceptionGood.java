@@ -29,8 +29,8 @@ import java.io.PrintWriter;
 
 import ERR01J.ExceptionReporter;
 
-public class divideExceptionGood {
-	public static int division(int totalSum, int totalNumber) throws IOException {
+class divideExceptionGood {
+	private static int division(int totalSum, int totalNumber) throws IOException {
 		int average = totalSum / totalNumber;
 		// Additional operations that may throw IOException...
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("div.result")));

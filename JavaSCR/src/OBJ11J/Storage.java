@@ -22,7 +22,7 @@
 
 package OBJ11J;
 
-public class Storage {
+class Storage {
 	private static BankOperations bop;
 
 	public static void store(BankOperations bo) {

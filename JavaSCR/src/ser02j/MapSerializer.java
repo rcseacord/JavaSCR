@@ -46,9 +46,9 @@ import javax.crypto.SealedObject;
 
 class MapSerializer {
   private static SerializableMap<String, String> buildMap() {
-    SerializableMap<String, String> map = new SerializableMap<String, String>();
-    map.setData("John Doe", new String("012-34-5678"));
-    map.setData("Jane Doe", new String("987-65-4321"));
+    SerializableMap<String, String> map = new SerializableMap<>();
+    map.setData("John Doe", "012-34-5678");
+    map.setData("Jane Doe", "987-65-4321");
     return map;
   }
 

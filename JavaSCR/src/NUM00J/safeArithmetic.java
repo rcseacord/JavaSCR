@@ -24,8 +24,8 @@ package NUM00J;
 
 import java.lang.Integer;
 
-public class safeArithmetic {
-	static int safeAdd(int left, int right) throws ArithmeticException {
+class safeArithmetic {
+	private static int safeAdd(int left, int right) throws ArithmeticException {
 		if (right > 0 ? left > Integer.MAX_VALUE - right
 				: left < Integer.MIN_VALUE - right) {
 			throw new ArithmeticException("Integer overflow");

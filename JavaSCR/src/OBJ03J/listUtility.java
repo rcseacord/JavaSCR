@@ -41,7 +41,7 @@ class listUtility {
 	*/
 
 	public static void main(String[] args) {
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		// The call to addToList(list, 42) succeeds in adding an integer to
 		// list, although it is of type List<String>.
 		addToList(list, 42);
@@ -56,7 +56,7 @@ class listUtility {
 		// returns a wrapper collection that performs runtime type checking in
 		// its implementation of the add() method before delegating to the
 		// back-end List<String>.
-		List<String> backlist = new ArrayList<String>();
+		List<String> backlist = new ArrayList<>();
 		List<String> checkedList = Collections.checkedList(backlist, String.class);
 		addToList(checkedList, 42);
 		System.out.println(list.get(0));
