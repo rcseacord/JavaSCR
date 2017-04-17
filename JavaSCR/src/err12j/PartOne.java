@@ -32,7 +32,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Calendar;
 
-public final class PartOne implements Cloneable {
+public final class PartOne implements AutoCloseable {
   private static final CopyOption[] options = { StandardCopyOption.COPY_ATTRIBUTES };
   private static final Charset charset = Charset.forName("US-ASCII");
   private static final String s = "File ID";
@@ -46,11 +46,6 @@ public final class PartOne implements Cloneable {
     writer.flush();
   }
 
-  public void setNow(Calendar rightNow) throws IOException {
-    writer.write(rightNow.toString());
-    writer.flush();
-  }
-
   // copy constructor
   public PartOne(PartOne p1) throws IOException {
     filepath = Paths.get(p1.filepath + "copy");
@@ -58,6 +53,11 @@ public final class PartOne implements Cloneable {
     writer = Files.newBufferedWriter(filepath, charset);
   }
 
+  public void setNow(Calendar rightNow) throws IOException {
+    writer.write(rightNow.toString());
+    writer.flush();
+  }
+  
   public void close() throws IOException {
     try {
       writer.close();

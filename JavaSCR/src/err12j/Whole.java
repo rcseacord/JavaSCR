@@ -67,9 +67,9 @@ public class Whole {
             // This is the pivotal point of the
             // code - everything that could
             // fail is before this point.
-            // Nothing that makes persistent
+            // Anything that makes persistent
             // changes to the state of the
-            // system is before this point.
+            // system is after this point.
             // ********************************
 
             // Commit the change to the system state.
@@ -83,7 +83,7 @@ public class Whole {
             // frees the temporary if we passed the
             // pivot uneventfully.
             if (t2 != null)
-              t2.close();
+              t2.close();  // TODO: catch possible exceptions
           }
         }
       } finally {
