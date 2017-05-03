@@ -24,7 +24,7 @@ public class SensitiveClass extends Number {
   protected int getBalance() {
     return balance;
   }
-
+  
   @Override
   public double doubleValue() {
     // TODO Auto-generated method stub
@@ -87,10 +87,18 @@ public class SensitiveClass extends Number {
 
 
 /*
+// Cause deserialization to fail
 private void writeObject(java.io.ObjectOutputStream out) throws IOException {
   throw new IOException("Not serializable");
 }
 private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
   throw new IOException("Not serializable");
 }
+*/
+
+/* Allow deserialization to succeed securely
+  private Object readResolve( ) {
+    // Accept no substitutes!
+    return INSTANCE;
+  }
 */

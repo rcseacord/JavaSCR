@@ -22,11 +22,17 @@
 
 package ser00j;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
+import java.util.Objects;
+
+import ser101j.Person;
 
 public class GameWeapon implements Serializable {
   private static final long serialVersionUID = -2219161247533868418L;
@@ -47,4 +53,31 @@ public class GameWeapon implements Serializable {
   public String toString() {
     return String.valueOf(ws);
   }
+  
+  public static void main(String[] args) {
+    try {
+      GameWeapon gw = new GameWeapon();
+
+      FileOutputStream fos = new FileOutputStream("tempdata.ser");
+      ObjectOutputStream oos = new ObjectOutputStream(fos);
+      oos.writeObject(gw);
+      oos.close();
+    } 
+    catch (IOException e) {
+      e.printStackTrace(System.err);
+    }
+    try {
+      FileInputStream fis = new FileInputStream("tempdata.ser");
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      GameWeapon gw = (GameWeapon) ois.readObject();
+      ois.close();
+      System.out.println("No. of Weapons = " + gw.ws.numOfWeapons);
+
+      // Clean up the file
+      new File("tempdata.ser").delete();
+    } catch (IOException | ClassNotFoundException e) {
+      e.printStackTrace(System.err);
+    }
+  }  // end main
+  
 }

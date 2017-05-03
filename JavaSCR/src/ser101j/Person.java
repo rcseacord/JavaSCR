@@ -111,5 +111,5 @@ public Person(String fn, String ln, String socialSecurity, int a) {
     } catch (IOException | ClassNotFoundException e) {
       e.printStackTrace(System.err);
     }
-  }
-}
+  }  // end main
+} // end class
