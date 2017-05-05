@@ -30,16 +30,12 @@ public class LookAheadDeserializer {
     return buffer;
   }
 
-  private static Object deserialize(byte[] buffer) throws IOException,
-      ClassNotFoundException, ConfigurationException {
-    ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
-
-    // We use SerialKiller LookAheadObjectInputStream instead of InputStream
-    ValidatingObjectInputStream ois = new ValidatingObjectInputStream(bais);
-    ois.accept(Bicycle.class);
-    Object obj = ois.readObject();
-    ois.close();
-    bais.close();
+  private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException, ConfigurationException {
+    Object obj;
+    try (ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
+         ObjectInputStream ois = new ObjectInputStream(bais);) {
+      obj = ois.readObject();
+    }
     return obj;
   }
 
@@ -57,10 +53,65 @@ public class LookAheadDeserializer {
 
       // Deserialize the File instance (error case)
       @SuppressWarnings("unused")
-      Bicycle bicycle1 = (Bicycle) deserialize(serializedFile);
+      Object bicycle1 = (Object) deserialize(serializedFile);
 
     } catch (IOException | ClassNotFoundException | ConfigurationException ex) {
       ex.printStackTrace(System.err);
     }
+  }  // end main
+}  // end LookAheadDeserializer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException, ConfigurationException {
+  Object obj;
+  try (ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
+      // Use ValidatingObjectInputStream instead of InputStream
+      ValidatingObjectInputStream ois = new ValidatingObjectInputStream(bais);) {
+    ois.accept(Bicycle.class);
+    obj = ois.readObject();
   }
+  return obj;
 }
+*/
