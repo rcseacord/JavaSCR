@@ -33,7 +33,7 @@ import java.nio.file.AccessDeniedException;
 
 public final class Hometown implements Serializable {
   private static final long serialVersionUID = 6515419803685137985L;
-  // Private internal state
+  // Private internal state 
   private String town;
   private static final String UNKNOWN = "UNKNOWN";
   private static final String MOSCOW = "Moscow";
@@ -120,7 +120,7 @@ public final class Hometown implements Serializable {
       FileInputStream fis = new FileInputStream("tempdata.ser");
       ObjectInputStream ois = new ObjectInputStream(fis);
       Hometown ht = (Hometown) ois.readObject();
-      ois.close();
+      ois.close(); 
       System.out.println("My town is " + ht.getTown());
 
       // Clean up the file
