@@ -1,17 +1,17 @@
 // The MIT License (MIT)
-// 
+//
 // Copyright (c) 2017 Robert C. Seacord
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -37,55 +37,55 @@ public final class Hometown implements Serializable {
   private String town;
   private static final String UNKNOWN = "UNKNOWN";
   private static final String MOSCOW = "Moscow";
- 
+
   void performSecurityManagerCheck(String town) throws AccessDeniedException {
     if (MOSCOW.equals(town)) {
       throw new AccessDeniedException("Nyet, comrade");
     }
   }
- 
+
   void validateInput(String newCC) throws IllegalArgumentException {
     // ...
   }
- 
+
   public Hometown(String town) {
     try {
       performSecurityManagerCheck(town);
     } catch (AccessDeniedException e) {
       e.printStackTrace();
     }
- 
+
     // Initialize town to default value
     this.town = town;
   }
- 
+
   // Allows callers to retrieve internal state w/o security check
   String getTown() { return town; }
- 
+
   // Privileged  callers can modify (private) state
-  public void setTown(String newTown) {
+  public void setTown(String newTown) throws AccessDeniedException {
     if (town.equals(newTown)) {
       // No change
       return;
-    } else { 
-      try {
-        performSecurityManagerCheck(newTown);
-      } catch (AccessDeniedException e) {
-        e.printStackTrace();
-      }
+    } else {
+      performSecurityManagerCheck(newTown);
       validateInput(newTown);
       town = newTown;
     }
   }
- 
+
   private void writeObject(ObjectOutputStream out) throws IOException {
-    out.writeObject(town);
+    //out.writeObject(town);
+  out.defaultWriteObject();
   }
- 
+
   private void readObject(ObjectInputStream in) throws IOException {
+    String town;
     try {
-      in.defaultReadObject();
+      ObjectInputStream.GetField fields = in.readFields();
+      town = (String)fields.get("town", null);
     } catch (ClassNotFoundException e) {
+      town = null;
       e.printStackTrace();
     }
     // If the deserialized name does not match the default value normally
@@ -93,8 +93,10 @@ public final class Hometown implements Serializable {
     if (!UNKNOWN.equals(town)) {
       validateInput(town);
     }
+
+    this.town = town;
   }
-    
+
   public static void main(String[] args) {
     Hometown myTown = new Hometown("Pittsburgh");
     System.out.println("My town is " + myTown.getTown());
@@ -106,12 +108,12 @@ public final class Hometown implements Serializable {
       FileOutputStream fos = new FileOutputStream("tempdata.ser");
       ObjectOutputStream oos = new ObjectOutputStream(fos);
       oos.writeObject(ht);
-      oos.close();  
-    } 
+      oos.close();
+    }
     catch (IOException e) {
       e.printStackTrace(System.err);
     }
-    
+
     // Construct a new object through deserialization
     try {
       // NOTE:  File is in %userprofile%\git\JavaSCR\JavaSCR
