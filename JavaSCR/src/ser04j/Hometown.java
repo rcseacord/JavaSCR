@@ -45,7 +45,7 @@ public final class Hometown implements Serializable {
   }
 
   void validateInput(String newCC) throws IllegalArgumentException {
-    // ...
+    // ... 
   }
 
   public Hometown(String town) {
