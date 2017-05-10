@@ -59,7 +59,7 @@ public final class Hometown implements Serializable {
     this.town = town;
   }
 
-  // Allows callers to retrieve internal state w/o security check
+  // Allows callers to retrieve internal state without security check
   String getTown() { return town; }
 
   // Privileged  callers can modify (private) state
