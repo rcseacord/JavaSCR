@@ -120,4 +120,17 @@ class TrimString {
         // offsetByCodePoints returns the ith code point 
         return string.substring(string.offsetByCodePoints(0, i));
      }
+     
+     // Prestream solution
+  private static String trim(String string) {
+    int i;
+    for (i = 0; i < string.length(); i = string.offsetByCodePoints(i,  1)) {
+      int cp = string.codePointAt(i);
+      if (!Character.isLetter(cp)) {
+        break;
+      }
+    }
+    return string.substring(i);
+  }
+      
 */
