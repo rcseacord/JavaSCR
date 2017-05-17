@@ -30,10 +30,21 @@ public class LookAheadDeserializer {
     return buffer;
   }
 
+  /*
   private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException, ConfigurationException {
     Object obj;
     try (ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
          ObjectInputStream ois = new ObjectInputStream(bais);) {
+      obj = ois.readObject();
+    }
+    return obj;
+  }
+  */
+  private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException, ConfigurationException {
+    Object obj;
+    try (ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
+         ObjectInputStream ois = new ObjectInputStream(bais);) {
+      ois.setObjectInputFilter(new BikeFilter());
       obj = ois.readObject();
     }
     return obj;
