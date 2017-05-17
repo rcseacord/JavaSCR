@@ -32,7 +32,7 @@ class Parser<T extends Exception> {
   }
   
   public static void main(String[] args) {
-    String s = new String("my new string");
+    String s = "my new string";
     Parser<IOException> p = new Parser<>();
     try {
       p.parse(s);
