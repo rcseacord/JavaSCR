@@ -23,6 +23,7 @@
 package OBJ06J;
 
 import java.net.HttpCookie;
+import java.util.Objects;
 
 final class mutableInputs {
 
@@ -32,14 +33,10 @@ final class mutableInputs {
 
 	// java.net.HttpCookie is mutable
 	public void useMutableInput(HttpCookie cookie) {
-		if (cookie == null) {
-			throw new NullPointerException();
-		}
-
+		Objects.requireNonNull(cookie, "cookie cannot be null");
 		// Check whether cookie has expired
 		if (cookie.hasExpired()) {
-			// Cookie is no longer valid; handle condition by throwing an
-			// exception
+			throw new IllegalArgumentException();
 		}
 
 		// Cookie may have expired since time of check
