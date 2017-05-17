@@ -27,17 +27,17 @@ class BitwiseAndArithmetic {
 	// The >>>= operator is a logical right shift; it fills the leftmost  
 	// bits with zeroes, regardless of the number's original sign.
 	private static int divideLogicalRightShift(int x) {
-		return x >>>= 2;
+		return x >>> 2;
 	}
 	
 	// Arithmetic right shift truncates the resulting value towards negative 
 	// infinity, whereas integer division truncates toward zero.
 	private static int divideArithmeticRightShift(int x) {
-		return x >>= 2;
+		return x >> 2;
 	}
 	
 	private static int divide(int x) {
-		return x /= 4;
+		return x / 4;
 	}
 
 	public static void main(String[] args) {
