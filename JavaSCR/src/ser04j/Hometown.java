@@ -62,10 +62,7 @@ public final class Hometown implements Serializable {
 
   // Privileged callers can modify (private) state
   public void setTown(String newTown) throws AccessDeniedException {
-    if (town.equals(newTown)) {
-      // No change
-      return;
-    } else {
+    if (!town.equals(newTown)) {
       performSecurityManagerCheck(newTown);
       validateInput(newTown);
       town = newTown;
