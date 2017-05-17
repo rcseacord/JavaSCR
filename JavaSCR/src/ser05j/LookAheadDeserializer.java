@@ -1,14 +1,14 @@
 package ser05j;
 
+import javax.naming.ConfigurationException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import org.apache.commons.io.serialization.ValidatingObjectInputStream;
-
-import org.apache.commons.configuration.ConfigurationException;
+//import org.apache.commons.io.serialization.ValidatingObjectInputStream;
+// import org.apache.commons.configuration.ConfigurationException;
 
 /**
  * A simple Java program to demonstrate how to perform input validation on
@@ -43,7 +43,7 @@ public class LookAheadDeserializer {
   private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException, ConfigurationException {
     Object obj;
     try (ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
-         ObjectInputStream ois = new ObjectInputStream(bais);) {
+         ObjectInputStream ois = new ObjectInputStream(bais)) {
       ois.setObjectInputFilter(new BikeFilter());
       obj = ois.readObject();
     }
@@ -56,7 +56,7 @@ public class LookAheadDeserializer {
       byte[] serializedBicycle = serialize(new Bicycle(0, "Unicycle", 1));
 
       // Serialize a File instance
-      byte[] serializedFile = serialize(new File("Pierre Ernst"));
+      byte[] serializedFile = serialize(new File("file.txt"));
 
       // Deserialize the Bicycle instance (legitimate use case)
       Bicycle bicycle0 = (Bicycle) deserialize(serializedBicycle);

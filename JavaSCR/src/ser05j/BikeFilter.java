@@ -76,5 +76,4 @@ class BikeFilter implements ObjectInputFilter {
     return Status.UNDECIDED;
     */
   } // end checkInput
-
 } // end class BikeFilter
