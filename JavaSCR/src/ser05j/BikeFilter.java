@@ -4,13 +4,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-import sun.misc.ObjectInputFilter;
+import java.io.ObjectInputFilter;
 
 class BikeFilter implements ObjectInputFilter {
 
-  /**
-   * The list of class filters.
-   */
   // private final List<Function<Class<?>, Status>> filters;
   /**
    * Maximum allowed bytes in the stream.

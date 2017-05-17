@@ -1,13 +1,6 @@
 package ser05j;
 
-/**
- * A simple serializable class
- * 
- * @author Pierre Ernst
- */
-
 import java.io.Serializable;
-
 
 public class Bicycle implements Serializable {
 
