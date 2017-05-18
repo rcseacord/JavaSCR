@@ -46,8 +46,8 @@ class OnlineStore {
 
 	private static void createXMLStreamBad(final BufferedOutputStream outStream, final String quantity)
 			throws IOException {
-		String xmlString = "<item>\n<description>Widget</description>\n" + "<price>500</price>\n" + "<quantity>"
-				+ quantity + "</quantity></item>";
+		String xmlString = "<item>\n<description>Widget</description>\n" + "<price>500</price>\n" + "<quantity>" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				+ quantity + "</quantity></item>"; //$NON-NLS-1$
 		outStream.write(xmlString.getBytes());
 		outStream.flush();
 	}
@@ -58,8 +58,8 @@ class OnlineStore {
 		// Write XML string only if quantity is an unsigned integer (count).
 		int count = Integer.parseUnsignedInt(quantity);
 
-		String xmlString = "<item>\n<description>Widget</description>\n" + "<price>500</price>\n" + "<quantity>" + count
-				+ "</quantity></item>";
+		String xmlString = "<item>\n<description>Widget</description>\n" + "<price>500</price>\n" + "<quantity>" + count //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				+ "</quantity></item>"; //$NON-NLS-1$
 		outStream.write(xmlString.getBytes());
 		outStream.flush();
 	}
@@ -67,26 +67,29 @@ class OnlineStore {
 	private static void createXMLStreamDTD(final BufferedOutputStream outStream, final String quantity)
 			throws IOException {
 		String xmlString;
-		xmlString = "<order><item>\n<description>Widget</description>\n" + "<price>500.0</price>\n" + "<quantity>" + quantity
-				+ "</quantity></item></order>";
+		xmlString = "<order><item>\n<description>Widget</description>\n" + "<price>500.0</price>\n" + "<quantity>" + quantity //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				+ "</quantity></item></order>"; //$NON-NLS-1$
 		InputSource xmlStream = new InputSource(new StringReader(xmlString));
 
 		// Build a validating SAX parser using our schema
 		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		DefaultHandler defHandler = new DefaultHandler() {
-			public void warning(SAXParseException s) throws SAXParseException {
+			@Override
+      public void warning(SAXParseException s) throws SAXParseException {
 				throw s;
 			}
 
-			public void error(SAXParseException s) throws SAXParseException {
+			@Override
+      public void error(SAXParseException s) throws SAXParseException {
 				throw s;
 			}
 
-			public void fatalError(SAXParseException s) throws SAXParseException {
+			@Override
+      public void fatalError(SAXParseException s) throws SAXParseException {
 				throw s;
 			}
 		};
-		StreamSource ss = new StreamSource(new File("src/IDS16J/schema.xsd"));
+		StreamSource ss = new StreamSource(new File("src/IDS16J/schema.xsd")); //$NON-NLS-1$
 		try {
 			Schema schema = sf.newSchema(ss);
 			SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -98,9 +101,9 @@ class OnlineStore {
 			reader.setEntityResolver(new CustomResolver());
 			saxParser.parse(xmlStream, defHandler);
 		} catch (ParserConfigurationException x) {
-			throw new IOException("Unable to validate XML", x);
+			throw new IOException("Unable to validate XML", x); //$NON-NLS-1$
 		} catch (SAXException x) {
-			throw new IOException("Invalid quantity", x);
+			throw new IOException("Invalid quantity", x); //$NON-NLS-1$
 		}
 
 		// XML is valid, proceed
@@ -112,26 +115,26 @@ class OnlineStore {
 		// Unvalidated input
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
-			createXMLStreamBad(bos, "1");
-			createXMLStreamBad(bos, "1</quantity><price>1.0</price><quantity>1");
+			createXMLStreamBad(bos, "1"); //$NON-NLS-1$
+			createXMLStreamBad(bos, "1</quantity><price>1.0</price><quantity>1"); //$NON-NLS-1$
 		} catch (Exception ex) {
-			System.err.println("thrown exception: " + ex.toString());
+			System.err.println("thrown exception: " + ex.toString()); //$NON-NLS-1$
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		}
 
 		// Schema validated
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
-			createXMLStreamDTD(bos, "1");
-			createXMLStreamDTD(bos, "1</quantity><price>1.0</price><quantity>1");
+			createXMLStreamDTD(bos, "1"); //$NON-NLS-1$
+			createXMLStreamDTD(bos, "1</quantity><price>1.0</price><quantity>1"); //$NON-NLS-1$
 		} catch (IOException ex) {
-			System.err.println("thrown exception: " + ex.toString());
+			System.err.println("thrown exception: " + ex.toString()); //$NON-NLS-1$
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		} // end catch (IOException ex)
 
@@ -139,25 +142,25 @@ class OnlineStore {
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
 			createXMLStreamDTD(bos,
-					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100");
+					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100"); //$NON-NLS-1$
 		} catch (IOException ex) {
-			System.err.println("thrown exception: " + ex.toString());
+			System.err.println("thrown exception: " + ex.toString()); //$NON-NLS-1$
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		} // end catch (IOException ex)
 		
 		// Input validation
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
-			createXMLStream(bos, "1");
-			createXMLStream(bos, "1</quantity><price>1.0</price><quantity>1");
+			createXMLStream(bos, "1"); //$NON-NLS-1$
+			createXMLStream(bos, "1</quantity><price>1.0</price><quantity>1"); //$NON-NLS-1$
 		} catch (Exception ex) {
-			System.err.println("thrown exception: " + ex.toString());
+			System.err.println("thrown exception: " + ex.toString()); //$NON-NLS-1$
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		} // end catch (IOException ex)	
 		
@@ -165,12 +168,12 @@ class OnlineStore {
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
 			createXMLStream(bos, 
-					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100");
+					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100"); //$NON-NLS-1$
 		} catch (Exception ex) {
-			System.err.println("thrown exception: " + ex.toString());
+			System.err.println("thrown exception: " + ex.toString()); //$NON-NLS-1$
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		} // end catch (IOException ex)	
 		
