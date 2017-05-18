@@ -23,17 +23,15 @@
 package OBJ02J;
 
 class Account {
-	// Maintains all banking-related data such as account balance
-	private double balance = 100;
+  // Maintains all banking-related data such as account balance
+  private double balance = 100;
 
-	boolean withdraw(double amount) throws IllegalAccessException {
-		if ((balance - amount) >= 0) {
-			balance -= amount;
-			System.out.println("Withdrawal successful. The balance is : " + balance);
-			return true;
-		}
-		return false;
-	}
+  void withdraw(double amount) {
+    if ((this.balance - amount) >= 0) {
+      this.balance -= amount;
+      System.out.println("Withdrawal successful. The balance is : " + this.balance); //$NON-NLS-1$
+    }
+  }
 
 	/*
 	boolean overdraft() {

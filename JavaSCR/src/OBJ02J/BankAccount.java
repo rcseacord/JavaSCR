@@ -25,14 +25,14 @@ package OBJ02J;
 class BankAccount extends Account {
 	// Subclass handles authentication
 	@Override
-	boolean withdraw(double amount) throws IllegalAccessException {
+	void withdraw(double amount) throws SecurityException {
 		if (!securityCheck()) {
-			throw new IllegalAccessException();
+			throw new SecurityException();
 		}
-		return super.withdraw(amount);
+		super.withdraw(amount);
 	}
 
-	private boolean securityCheck() {
+	private static boolean securityCheck() {
 		// Check that account management may proceed
 		return false;
 	}
@@ -40,14 +40,13 @@ class BankAccount extends Account {
 	public static void main(String[] args) {
 		Account account = new BankAccount();
 		// Enforce security manager check
-		boolean result = false;
 		try {
-			result = account.withdraw(200.0);
-		} catch (IllegalAccessException e) {
-			System.err.println("Withdrawal failed.");
+			account.withdraw(200.0);
+		  System.out.println("Withdrawal successful."); //$NON-NLS-1$
+		} catch (SecurityException e) {
+			System.err.println("Withdrawal failed."); //$NON-NLS-1$
 			e.printStackTrace();
 		}
-		System.out.println("Withdrawal successful? " + result);
 
 		// Client uses new overdraft method.
 		/*
