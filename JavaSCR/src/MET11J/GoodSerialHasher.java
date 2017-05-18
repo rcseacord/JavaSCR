@@ -34,28 +34,31 @@ class GoodSerialHasher {
                      throws IOException, ClassNotFoundException {
 	// The type of the key value has been changed to an Integer object. 
     Hashtable<Integer, String> ht = new Hashtable<>();
-    ht.put(1, "Value");
-    System.out.println("Entry: " + ht.get(1)); // Retrieve using the key
+    final Integer key = new Integer(1);
+    ht.put(key, "Value"); //$NON-NLS-1$
+    System.out.println("Entry: " + ht.get(key)); // Retrieve using the key //$NON-NLS-1$
  
     // Serialize the Hashtable object
-    FileOutputStream fos = new FileOutputStream("hashdata.ser");
-    ObjectOutputStream oos = new ObjectOutputStream(fos);
+    try (
+    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("hashdata.ser")); //$NON-NLS-1$
+        ) {
     oos.writeObject(ht);
-    oos.close();
+    }
  
     // Deserialize the Hashtable object
-    FileInputStream fis = new FileInputStream("hashdata.ser");
-    ObjectInputStream ois = new ObjectInputStream(fis);
-    Hashtable<Integer, String> ht_in =
-        (Hashtable<Integer, String>)(ois.readObject());
-    ois.close();
+    Hashtable<Integer, String> ht_in;
+    try (
+    ObjectInputStream ois = new ObjectInputStream(new FileInputStream("hashdata.ser")); //$NON-NLS-1$
+        ) {
+    ht_in = (Hashtable<Integer, String>)ois.readObject();
+    }
  
-    if (ht_in.contains("Value"))
+    if (ht_in.contains("Value")) //$NON-NLS-1$
       // Check whether the object actually exists in the Hashtable
-      System.out.println("Value was found in deserialized object.");
+      System.out.println("Value was found in deserialized object."); //$NON-NLS-1$
  
-    if (ht_in.get(1) == null)  // Not printed
+    if (ht_in.get(key) == null)  // Not printed
       System.out.println(
-          "Object was not found when retrieved using the key.");
+          "Object was not found when retrieved using the key."); //$NON-NLS-1$
   }
 }
