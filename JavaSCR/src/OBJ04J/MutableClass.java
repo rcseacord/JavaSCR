@@ -32,7 +32,7 @@ class MutableClass implements Cloneable {
 	  }
 	  
 	  private Date getDate() {
-	    return (Date) date.clone(); 
+	    return (Date) this.date.clone(); 
 	  }
 	  public static MutableClass newInstance( 
 	                               MutableClass mc)  {
@@ -41,11 +41,6 @@ class MutableClass implements Cloneable {
 	
 	public static void main(String[] args) {
 		MutableClass mc = new MutableClass(new Date());
-		if (mc instanceof Cloneable) {
-			System.out.println("true");
-		}
-		else {
-			System.out.println("false");
-		}
+		System.out.println("mc = " + mc.toString()); //$NON-NLS-1$
 	}
 }

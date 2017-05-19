@@ -10,11 +10,12 @@ public final class ClonableMutableClass implements Cloneable {
 	  }
 	  
 	  public Date getDate() {
-	    return (Date)date.clone(); // Copy and return
+	    return (Date)this.date.clone(); // Copy and return
 	  }
 	  
-	  public ClonableMutableClass clone() {
-	    Date d = (Date)date.clone();
+	  @Override
+    public ClonableMutableClass clone() {
+	    Date d = (Date)this.date.clone();
 	    return new ClonableMutableClass(d);
 	  }
 	}
