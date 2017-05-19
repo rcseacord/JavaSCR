@@ -31,85 +31,105 @@ import java.util.Objects;
 
 enum Gender {
   MALE, FEMALE
-} 
+}
 
 public class Person implements java.io.Serializable {
-//  private static final long serialVersionUID = 9043182744481133479L;
+  // private static final long serialVersionUID = 9043182744481133479L;
   private String firstName;
   private String lastName;
   private String socialSecurity;
   private int age;
   private Person spouse;
-//  private Gender gender;
+  // private Gender gender;
 
-public Person(String fn, String ln, String socialSecurity, int a) {
-//  public Person(String fn, String ln, String socialSecurity, int a, Gender g) {
+  public Person(String fn, String ln, String socialSecurity, int a) {
+    // public Person(String fn, String ln, String socialSecurity, int a, Gender
+    // g) {
     this.firstName = fn;
     this.lastName = ln;
     this.socialSecurity = socialSecurity;
     this.age = a;
-//    this.gender = g;
+    // this.gender = g;
   }
 
-//  public Gender getGender() { return gender; }
-//  public void setGender(Gender value) { gender = value; }
-  
-  public String getFirstName() { return firstName; } 
-  public void setFirstName(String value) { firstName = value; }
-  
-  public String getLastName() { return lastName; }
-  public void setLastName(String value) { lastName = value; }
-  
-  public int getAge() { return age; }
-  public void setAge(int value) { age = value; }
+  // public Gender getGender() { return gender; }
+  // public void setGender(Gender value) { gender = value; }
 
-  public Person getSpouse() { return spouse; }
-  public void setSpouse(Person value) { spouse = value; }
-  
-  public String getSocialSecurity() { return socialSecurity; }
-  public void setSocialSecurity(String value) { socialSecurity = value; }
+  public String getFirstName() {
+    return this.firstName;
+  }
 
+  public void setFirstName(String value) {
+    this.firstName = value;
+  }
+
+  public String getLastName() {
+    return this.lastName;
+  }
+
+  public void setLastName(String value) {
+    this.lastName = value;
+  }
+
+  public int getAge() {
+    return this.age;
+  }
+
+  public void setAge(int value) {
+    this.age = value;
+  }
+
+  public Person getSpouse() {
+    return this.spouse;
+  }
+
+  public void setSpouse(Person value) {
+    this.spouse = value;
+  }
+
+  public String getSocialSecurity() {
+    return this.socialSecurity;
+  }
+
+  public void setSocialSecurity(String value) {
+    this.socialSecurity = value;
+  }
+
+  @Override
   public String toString() {
-    return "[Person: firstName=" + firstName + " lastName=" + lastName + " age=" + age + " spouse="
-        + spouse.getFirstName() + "]";
+    return "[Person: firstName=" + this.firstName + " lastName=" + this.lastName + " age=" + this.age + " spouse=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        + this.spouse.getFirstName() + "]"; //$NON-NLS-1$
   }
 
-  public static void main(String[] args) {
-    try {
-      Person p1 = new Person("John", "Doe", "012-34-5678", 25);
-      Person p2 = new Person("Jane", "Doe", "987-65-4321", 24);
-//      Person p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
-//      Person p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
-      
-      p1.setSpouse(p2);
-      p2.setSpouse(p1);
+  public static void main(String[] args) throws IOException, ClassNotFoundException {
+    Person p1 = new Person("John", "Doe", "012-34-5678", 25); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    Person p2 = new Person("Jane", "Doe", "987-65-4321", 24); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    // Person p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
+    // //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    // Person p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
+    // //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
-      FileOutputStream fos = new FileOutputStream("tempdata.ser");
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
+    p1.setSpouse(p2);
+    p2.setSpouse(p1);
+
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));) { //$NON-NLS-1$
       oos.writeObject(p1);
-      oos.close();
-    } 
-    catch (IOException e) {
-      e.printStackTrace(System.err);
     }
-    try {
-      FileInputStream fis = new FileInputStream("tempdata.ser");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      Person p = (Person) ois.readObject();
-      ois.close();
 
-      if (!Objects.equals(p.getFirstName(), "John") || 
-          !Objects.equals(p.getSpouse().getFirstName(), "Jane")) {
-        System.err.println("Object changed during deserialization");
-      }
-      else {
-        System.out.println("Object succesfully deserialized");
-      }
-       
-      // Clean up the file
-      // new File("tempdata.ser").delete();
-    } catch (IOException | ClassNotFoundException e) {
-      e.printStackTrace(System.err);
+    Person p;
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));) {  //$NON-NLS-1$
+      p = (Person) ois.readObject();
     }
-  }  // end main
+
+    if (!Objects.equals(p.getFirstName(), "John") || //$NON-NLS-1$
+        !Objects.equals(p.getSpouse().getFirstName(), "Jane")) { //$NON-NLS-1$
+      System.err.println("Object changed during deserialization"); //$NON-NLS-1$
+    } else {
+      System.out.println("Object succesfully deserialized"); //$NON-NLS-1$
+    }
+
+    // Clean up the file
+    // new File("tempdata.ser").delete();
+
+  } // end main
 } // end class
