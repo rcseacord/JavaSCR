@@ -24,6 +24,7 @@ package ser04j;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -35,16 +36,16 @@ public final class Hometown implements Serializable {
   private static final long serialVersionUID = 6515419803685137985L;
   // Private internal state
   private String town;
-  private static final String UNKNOWN = "UNKNOWN";
-  private static final String MOSCOW = "Moscow";
+  private static final String UNKNOWN = "UNKNOWN"; //$NON-NLS-1$
+  private static final String MOSCOW = "Moscow"; //$NON-NLS-1$
 
-  void performSecurityManagerCheck(String town) throws AccessDeniedException {
-    if (MOSCOW.equals(town)) {
-      throw new AccessDeniedException("Nyet, comrade");
+  static void performSecurityManagerCheck(String newtown) throws AccessDeniedException {
+    if (MOSCOW.equals(newtown)) {
+      throw new AccessDeniedException("Nyet, comrade"); //$NON-NLS-1$
     }
   }
 
-  void validateInput(String newCC) throws IllegalArgumentException {
+  void validateInput(@SuppressWarnings("unused") String newCC) throws IllegalArgumentException {
     // ...
   }
 
@@ -57,106 +58,61 @@ public final class Hometown implements Serializable {
 
   // Allows callers to retrieve internal state without security check
   String getTown() {
-    return town;
+    return this.town;
   }
 
   // Privileged callers can modify (private) state
   public void setTown(String newTown) throws AccessDeniedException {
-    if (!town.equals(newTown)) {
+    if (!this.town.equals(newTown)) {
       performSecurityManagerCheck(newTown);
       validateInput(newTown);
-      town = newTown;
+      this.town = newTown;
     }
   }
 
+  @SuppressWarnings("static-method")
   private void writeObject(ObjectOutputStream out) throws IOException {
-    // out.writeObject(town);
+    System.out.println("writeObject called"); //$NON-NLS-1$
     out.defaultWriteObject();
   }
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    String town;
+    String readTown;
     ObjectInputStream.GetField fields = in.readFields();
-    town = (String) fields.get("town", null);
+    readTown = (String) fields.get("town", null); //$NON-NLS-1$
     // If the deserialized name does not match the default value normally
     // created at construction time, duplicate the checks
-    if (!UNKNOWN.equals(town)) {
-      performSecurityManagerCheck(town); 
-      validateInput(town); 
+    if (!UNKNOWN.equals(readTown)) {
+      performSecurityManagerCheck(readTown);
+      validateInput(readTown);
     }
 
-    this.town = town;
+    this.town = readTown;
   }
 
-  public static void main(String[] args) throws AccessDeniedException {
-    Hometown myTown = new Hometown("Pittsburgh");
-    System.out.println("My town is " + myTown.getTown());
+  public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+    Hometown myTown = new Hometown("Pittsburgh"); //$NON-NLS-1$
+    System.out.println("My town is " + myTown.getTown()); //$NON-NLS-1$
 
     // Create object that violates security checks
-    try {
-      Hometown ht = new Hometown("Warsaw");
-
-      FileOutputStream fos = new FileOutputStream("tempdata.ser");
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
+    Hometown ht = new Hometown("Warsaw"); //$NON-NLS-1$
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));//$NON-NLS-1$
+    ) {
       oos.writeObject(ht);
-      oos.close();
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
-
     // Construct a new object through deserialization
-    try {
-      // NOTE: File is in %userprofile%\git\JavaSCR\JavaSCR
-      FileInputStream fis = new FileInputStream("tempdata.ser");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      Hometown ht = (Hometown) ois.readObject();
-      ois.close();
-      System.out.println("My town is " + ht.getTown());
-
-      // Clean up the file
-      new File("tempdata.ser").delete();
-    } catch (IOException | ClassNotFoundException e) {
-      e.printStackTrace(System.err);
+    try (
+        // NOTE: File is in %userprofile%\git\JavaSCR\JavaSCR
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));//$NON-NLS-1$
+    ) {
+      ht = (Hometown) ois.readObject();
     }
+    System.out.println("My town is " + ht.getTown()); //$NON-NLS-1$
+
+    // Clean up the file
+    new File("tempdata.ser").delete(); //$NON-NLS-1$
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
  * add performSecurityManagerCheck at line 94 if (!UNKNOWN.equals(town)) {
