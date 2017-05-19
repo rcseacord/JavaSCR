@@ -25,7 +25,7 @@ public class SerialDOS {
     for (int i = 0; i < 100; i++) {
       Set<Object> t1 = new HashSet<>();
       Set<Object> t2 = new HashSet<>();
-      t1.add("foo"); // make it not equal to t2
+      t1.add("foo"); // make it not equal to t2 //$NON-NLS-1$
       s1.add(t1);
       s1.add(t2);
       s2.add(t1);
@@ -37,10 +37,9 @@ public class SerialDOS {
   }
 
   static byte[] serialize(Object o) throws IOException {
-    ByteArrayOutputStream ba = new ByteArrayOutputStream();
-    ObjectOutputStream oos = new ObjectOutputStream(ba);
-    oos.writeObject(o);
-    oos.close();
-    return ba.toByteArray();
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba);) {
+      oos.writeObject(o);
+      return ba.toByteArray();
+    }
   }
 }
