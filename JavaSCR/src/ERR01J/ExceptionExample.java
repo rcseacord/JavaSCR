@@ -23,22 +23,26 @@
 package ERR01J;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 class ExceptionExample {
 
-	static FileInputStream fis;
+  static FileInputStream fis;
 
-	public static void main(String[] args) throws FileNotFoundException {
-		setFis(new FileInputStream(System.getenv("APPDATA") + "\\" + args[0]));
-	}
+  public static void main(String[] args) throws IOException {
+    try (FileInputStream myfis = new FileInputStream(System.getenv("APPDATA") + "\\" + args[0]); //$NON-NLS-1$ //$NON-NLS-2$
+    ) {
+      setFis(myfis);
+      // add some code to demonstrate
+    }
+  }
 
-	public static FileInputStream getFis() {
-		return fis;
-	}
+  public static FileInputStream getFis() {
+    return fis;
+  }
 
-	private static void setFis(FileInputStream fis) {
-		ExceptionExample.fis = fis;
-	}
+  private static void setFis(FileInputStream fis) {
+    ExceptionExample.fis = fis;
+  }
 
 }

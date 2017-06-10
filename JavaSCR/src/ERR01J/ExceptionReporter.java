@@ -33,18 +33,18 @@ public class ExceptionReporter {
 	private Reporter current = PrintException;
 	
 	public void reportException(Throwable t) {
-		current.report(t);
+		this.current.report(t);
 	}
 
 	// May throw an unchecked SecurityException
 	public Reporter setExceptionReporter(Reporter reporter) {
-			ExceptionReporterPermission perm = new ExceptionReporterPermission("exc.reporter");
+			ExceptionReporterPermission perm = new ExceptionReporterPermission("exc.reporter"); //$NON-NLS-1$
 		SecurityManager sm = System.getSecurityManager();
 		if (sm != null) {
 			sm.checkPermission(perm);
 		}
-		Reporter old = current;
-		current = reporter;
+		Reporter old = this.current;
+		this.current = reporter;
 		return old;
 	}
 }

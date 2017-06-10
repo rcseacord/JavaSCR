@@ -43,9 +43,10 @@ class ExceptionReporterExample {
 	
 	static Reporter old_reporter = er.setExceptionReporter(logException);
 	
-	public static void main(String[] args) throws FileNotFoundException {
+	@SuppressWarnings("resource")
+  public static void main(String[] args)  {
 		try {
-			setFis(new FileInputStream(System.getenv("APPDATA") + "\\" + args[0]));
+			setFis(new FileInputStream(System.getenv("APPDATA") + "\\" + args[0])); //$NON-NLS-1$ //$NON-NLS-2$
 		} catch (IOException ioex) {		
 			er.reportException(ioex);
 			// Recover from the exception...

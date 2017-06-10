@@ -42,14 +42,14 @@ class Dimensions {
 	}
 
 	protected int getVolumePackage(int weight) {
-		l += PAD; w += PAD; h += PAD;
+		this.l += PAD; this.w += PAD; this.h += PAD;
 		try {
 			if (weight <= 0 || weight > 20) 
 				throw new IllegalArgumentException();
-			int volume = l * w * h; // 12 * 12 * 12 = 1728
-			l -= PAD;
-			w -= PAD;
-			h -= PAD; // Revert
+			int volume = this.l * this.w * this.h; // 12 * 12 * 12 = 1728
+			this.l -= PAD;
+			this.w -= PAD;
+			this.h -= PAD; // Revert
 			return volume;
 		} catch (Throwable t) {
 			ExceptionReporter er = new ExceptionReporter();
@@ -62,7 +62,7 @@ class Dimensions {
 			try {
 			if (weight <= 0 || weight > 20) 
 				throw new IllegalArgumentException();
-			return (l + PAD) * (w + PAD) * (h + PAD); 
+			return (this.l + PAD) * (this.w + PAD) * (this.h + PAD); 
 		} catch (Throwable t) {
 			ExceptionReporter er = new ExceptionReporter();
 			er.reportException(t);  // Report

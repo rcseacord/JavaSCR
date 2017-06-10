@@ -25,7 +25,7 @@ package ERR01J;
 import java.util.logging.Logger;
 
 class FilteredExceptionReporter extends ExceptionReporter {
-	private static final Logger logger = Logger.getLogger("com.organization.Log");
+	private static final Logger logger = Logger.getLogger("com.organization.Log"); //$NON-NLS-1$
 
 	/*
 	public static void report(Throwable t) {
