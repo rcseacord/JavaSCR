@@ -22,57 +22,91 @@
 
 package ERR03J;
 
-import ERR01J.ExceptionReporter;
-
 class Dimensions {
-	private int l, w, h;
-	private static final int PAD = 2;
-	static public final int MAX_DIM = 12;
+  private int l, w, h;
+  private static final int PAD = 2;
+  static public final int MAX_DIM = 12;
 
-	private Dimensions(int l, int w, int h) {
-		this.l = l;
-		this.w = w;
-		this.h = h;
-		/*
-		if (l <= PAD || w <= PAD || h <= PAD || l > MAX_DIM + PAD ||
-			w > MAX_DIM + PAD || h > MAX_DIM + PAD) {
-			throw new IllegalArgumentException();
-		} 
-		*/
-	}
+  private Dimensions(int l, int w, int h) throws VolumeException {
+    // Validate invariants
+    if (l > MAX_DIM - PAD || w > MAX_DIM - PAD || h > MAX_DIM - PAD) {
+      throw new VolumeException("Volume exceeded in ctor"); //$NON-NLS-1$
+    }
+    this.l = l;
+    this.w = w;
+    this.h = h;
+  }
 
-	protected int getVolumePackage(int weight) {
-		this.l += PAD; this.w += PAD; this.h += PAD;
-		try {
-			if (weight <= 0 || weight > 20) 
-				throw new IllegalArgumentException();
-			int volume = this.l * this.w * this.h; // 12 * 12 * 12 = 1728
-			this.l -= PAD;
-			this.w -= PAD;
-			this.h -= PAD; // Revert
-			return volume;
-		} catch (Throwable t) {
-			ExceptionReporter er = new ExceptionReporter();
-			er.reportException(t);  // Report
-			return -1; // Non-positive error code
-		}
-	}
-	
-	private int getVolumePackageGood(int weight) {
-			try {
-			if (weight <= 0 || weight > 20) 
-				throw new IllegalArgumentException();
-			return (this.l + PAD) * (this.w + PAD) * (this.h + PAD); 
-		} catch (Throwable t) {
-			ExceptionReporter er = new ExceptionReporter();
-			er.reportException(t);  // Report
-			return -1; // Non-positive error code
-		}
-	}
+  protected int getVolumePackage(int weight) throws WeightException {
+    this.l += PAD;
+    this.w += PAD;
+    this.h += PAD;
+    if (weight <= 0 || weight > 20)
+      throw new WeightException("Package overweight"); //$NON-NLS-1$
+    int volume = this.l * this.w * this.h; // 12 * 12 * 12 = 1728
+    this.l -= PAD;
+    this.w -= PAD;
+    this.h -= PAD; // Revert
+    return volume;
+  }
 
-	public static void main(String[] args) {
-		Dimensions d = new Dimensions(10, 10, 10);
-		System.out.println(d.getVolumePackageGood(21)); // Prints -1 (error)
-		System.out.println(d.getVolumePackageGood(19)); // Prints 2744 instead of 1728
-	}
+  public static void main(String[] args) throws VolumeException {
+    Dimensions d = new Dimensions(10, 10, 10);
+
+    try {
+      System.out.println(d.getVolumePackage(21));
+    } catch (WeightException e) {
+      System.out.println(e.getMessage() + ": lighten re-weigh"); //$NON-NLS-1$
+    }
+    
+    try {
+      System.out.println(d.getVolumePackage(19)); // 2744 instead of 1728
+    } catch (WeightException e) {
+      System.out.println(e.getMessage() + ": lighten re-weigh"); //$NON-NLS-1$
+    }
+  } // end main
+}  // end Class Dimensions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+private int getVolumePackage(int weight) throws WeightException {
+  if (weight <= 0 || weight > 20)
+    throw new WeightException("Package overweight"); //$NON-NLS-1$
+  return (this.l + PAD) * (this.w + PAD) * (this.h + PAD);
 }
+*/
