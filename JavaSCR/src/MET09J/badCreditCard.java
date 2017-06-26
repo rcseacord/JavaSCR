@@ -32,7 +32,8 @@ final class badCreditCard {
 	    this.number = number;
 	  }
 	 
-	  public boolean equals(Object o) {
+	  @Override
+    public boolean equals(Object o) {
 	    if (o == this) {
 	      return true;
 	    }
@@ -45,7 +46,7 @@ final class badCreditCard {
 	 
 	  public static void main(String[] args) {
 	    Map<badCreditCard, String> m = new HashMap<>();
-	    m.put(new badCreditCard(100), "4111111111111111");
+	    m.put(new badCreditCard(100), "4111111111111111"); //$NON-NLS-1$
 	    // The expected retrieved value is 4111111111111111; 
 	    // the actual retrieved value is null.
 	    System.out.println(m.get(new badCreditCard(100))); 

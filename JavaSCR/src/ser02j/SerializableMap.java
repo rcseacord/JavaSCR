@@ -31,14 +31,14 @@ class SerializableMap<K, V> implements Serializable {
   final private Map<K, V> map;
 
   public SerializableMap() {
-    map = new HashMap<>();
+    this.map = new HashMap<>();
   }
 
   public Object getData(K key) {
-    return map.get(key);
+    return this.map.get(key);
   }
 
   public void setData(K key, V data) {
-    map.put(key, data);
+    this.map.put(key, data);
   }
 }

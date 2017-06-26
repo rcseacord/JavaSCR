@@ -28,16 +28,17 @@ class subClass extends baseClass {
 	  private Date d; // Mutable instance field
 	 
 	  protected subClass() {
-	    d = new Date();
+	    this.d = new Date();
 	  }
 	 
 	// The class SubClass overrides the protected finalize() method
 	// and performs cleanup activities.
-	protected void finalize() throws Throwable {
-		System.out.println("Subclass finalize!");
+	@Override
+  protected void finalize() throws Throwable {
+		System.out.println("Subclass finalize!"); //$NON-NLS-1$
 		try {
 			// Cleanup resources
-			d = null;
+			this.d = null;
 		} finally {
 			// Subsequently, it calls super.finalize() to make sure its
 			// superclass is also finalized. 
@@ -45,12 +46,13 @@ class subClass extends baseClass {
 		}
 	}
 	 
-	  public void doLogic() throws Throwable {
+	  @Override
+    public void doLogic() throws Throwable {
 	    // Any resource allocations made here will persist
 	 
 	    // Inconsistent object state
 	    System.out.println(
-	        "This is sub-class! The date object is: " + d);
+	        "This is sub-class! The date object is: " + this.d); //$NON-NLS-1$
 	    // 'd' is already null
 	  }
 	  

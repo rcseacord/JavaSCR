@@ -34,20 +34,22 @@ final class caseInsensitiveStringGood {
  
   // Simplified to operate only on instances of the 
   // CaseInsensitiveString class, consequently preserving symmetry
+  @Override
   public boolean equals(Object o) {
     return o instanceof caseInsensitiveStringGood &&
         ((caseInsensitiveStringGood)o).s.equalsIgnoreCase(s);
   }
  
 	// Comply with MET09-J
-	public int hashCode() {
+	@Override
+  public int hashCode() {
 		/* ... */
 		return 0;
 	}
  
   public static void main(String[] args) {
-    caseInsensitiveStringGood cis = new caseInsensitiveStringGood("Java");
-    String s = "java";
+    caseInsensitiveStringGood cis = new caseInsensitiveStringGood("Java"); //$NON-NLS-1$
+    String s = "java"; //$NON-NLS-1$
     System.out.println(cis.equals(s)); // Returns false now
     System.out.println(s.equals(cis)); // Returns false now
   }

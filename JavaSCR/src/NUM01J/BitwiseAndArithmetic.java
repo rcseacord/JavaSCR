@@ -41,8 +41,8 @@ class BitwiseAndArithmetic {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Logical Right Shift: " + divideLogicalRightShift(-50));
-		System.out.println("Arithmetic Right Shift: " + divideArithmeticRightShift(-50));
-		System.out.println("Divide: " + divide(-50));
+		System.out.println("Logical Right Shift: " + divideLogicalRightShift(-50)); //$NON-NLS-1$
+		System.out.println("Arithmetic Right Shift: " + divideArithmeticRightShift(-50)); //$NON-NLS-1$
+		System.out.println("Divide: " + divide(-50)); //$NON-NLS-1$
 	}
 }

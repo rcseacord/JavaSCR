@@ -28,7 +28,7 @@ class safeArithmetic {
 	private static int safeAdd(int left, int right) throws ArithmeticException {
 		if (right > 0 ? left > Integer.MAX_VALUE - right
 				: left < Integer.MIN_VALUE - right) {
-			throw new ArithmeticException("Integer overflow");
+			throw new ArithmeticException("Integer overflow"); //$NON-NLS-1$
 		}
 		return left + right;
 	}
@@ -37,7 +37,7 @@ class safeArithmetic {
 			throws ArithmeticException {
 		if (right > 0 ? left < Integer.MIN_VALUE + right
 				: left > Integer.MAX_VALUE + right) {
-			throw new ArithmeticException("Integer overflow");
+			throw new ArithmeticException("Integer overflow"); //$NON-NLS-1$
 		}
 		return left - right;
 	}
@@ -49,28 +49,28 @@ class safeArithmetic {
 				: (right < -1 ? left > Integer.MIN_VALUE / right
 						|| left < Integer.MAX_VALUE / right : right == -1
 						&& left == Integer.MIN_VALUE)) {
-			throw new ArithmeticException("Integer overflow");
+			throw new ArithmeticException("Integer overflow"); //$NON-NLS-1$
 		}
 		return left * right;
 	}
 
 	static int safeDivide(int left, int right) throws ArithmeticException {
 		if ((left == Integer.MIN_VALUE) && (right == -1)) {
-			throw new ArithmeticException("Integer overflow");
+			throw new ArithmeticException("Integer overflow"); //$NON-NLS-1$
 		}
 		return left / right;
 	}
 
 	static int safeNegate(int a) throws ArithmeticException {
 		if (a == Integer.MIN_VALUE) {
-			throw new ArithmeticException("Integer overflow");
+			throw new ArithmeticException("Integer overflow"); //$NON-NLS-1$
 		}
 		return -a;
 	}
 
 	static int safeAbs(int a) throws ArithmeticException {
 		if (a == Integer.MIN_VALUE) {
-			throw new ArithmeticException("Integer overflow");
+			throw new ArithmeticException("Integer overflow"); //$NON-NLS-1$
 		}
 		return Math.abs(a);
 	}
@@ -79,7 +79,7 @@ class safeArithmetic {
 		try {
 			System.out.println(safeAdd(5, 10));
 		} catch (ArithmeticException ae) {
-			System.err.println("ArithmeticException: " + ae.getMessage());
+			System.err.println("ArithmeticException: " + ae.getMessage()); //$NON-NLS-1$
 		}
 		
 		System.out.println(5 + Integer.MAX_VALUE);
@@ -87,7 +87,7 @@ class safeArithmetic {
 		try {
 			System.out.println(safeAdd(5, Integer.MAX_VALUE));
 		} catch (ArithmeticException ae) {
-			System.err.println("ArithmeticException: " + ae.getMessage());
+			System.err.println("ArithmeticException: " + ae.getMessage()); //$NON-NLS-1$
 		}		
 		
 		System.out.println(-5 + Integer.MIN_VALUE);
@@ -95,7 +95,7 @@ class safeArithmetic {
 		try {
 			System.out.println(safeAdd(-5, Integer.MIN_VALUE));
 		} catch (ArithmeticException ae) {
-			System.err.println("ArithmeticException: " + ae.getMessage());
+			System.err.println("ArithmeticException: " + ae.getMessage()); //$NON-NLS-1$
 		}
 	}
 }

@@ -27,11 +27,12 @@ class subClass extends superClass {
 
 	public subClass() {
 		super();
-		color = "Red";
+		this.color = "Red"; //$NON-NLS-1$
 	}
 
-	public void doLogic() {
-		System.out.println("subclass: color is: " + color);
+	@Override
+  public void doLogic() {
+		System.out.println("subclass: color is: " + this.color); //$NON-NLS-1$
 		// ...
 	}
 }

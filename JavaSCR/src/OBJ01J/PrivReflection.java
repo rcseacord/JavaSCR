@@ -28,10 +28,10 @@ class PrivReflection {
 	public static void main(String args[]) throws Exception {
     SecurityManager sm = System.getSecurityManager();
     if (sm != null) {
-      System.out.println("Security manager installed.");
+      System.out.println("Security manager installed."); //$NON-NLS-1$
     }
     else {
-      System.out.println("No security manager.");
+      System.out.println("No security manager."); //$NON-NLS-1$
     }
 	  
 		// Returns an array of Field objects reflecting 
@@ -40,18 +40,18 @@ class PrivReflection {
 
 		// Enumerate fields
 		for (Field field : fields) {
-			System.out.println("Field: " + field);
+			System.out.println("Field: " + field); //$NON-NLS-1$
 		}
 
 		for (Field field : fields) {
-			if ("barPrivStr".equals(field.getName())) {
+			if ("barPrivStr".equals(field.getName())) { //$NON-NLS-1$
 				FieldTest fieldTest = new FieldTest();
 
 				try {
 					// Get field
 					System.out.println(field.get(fieldTest));
 				} catch (IllegalAccessException iae) {
-					System.err.println("java.lang.IllegalAccessException" + iae.toString());
+					System.err.println("java.lang.IllegalAccessException" + iae.toString()); //$NON-NLS-1$
 				}
 				// Make private field accessible
 				// Policy file: C:/Users/rseacord/.java.policy
@@ -60,7 +60,7 @@ class PrivReflection {
 				System.out.println(field.get(fieldTest));
 
 				// Set field
-				field.set(fieldTest, "fighters");
+				field.set(fieldTest, "fighters"); //$NON-NLS-1$
 				System.out.println(field.get(fieldTest));
 				break;
 			}

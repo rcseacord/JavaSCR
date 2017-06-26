@@ -35,26 +35,26 @@ class SensitiveClass {
 	// returned String object, operations that can modify the array are
 	// subsequently prohibited.
 	final String get() {
-		if (!shared) {
-			shared = true;
-			return String.valueOf(filename);
+		if (!this.shared) {
+			this.shared = true;
+			return String.valueOf(this.filename);
 		} else {
-			throw new IllegalStateException("Failed to get instance");
+			throw new IllegalStateException("Failed to get instance"); //$NON-NLS-1$
 		}
 	}
 
 	// The replace() method will not replace all elements of the array with
 	// an x when the shared flag is set.
 	final void replace() {
-		if (!shared) {
-			for (int i = 0; i < filename.length; i++) {
-				filename[i] = 'x';
+		if (!this.shared) {
+			for (int i = 0; i < this.filename.length; i++) {
+				this.filename[i] = 'x';
 			}
 		}
 	}
 	
 	final void print() {
-		System.out.println(String.valueOf(filename));
+		System.out.println(String.valueOf(this.filename));
 	}
 	
 	// Prevent subclasses from being made cloneable by defining a final clone()
@@ -66,7 +66,7 @@ class SensitiveClass {
 	*/
 
 	public static void main(String[] args) {
-		SensitiveClass ms1 = new SensitiveClass("password.txt");
+		SensitiveClass ms1 = new SensitiveClass("password.txt"); //$NON-NLS-1$
 		String s = ms1.get(); // Returns filename
 		System.out.println(s); // Filename is "file.txt"
 		ms1.replace(); // Attempts to replaces all characters with 'x'

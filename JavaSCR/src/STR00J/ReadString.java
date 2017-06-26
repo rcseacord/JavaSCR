@@ -27,7 +27,7 @@ import java.io.UnsupportedEncodingException;
 class ReadString {
 	
 	public static void main(String[] args) {
-		String str = "";
+		String str = ""; //$NON-NLS-1$
 		int offset; // initialized to zero
 
 		// A = 41 Ω = CE  A9   語  = E8  AA  9E  
@@ -49,27 +49,27 @@ class ReadString {
 		try {
 			// Read UTF-8 Data from 4 byte buffer
 			for (offset = 0; offset < utf8_data.length; offset += 4) {
-				str += new String(utf8_data, offset, 4, "UTF-8");
+				str += new String(utf8_data, offset, 4, "UTF-8"); //$NON-NLS-1$
 			}
 			
 			// convert full string
-			String reference_utf8_str = new String(utf8_data, "UTF-8");
+			String reference_utf8_str = new String(utf8_data, "UTF-8"); //$NON-NLS-1$
 			
 			if (!reference_utf8_str.equals(str)) {
-				System.out.println("UTF-8 strings are not equal");
+				System.out.println("UTF-8 strings are not equal"); //$NON-NLS-1$
 			}
 			
 			// Read UTF-16 Data from 4 byte buffer
-			str = "";
+			str = ""; //$NON-NLS-1$
 			for (offset = 0; offset < utf16_data.length; offset += 4) {
-				str += new String(utf16_data, offset, 4, "UTF-16");
+				str += new String(utf16_data, offset, 4, "UTF-16"); //$NON-NLS-1$
 			}
 				
 			// print full string
-			String reference_utf16_str = new String(utf16_data, "UTF-16");
+			String reference_utf16_str = new String(utf16_data, "UTF-16"); //$NON-NLS-1$
 			
 			if (!reference_utf16_str.equals(str)) {
-				System.out.println("UTF-16 strings are not equal");
+				System.out.println("UTF-16 strings are not equal"); //$NON-NLS-1$
 			}
 		
 		} catch (UnsupportedEncodingException e) {

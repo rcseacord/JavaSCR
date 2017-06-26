@@ -30,17 +30,17 @@ class compNaN {
 		double result = Math.cos(1 / x); // returns NaN
 		// comparison is always false!
 		if (result == Double.NaN) {
-			System.out.println("result is NaN");
+			System.out.println("result is NaN"); //$NON-NLS-1$
 		}
 
 		// Use the�isNaN() method to check whether the specified value is�NaN
 		if (Double.isNaN(result)) {
-			System.out.println("result is NaN");
+			System.out.println("result is NaN"); //$NON-NLS-1$
 		}
 
 		// true if and only if x is NaN
 		if (result != result) {
-			System.out.println("result is NaN");
+			System.out.println("result is NaN"); //$NON-NLS-1$
 		}
 		
 		x = Math.cos(1 / x); // returns NaN
@@ -48,10 +48,10 @@ class compNaN {
 		
 		// false if x or y is NaN
 		if ((x<y) == !(x>=y)) {
-			System.out.println("x and y are not NaN");
+			System.out.println("x and y are not NaN"); //$NON-NLS-1$
 		}
 		else {
-			System.out.println("result is NaN");
+			System.out.println("result is NaN"); //$NON-NLS-1$
 		}	
 	}
 }

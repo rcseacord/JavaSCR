@@ -19,7 +19,7 @@ public final class SensitiveClass extends Number {
   private int balance = 1000;
 
   protected int getBalance() {
-    return balance;
+    return this.balance;
   }
 
   @Override

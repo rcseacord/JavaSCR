@@ -3,11 +3,11 @@ package err11j;
 import java.sql.*;
 
 class EmployeeDAO {
-	public void list() throws DAOException {
+	public static void list() throws DAOException {
 		try {
-			DatabaseUtils.executeQuery("SELECT");
+			DatabaseUtils.executeQuery("SELECT"); //$NON-NLS-1$
 		} catch (SQLException ex) {
-			throw new DAOException("Error querying employee from database");
+			throw new DAOException("Error querying employee from database"); //$NON-NLS-1$
 		}
 	}
 }

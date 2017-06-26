@@ -25,7 +25,7 @@ class Malicious {
        (SensitiveClass) deepCopy(SensitiveClass.getInstance());
     // Prints false; indicates new instance
     System.out.println(sc == SensitiveClass.getInstance()); 
-    System.out.println("Balance = " + sc.getBalance());
+    System.out.println("Balance = " + sc.getBalance()); //$NON-NLS-1$
   }
  
 }

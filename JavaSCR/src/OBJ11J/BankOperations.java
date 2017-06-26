@@ -23,11 +23,13 @@
 package OBJ11J;
 
 class BankOperations {
+  final private String user;
 	// Constructor throws a SecurityException when SSN verification fails.
-	public BankOperations() {
+	public BankOperations(String user) {
+	  this.user = user;
 		// Perform social security number (SSN) verification  
 		if (!performSSNVerification()) {
-			throw new SecurityException("Access Denied!");
+			throw new SecurityException("Access Denied!"); //$NON-NLS-1$
 			// The garbage collector waits to grab the object
 			// reference. However, the object cannot be garbage-collected
 			// until after the finalizer completes its execution.
@@ -36,11 +38,11 @@ class BankOperations {
 
 	// Returns true if data entered is valid, else false
 	// Assume that the attacker always enters an invalid SSN
-	private boolean performSSNVerification() {
+	private static boolean performSSNVerification() {
 		return false;
 	}
 
 	public void greet() {
-		System.out.println("Welcome user! You may now use all the features.");
+		System.out.println("Welcome " + this.user); //$NON-NLS-1$
 	}
 }

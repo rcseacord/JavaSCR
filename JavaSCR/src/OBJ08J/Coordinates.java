@@ -24,8 +24,8 @@ package OBJ08J;
 
 public class Coordinates {
 
-	final private int x = 42;
-	final private int y = 24;
+	private int x = 42;
+	private int y = 24;
 
 	// anonymous class
 	final Point p = new Point() {

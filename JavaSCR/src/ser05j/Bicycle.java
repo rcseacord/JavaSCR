@@ -17,7 +17,7 @@ public class Bicycle implements Serializable {
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public void setName(String name) {
@@ -29,11 +29,11 @@ public class Bicycle implements Serializable {
   }
 
   public int getId() {
-    return id;
+    return this.id;
   }
 
   public int getNbrWheels() {
-    return nbrWheels;
+    return this.nbrWheels;
   }
 
   public void setNbrWheels(int nbrWheels) {

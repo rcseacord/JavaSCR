@@ -39,7 +39,8 @@ final class caseInsensitiveString {
 	}
 
 	// This method violates symmetry
-	public boolean equals(Object o) {
+	@Override
+  public boolean equals(Object o) {
 		if (o instanceof caseInsensitiveString) {
 			return s.equalsIgnoreCase(((caseInsensitiveString)o).s);
 		}
@@ -47,14 +48,15 @@ final class caseInsensitiveString {
 	}
 
 	// Comply with MET09-J
-	public int hashCode() {
+	@Override
+  public int hashCode() {
 		/* ... */
 		return 0;
 	}
 
 	public static void main(String[] args) {
-		caseInsensitiveString cis = new caseInsensitiveString("Java");
-		String s = "java";
+		caseInsensitiveString cis = new caseInsensitiveString("Java"); //$NON-NLS-1$
+		String s = "java"; //$NON-NLS-1$
 		// By operating on String objects, the CaseInsensitiveString.equals() method 
 		// violates the second contract requirement (symmetry). Because of the asymmetry, 
 		// given a String object s and a CaseInsensitiveString object cis that differ 

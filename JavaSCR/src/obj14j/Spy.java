@@ -7,9 +7,9 @@ class Spy {
   public static void main(String[] args) {
     SecurityManager sm = System.getSecurityManager();
     if (sm != null) {
-      System.out.println("Security manager installed.");
+      System.out.println("Security manager installed."); //$NON-NLS-1$
     } else {
-      System.out.println("No security manager.");
+      System.out.println("No security manager."); //$NON-NLS-1$
     }
 
     // Returns an array of Field objects reflecting
@@ -18,10 +18,10 @@ class Spy {
 
     // Enumerate fields
     for (Field field : fields) {
-      System.out.println("Field: " + field);
+      System.out.println("Field: " + field); //$NON-NLS-1$
       if (field.getType().isArray()) {
         try {
-          Object array = field.get("keyBytes".getClass());
+          Object array = field.get("keyBytes".getClass()); //$NON-NLS-1$
           int length = Array.getLength(array);
           for (int j = 0; j < length; j++) {
             System.out.println(Array.get(array, j));

@@ -32,7 +32,8 @@ final class goodCreditCard {
 		  this.number = number;
 	  }
 	 
-	  public boolean equals(Object o) {
+	  @Override
+    public boolean equals(Object o) {
 	    if (o == this) {
 	      return true;
 	    }
@@ -40,21 +41,22 @@ final class goodCreditCard {
 	      return false;
 	    }
 	    goodCreditCard cc = (goodCreditCard)o;
-	    return cc.number == number;
+	    return cc.number == this.number;
 	  }
 	 
 	  // override the hashCode() method so that it generates the same 
 	  // value for any two instances that are considered to be equal
 	  // by the equals() method. 
-	  public int hashCode() {
+	  @Override
+    public int hashCode() {
 	    int result = 17;
-	    result = 31 * result + number;
+	    result = 31 * result + this.number;
 	    return result;
 	  }
 	 
 	  public static void main(String[] args) {
 	    Map<goodCreditCard, String> m = new HashMap<>();
-	    m.put(new goodCreditCard(100), "4111111111111111");
+	    m.put(new goodCreditCard(100), "4111111111111111"); //$NON-NLS-1$
 	    System.out.println(m.get(new goodCreditCard(100)));
 	  }
 	}

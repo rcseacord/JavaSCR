@@ -29,7 +29,7 @@ class PreciseComputation {
 		int dime = 10;
 		int count = 7;
 		System.out.println(
-				"$1 minus " + count + " dimes is $0." + (dollar - count * dime)
+				"$1 minus " + count + " dimes is $0." + (dollar - count * dime) //$NON-NLS-1$ //$NON-NLS-2$
 				);
 	}
 

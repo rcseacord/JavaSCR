@@ -34,24 +34,24 @@ class Whole {
   private PartTwo p2;
 
   private Whole(Path path1, Path path2) throws IOException {
-    p1 = new PartOne(path1);
-    p2 = new PartTwo(path2);
+    this.p1 = new PartOne(path1);
+    this.p2 = new PartTwo(path2);
   }
 
   private Whole(PartOne pone, PartTwo ptwo) {
-    p1 = pone;
-    p2 = ptwo;
+    this.p1 = pone;
+    this.p2 = ptwo;
   }
 
   private PartOne getp1() {
-    return p1;
+    return this.p1;
   }
 
   private PartTwo getp2() {
-    return p2;
+    return this.p2;
   }
 
-  private Whole copy(Whole Source) throws IOException {
+  private Whole move(Whole Source) throws IOException {
     PartOne t1 = new PartOne(Source.getp1());
     if (t1 != null) { // not necessary for copy constructor
       try {
@@ -75,10 +75,18 @@ class Whole {
             // Commit the change to the system state.
             // Importantly it won't throw.
             // Copy
-            p1 = t1;
-            t1 = null;
-            p2 = t2;
-            t2 = null;
+            //p1 = t1;
+            //t1 = null;
+            //p2 = t2;
+            //t2 = null;
+            // Move
+            PartOne swap1 = t1;
+            t1 = this.p1;
+            this.p1 = swap1;
+            
+            PartTwo swap2 = t2;
+            t2 = this.p2;
+            this.p2 = swap2;
           } finally {
             // frees the temporary if we passed the
             // pivot uneventfully.
@@ -93,26 +101,26 @@ class Whole {
           t1.close();
       }
     } // t1 not null
-    return new Whole(p1, p2);
-  } // clone method
+    return new Whole(this.p1, this.p2);
+  } // copy constructor
 
   public static void main(String[] args) {
     try {
-      Whole a = new Whole(Paths.get("p1"), Paths.get("p2"));
+      Whole a = new Whole(Paths.get("p1"), Paths.get("p2")); //$NON-NLS-1$ //$NON-NLS-2$
       System.out.println(a.toString());
-      Whole b = a.copy(a);
+      Whole b = a.move(a);
       System.out.println(b.toString());
     } 
     catch (IOException e) {
       e.printStackTrace();
     } 
     finally {
-      String[] files = { "p1", "p2", "p1copy", "p2copy" };
+      String[] files = { "p1", "p2", "p1copy", "p2copy" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
       for (String file : files) {
         try {
           Files.delete(Paths.get(file));
         } catch (IOException e) {
-          System.err.println("Couldn't delete file " + file);
+          System.err.println("Couldn't delete file " + file); //$NON-NLS-1$
         }
       } // end for
     } // end finally

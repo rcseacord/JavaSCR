@@ -33,7 +33,7 @@ class MalSubclass extends SensitiveClass implements Cloneable {
 		try {
 			s = (MalSubclass) super.clone();
 		} catch (CloneNotSupportedException e) {
-			System.err.println("not cloneable");
+			System.err.println("not cloneable"); //$NON-NLS-1$
 		}
 		return s;
 	}
@@ -42,7 +42,7 @@ class MalSubclass extends SensitiveClass implements Cloneable {
 		// Java's cloning feature provides a way to circumvent the sharing
 		// constraint even though SensitiveClass does not implement the
 		// Cloneable interface.
-		MalSubclass ms1 = new MalSubclass("file.txt");
+		MalSubclass ms1 = new MalSubclass("file.txt"); //$NON-NLS-1$
 		MalSubclass ms2 = ms1.clone(); // Creates a copy by cloning ms1
 		String s = ms1.get(); // Returns filename
 		System.out.println(s); // Filename is "file.txt"

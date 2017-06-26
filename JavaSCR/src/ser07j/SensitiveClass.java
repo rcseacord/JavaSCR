@@ -23,7 +23,7 @@ public final class SensitiveClass extends Number {
   private int balance = 1000;
 
   protected int getBalance() {
-    return balance;
+    return this.balance;
   }
 
   @Override
@@ -72,8 +72,9 @@ public final class SensitiveClass extends Number {
   }
 
   // readObject method for the serialization proxy pattern
-  private void readObject(ObjectInputStream stream) throws InvalidObjectException {
-    throw new InvalidObjectException("Proxy required");
+  @SuppressWarnings("static-method")
+  private void readObject(@SuppressWarnings("unused") ObjectInputStream stream) throws InvalidObjectException {
+    throw new InvalidObjectException("Proxy required"); //$NON-NLS-1$
   }
 
   // The rest of this is to serialize/deserialize
@@ -82,11 +83,11 @@ public final class SensitiveClass extends Number {
   }
 
   static byte[] serialize(Object o) throws IOException {
-    ByteArrayOutputStream ba = new ByteArrayOutputStream();
-    ObjectOutputStream oos = new ObjectOutputStream(ba);
-    oos.writeObject(o);
-    oos.close();
-    return ba.toByteArray();
+    try (ObjectOutputStream oos = new ObjectOutputStream(new ByteArrayOutputStream());) {
+      oos.writeObject(o);
+      return new ByteArrayOutputStream().toByteArray();
+    }
+
   }
 
   public static void main(String[] args) throws Exception {

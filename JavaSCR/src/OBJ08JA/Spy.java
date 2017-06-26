@@ -39,15 +39,15 @@ class Spy {
 
 		// Enumerate methods
 		for (Method method : methods) {
-			System.out.println("Method: " + method);
+			System.out.println("Method: " + method); //$NON-NLS-1$
 		}
 		
-	    Method m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class);
+	    Method m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class); //$NON-NLS-1$
 	    // m.setAccessible(true);
 	    Integer x = (Integer) m.invoke(null, ic);   
 	    System.out.println(x);
 	    
-	    m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class);
+	    m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class); //$NON-NLS-1$
 	    Integer y = (Integer) m.invoke(null, ic);
 	    System.out.println(y);
 	}

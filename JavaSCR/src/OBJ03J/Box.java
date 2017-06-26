@@ -38,7 +38,7 @@ class Box<T> {
 		List<String> ls = list;   // warning: unchecked conversion
 		
 		if (intBox.getClass() == stringBox.getClass()) {
-			System.out.println("intBox.getClass() == stringBox.getClass()");
+			System.out.println("intBox.getClass() == stringBox.getClass()"); //$NON-NLS-1$
 		}
 		
 		Box<Number> box = new Box<>();

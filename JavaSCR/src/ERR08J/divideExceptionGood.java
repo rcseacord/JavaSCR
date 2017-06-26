@@ -33,9 +33,10 @@ class divideExceptionGood {
 	private static int division(int totalSum, int totalNumber) throws IOException {
 		int average = totalSum / totalNumber;
 		// Additional operations that may throw IOException...
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("div.result")));
-		out.write(average);
-		out.close();
+    try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("div.result"))); //$NON-NLS-1$
+    ) {
+      out.write(average);
+    }
 		return average;
 	}
 

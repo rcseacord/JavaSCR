@@ -50,10 +50,10 @@ class LambdaScopeTest {
              
             Consumer<Integer> myConsumer = (y) -> 
             {
-                System.out.println("x = " + x); // Statement A
-                System.out.println("y = " + y);
-                System.out.println("this.x = " + this.x);
-                System.out.println("LambdaScopeTest.this.x = " +
+                System.out.println("x = " + x); // Statement A //$NON-NLS-1$
+                System.out.println("y = " + y); //$NON-NLS-1$
+                System.out.println("this.x = " + this.x); //$NON-NLS-1$
+                System.out.println("LambdaScopeTest.this.x = " + //$NON-NLS-1$
                     LambdaScopeTest.this.x);
             };
  
