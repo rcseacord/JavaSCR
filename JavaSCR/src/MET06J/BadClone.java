@@ -28,10 +28,11 @@ class BadClone implements Cloneable {
 	private HttpCookie[] cookies;
 
 	BadClone(HttpCookie[] c) {
-			cookies = c;
+			this.cookies = c;
 	}
 
-	public Object clone() throws CloneNotSupportedException {
+	@Override
+  public Object clone() throws CloneNotSupportedException {
 		final BadClone clone = (BadClone) super.clone();
 		// Invokes overridable method!!!
 		clone.doSomething();
@@ -43,24 +44,24 @@ class BadClone implements Cloneable {
 	// This overridden method sets the value of the cookies
 	void doSomething() { // Overridable
 		// Initializes hc to correct values
-		for (int i = 0; i < cookies.length; i++) {
-			cookies[i].setValue("" + i * 2);
+		for (int i = 0; i < this.cookies.length; i++) {
+			this.cookies[i].setValue("" + i * 2); //$NON-NLS-1$
 		}
 	}
 
 	void printValues() { // Overridable
-		for (HttpCookie cookie : cookies) {
-			System.out.println("value: " + cookie.getValue() + ", domain:" + cookie.getDomain());
+		for (HttpCookie cookie : this.cookies) {
+			System.out.println("value: " + cookie.getValue() + ", domain:" + cookie.getDomain());  //$NON-NLS-1$//$NON-NLS-2$
 		}
 	}
 
 	private HttpCookie[] deepCopy() {
 		// Deep copy
-		HttpCookie[] cookiesCopy = new HttpCookie[cookies.length];
+		HttpCookie[] cookiesCopy = new HttpCookie[this.cookies.length];
 
-		for (int i = 0; i < cookies.length; i++) {
+		for (int i = 0; i < this.cookies.length; i++) {
 			// Manually create a copy of each element in array
-			cookiesCopy[i] = (HttpCookie) cookies[i].clone();
+			cookiesCopy[i] = (HttpCookie) this.cookies[i].clone();
 		}
 		return cookiesCopy;
 	}

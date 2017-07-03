@@ -26,17 +26,17 @@ class DenormalizedNumbers {
 
 	public static void main(String[] args) {
 		float x = 1/3.0f;
-		System.out.println("Original    : " + x);
+		System.out.println("Original    : " + x); //$NON-NLS-1$
 		x = x * 7e-45f;
-		System.out.println("Denormalized: " + x);
+		System.out.println("Denormalized: " + x); //$NON-NLS-1$
 		x = x / 7e-45f;
-		System.out.println("Restored    : " + x);
+		System.out.println("Restored    : " + x); //$NON-NLS-1$
 
 		double y = 1/3.0;
-		System.out.println("\nOriginal    : " + y);
+		System.out.println("\nOriginal    : " + y); //$NON-NLS-1$
 		y = y * 7e-45;
-		System.out.println("Normalized: " + y);
+		System.out.println("Normalized: " + y); //$NON-NLS-1$
 		y = y / 7e-45;
-		System.out.println("Restored    : " + y);
+		System.out.println("Restored    : " + y); //$NON-NLS-1$
 	}
 }

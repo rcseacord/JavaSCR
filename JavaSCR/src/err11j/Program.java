@@ -6,7 +6,7 @@ class Program {
 		Employer manager = new Employer(dao);
 
 		try {
-			manager.findEmployee("Spiff");
+			manager.findEmployee("Spiff"); //$NON-NLS-1$
 		} 
 		catch (EmployeeException ex) {
 			ex.printStackTrace();

@@ -26,43 +26,43 @@ class Conversions {
 
 	private static void narrowIntToByteWrong(int i) {
 		byte b = (byte) i; // b has value -128
-		System.out.println("b = " + b);
+		System.out.println("b = " + b); //$NON-NLS-1$
 	}
 
 	private static void narrowIntToByte(int i) throws ArithmeticException {
 		// check if i is within byte range
 		if ((i < Byte.MIN_VALUE) || (i > Byte.MAX_VALUE)) {
-			throw new ArithmeticException("Int value is out of range");
+			throw new ArithmeticException("Int value is out of range"); //$NON-NLS-1$
 		}
 
 		byte b = (byte) i;
-		System.out.println("b = " + b);
+		System.out.println("b = " + b); //$NON-NLS-1$
 	}
 
 	private static void fpToIntWrong(float f) {
 		// Converted to int then narrowed to short
 		short s = (short) f;
-		System.out.println("(short) s = " + s);
+		System.out.println("(short) s = " + s); //$NON-NLS-1$
 		
 		// Converted to Integer.MAX_VALUE
 		int i = (int) f;
 		if (i == Integer.MAX_VALUE) {
-			System.out.println("i = Integer.MAX_VALUE");
+			System.out.println("i = Integer.MAX_VALUE"); //$NON-NLS-1$
 		}
 		
 		// Converted to Long.MAX_VALUE
 		long l = (long) f;
 		if (l == Long.MAX_VALUE) {
-			System.out.println("l = Long.MAX_VALUE");
+			System.out.println("l = Long.MAX_VALUE"); //$NON-NLS-1$
 		}
 	}
 
 	private static void fpToInt(float f) throws ArithmeticException {
 		if ((f < Short.MIN_VALUE) || (f > Short.MAX_VALUE)) {
-			  throw new ArithmeticException ("Float value is out of range");
+			  throw new ArithmeticException ("Float value is out of range"); //$NON-NLS-1$
 			}
 		short s = (short)f;
-		System.out.println("s = " + s);
+		System.out.println("s = " + s); //$NON-NLS-1$
 	}
 
 	public static void main(String[] args) {
@@ -71,7 +71,7 @@ class Conversions {
 		try {
 			narrowIntToByte(128);
 		} catch (ArithmeticException ae) {
-			System.err.println("ArithmeticException: " + ae.getMessage());
+			System.err.println("ArithmeticException: " + ae.getMessage()); //$NON-NLS-1$
 		}
 		
 		// Floating-Point to Integer Conversion
@@ -80,7 +80,7 @@ class Conversions {
 		try {
 			fpToInt(Float.MAX_VALUE);
 		} catch (ArithmeticException ae) {
-			System.err.println("ArithmeticException: " + ae.getMessage());
+			System.err.println("ArithmeticException: " + ae.getMessage()); //$NON-NLS-1$
 		}
 	}
 }

@@ -26,12 +26,12 @@ class UserApp {
 	public static void main(String[] args) {
 		BankOperations bo;
 		try {
-			bo = new BankOperations();  // step into
+			bo = new BankOperations("Robert");  // step into //$NON-NLS-1$
 		} catch (SecurityException ex) {
 			bo = null;
 		}
 
 		Storage.store(bo);
-		System.out.println("Proceed with normal logic");
+		System.out.println("Proceed with normal logic"); //$NON-NLS-1$
 	}
 }

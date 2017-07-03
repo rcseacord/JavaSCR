@@ -28,19 +28,20 @@ public final class Period implements Serializable {
     this.start = new Date(start.getTime());
     this.end = new Date(end.getTime());
     if (this.start.compareTo(this.end) > 0)
-      throw new IllegalArgumentException(start + " after " + end);
+      throw new IllegalArgumentException(start + " after " + end); //$NON-NLS-1$
   }
 
   public Date start() {
-    return new Date(start.getTime());
+    return new Date(this.start.getTime());
   }
 
   public Date end() {
-    return new Date(end.getTime());
+    return new Date(this.end.getTime());
   }
 
+  @Override
   public String toString() {
-    return start + " - " + end;
+    return this.start + " - " + this.end; //$NON-NLS-1$
   }
 
   // Serialization proxy for Period class
@@ -57,7 +58,7 @@ public final class Period implements Serializable {
 
     // readResolve method for Period.SerializationProxy
     private Object readResolve() {
-      return new Period(start, end); // Uses public constructor
+      return new Period(this.start, this.end); // Uses public constructor
     }
   }
 
@@ -70,7 +71,7 @@ public final class Period implements Serializable {
 
   // readObject method for the serialization proxy pattern
   private void readObject(ObjectInputStream stream) throws InvalidObjectException {
-    throw new InvalidObjectException("Proxy required");
+    throw new InvalidObjectException("Proxy required"); //$NON-NLS-1$
   }
 
   // The rest of this is to serialize/deserialize
@@ -79,11 +80,10 @@ public final class Period implements Serializable {
   }
 
   static byte[] serialize(Object o) throws IOException {
-    ByteArrayOutputStream ba = new ByteArrayOutputStream();
-    ObjectOutputStream oos = new ObjectOutputStream(ba);
-    oos.writeObject(o);
-    oos.close();
-    return ba.toByteArray();
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba);) {
+      oos.writeObject(o);
+      return ba.toByteArray();
+    }
   }
 
   public static void main(String[] args) throws Exception {

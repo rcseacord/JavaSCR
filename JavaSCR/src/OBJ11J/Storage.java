@@ -29,7 +29,7 @@ class Storage {
 		// Store only if it is initialized
 		if (bop == null) {
 			if (bo == null) {
-				System.out.println("Invalid object!");
+				System.out.println("Invalid object!"); //$NON-NLS-1$
 				System.exit(1);
 			}
 			bop = bo;

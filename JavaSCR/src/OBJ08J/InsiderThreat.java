@@ -32,30 +32,30 @@ class InsiderThreat {
 		
 		Coordinates ic = new Coordinates();
 		
-	    System.out.println("(" + ic.getX() + "," + ic.getY() + ")");
+	    System.out.println("(" + ic.getX() + "," + ic.getY() + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		
 		final Method methods[] = Coordinates.class.getDeclaredMethods();
 
 		// Enumerate methods
 		for (Method method : methods) {
-			System.out.println("Method: " + method);
+			System.out.println("Method: " + method); //$NON-NLS-1$
 		}
 		
-	    Method m = Coordinates.class.getDeclaredMethod("access$1", Coordinates.class);
+	    Method m = Coordinates.class.getDeclaredMethod("access$1", Coordinates.class); //$NON-NLS-1$
 	    Integer x = (Integer) m.invoke(null, ic);	    
-	    m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class);
+	    m = Coordinates.class.getDeclaredMethod("access$0", Coordinates.class); //$NON-NLS-1$
 	    Integer y = (Integer) m.invoke(null, ic);
-	    System.out.println("(" + x + "," + y + ")");
+	    System.out.println("(" + x + "," + y + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	    
 	    LambdaScopeTest lst = new LambdaScopeTest();
 		final Method lmethods[] = LambdaScopeTest.class.getDeclaredMethods();
 
 		// Enumerate methods
 		for (Method lmethod : lmethods) {
-			System.out.println("Method: " + lmethod);
+			System.out.println("Method: " + lmethod); //$NON-NLS-1$
 		}
 		
-	    m = LambdaScopeTest.class.getDeclaredMethod("access$0", LambdaScopeTest.class);
+	    m = LambdaScopeTest.class.getDeclaredMethod("access$0", LambdaScopeTest.class); //$NON-NLS-1$
 	    x = (Integer) m.invoke(null, lst);	
 	    System.out.println(x);   
 	}

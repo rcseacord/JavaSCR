@@ -10,6 +10,6 @@ class UnsafeVarargs {
 	}
 
 	public static void main(String[] args) {
-		String[] bar = arrayOfTwo("hi", "mom");
+		String[] bar = arrayOfTwo("hi", "mom"); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

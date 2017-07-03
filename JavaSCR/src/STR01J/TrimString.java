@@ -37,9 +37,9 @@ class TrimString {
 	}
 
 	public static void main(String[] args) {
-		String s1 = trim("Aß東𐐀001");
+		String s1 = trim("Aß東𐐀001"); //$NON-NLS-1$
 		System.out.println(s1);
-		String s2 = trim("𐐀𐐀𐐀𐐀𐐀𐐀𐐀𐐀1");
+		String s2 = trim("𐐀𐐀𐐀𐐀𐐀𐐀𐐀𐐀1"); //$NON-NLS-1$
 		System.out.println(s2);
 	}
 

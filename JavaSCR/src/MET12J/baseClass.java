@@ -23,9 +23,10 @@
 package MET12J;
 
 class baseClass {
-	protected void finalize() throws Throwable {
+	@Override
+  protected void finalize() throws Throwable {
 		super.finalize();
-		System.out.println("Superclass finalize!");
+		System.out.println("Superclass finalize!"); //$NON-NLS-1$
 		// Calls the doLogic() method, which happens to be overridden in the
 		// SubClass. This resurrects a reference to SubClass that not only
 		// prevents it from being garbage-collected but also prevents it
@@ -35,6 +36,6 @@ class baseClass {
 	}
 
 	void doLogic() throws Throwable {
-		System.out.println("This is super-class!");
+		System.out.println("This is super-class!"); //$NON-NLS-1$
 	}
 }

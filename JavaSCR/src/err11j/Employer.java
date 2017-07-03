@@ -8,11 +8,11 @@ class Employer {
         this.dao = dao;
     }
  
-    public void findEmployee(String keyword) throws EmployeeException {
+    public static void findEmployee(String keyword) throws EmployeeException {
         try {
-            dao.list();
+            EmployeeDAO.list();
         } catch (DAOException ex) {
-            throw new EmployeeException("Can't find employee " + keyword);
+            throw new EmployeeException("Can't find employee " + keyword); //$NON-NLS-1$
         }
     }
 }

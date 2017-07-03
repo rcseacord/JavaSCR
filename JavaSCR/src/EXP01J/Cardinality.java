@@ -48,12 +48,12 @@ class Cardinality {
 	public static void main(String[] args) {
 		// a non-null List of nullable Strings
 		@NonNull List<@Nullable String> myList = new ArrayList<@Nullable String>();
-		myList.add("Java");
-		myList.add("C");
+		myList.add("Java"); //$NON-NLS-1$
+		myList.add("C"); //$NON-NLS-1$
 		myList.add(null);
-		myList.add("C++");
-		System.out.println("Cardinality of myList: " + cardinality("C", myList));
-		System.out.println("Cardinality of myList: " + cardinality(null, myList));
+		myList.add("C++"); //$NON-NLS-1$
+		System.out.println("Cardinality of myList: " + cardinality("C", myList)); //$NON-NLS-1$ //$NON-NLS-2$
+		System.out.println("Cardinality of myList: " + cardinality(null, myList)); //$NON-NLS-1$
 	}
 
 }

@@ -47,14 +47,14 @@ import javax.crypto.SealedObject;
 class MapSerializer {
   private static SerializableMap<String, String> buildMap() {
     SerializableMap<String, String> map = new SerializableMap<>();
-    map.setData("John Doe", "012-34-5678");
-    map.setData("Jane Doe", "987-65-4321");
+    map.setData("John Doe", "012-34-5678"); //$NON-NLS-1$ //$NON-NLS-2$
+    map.setData("Jane Doe", "987-65-4321"); //$NON-NLS-1$ //$NON-NLS-2$
     return map;
   }
 
   private static void InspectMap(SerializableMap<String, String> map) {
-    System.out.println("John Doe CC#: " + map.getData("John Doe"));
-    System.out.println("Jane Doe CC#: " + map.getData("Jane Doe"));
+    System.out.println("John Doe CC#: " + map.getData("John Doe")); //$NON-NLS-1$ //$NON-NLS-2$
+    System.out.println("Jane Doe CC#: " + map.getData("Jane Doe")); //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   @SuppressWarnings("unchecked")
@@ -64,38 +64,40 @@ class MapSerializer {
 
     try {
       // Generate signing public/private key pair & sign map
-      KeyPairGenerator kpg = KeyPairGenerator.getInstance("DSA");
+      KeyPairGenerator kpg = KeyPairGenerator.getInstance("DSA"); //$NON-NLS-1$
       KeyPair kp = kpg.generateKeyPair();
-      Signature sig = Signature.getInstance("SHA1withDSA");
+      Signature sig = Signature.getInstance("SHA1withDSA"); //$NON-NLS-1$
       SignedObject signedMap = new SignedObject(map, kp.getPrivate(), sig);
 
       // Generate sealing key & seal map
       KeyGenerator generator;
-      generator = KeyGenerator.getInstance("AES");
+      generator = KeyGenerator.getInstance("AES"); //$NON-NLS-1$
       generator.init(new SecureRandom());
       Key key = generator.generateKey();
-      Cipher cipher = Cipher.getInstance("AES");
+      Cipher cipher = Cipher.getInstance("AES"); //$NON-NLS-1$
       cipher.init(Cipher.ENCRYPT_MODE, key);
       SealedObject sealedMap = new SealedObject(signedMap, cipher);
 
       // Serialize map
-      ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("data"));
-      out.writeObject(sealedMap);
-      out.close();
+      try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("data")); //$NON-NLS-1$
+      ) {
+        out.writeObject(sealedMap);
+      }
 
       // Deserialize map
-      ObjectInputStream in = new ObjectInputStream(new FileInputStream("data"));
-      sealedMap = (SealedObject) in.readObject();
-      in.close();
+      try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("data")); //$NON-NLS-1$
+      ) {
+        sealedMap = (SealedObject) in.readObject();
+      }
 
       // Unseal map
-      cipher = Cipher.getInstance("AES");
+      cipher = Cipher.getInstance("AES"); //$NON-NLS-1$
       cipher.init(Cipher.DECRYPT_MODE, key);
       signedMap = (SignedObject) sealedMap.getObject(cipher);
 
       // Verify signature and retrieve map
       if (!signedMap.verify(kp.getPublic(), sig)) {
-        System.err.println("Map failed verification");
+        System.err.println("Map failed verification"); //$NON-NLS-1$
       }
 
       map = (SerializableMap<String, String>) signedMap.getObject();

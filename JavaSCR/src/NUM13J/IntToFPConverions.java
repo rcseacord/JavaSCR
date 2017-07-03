@@ -33,7 +33,7 @@ class IntToFPConverions {
 
 		// The significand can store at most 23 bits
 		if ((op2 > 0x007fffff) || (op2 < -0x800000)) {
-			throw new ArithmeticException("Insufficient precision");
+			throw new ArithmeticException("Insufficient precision"); //$NON-NLS-1$
 		}
 
 		return op1 - (int) op2;
@@ -46,7 +46,7 @@ class IntToFPConverions {
 		try {
 			result = subFloatFromInt(1234567890, 1234567890);
 		} catch (ArithmeticException ae) {
-			System.err.println("ArithmeticException: " + ae.getMessage());
+			System.err.println("ArithmeticException: " + ae.getMessage()); //$NON-NLS-1$
 		}
 		System.out.println(result);
 	}

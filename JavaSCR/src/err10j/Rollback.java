@@ -1,4 +1,3 @@
-
 /*
 
 package err10j;
@@ -50,7 +49,6 @@ class Rollback {
 	static void Main()  {
     	Book OMaM = new Book("Of Mice and Men");
 
-        
         using (FileInputStream fs = new FileInputStream(@"..\..\DataFile.dat", FileMode.Create))
         {
             SerializeObjectGraph(fs, new BinaryFormatter(), new Book("Of Mice and Men"));

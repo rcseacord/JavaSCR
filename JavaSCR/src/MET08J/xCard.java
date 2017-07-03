@@ -29,7 +29,8 @@ class xCard extends card {
 	    this.type = type;
 	  }
 	 
-	  public boolean equals(Object o) {
+	  @Override
+    public boolean equals(Object o) {
 	    if (!(o instanceof card)) {
 	      return false;
 	    }
@@ -41,19 +42,20 @@ class xCard extends card {
 	 
 	    // It is an xCard, compare type as well
 	    xCard xc = (xCard)o;
-	    return super.equals(o) && xc.type == type;
+	    return super.equals(o) && xc.type == this.type;
 	  }
 	 
 		// Comply with MET09-J
-		public int hashCode() {
+		@Override
+    public int hashCode() {
 			/* ... */
 			return 0;
 		}
 	 
 	  public static void main(String[] args) {
-	    xCard p1 = new xCard(1, "type1");
+	    xCard p1 = new xCard(1, "type1"); //$NON-NLS-1$
 	    card p2 = new card(1);
-	    xCard p3 = new xCard(1, "type2");
+	    xCard p3 = new xCard(1, "type2"); //$NON-NLS-1$
 	    
 	    // p1 and p2 compare equal and p2 and p3 compare equal, 
 	    // but p1 and p3 compare unequal, violating the transitivity requirement. 

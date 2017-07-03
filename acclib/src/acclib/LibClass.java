@@ -22,26 +22,20 @@
 
 package acclib;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
 public class LibClass {
-  public static final String OPTIONS = "acc01j.lib.options"; //$NON-NLS-1$
+    public static final String OPTIONS = "acc01j.lib.options"; //$NON-NLS-1$
 
-  public static String getOptions() {
-    // checked by SecurityManager
-    return System.getProperty(OPTIONS);
-  }
-
-  public static String getPrivOptions() {
-    return AccessController.doPrivileged((PrivilegedAction<String>) () -> System.getProperty(OPTIONS));
-  }
-
-  public Object invoke(Method m, Object[] args)
-      throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-    return m.invoke(this, args);
-  }
-
+    public static String getOptions() {
+        // checked by SecurityManager
+        return System.getProperty(OPTIONS);
+    }
+    
+    public static String getPrivOptions() {    
+      return AccessController.doPrivileged((PrivilegedAction<String>) () 
+          -> System.getProperty(OPTIONS));
+    }
+    
 } // end LibClass

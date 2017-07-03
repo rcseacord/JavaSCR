@@ -27,20 +27,16 @@ import java.math.BigInteger;
 
 class ByteToString {
 
-  private static BigInteger StringToBigInteger(String s) {
+  private static BigInteger StringToBigInteger(String s) throws UnsupportedEncodingException {
     String ns = null;
-    try {
-      byte[] byteArray = s.getBytes("UTF-8");
-      ns = new String(byteArray, "UTF-8");
-    } catch (UnsupportedEncodingException ex) {
-      // handle error
-    }
+    byte[] byteArray = s.getBytes("UTF-8"); //$NON-NLS-1$
+    ns = new String(byteArray, "UTF-8"); //$NON-NLS-1$
     return new BigInteger(ns);
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws UnsupportedEncodingException {
     // Generate binary data instead of string data
-    BigInteger x = new BigInteger("530500452766");
+    BigInteger x = new BigInteger("530500452766"); //$NON-NLS-1$
     byte[] byteArray = x.toByteArray();
     String s = new String(byteArray);
     try {
@@ -49,7 +45,7 @@ class ByteToString {
       nfe.printStackTrace();
     }
     
-    x = new BigInteger("530500452766");
+    x = new BigInteger("530500452766"); //$NON-NLS-1$
     s = x.toString(); // valid character data
     x = StringToBigInteger(s);
     System.out.println(x);

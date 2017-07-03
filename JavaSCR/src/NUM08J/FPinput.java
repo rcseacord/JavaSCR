@@ -31,32 +31,32 @@ class FPinput {
 		try {
 			val = Double.valueOf(userInput);
 		} catch (NumberFormatException e) {
-			System.err.println("input format error");
+			System.err.println("input format error"); //$NON-NLS-1$
 			return;
 		}
 		
 		if (!Double.isFinite(val)) {
-			System.err.println("value is not finite");
+			System.err.println("value is not finite"); //$NON-NLS-1$
 			return;
 		}
 
 		if (val >= Double.MAX_VALUE - currentBalance) {
-			System.err.println("input range error");
+			System.err.println("input range error"); //$NON-NLS-1$
 			return;
 		}
 		
-		System.err.println("updating balance");
+		System.err.println("updating balance"); //$NON-NLS-1$
 		currentBalance += val;
 
 	}
 
 	public static void main(String[] args) {
-		doDeposit("-Infinity");
-		doDeposit("Infinity");
-		doDeposit("NaN");
-		doDeposit("-infinity");
-		doDeposit("infinity");
-		doDeposit("nan");
+		doDeposit("-Infinity"); //$NON-NLS-1$
+		doDeposit("Infinity"); //$NON-NLS-1$
+		doDeposit("NaN"); //$NON-NLS-1$
+		doDeposit("-infinity"); //$NON-NLS-1$
+		doDeposit("infinity"); //$NON-NLS-1$
+		doDeposit("nan"); //$NON-NLS-1$
 	}
 
 }

@@ -30,7 +30,8 @@ class SubCloneExample extends BadClone {
 		super(c);
 	}
 
-	public Object clone() throws CloneNotSupportedException {
+	@Override
+  public Object clone() throws CloneNotSupportedException {
 		final SubCloneExample clone = (SubCloneExample) super.clone();
 		clone.doSomething();
 		return clone;
@@ -50,7 +51,7 @@ class SubCloneExample extends BadClone {
 		HttpCookie[] hc = new HttpCookie[5];
 		// Cookie values initialized to "0"
 		for (int i = 0; i < hc.length; i++) {
-			hc[i] = new HttpCookie("cookie" + i, "0");
+			hc[i] = new HttpCookie("cookie" + i, "0"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		BadClone bc = new SubCloneExample(hc);
 		bc.clone();

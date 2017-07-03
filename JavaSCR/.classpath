@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry excluding="ser05j/BikeFilter.java" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_131"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/Documents/NCC Training/Java Course/checker-qual.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_131/jre/lib/SerialKiller-0.4-all.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_131/jre/lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/javassist/lib/javassist.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/java/sacclib.jar" sourcepath="/acclib/src/acclib"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

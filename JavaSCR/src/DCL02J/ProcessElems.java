@@ -52,10 +52,10 @@ class ProcessElems {
 	public static void main(String[] args) {
 		List<String> myList = new ArrayList<>();
 		Iterator<String> i = myList.iterator();
-		myList.add("Java");
+		myList.add("Java"); //$NON-NLS-1$
 		myList.add(null);
-		myList.add("C");
-		myList.add("C++");
+		myList.add("C"); //$NON-NLS-1$
+		myList.add("C++"); //$NON-NLS-1$
 
 		for (String s : myList) {
 			if (s == null) { // skip null items

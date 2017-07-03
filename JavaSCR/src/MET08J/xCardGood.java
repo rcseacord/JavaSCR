@@ -30,35 +30,37 @@ class xCardGood {
   final private card card;
  
   private xCardGood(int number, String type) {
-    card = new card(number);
+    this.card = new card(number);
     this.type = type;
   }
  
   // new viewCard() method added
   public card viewCard() {
-    return card;
+    return this.card;
   }
  
+  @Override
   public boolean equals(Object o) {
     if (!(o instanceof xCardGood)) {
       return false;
     }
  
     xCardGood cp = (xCardGood)o;
-    return cp.card.equals(card) && cp.type.equals(type);
+    return cp.card.equals(this.card) && cp.type.equals(this.type);
   }
  
 	// Comply with MET09-J
-	public int hashCode() {
+	@Override
+  public int hashCode() {
 		/* ... */
 		return 0;
 	}
  
   public static void main(String[] args) {
-    xCardGood p1 = new xCardGood(1, "type1");
+    xCardGood p1 = new xCardGood(1, "type1"); //$NON-NLS-1$
     card p2 = new card(1);
-    xCardGood p3 = new xCardGood(1, "type2");
-    xCardGood p4 = new xCardGood(1, "type1");
+    xCardGood p3 = new xCardGood(1, "type2"); //$NON-NLS-1$
+    xCardGood p4 = new xCardGood(1, "type1"); //$NON-NLS-1$
     System.out.println(p1.equals(p2)); // Prints false
     System.out.println(p2.equals(p3)); // Prints false
     System.out.println(p1.equals(p3)); // Prints false

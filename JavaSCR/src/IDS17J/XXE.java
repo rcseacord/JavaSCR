@@ -59,35 +59,35 @@ class XXE {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
-		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
+		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) { //$NON-NLS-1$
 			receiveXMLStreamBad(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {
 			System.err.println(ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		}
 
-		try (FileInputStream fis = new FileInputStream("src/IDS17J/good.xml")) {
+		try (FileInputStream fis = new FileInputStream("src/IDS17J/good.xml")) { //$NON-NLS-1$
 			receiveXMLStream(fis, new DefaultHandler());
 		} catch (SAXException | IOException ex) {
 			System.err.println(ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		}
 		
-		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) {
+		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) { //$NON-NLS-1$
 			receiveXMLStream(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {
 			System.err.println(ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
-				System.err.println("suppressed exception: " + aSuppressed.toString());
+				System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
 			}
 		}
 	}

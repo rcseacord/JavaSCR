@@ -19,6 +19,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+
 package ids04j;
 
 import java.io.BufferedInputStream;
@@ -45,7 +46,7 @@ public class SecureUnzip {
     if (canonicalPath.startsWith(canonicalID)) {
       return canonicalPath;
     }
-    throw new IllegalStateException("File is outside extraction target directory."); //$NON-NLS-1$
+    throw new IllegalStateException("File is outside extraction target directory."); 
   }
 
   public final static void unzip(String filename) throws java.io.IOException {
@@ -54,14 +55,14 @@ public class SecureUnzip {
       int entries = 0;
       long total = 0;
       while ((entry = zis.getNextEntry()) != null) {
-        System.out.println("Extracting: " + entry); //$NON-NLS-1$
+        System.out.println("Extracting: " + entry); 
         int count;
         byte data[] = new byte[BUFFER];
         // Write the files to the disk, but ensure that the filename is valid,
         // and that the file is not insanely big
-        String name = validateFilename(entry.getName(), "."); //$NON-NLS-1$
+        String name = validateFilename(entry.getName(), "."); 
         if (entry.isDirectory()) {
-          System.out.println("Creating directory " + name); //$NON-NLS-1$
+          System.out.println("Creating directory " + name); 
           new File(name).mkdir();
           continue;
         }
@@ -69,7 +70,7 @@ public class SecureUnzip {
           while ((count = zis.read(data, 0, BUFFER)) != -1) {
             total += count;
             if (total >= TOOBIG) {
-              throw new IllegalStateException("Data limit exceeded."); //$NON-NLS-1$
+              throw new IllegalStateException("Data limit exceeded."); 
             }
             dest.write(data, 0, count);
           }
@@ -78,7 +79,7 @@ public class SecureUnzip {
         zis.closeEntry();
         entries++;
         if (entries > TOOMANY) {
-          throw new IllegalStateException("File limited exceeded."); //$NON-NLS-1$
+          throw new IllegalStateException("File limited exceeded."); 
         }
       }  // end while more zip file entries
     } // end try-with-resources block
@@ -86,7 +87,7 @@ public class SecureUnzip {
 
   public static void main(String[] args) {
     try {
-      unzip("./src/ids04j/10GB/10GB.zip"); //$NON-NLS-1$
+      unzip("./src/ids04j/10GB/10GB.zip"); 
     } catch (IOException e) {
       System.err.println(e);
     }

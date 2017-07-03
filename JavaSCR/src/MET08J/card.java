@@ -29,7 +29,8 @@ public class card {
 		this.number = number;
 	}
 
-	public boolean equals(Object o) {
+	@Override
+  public boolean equals(Object o) {
 		if (!(o instanceof card)) {
 			return false;
 		}
@@ -39,7 +40,8 @@ public class card {
 	}
 
 	// Comply with MET09-J
-	public int hashCode() {
+	@Override
+  public int hashCode() {
 		/* ... */
 		return 0;
 	}

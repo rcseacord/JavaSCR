@@ -48,13 +48,14 @@ public class Interceptor extends BankOperations {
 
 	// attacker's finalizer obtains and stores a reference by using the this
 	// keyword.
-	public void finalize() throws Throwable {
+	@Override
+  public void finalize() throws Throwable {
 		super.finalize();
 		synchronized (Interceptor.class) {
 			stealInstance = this;
 			Interceptor.class.notify();
 		}
-		System.out.println("Stole the instance in finalize of " + this);
+		System.out.println("Stole the instance in finalize of " + this); //$NON-NLS-1$
 		// The attacker can now maliciously invoke any instance method
 		// on the base class by using the stolen instance reference. This attack
 		// can even bypass a check by a security manager.

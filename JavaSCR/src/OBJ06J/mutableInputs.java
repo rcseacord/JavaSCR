@@ -28,12 +28,12 @@ import java.util.Objects;
 final class mutableInputs {
 
 	private void doLogic(HttpCookie cookie) {
-		System.out.println("Do stuff");
+		System.out.println("Do stuff"); //$NON-NLS-1$
 	}
 
 	// java.net.HttpCookie is mutable
 	public void useMutableInput(HttpCookie cookie) {
-		Objects.requireNonNull(cookie, "cookie cannot be null");
+		Objects.requireNonNull(cookie, "cookie cannot be null"); //$NON-NLS-1$
 		// Check whether cookie has expired
 		if (cookie.hasExpired()) {
 			throw new IllegalArgumentException();

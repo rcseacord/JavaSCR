@@ -28,17 +28,17 @@ import java.util.regex.Matcher;
 
 class ValidateString {
 	
-	private static String NormalizeandValidate(String s) {
+	private static String NormalizeandValidate(String input) {
 
 		// Validate
-		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
-		Matcher matcher = pattern.matcher(s);
+		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets //$NON-NLS-1$
+		String s = input;
+    Matcher matcher = pattern.matcher(s);
 		if (matcher.find()) {
 			// Found black listed tag
 			throw new IllegalStateException();
-		} else {
-			System.out.println("valid input");
 		}
+    System.out.println("valid input"); //$NON-NLS-1$
 		
 		// Normalize
 		s = Normalizer.normalize(s, Form.NFKC);
@@ -50,10 +50,10 @@ class ValidateString {
 		// Assume input is user controlled
 		// \uFE64 is normalized to < and \uFE65 is normalized to > using the
 		// NFKC normalization form
-		String input = "\uFE64" + "script" + "\uFE65";
-		System.out.println("unnormalized string: " + input);
+		String input = "\uFE64" + "script" + "\uFE65"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		System.out.println("unnormalized string: " + input); //$NON-NLS-1$
 		input = NormalizeandValidate(input);
-		System.out.println("normalized string: " + input);
+		System.out.println("normalized string: " + input); //$NON-NLS-1$
 	}
 }
 

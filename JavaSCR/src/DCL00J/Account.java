@@ -58,11 +58,12 @@ class Account {
 	private Account() {
 		// Calculate the account balance by subtracting the 
 		// processing fee from the deposited amount.
-		balance = deposit - 10; 
+		this.balance = deposit - 10; 
 	}
 
 	public static void main(String[] args) {
-		System.out.println("The account balance is: " + c.balance);
+		System.out.println("The account balance is: " + c.balance); //$NON-NLS-1$
+
 	}
 
 }

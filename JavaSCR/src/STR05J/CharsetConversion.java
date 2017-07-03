@@ -42,7 +42,7 @@ class CharsetConversion {
     CharsetDecoder decoder = StandardCharsets.UTF_16.newDecoder();
 
     // Use String constructor
-    BigInteger x = new BigInteger("530500452766");
+    BigInteger x = new BigInteger("530500452766"); //$NON-NLS-1$
     byte[] byteArray = x.toByteArray();
     String s = new String(byteArray);
     System.out.println(s);

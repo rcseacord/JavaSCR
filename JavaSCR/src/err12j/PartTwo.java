@@ -34,37 +34,38 @@ import java.util.Calendar;
 
 public final class PartTwo implements AutoCloseable {
   private static final CopyOption[] options = { StandardCopyOption.COPY_ATTRIBUTES };
-  private static final Charset charset = Charset.forName("US-ASCII");
-  private static final String s = "File ID";
+  private static final Charset charset = Charset.forName("US-ASCII"); //$NON-NLS-1$
+  private static final String s = "File ID"; //$NON-NLS-1$
   private final Path filepath;
   private BufferedWriter writer;
 
   public PartTwo(Path pathname) throws IOException {
-    filepath = pathname;
-    writer = Files.newBufferedWriter(filepath, charset);
-    writer.write(s, 0, s.length());
-    writer.flush();
+    this.filepath = pathname;
+    this.writer = Files.newBufferedWriter(this.filepath, charset);
+    this.writer.write(s, 0, s.length());
+    this.writer.flush();
   }
   
   // copy constructor
   public PartTwo(PartTwo p2) throws IOException {
-    filepath = Paths.get(p2.filepath + "copy");
-    Files.copy(p2.filepath, filepath, options);
-    writer = Files.newBufferedWriter(filepath, charset);
+    this.filepath = Paths.get(p2.filepath + "copy"); //$NON-NLS-1$
+    Files.copy(p2.filepath, this.filepath, options);
+    this.writer = Files.newBufferedWriter(this.filepath, charset);
   }
 
   public void setNow(Calendar rightNow) throws IOException {
-    writer.write(rightNow.toString());  
-    writer.flush();
-    // throw new IOException("injected fault");
+    this.writer.write(rightNow.toString());  
+    this.writer.flush();
+ // throw new IOException("injected fault");
   }
   
+  @Override
   public void close() throws IOException {
     try {
-      writer.close();
+      this.writer.close();
     } finally {
-      writer = null;
-      Files.delete(filepath);
+      this.writer = null;
+      Files.delete(this.filepath);
     }
   }
 

@@ -28,6 +28,6 @@ class superClass {
 	  }
 	 
 	  public void doLogic() {
-	    System.out.println("This is superclass!");
+	    System.out.println("This is superclass!"); //$NON-NLS-1$
 	  }
 	}

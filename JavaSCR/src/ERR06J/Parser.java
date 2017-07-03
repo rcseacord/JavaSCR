@@ -28,11 +28,11 @@ import java.io.IOException;
 class Parser<T extends Exception> {
   @SuppressWarnings("unchecked")
   public void parse(String s) throws T {     // OK
-      throw (T) new AWTException("oopsie");
+      throw (T) new AWTException("oopsie"); //$NON-NLS-1$
   }
   
   public static void main(String[] args) {
-    String s = "my new string";
+    String s = "my new string"; //$NON-NLS-1$
     Parser<IOException> p = new Parser<>();
     try {
       p.parse(s);
