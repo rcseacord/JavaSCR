@@ -21,17 +21,17 @@
 // SOFTWARE.
 
 package acc01j;
+import acclib.*;
 
 class AppClass {
   public static void main(String[] args) {
     SecurityManager sm = System.getSecurityManager();
-    if (sm != null) {
+    if (sm != null) { 
       System.out.println("Security manager installed."); //$NON-NLS-1$
     } else {
       System.out.println("No security manager."); //$NON-NLS-1$
     }
-    System.setProperty(acc01j.LibClass.OPTIONS, "extra-secure"); //$NON-NLS-1$
-
-    System.out.println(acc01j.LibClass.getOptions());
+   System.setProperty(LibClass.OPTIONS, "extra-secure"); //$NON-NLS-1$
+   System.out.println(LibClass.getOptions());
   }
 }
