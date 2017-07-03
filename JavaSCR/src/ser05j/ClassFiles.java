@@ -12,12 +12,12 @@ public class ClassFiles {
   public static String classAsFile(final Class<?> clazz, boolean suffix) {
     String str;
     if (clazz.getEnclosingClass() == null) {
-      str = clazz.getName().replace(".", "/"); //$NON-NLS-1$ //$NON-NLS-2$
+      str = clazz.getName().replace(".", "/"); 
     } else {
-      str = classAsFile(clazz.getEnclosingClass(), false) + "$" + clazz.getSimpleName(); //$NON-NLS-1$
+      str = classAsFile(clazz.getEnclosingClass(), false) + "$" + clazz.getSimpleName(); 
     }
     if (suffix) {
-      str += ".class";       //$NON-NLS-1$
+      str += ".class";    
     }
     return str;  
   }

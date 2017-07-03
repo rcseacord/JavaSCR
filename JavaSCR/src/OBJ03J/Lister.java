@@ -21,7 +21,7 @@ public class Lister {
   }
   
   public static void main(String[] args) {
-    List<String> agents = new LinkedList<>(Arrays.asList("steven", "sean", "rex", "donald")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    List<String> agents = new LinkedList<>(Arrays.asList("steven", "sean", "rex", "donald")); 
     List<Integer> payments = new LinkedList<>(Arrays.asList(100000, 200000, 300000, 500000));
     
     List<?> agents5 = fetchNextBatchRecords(agents, 5);
@@ -29,21 +29,21 @@ public class Lister {
       System.out.println(agent);
     } // end for
     
-    System.out.println("-------------------------"); //$NON-NLS-1$
+    System.out.println("-------------------------"); 
     
     List<?> agents2 = fetchNextBatchRecords(agents, 2);
     for (Object agent : agents2) {
       System.out.println(agent);
     } // end for
   
-    System.out.println("-------------------------"); //$NON-NLS-1$
+    System.out.println("-------------------------"); 
     
     List<?> bribes = fetchNextBatchRecords(payments, 5);
     for (Object bribe : bribes) {
       System.out.println(bribe);
     } // end for
     
-    System.out.println("-------------------------"); //$NON-NLS-1$
+    System.out.println("-------------------------"); 
     
      for (Object agent : agents) {
       System.out.println(agent);
