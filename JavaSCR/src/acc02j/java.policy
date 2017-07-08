@@ -1,0 +1,9 @@
+keystore "file:/C:/Users/rseacord/classkeystore", "pkcs12";
+keystorePasswordURL "file:/C:/Users/rseacord/kspass.txt";
+
+grant codeBase "file:/C:/Users/rseacord/git/JavaSCR/-" {
+  permission java.util.PropertyPermission "acc01j.lib.options", "write";
+};
+grant signedBy "course", codeBase "file:/C:/Users/rseacord/java/-" {
+  permission java.util.PropertyPermission "acc01j.lib.options", "read";
+};

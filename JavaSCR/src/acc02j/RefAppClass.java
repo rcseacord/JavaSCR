@@ -30,17 +30,17 @@ class RefAppClass {
   public static void main(String[] args) {
     SecurityManager sm = System.getSecurityManager();
     if (sm != null) { 
-      System.out.println("Security manager installed."); //$NON-NLS-1$
+      System.out.println("Security manager installed."); 
     } else {
-      System.out.println("No security manager."); //$NON-NLS-1$
+      System.out.println("No security manager."); 
     }
     
-    System.setProperty(LibClass.OPTIONS, "extra-secure"); //$NON-NLS-1$
+    System.setProperty(LibClass.OPTIONS, "extra-secure"); 
     LibClass lc = new LibClass();
     Method m;
     try {
-      m = lc.getClass().getMethod("getOptions"); //$NON-NLS-1$
-      System.out.println("Options = " + lc.invoke(m, null)); //$NON-NLS-1$
+      m = lc.getClass().getMethod("getOptions"); 
+      System.out.println("Options = " + lc.invoke(m, null)); 
     } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
       e.printStackTrace();
     }
