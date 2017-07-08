@@ -28,7 +28,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 
 public class LibClass {
-  public static final String OPTIONS = "acc01j.lib.options"; //$NON-NLS-1$
+  public static final String OPTIONS = "acc01j.lib.options"; 
 
   public static String getOptions() {
     // checked by SecurityManager
