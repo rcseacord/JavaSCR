@@ -12,8 +12,12 @@ class Employer {
         try {
             EmployeeDAO.list();
         } catch (DAOException ex) {
-            throw new EmployeeException("Can't find employee " + keyword); //$NON-NLS-1$
+            throw new EmployeeException("Can't find employee " + keyword); 
         }
+    }
+
+    public EmployeeDAO getDao() {
+      return this.dao;
     }
 }
 
