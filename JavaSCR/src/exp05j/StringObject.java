@@ -20,71 +20,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package EXP04J;
+package exp05j;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-class ShortSet {
+public class StringObject {
+  public static final Object STRING_OBJECT = "string literal";
 
-	public static void main(String[] args) {
-		HashSet<Short> s = new HashSet<>();
-		for (int i = 0; i < 10; i++) {
-//			s.add(i);
-			s.remove(i); 
-		}
-		System.out.println(s.size());
-	}
+  public static void main(String[] args) {
+    final Map<String, Object> myMap = new HashMap<>();
+    myMap.put((String) STRING_OBJECT, new Integer(5));
+
+    if (myMap.containsKey(STRING_OBJECT)) {
+      System.out.println("Map contains key");
+    } else {
+      System.out.println("Map does not contain key");
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*s.clear();
-	public static void main(String[] args) {
-		HashSet<Short> s = new HashSet<Short>();
-for (int i = 0; i < 10; i++) {
-	s.add((short)i);
-	// remove a Short
-	if (s.remove((short)i) == false) {
-		// EXP00-J. Do not ignore values returned by methods
-		System.err.println("Error removing " + i);
-	}
-}
-System.out.println(s.size());*/
-
-/*
-	public static void main(String[] args) {
-HashSet<Short> s = new HashSet<Short>();
-for (Short i = 0; i < 10; i++) {
-	s.add(i);
-	s.remove(i); // tries to remove an Integer
-}
-System.out.println(s.size());
-}
-*/
