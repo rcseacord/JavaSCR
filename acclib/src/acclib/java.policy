@@ -1,0 +1,6 @@
+keystore "file:${user.home}/classkeystore", "pkcs12";
+keystorePasswordURL "file:${user.home}/kspass.txt";
+
+grant signedBy "course", codeBase "file:${user.home}/java/-" {
+  permission java.util.PropertyPermission "acc01j.lib.options", "read";
+};
