@@ -23,47 +23,65 @@
 package OBJ01J;
 
 import java.lang.reflect.Field;
+import java.security.CodeSource;
+import java.security.Permission;
+import java.security.PermissionCollection;
+import java.security.Policy;
+import java.util.Enumeration;
 
 class PrivReflection {
-	public static void main(String args[]) throws Exception {
+  public static void main(String args[]) throws Exception {
     SecurityManager sm = System.getSecurityManager();
     if (sm != null) {
-      System.out.println("Security manager installed."); //$NON-NLS-1$
+      System.out.println("Security manager installed.");
+
+      // Construct a code source with the code base
+      CodeSource cs = new PrivReflection().getClass().getProtectionDomain().getCodeSource();
+      System.out.println("path: " + cs.getLocation().getPath());
+
+      // Get all granted permissions
+      PermissionCollection pcoll = Policy.getPolicy().getPermissions(cs);
+
+      // View each permission in the permission collection
+      Enumeration<Permission> enum1 = pcoll.elements();
+
+      for (; enum1.hasMoreElements();) {
+        System.out.println(enum1.nextElement());
+      }
+    } else {
+      System.out.println("No security manager.");
     }
-    else {
-      System.out.println("No security manager."); //$NON-NLS-1$
+
+    // Returns an array of Field objects reflecting
+    // all the fields declared by the class (including private)
+    final Field fields[] = FieldTest.class.getDeclaredFields();
+
+    // Enumerate fields
+    for (Field field : fields) {
+      System.out.println("Field: " + field);
     }
-	  
-		// Returns an array of Field objects reflecting 
-		// all the fields declared by the class (including private)
-		final Field fields[] = FieldTest.class.getDeclaredFields();
 
-		// Enumerate fields
-		for (Field field : fields) {
-			System.out.println("Field: " + field); //$NON-NLS-1$
-		}
+    for (Field field : fields) {
+      if ("barPrivStr".equals(field.getName())) {
+        FieldTest fieldTest = new FieldTest();
 
-		for (Field field : fields) {
-			if ("barPrivStr".equals(field.getName())) { //$NON-NLS-1$
-				FieldTest fieldTest = new FieldTest();
+        try {
+          // Get field
+          System.out.println(field.get(fieldTest));
+        } catch (IllegalAccessException iae) {
+          System.err.println("java.lang.IllegalAccessException" + iae.toString());
+        }
+        // Make private field accessible
+        // Policy file: C:/Users/rseacord/.java.policy
+        field.setAccessible(true);
+        // Get field
+        System.out.println(field.get(fieldTest));
 
-				try {
-					// Get field
-					System.out.println(field.get(fieldTest));
-				} catch (IllegalAccessException iae) {
-					System.err.println("java.lang.IllegalAccessException" + iae.toString()); //$NON-NLS-1$
-				}
-				// Make private field accessible
-				// Policy file: C:/Users/rseacord/.java.policy
-				field.setAccessible(true);
-				// Get field
-				System.out.println(field.get(fieldTest));
-
-				// Set field
-				field.set(fieldTest, "fighters"); //$NON-NLS-1$
-				System.out.println(field.get(fieldTest));
-				break;
-			}
-		}
-	}
+        // Set field
+        field.set(fieldTest, "fighters");
+        System.out.println(field.get(fieldTest));
+        break;
+      }
+    }
+  }
 }

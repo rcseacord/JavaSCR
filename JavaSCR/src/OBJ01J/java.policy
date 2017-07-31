@@ -1,0 +1,7 @@
+// Add comments using double slash 
+grant codeBase "file:/C:/Users/rseacord/git/JavaSCR/-" {
+  permission java.security.AllPermission;
+  permission java.lang.RuntimePermission.setSecurityManager; 
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+};
