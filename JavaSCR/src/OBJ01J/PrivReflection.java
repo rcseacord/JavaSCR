@@ -40,13 +40,13 @@ class PrivReflection {
       System.out.println("path: " + cs.getLocation().getPath());
 
       // Get all granted permissions
-      PermissionCollection pcoll = Policy.getPolicy().getPermissions(cs);
-
+      PermissionCollection collectPerm = Policy.getPolicy().getPermissions(cs);
+      
       // View each permission in the permission collection
-      Enumeration<Permission> enum1 = pcoll.elements();
+      Enumeration<Permission> pernEnum = collectPerm.elements();
 
-      for (; enum1.hasMoreElements();) {
-        System.out.println(enum1.nextElement());
+      while (pernEnum.hasMoreElements()) {
+        System.out.println(pernEnum.nextElement());
       }
     } else {
       System.out.println("No security manager.");
