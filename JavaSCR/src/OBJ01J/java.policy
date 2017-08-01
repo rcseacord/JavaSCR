@@ -1,7 +1,8 @@
-// Add comments using double slash 
+// Policy file for OBJ01J
 grant codeBase "file:/C:/Users/rseacord/git/JavaSCR/-" {
-  permission java.security.AllPermission;
-  permission java.lang.RuntimePermission.setSecurityManager; 
-  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  // required to view all granted permissions
+  permission java.lang.RuntimePermission "getProtectionDomain";
+  permission java.security.SecurityPermission "getPolicy";
+  // uncomment out following line to make private fields accessible 
+//  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
 };
