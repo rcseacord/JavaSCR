@@ -21,17 +21,45 @@
 // SOFTWARE.
 
 package acc01j;
+
+import java.security.CodeSource;
+import java.security.Permission;
+import java.security.PermissionCollection;
+import java.security.Policy;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Enumeration;
+import java.util.List;
+
 import acclib.*;
 
 class AppClass {
   public static void main(String[] args) {
     SecurityManager sm = System.getSecurityManager();
-    if (sm != null) { 
-      System.out.println("Security manager installed."); 
+    if (sm != null) {
+      System.out.println("Security manager installed.");
+      List<Class<?>> privClasses = new ArrayList<>();
+      privClasses.add(new AppClass().getClass());
+      privClasses.add(new LibClass().getClass());
+      // Display privileges for all code bases
+      privClasses.forEach(privClass -> {
+        CodeSource cs = new AppClass().getClass().getProtectionDomain().getCodeSource();
+        System.out.println("path: " + cs.getLocation().getPath());
+
+        // Get all granted permissions
+        PermissionCollection collectPerm = Policy.getPolicy().getPermissions(cs);
+
+        // View each permission in the permission collection
+        Enumeration<Permission> permEnum = collectPerm.elements();
+
+        while (permEnum.hasMoreElements()) {
+          System.out.println(permEnum.nextElement());
+        }
+      });
     } else {
-      System.out.println("No security manager."); 
+      System.out.println("No security manager.");
     }
-   System.setProperty(LibClass.OPTIONS, "extra-secure"); 
-   System.out.println(LibClass.getOptions());
+    System.setProperty(LibClass.OPTIONS, "extra-secure");
+    System.out.println(LibClass.getOptions());
   }
 }
