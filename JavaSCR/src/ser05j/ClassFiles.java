@@ -44,6 +44,7 @@ public class ClassFiles {
     return str;  
   }
 
+  @SuppressWarnings("resource")
   public static byte[] classAsBytes(final Class<?> clazz) {
     try {
       final byte[] buffer = new byte[1024];

