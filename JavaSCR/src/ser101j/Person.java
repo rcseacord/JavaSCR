@@ -97,35 +97,35 @@ public class Person implements java.io.Serializable {
 
   @Override
   public String toString() {
-    return "[Person: firstName=" + this.firstName + " lastName=" + this.lastName + " age=" + this.age + " spouse=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-        + this.spouse.getFirstName() + "]"; //$NON-NLS-1$
+    return "[Person: firstName=" + this.firstName + " lastName=" + this.lastName + " age=" + this.age + " spouse="    //$NON-NLS-4$
+        + this.spouse.getFirstName() + "]"; 
   }
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
-    Person p1 = new Person("John", "Doe", "012-34-5678", 25); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-    Person p2 = new Person("Jane", "Doe", "987-65-4321", 24); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    Person p1 = new Person("John", "Doe", "012-34-5678", 25);   
+    Person p2 = new Person("Jane", "Doe", "987-65-4321", 24);   
     // Person p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
-    // //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    //   
     // Person p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
-    // //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    //   
 
     p1.setSpouse(p2);
     p2.setSpouse(p1);
 
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));) { //$NON-NLS-1$
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));) { 
       oos.writeObject(p1);
     }
 
     Person p;
-    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));) {  //$NON-NLS-1$
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));) {  
       p = (Person) ois.readObject();
     }
 
-    if (!Objects.equals(p.getFirstName(), "John") || //$NON-NLS-1$
-        !Objects.equals(p.getSpouse().getFirstName(), "Jane")) { //$NON-NLS-1$
-      System.err.println("Object changed during deserialization"); //$NON-NLS-1$
+    if (!Objects.equals(p.getFirstName(), "John") || 
+        !Objects.equals(p.getSpouse().getFirstName(), "Jane")) { 
+      System.err.println("Object changed during deserialization"); 
     } else {
-      System.out.println("Object succesfully deserialized"); //$NON-NLS-1$
+      System.out.println("Object succesfully deserialized"); 
     }
 
     // Clean up the file
