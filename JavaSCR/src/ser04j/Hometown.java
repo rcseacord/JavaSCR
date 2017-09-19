@@ -36,21 +36,15 @@ public final class Hometown implements Serializable {
   private static final long serialVersionUID = 6515419803685137985L;
   // Private internal state
   private String town;
-  private static final String UNKNOWN = "UNKNOWN"; //$NON-NLS-1$
-  private static final String MOSCOW = "Moscow"; //$NON-NLS-1$
+  private static final String MOSCOW = "Moscow"; 
 
-  static void performSecurityManagerCheck(String newtown) throws AccessDeniedException {
+  static void validateInput(String newtown) throws AccessDeniedException {
     if (MOSCOW.equals(newtown)) {
-      throw new AccessDeniedException("Nyet, comrade"); //$NON-NLS-1$
+      throw new AccessDeniedException("Nyet, comrade"); 
     }
   }
 
-  void validateInput(@SuppressWarnings("unused") String newCC) throws IllegalArgumentException {
-    // ...
-  }
-
   public Hometown(String town) throws AccessDeniedException {
-    performSecurityManagerCheck(town);
     validateInput(town);
     // Initialize town to default value
     this.town = town;
@@ -64,7 +58,6 @@ public final class Hometown implements Serializable {
   // Privileged callers can modify (private) state
   public void setTown(String newTown) throws AccessDeniedException {
     if (!this.town.equals(newTown)) {
-      performSecurityManagerCheck(newTown);
       validateInput(newTown);
       this.town = newTown;
     }
@@ -72,49 +65,71 @@ public final class Hometown implements Serializable {
 
   @SuppressWarnings("static-method")
   private void writeObject(ObjectOutputStream out) throws IOException {
-    System.out.println("writeObject called"); //$NON-NLS-1$
+    System.out.println("writeObject called"); 
     out.defaultWriteObject();
   }
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     String readTown;
     ObjectInputStream.GetField fields = in.readFields();
-    readTown = (String) fields.get("town", null); //$NON-NLS-1$
-    // If the deserialized name does not match the default value normally
-    // created at construction time, duplicate the checks
-    if (!UNKNOWN.equals(readTown)) {
-      performSecurityManagerCheck(readTown);
-      validateInput(readTown);
-    }
-
+    readTown = (String) fields.get("town", null); 
     this.town = readTown;
   }
 
   public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-    Hometown myTown = new Hometown("Pittsburgh"); //$NON-NLS-1$
-    System.out.println("My town is " + myTown.getTown()); //$NON-NLS-1$
+    Hometown myTown = new Hometown("Pittsburgh"); 
+    System.out.println("My town is " + myTown.getTown()); 
 
     // Create object that violates security checks
-    Hometown ht = new Hometown("Warsaw"); //$NON-NLS-1$
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));//$NON-NLS-1$
+    Hometown ht = new Hometown("Warsaw"); 
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));
     ) {
       oos.writeObject(ht);
     }
     // Construct a new object through deserialization
     try (
         // NOTE: File is in %userprofile%\git\JavaSCR\JavaSCR
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));//$NON-NLS-1$
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));
     ) {
       ht = (Hometown) ois.readObject();
     }
-    System.out.println("My town is " + ht.getTown()); //$NON-NLS-1$
+    System.out.println("My town is " + ht.getTown()); 
 
     // Clean up the file
-    new File("tempdata.ser").delete(); //$NON-NLS-1$
+    new File("tempdata.ser").delete(); 
   }
 }
 
-/*
- * add performSecurityManagerCheck at line 94 if (!UNKNOWN.equals(town)) {
- * performSecurityManagerCheck(town); validateInput(town); }
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+//  String readTown;
+//  ObjectInputStream.GetField fields = in.readFields();
+//  readTown = (String) fields.get("town", null); 
+//  // Validate town field
+//  validateInput(readTown);
+//  this.town = readTown;
+//}
