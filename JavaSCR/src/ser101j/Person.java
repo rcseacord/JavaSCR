@@ -112,12 +112,12 @@ public class Person implements java.io.Serializable {
     p1.setSpouse(p2);
     p2.setSpouse(p1);
 
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));) { 
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
       oos.writeObject(p1);
     }
 
     Person p;
-    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));) {  
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"))) {
       p = (Person) ois.readObject();
     }
 
