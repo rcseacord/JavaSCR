@@ -43,17 +43,21 @@ public class Person implements java.io.Serializable {
   // private Gender gender;
 
   public Person(String fn, String ln, String socialSecurity, int a) {
-    // public Person(String fn, String ln, String socialSecurity, int a, Gender
-    // g) {
     this.firstName = fn;
     this.lastName = ln;
     this.socialSecurity = socialSecurity;
     this.age = a;
-    // this.gender = g;
   }
 
-  // public Gender getGender() { return gender; }
-  // public void setGender(Gender value) { gender = value; }
+//  public Person(String fn, String ln, String socialSecurity, int a, Gender g) {
+//    this.firstName = fn;
+//    this.lastName = ln;
+//    this.socialSecurity = socialSecurity;
+//    this.age = a;
+//    this.gender = g;
+//  }
+//  public Gender getGender() { return gender; }
+//  public void setGender(Gender value) { gender = value; }
 
   public String getFirstName() {
     return this.firstName;
@@ -104,14 +108,15 @@ public class Person implements java.io.Serializable {
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     Person p1 = new Person("John", "Doe", "012-34-5678", 25);   
     Person p2 = new Person("Jane", "Doe", "987-65-4321", 24);   
-    // Person p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
-    //   
-    // Person p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
-    //   
+
+    // Create objects with new Gender field
+    // p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
+    // p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
 
     p1.setSpouse(p2);
     p2.setSpouse(p1);
 
+    // Comment out when deserializing Person with Gender field
     try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
       oos.writeObject(p1);
     }
@@ -125,7 +130,7 @@ public class Person implements java.io.Serializable {
         !Objects.equals(p.getSpouse().getFirstName(), "Jane")) { 
       System.err.println("Object changed during deserialization"); 
     } else {
-      System.out.println("Object succesfully deserialized"); 
+      System.out.println("Object successfully deserialized");
     }
 
     // Clean up the file
