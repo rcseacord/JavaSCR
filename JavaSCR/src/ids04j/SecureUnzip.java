@@ -49,8 +49,8 @@ public class SecureUnzip {
     throw new IllegalStateException("File is outside extraction target directory."); 
   }
 
-  public final static void unzip(String filename) throws java.io.IOException {
-    try (ZipInputStream zis = new ZipInputStream(new BufferedInputStream(new FileInputStream(filename)));) {
+  public static void unzip(String filename) throws java.io.IOException {
+    try (ZipInputStream zis = new ZipInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
       ZipEntry entry;
       int entries = 0;
       long total = 0;
@@ -66,7 +66,7 @@ public class SecureUnzip {
           new File(name).mkdir();
           continue;
         }
-        try (BufferedOutputStream dest = new BufferedOutputStream(new FileOutputStream(name), BUFFER);) {
+        try (BufferedOutputStream dest = new BufferedOutputStream(new FileOutputStream(name), BUFFER)) {
           while ((count = zis.read(data, 0, BUFFER)) != -1) {
             total += count;
             if (total >= TOOBIG) {
@@ -89,7 +89,7 @@ public class SecureUnzip {
     try {
       unzip("./src/ids04j/10GB/10GB.zip"); 
     } catch (IOException e) {
-      System.err.println(e);
+      System.err.println("Could not unzip file.");
     }
   } // end main
 }

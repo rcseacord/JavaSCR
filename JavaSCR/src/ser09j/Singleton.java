@@ -31,7 +31,7 @@ public enum Singleton {
   int value;
 
   static void serialize(Object o) throws IOException {
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));) {
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
       oos.writeObject(o);
     }
   }

@@ -34,7 +34,7 @@ import java.util.Set;
 public class SerialDOS {
 
   static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba);) {
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
       oos.writeObject(o);
       return ba.toByteArray();
     }
@@ -64,18 +64,14 @@ public class SerialDOS {
   }
 
   public static void main(String[] args) throws InterruptedException {
-    new Thread(new Runnable() {
-
-      // start a thread to deserialize the DoS payload
-      @Override
-      public void run() {
-        try {
-          deserialize(DoSpayload());
-        } catch (ClassNotFoundException | IOException e) {
-          e.printStackTrace();
-        }
-        System.out.println("DoS has been deserialized.");
+    // start a thread to deserialize the DoS payload
+    new Thread(() -> {
+      try {
+        deserialize(DoSpayload());
+      } catch (ClassNotFoundException | IOException e) {
+        e.printStackTrace();
       }
+      System.out.println("DoS has been deserialized.");
     }).start();
 
     // give the thread 10 seconds to complete

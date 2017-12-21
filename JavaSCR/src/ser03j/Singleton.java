@@ -22,19 +22,15 @@
 
 package ser03j;
 
-import java.io.IOException;
-import java.io.InvalidObjectException;
-import java.io.ObjectStreamException;
-
-public final class SensitiveClass extends Number {
+public final class Singleton extends Number {
   private static final long serialVersionUID = 1L;
-  private static final SensitiveClass INSTANCE = new SensitiveClass();
+  private static final Singleton INSTANCE = new Singleton();
 
-  public static SensitiveClass getInstance() {
+  public static Singleton getInstance() {
     return INSTANCE;
   }
 
-  private SensitiveClass() {
+  private Singleton() {
     // Perform security checks and parameter validation
   }
 
@@ -64,7 +60,7 @@ public final class SensitiveClass extends Number {
     return 0;
   }
   
-} // end class SensitiveClass
+} // end class Singleton
 
 
 

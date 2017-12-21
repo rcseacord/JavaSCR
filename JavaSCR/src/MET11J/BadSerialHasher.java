@@ -39,13 +39,13 @@ class BadSerialHasher {
 
     // Serialize the Hashtable object
     try (FileOutputStream fos = new FileOutputStream("hashdata.ser"); //$NON-NLS-1$
-        ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+        ObjectOutputStream oos = new ObjectOutputStream(fos)) {
       oos.writeObject(ht);
     }
 
     // Deserialize the Hashtable object
     Hashtable<MyKey, String> ht_in;
-    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("hashdata.ser"));) { //$NON-NLS-1$
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("hashdata.ser"))) { //$NON-NLS-1$
       Hashtable<MyKey, String> readObject = (Hashtable<MyKey, String>) ois.readObject();
       ht_in = readObject;
     }

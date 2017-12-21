@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$USER_HOME$/java/checker-framework-2.2.2/checker-framework-2.2.2/checker/dist/checker-qual.jar!/" />
+    <libelement value="jar://$USER_HOME$/java/SerialKiller-0.4-all.jar!/" />
+    <libelement value="jar://$USER_HOME$/java/commons-io-2.5.jar!/" />
+    <libelement value="jar://$USER_HOME$/java/jboss-javassist-javassist-rel_3_22_00_ga-46-g40d3223/jboss-javassist-javassist-40d3223/javassist.jar!/" />
+    <libelement value="jar://$USER_HOME$/java/sacclib.jar!/" />
+    <libelement value="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="checker-qual.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/java/checker-framework-2.2.2/checker-framework-2.2.2/checker/dist/checker-qual.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="SerialKiller-0.4-all.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/java/SerialKiller-0.4-all.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.5.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/java/commons-io-2.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="javassist.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/java/jboss-javassist-javassist-rel_3_22_00_ga-46-g40d3223/jboss-javassist-javassist-40d3223/javassist.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="sacclib.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/java/sacclib.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../acclib/src/acclib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="jdk" jdkName="9.0" jdkType="JavaSDK" />
+    <orderEntry type="module-library">
+      <library name="commons-collections4-4.0.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

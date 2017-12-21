@@ -2,11 +2,6 @@ package METOOJ;
 
 final class ElementaryParticle {
 
-	@SuppressWarnings("unused")
-	private String fName;
-	@SuppressWarnings("unused")
-	private double fSpeed;
-	
 	/**
 	 * @param aName
 	 *   has content.
@@ -18,14 +13,12 @@ final class ElementaryParticle {
 	 *   if a param does not comply.
 	 */
 	public ElementaryParticle(String aName, double aSpeed) {
-		if (!aName.trim().equals("")) { //$NON-NLS-1$
-			throw new IllegalArgumentException("Empty string"); //$NON-NLS-1$
+		if (!aName.trim().equals("")) {
+			throw new IllegalArgumentException("Empty string");
 		}
 		if (aSpeed < 0.0 || aSpeed > 1.0) {
-			throw new IllegalArgumentException("Speed not in range [0..1]: " + aSpeed); //$NON-NLS-1$
+			throw new IllegalArgumentException("Speed not in range [0..1]: " + aSpeed);
 		}
-		this.fName = aName;
-		this.fSpeed = aSpeed;
 	}
 
 	// ..other methods elided

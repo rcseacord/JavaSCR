@@ -30,7 +30,7 @@ class ExceptionExample {
   static FileInputStream fis;
 
   public static void main(String[] args) throws IOException {
-    try (FileInputStream myfis = new FileInputStream(System.getenv("APPDATA") + "\\" + args[0]); //$NON-NLS-1$ //$NON-NLS-2$
+    try (FileInputStream myfis = new FileInputStream(System.getenv("APPDATA") + "\\" + args[0]) //$NON-NLS-1$ //$NON-NLS-2$
     ) {
       setFis(myfis);
       // add some code to demonstrate

@@ -3,18 +3,6 @@ package ser09j;
 import java.io.ObjectInputFilter;
 
 class BikeFilter implements ObjectInputFilter {
-  /**
-   * Maximum allowed bytes in the stream.
-   */
-  private long maxStreamBytes = 78;
-  /**
-   * Maximum depth of the graph allowed.
-   */
-  private long maxDepth = 1;
-  /**
-   * Maximum number of references in a graph.
-   */
-  private long maxReferences = 1;
 
   @Override
   public Status checkInput(FilterInfo filterInfo) {
@@ -23,11 +11,14 @@ class BikeFilter implements ObjectInputFilter {
     System.out.println("filterInfo.streamBytes = " + filterInfo.streamBytes()); 
     System.out.println("filterInfo.references = " + filterInfo.references()); 
     System.out.println("filterInfo.depth = " + filterInfo.depth()); 
-    System.out.println("filterInfo.serialClass = " + filterInfo.serialClass().getCanonicalName()); 
+    System.out.println("filterInfo.serialClass = " + filterInfo.serialClass().getCanonicalName());
 
+    long maxStreamBytes = 78;   // Maximum allowed bytes in the stream.
+    long maxDepth = 1;
+    long maxReferences = 1;
     if (filterInfo.references() < 0 || filterInfo.depth() < 0 || filterInfo.streamBytes() < 0
-        || filterInfo.references() > this.maxReferences || filterInfo.depth() > this.maxDepth
-        || filterInfo.streamBytes() > this.maxStreamBytes) {
+        || filterInfo.references() > maxReferences || filterInfo.depth() > maxDepth
+        || filterInfo.streamBytes() > maxStreamBytes) {
       return Status.REJECTED;
     }
     Class<?> clazz = filterInfo.serialClass();

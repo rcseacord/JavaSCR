@@ -53,8 +53,8 @@ class UnsignedInteger {
 
   public static void main(String[] args) throws IOException {
     try (
-        // create output stream from file
-        DataOutputStream dos = new DataOutputStream(new FileOutputStream("test.txt"));//$NON-NLS-1$
+            // create output stream from file
+            DataOutputStream dos = new DataOutputStream(new FileOutputStream("test.txt"))//$NON-NLS-1$
     ) {
       // write out "unsigned int" values
       dos.writeInt(0xFFFFFFFF); // 4,294,967,295
@@ -66,7 +66,7 @@ class UnsignedInteger {
     FileInputStream is = new FileInputStream("test.txt"); //$NON-NLS-1$
 
     // create data input stream
-    try (DataInputStream dis = new DataInputStream(is);) {
+    try (DataInputStream dis = new DataInputStream(is)) {
       int int_a = getIntegerWrong(dis);
       System.out.println("incorrect value = " + int_a); //$NON-NLS-1$
 

@@ -30,7 +30,7 @@ public class StringObject {
 
   public static void main(String[] args) {
     final Map<String, Object> myMap = new HashMap<>();
-    myMap.put((String) STRING_OBJECT, new Integer(5));
+    myMap.put((String) STRING_OBJECT, 5);
 
     if (myMap.containsKey(STRING_OBJECT)) {
       System.out.println("Map contains key");

@@ -28,9 +28,13 @@ package OBJ11J;
 public class Interceptor extends BankOperations {
 	private static Interceptor stealInstance = null;
 
+	public Interceptor(String user) {
+		super(user);
+	}
+
 	public static Interceptor get() {
 		try {
-			new Interceptor();
+			new Interceptor("Robert");
 		} catch (Exception ex) {
 			/* Ignore exception */}
 		try {

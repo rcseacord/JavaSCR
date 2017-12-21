@@ -28,7 +28,7 @@ public final class Period implements Serializable {
     this.start = new Date(start.getTime());
     this.end = new Date(end.getTime());
     if (this.start.compareTo(this.end) > 0)
-      throw new IllegalArgumentException(start + " after " + end); //$NON-NLS-1$
+      throw new IllegalArgumentException(start + " after " + end); 
   }
 
   public Date start() {
@@ -41,11 +41,12 @@ public final class Period implements Serializable {
 
   @Override
   public String toString() {
-    return this.start + " - " + this.end; //$NON-NLS-1$
+    return this.start + " - " + this.end; 
   }
 
   // Serialization proxy for Period class
   private static class SerializationProxy implements Serializable {
+    private static final long serialVersionUID = 234098243823485285L;
     private final Date start;
     private final Date end;
 
@@ -53,9 +54,7 @@ public final class Period implements Serializable {
       this.start = p.start;
       this.end = p.end;
     }
-
-    private static final long serialVersionUID = 234098243823485285L;
-
+    
     // readResolve method for Period.SerializationProxy
     private Object readResolve() {
       return new Period(this.start, this.end); // Uses public constructor
@@ -70,17 +69,17 @@ public final class Period implements Serializable {
   }
 
   // readObject method for the serialization proxy pattern
-  private void readObject(ObjectInputStream stream) throws InvalidObjectException {
-    throw new InvalidObjectException("Proxy required"); //$NON-NLS-1$
+  private void readObject(@SuppressWarnings("unused") ObjectInputStream stream) throws InvalidObjectException {
+    throw new InvalidObjectException("Proxy required"); 
   }
 
   // The rest of this is to serialize/deserialize
-  static Object deserialize(byte[] bytes) throws Exception {
+  private static Object deserialize(byte[] bytes) throws Exception {
     return new ObjectInputStream(new ByteArrayInputStream(bytes)).readObject();
   }
 
-  static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba);) {
+  private static byte[] serialize(Object o) throws IOException {
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
       oos.writeObject(o);
       return ba.toByteArray();
     }

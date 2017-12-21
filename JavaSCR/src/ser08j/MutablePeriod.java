@@ -31,15 +31,15 @@ import java.util.Date;
 
 public class MutablePeriod {
   // A period instance
-  public Period period = null;
+  private Period period = null;
   // period's start field, to which we shouldn't have access
-  public Date start = null;
+  private Date start = null;
   // period's end field, to which we shouldn't have access
-  public Date end = null;
+  private Date end = null;
 
   public MutablePeriod() {
     try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);) {
+        ObjectOutputStream oos = new ObjectOutputStream(baos)) {
       // Serialize a valid Period instance
       oos.writeObject(new Period(new Date(), new Date()));
 

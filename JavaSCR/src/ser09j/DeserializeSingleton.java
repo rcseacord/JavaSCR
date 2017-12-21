@@ -29,16 +29,14 @@ import java.io.ObjectInputStream;
 public class DeserializeSingleton {
 
   public static void main(String[] args) throws ClassNotFoundException, IOException {
-
     Singleton one;
-    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));) {
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"))) {
       one = (Singleton) ois.readObject();
       System.out.println("one = " + one.getValue());
     }
     
     Singleton.INSTANCE.setValue(21);
     System.out.println("Singleton.INSTANCE = " + Singleton.INSTANCE.getValue());
-    
     System.out.println("one = " + one.getValue());
   }
 }

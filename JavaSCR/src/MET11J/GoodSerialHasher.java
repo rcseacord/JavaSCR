@@ -34,13 +34,13 @@ class GoodSerialHasher {
                      throws IOException, ClassNotFoundException {
 	// The type of the key value has been changed to an Integer object. 
     Hashtable<Integer, String> ht = new Hashtable<>();
-    final Integer key = new Integer(1);
-    ht.put(key, "Value"); //$NON-NLS-1$
-    System.out.println("Entry: " + ht.get(key)); // Retrieve using the key //$NON-NLS-1$
+    final Integer key = 1;
+    ht.put(key, "Value"); 
+    System.out.println("Entry: " + ht.get(key)); // Retrieve using the key 
  
     // Serialize the Hashtable object
     try (
-    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("hashdata.ser")); //$NON-NLS-1$
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("hashdata.ser")) 
         ) {
     oos.writeObject(ht);
     }
@@ -48,17 +48,17 @@ class GoodSerialHasher {
     // Deserialize the Hashtable object
     Hashtable<Integer, String> ht_in;
     try (
-    ObjectInputStream ois = new ObjectInputStream(new FileInputStream("hashdata.ser")); //$NON-NLS-1$
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("hashdata.ser")) 
         ) {
     ht_in = (Hashtable<Integer, String>)ois.readObject();
     }
  
-    if (ht_in.contains("Value")) //$NON-NLS-1$
+    if (ht_in.contains("Value")) 
       // Check whether the object actually exists in the Hashtable
-      System.out.println("Value was found in deserialized object."); //$NON-NLS-1$
+      System.out.println("Value was found in deserialized object."); 
  
     if (ht_in.get(key) == null)  // Not printed
       System.out.println(
-          "Object was not found when retrieved using the key."); //$NON-NLS-1$
+          "Object was not found when retrieved using the key."); 
   }
 }

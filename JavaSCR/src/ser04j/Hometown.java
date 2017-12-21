@@ -38,7 +38,7 @@ public final class Hometown implements Serializable {
   private String town;
   private static final String MOSCOW = "Moscow"; 
 
-  static void validateInput(String newtown) throws AccessDeniedException {
+  private static void validateInput(String newtown) throws AccessDeniedException {
     if (MOSCOW.equals(newtown)) {
       throw new AccessDeniedException("Nyet, comrade"); 
     }
@@ -76,27 +76,29 @@ public final class Hometown implements Serializable {
     this.town = readTown;
   }
 
-  public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+  public static void main(String[] args) throws IOException, ClassNotFoundException {
     Hometown myTown = new Hometown("Pittsburgh"); 
     System.out.println("My town is " + myTown.getTown()); 
 
     // Create object that violates security checks
     Hometown ht = new Hometown("Warsaw"); 
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))
     ) {
       oos.writeObject(ht);
     }
     // Construct a new object through deserialization
     try (
-        // NOTE: File is in %userprofile%\git\JavaSCR\JavaSCR
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"));
+        // Edit tempdata.ser in %userprofile%\git\JavaSCR
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"))
     ) {
       ht = (Hometown) ois.readObject();
     }
     System.out.println("My town is " + ht.getTown()); 
 
     // Clean up the file
-    new File("tempdata.ser").delete(); 
+    if (!new File("tempdata.ser").delete()) {
+      System.err.println("Failed to delete tempdata.ser");
+    }
   }
 }
 

@@ -36,14 +36,14 @@ class LogSearch {
 
   private static void FindLogEntryBad(String search) {
     // Construct regex dynamically from user string
-    String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)"; //$NON-NLS-1$ //$NON-NLS-2$
+    String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)";  
     Pattern searchPattern = Pattern.compile(regex);
-    try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt"); FileChannel channel = fis.getChannel();) { //$NON-NLS-1$
+    try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt"); FileChannel channel = fis.getChannel()) { 
       // Get the file's size and map it into memory
       long size = channel.size();
       final MappedByteBuffer mappedBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, size);
 
-      Charset charset = Charset.forName("ISO-8859-15"); //$NON-NLS-1$
+      Charset charset = Charset.forName("ISO-8859-15"); 
       final CharsetDecoder decoder = charset.newDecoder();
       // Read file into char buffer
       CharBuffer log = decoder.decode(mappedBuffer);
@@ -55,24 +55,24 @@ class LogSearch {
         }
       }
     } catch (IOException ex) {
-      System.err.println("thrown exception: " + ex.toString()); //$NON-NLS-1$
+      System.err.println("thrown exception: " + ex.toString()); 
       Throwable[] suppressed = ex.getSuppressed();
       for (Throwable aSuppressed : suppressed) {
-        System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
+        System.err.println("suppressed exception: " + aSuppressed.toString()); 
       }
     }
   }
 
   private static void FindLogEntryQuote(String search) {
     // Construct regex dynamically from user string
-    String regex = "(.*? +public\\[\\d+\\] +.*" + Pattern.quote(search) + ".*)"; //$NON-NLS-1$ //$NON-NLS-2$
+    String regex = "(.*? +public\\[\\d+\\] +.*" + Pattern.quote(search) + ".*)";  
     Pattern searchPattern = Pattern.compile(regex);
-    try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt"); FileChannel channel = fis.getChannel()) { //$NON-NLS-1$
+    try (FileInputStream fis = new FileInputStream("src/IDS08J/log.txt"); FileChannel channel = fis.getChannel()) { 
       // Get the file's size and map it into memory
       long size = channel.size();
       final MappedByteBuffer mappedBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, size);
 
-      Charset charset = Charset.forName("ISO-8859-15"); //$NON-NLS-1$
+      Charset charset = Charset.forName("ISO-8859-15"); 
       final CharsetDecoder decoder = charset.newDecoder();
       // Read file into char buffer
       CharBuffer log = decoder.decode(mappedBuffer);
@@ -84,26 +84,26 @@ class LogSearch {
         }
       }
     } catch (IOException ex) {
-      System.err.println("thrown exception: " + ex.toString()); //$NON-NLS-1$
+      System.err.println("thrown exception: " + ex.toString()); 
       Throwable[] suppressed = ex.getSuppressed();
       for (Throwable aSuppressed : suppressed) {
-        System.err.println("suppressed exception: " + aSuppressed.toString()); //$NON-NLS-1$
+        System.err.println("suppressed exception: " + aSuppressed.toString()); 
       }
     }
   }
 
   public static void main(String[] args) {
-    String arg = ".*)|(.*"; //$NON-NLS-1$
-    System.out.println("FindLogEntryBad(arg)"); //$NON-NLS-1$
+    String arg = ".*)|(.*"; 
+    System.out.println("FindLogEntryBad(arg)"); 
     FindLogEntryBad(arg); // matches everything
-    System.out.println("++++++++++++++++++++++"); //$NON-NLS-1$
+    System.out.println("++++++++++++++++++++++"); 
 
-    System.out.println("FindLogEntryQuote(arg)"); //$NON-NLS-1$
+    System.out.println("FindLogEntryQuote(arg)"); 
     FindLogEntryQuote(arg); // matches nothing
-    System.out.println("++++++++++++++++++++++"); //$NON-NLS-1$
+    System.out.println("++++++++++++++++++++++"); 
 
-    System.out.println("FindLogEntryQuote(\"\")"); //$NON-NLS-1$
-    FindLogEntryQuote(""); // matches lines containing "public" //$NON-NLS-1$
-    System.out.println("++++++++++++++++++++++"); //$NON-NLS-1$
+    System.out.println("FindLogEntryQuote(\"\")"); 
+    FindLogEntryQuote(""); // matches lines containing "public" 
+    System.out.println("++++++++++++++++++++++"); 
   }
 }

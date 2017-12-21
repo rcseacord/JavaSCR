@@ -22,30 +22,43 @@
 
 package ser00j;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.ObjectStreamField;
-import java.io.Serializable;
+import java.io.*;
 
 public class GameWeapon implements Serializable {
   private static final long serialVersionUID = -2219161247533868418L;
-  private WeaponStore ws = new WeaponStore();
-  private static final ObjectStreamField[] serialPersistentFields = { new ObjectStreamField("ws", WeaponStore.class) }; //$NON-NLS-1$
+  private WeaponStore ws;
+  private static final ObjectStreamField[] serialPersistentFields = { new ObjectStreamField("ws", WeaponStore.class) };
+
+  public GameWeapon() {
+    ws = new WeaponStore();
+  }
 
   private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
     ObjectInputStream.GetField gf = ois.readFields();
-    this.ws = (WeaponStore) gf.get("ws", this.ws); //$NON-NLS-1$
+    this.ws = (WeaponStore) gf.get("ws", ws);
   }
 
   private void writeObject(ObjectOutputStream oos) throws IOException {
     ObjectOutputStream.PutField pf = oos.putFields();
-    pf.put("ws", this.ws); //$NON-NLS-1$
+    pf.put("ws", ws);
     oos.writeFields();
+  }
+
+  private static byte[] serialize(Object o) throws IOException {
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream()) {
+      try (ObjectOutputStream oos = new ObjectOutputStream(ba)) {
+        oos.writeObject(o);
+        return ba.toByteArray();
+      }
+    }
+  }
+
+  private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException {
+    Object obj;
+    try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buffer))) {
+      obj = ois.readObject();
+    }
+    return obj;
   }
 
   @Override
@@ -53,20 +66,9 @@ public class GameWeapon implements Serializable {
     return String.valueOf(this.ws);
   }
 
-  public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+  public static void main(String[] args) throws IOException, ClassNotFoundException {
     GameWeapon gw = new GameWeapon();
-
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"));) { //$NON-NLS-1$
-      oos.writeObject(gw);
-    }
-    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser")); //$NON-NLS-1$
-    ) {
-      gw = (GameWeapon) ois.readObject();
-      System.out.println("No. of Weapons = " + gw.ws.numOfWeapons); //$NON-NLS-1$
-    }
-
-    // Clean up the file
-    new File("tempdata.ser").delete(); //$NON-NLS-1$
-  } // end main
-
-}
+    gw = (GameWeapon) deserialize(serialize(gw));
+    System.out.println("No. of Weapons = " + gw.ws.numOfWeapons);
+  }
+} // end main

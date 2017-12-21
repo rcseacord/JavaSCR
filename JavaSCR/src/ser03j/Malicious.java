@@ -37,7 +37,7 @@ class Malicious {
    * @param  obj  the Object to copy
    * @return      copy of obj
     */
-  static public Object serialCopy(Object obj) {
+  private static Object serialCopy(Object obj) {
     try {
       ByteArrayOutputStream bos = new ByteArrayOutputStream();
       new ObjectOutputStream(bos).writeObject(obj);
@@ -50,10 +50,11 @@ class Malicious {
   } // end deepCopy()
   
   public static void main(String[] args) {
-    SensitiveClass sc =
-       (SensitiveClass) serialCopy(SensitiveClass.getInstance());
+    Singleton sc =
+       (Singleton) serialCopy(Singleton.getInstance());
     // Prints false; indicates new instance
-    System.out.println(sc == SensitiveClass.getInstance()); 
+    //noinspection NumberEquality
+    System.out.println(sc == Singleton.getInstance());
     System.out.println("Balance = " + sc.getBalance()); 
   }
  

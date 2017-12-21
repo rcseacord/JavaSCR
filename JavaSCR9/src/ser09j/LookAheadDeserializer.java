@@ -23,7 +23,7 @@ import java.util.Set;
 public class LookAheadDeserializer {
 
   private static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba);) {
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
       oos.writeObject(o);
       return ba.toByteArray();
     }
