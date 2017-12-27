@@ -32,7 +32,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 class Cardinality {
 
 	// returns the number of occurrences of Object obj in Collection col.
-	private static int cardinality(@Nullable Object obj, final Collection<?> col) {
+	private static int cardinality(Object obj, final Collection<?> col) {
 		int count = 0;
 		for (Object elt : col) {
 			// Because membership in the collection is checked using
@@ -47,7 +47,7 @@ class Cardinality {
 
 	public static void main(String[] args) {
 		// a non-null List of nullable Strings
-		@NonNull List<@Nullable String> myList = new ArrayList<@Nullable String>();
+		@NonNull List<String> myList = new ArrayList<>();
 		myList.add("Java"); 
 		myList.add("C"); 
 		myList.add(null);

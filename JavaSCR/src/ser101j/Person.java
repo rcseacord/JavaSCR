@@ -101,8 +101,8 @@ public class Person implements java.io.Serializable {
 
   @Override
   public String toString() {
-    return "[Person: firstName=" + this.firstName + " lastName=" + this.lastName + " age=" + this.age + " spouse="    //$NON-NLS-4$
-        + this.spouse.getFirstName() + "]"; 
+    return "[Person: firstName=" + this.firstName + " lastName=" + this.lastName +
+        " age=" + this.age + " spouse=" + this.spouse.getFirstName() + "]";
   }
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
