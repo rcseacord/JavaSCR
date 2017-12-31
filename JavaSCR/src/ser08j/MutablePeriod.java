@@ -31,11 +31,11 @@ import java.util.Date;
 
 public class MutablePeriod {
   // A period instance
-  private Period period = null;
+  private Period period;
   // period's start field, to which we shouldn't have access
-  private Date start = null;
+  private Date start;
   // period's end field, to which we shouldn't have access
-  private Date end = null;
+  private Date end;
 
   public MutablePeriod() {
     try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -65,7 +65,6 @@ public class MutablePeriod {
 
   @SuppressWarnings("deprecation")
   public static void main(String[] args) {
-    System.out.println("MutablePeriod");
     MutablePeriod mp = new MutablePeriod();
     Period p = mp.period;
     Date pEnd = mp.end;

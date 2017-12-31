@@ -27,7 +27,9 @@ import java.io.*;
 public class GameWeapon implements Serializable {
   private static final long serialVersionUID = -2219161247533868418L;
   private WeaponStore ws;
-  private static final ObjectStreamField[] serialPersistentFields = { new ObjectStreamField("ws", WeaponStore.class) };
+  private static final ObjectStreamField[] serialPersistentFields = {
+      new ObjectStreamField("ws", WeaponStore.class)
+  };
 
   public GameWeapon() {
     ws = new WeaponStore();
@@ -39,6 +41,7 @@ public class GameWeapon implements Serializable {
   }
 
   private void writeObject(ObjectOutputStream oos) throws IOException {
+    // Retrieve the object used to buffer persistent fields to be written to the stream.
     ObjectOutputStream.PutField pf = oos.putFields();
     pf.put("ws", ws);
     oos.writeFields();

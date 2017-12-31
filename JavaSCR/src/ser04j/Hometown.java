@@ -72,16 +72,14 @@ public final class Hometown implements Serializable {
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     String readTown;
     ObjectInputStream.GetField fields = in.readFields();
-    readTown = (String) fields.get("town", null); 
+    readTown = (String) fields.get("town", null);
     this.town = readTown;
   }
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
-    Hometown myTown = new Hometown("Pittsburgh"); 
-    System.out.println("My town is " + myTown.getTown()); 
-
-    // Create object that violates security checks
-    Hometown ht = new Hometown("Warsaw"); 
+    // Create Hometown object
+    Hometown ht = new Hometown("Warsaw");
+    System.out.println("Home town is " + ht.getTown());
     try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))
     ) {
       oos.writeObject(ht);
@@ -100,7 +98,7 @@ public final class Hometown implements Serializable {
       System.err.println("Failed to delete tempdata.ser");
     }
   }
-}
+      }
 
 
 
