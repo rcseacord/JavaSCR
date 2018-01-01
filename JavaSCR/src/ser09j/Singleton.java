@@ -25,10 +25,13 @@ package ser09j;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public enum Singleton {
-  INSTANCE;
+public class Singleton implements Serializable {
+  public static final Singleton INSTANCE = new Singleton();
   int value;
+
+  private Singleton() { }
 
   static void serialize(Object o) throws IOException {
     try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {

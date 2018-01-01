@@ -22,40 +22,43 @@
 
 package ser03j;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 class Malicious {
-  
+
+  private static byte[] serialize(Object o) throws IOException {
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
+      oos.writeObject(o);
+      return ba.toByteArray();
+    }
+  }
+
+  private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException {
+    Object obj;
+    try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buffer))) {
+      obj = ois.readObject();
+    }
+    return obj;
+  }
+
   /**
-   * Copies a specified Object by serializing then deserializing the object. 
+   * Copies a specified Object by serializing then deserializing the object.
    * <p>
    * This method should not be used in production code.
    *
-   * @param  obj  the Object to copy
-   * @return      copy of obj
-    */
-  private static Object serialCopy(Object obj) {
-    try {
-      ByteArrayOutputStream bos = new ByteArrayOutputStream();
-      new ObjectOutputStream(bos).writeObject(obj);
-      ByteArrayInputStream bin =
-          new ByteArrayInputStream(bos.toByteArray());
-      return new ObjectInputStream(bin).readObject();
-    } catch (Exception e) {
-      throw new IllegalArgumentException(e);
-    }
+   * @param obj the Object to copy
+   * @return copy of obj
+   */
+  private static Object serialCopy(Object obj) throws IOException, ClassNotFoundException {
+    return deserialize(serialize(obj));
   } // end deepCopy()
-  
-  public static void main(String[] args) {
-    Singleton sc =
-       (Singleton) serialCopy(Singleton.getInstance());
+
+  public static void main(String[] args) throws IOException, ClassNotFoundException {
+    Singleton sc = (Singleton) serialCopy(Singleton.getInstance());
     // Prints false; indicates new instance
     //noinspection NumberEquality
     System.out.println(sc == Singleton.getInstance());
-    System.out.println("Balance = " + sc.getBalance()); 
+    System.out.println("Balance = " + sc.getBalance());
   }
- 
+
 }

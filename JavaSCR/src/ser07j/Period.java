@@ -51,6 +51,7 @@ public final class Period implements Serializable {
     private final Date end;
 
     SerializationProxy(Period p) {
+      // copy argument data without consistency checking or defensive copying
       this.start = p.start;
       this.end = p.end;
     }
@@ -62,8 +63,7 @@ public final class Period implements Serializable {
   }
 
   // writeReplace method for the serialization proxy pattern
-  // This method can be copied verbatim into any class with a serialization
-  // proxy:
+  // Method can be copied verbatim into any class with a serialization proxy.
   private Object writeReplace() {
     return new SerializationProxy(this);
   }
@@ -79,7 +79,8 @@ public final class Period implements Serializable {
   }
 
   private static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
+    try (ByteArrayOutputStream ba = new ByteArrayOutputStream();
+         ObjectOutputStream oos = new ObjectOutputStream(ba)) {
       oos.writeObject(o);
       return ba.toByteArray();
     }
