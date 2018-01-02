@@ -51,7 +51,7 @@ class Malicious {
    */
   private static Object serialCopy(Object obj) throws IOException, ClassNotFoundException {
     return deserialize(serialize(obj));
-  } // end deepCopy()
+  } // end serialCopy()
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     Singleton sc = (Singleton) serialCopy(Singleton.getInstance());

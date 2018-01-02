@@ -22,6 +22,10 @@
 
 package ser03j;
 
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.io.ObjectStreamException;
+
 public final class Singleton extends Number {
   private static final long serialVersionUID = 1L;
   private static final Singleton INSTANCE = new Singleton();
@@ -59,22 +63,8 @@ public final class Singleton extends Number {
   public long longValue() {
     return 0;
   }
-  
+
 } // end class Singleton
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
