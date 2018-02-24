@@ -53,15 +53,15 @@ public class NewInstance {
   public static void main(String[] args) {
     // No declared checked exceptions
     try {
-      NewInstance.undeclaredThrow(new Exception("Generic Exception")); //$NON-NLS-1$
+      NewInstance.undeclaredThrow(new Exception("Generic Exception"));
     } catch (Exception e) {
       e.printStackTrace();
     }
     try {
-      NewInstance.undeclaredThrow(new IOException("IOException")); //$NON-NLS-1$
+      NewInstance.undeclaredThrow(new IOException("IOException"));
     } catch (Exception e) {
       if (e instanceof IOException) {
-        System.err.println("IOException occurred"); //$NON-NLS-1$
+        System.err.println("IOException occurred");
         e.printStackTrace();
       } else {
         e.printStackTrace();

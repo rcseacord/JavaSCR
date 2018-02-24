@@ -21,10 +21,10 @@
 // SOFTWARE.
 
 package acc02j;
+import src.acclib.acclib.LibClass;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import acclib.*;
 
 class RefAppClass {
   public static void main(String[] args) {
@@ -35,7 +35,7 @@ class RefAppClass {
       System.out.println("No security manager."); 
     }
     
-    System.setProperty(LibClass.OPTIONS, "extra-secure"); 
+    System.setProperty(LibClass.OPTIONS, "extra-secure");
     LibClass lc = new LibClass();
     Method m;
     try {

@@ -40,7 +40,7 @@ public class Person implements java.io.Serializable {
   private String socialSecurity;
   private int age;
   private Person spouse;
-  // private Gender gender;
+  private Gender gender;
 
   public Person(String fn, String ln, String socialSecurity, int a) {
     this.firstName = fn;
@@ -49,15 +49,15 @@ public class Person implements java.io.Serializable {
     this.age = a;
   }
 
-//  public Person(String fn, String ln, String socialSecurity, int a, Gender g) {
-//    this.firstName = fn;
-//    this.lastName = ln;
-//    this.socialSecurity = socialSecurity;
-//    this.age = a;
-//    this.gender = g;
-//  }
-//  public Gender getGender() { return gender; }
-//  public void setGender(Gender value) { gender = value; }
+  public Person(String fn, String ln, String socialSecurity, int a, Gender g) {
+    this.firstName = fn;
+    this.lastName = ln;
+    this.socialSecurity = socialSecurity;
+    this.age = a;
+    this.gender = g;
+  }
+  public Gender getGender() { return gender; }
+  public void setGender(Gender value) { gender = value; }
 
   public String getFirstName() {
     return this.firstName;
@@ -110,16 +110,16 @@ public class Person implements java.io.Serializable {
     Person p2 = new Person("Jane", "Doe", "987-65-4321", 24);   
 
     // Create objects with new Gender field
-    // p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
-    // p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
+    p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
+    p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
 
     p1.setSpouse(p2);
     p2.setSpouse(p1);
 
     // Comment out when deserializing Person with Gender field
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
-      oos.writeObject(p1);
-    }
+//    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
+//      oos.writeObject(p1);
+//    }
 
     Person p;
     try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"))) {

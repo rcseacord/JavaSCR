@@ -35,18 +35,6 @@ public class GameWeapon implements Serializable {
     ws = new WeaponStore();
   }
 
-  private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-    ObjectInputStream.GetField gf = ois.readFields();
-    this.ws = (WeaponStore) gf.get("ws", ws);
-  }
-
-  private void writeObject(ObjectOutputStream oos) throws IOException {
-    // Retrieve the object used to buffer persistent fields to be written to the stream.
-    ObjectOutputStream.PutField pf = oos.putFields();
-    pf.put("ws", ws);
-    oos.writeFields();
-  }
-
   private static byte[] serialize(Object o) throws IOException {
     try (ByteArrayOutputStream ba = new ByteArrayOutputStream()) {
       try (ObjectOutputStream oos = new ObjectOutputStream(ba)) {

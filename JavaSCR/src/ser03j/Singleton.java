@@ -64,6 +64,31 @@ public final class Singleton extends Number {
     return 0;
   }
 
+
+
+  /**
+   * @param out not used, but required to match signature
+   */
+  @SuppressWarnings("static-method")
+  private void writeObject(java.io.ObjectOutputStream out) throws IOException {
+    throw new IOException("Not serializable");
+  }
+
+  /**
+   * @param in not used, but required to match signature
+   * @throws IOException to prevent deserialization
+   * @throws ClassNotFoundException not used, but required to match signature
+   */
+  @SuppressWarnings("static-method")
+  private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+    throw new IOException("Not deserializable");
+  }
+
+  @SuppressWarnings({ "unused", "static-method" })
+  private void readObjectNoData() throws ObjectStreamException {
+     throw new InvalidObjectException("Not deserializable");
+  }
+
 } // end class Singleton
 
 

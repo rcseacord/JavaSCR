@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="acclib:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/acclib_jar</output-path>
+    <root id="archive" name="acclib.jar">
+      <element id="module-output" name="acclib" />
+    </root>
+  </artifact>
+</component>

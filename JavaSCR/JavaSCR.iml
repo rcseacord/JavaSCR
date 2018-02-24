@@ -5,7 +5,7 @@
     <libelement value="jar://$USER_HOME$/java/SerialKiller-0.4-all.jar!/" />
     <libelement value="jar://$USER_HOME$/java/commons-io-2.5.jar!/" />
     <libelement value="jar://$USER_HOME$/java/jboss-javassist-javassist-rel_3_22_00_ga-46-g40d3223/jboss-javassist-javassist-40d3223/javassist.jar!/" />
-    <libelement value="jar://$USER_HOME$/java/sacclib.jar!/" />
+    <libelement value="jar:file://C:/Users/rseacord/git/JavaSCR/acclib/src/acclib/sacclib.jar!/" />
     <libelement value="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
@@ -54,18 +54,18 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="PROVIDED">
       <library name="sacclib.jar">
         <CLASSES>
-          <root url="jar://$USER_HOME$/java/sacclib.jar!/" />
+          <root url="jar://$MODULE_DIR$/../acclib/src/acclib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../acclib/src/acclib" />
+          <root url="jar://$MODULE_DIR$/../acclib/src/acclib" />
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="jdk" jdkName="9.0" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="9.0 (1)" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library name="commons-collections4-4.0.jar">
         <CLASSES>
@@ -79,5 +79,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="acclib" />
   </component>
 </module>

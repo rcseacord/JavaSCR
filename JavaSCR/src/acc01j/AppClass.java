@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,28 +22,28 @@
 
 package acc01j;
 
+import src.acclib.acclib.LibClass;
+
 import java.security.CodeSource;
 import java.security.Permission;
 import java.security.PermissionCollection;
 import java.security.Policy;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Enumeration;
 import java.util.List;
 
-import acclib.*;
-
 class AppClass {
   public static void main(String[] args) {
+    // acc01j/java.policy
     SecurityManager sm = System.getSecurityManager();
     if (sm != null) {
       System.out.println("Security manager installed.");
-      List<Class<?>> privClasses = new ArrayList<>();
-      privClasses.add(new AppClass().getClass());
-      privClasses.add(new LibClass().getClass());
+      List<Class<?>> privilegedClasses = new ArrayList<>();
+      privilegedClasses.add(AppClass.class);
+      privilegedClasses.add(LibClass.class);
       // Display privileges for all code bases
-      privClasses.forEach(privClass -> {
-        CodeSource cs = new AppClass().getClass().getProtectionDomain().getCodeSource();
+      privilegedClasses.forEach(privilegedClass -> {
+        CodeSource cs = AppClass.class.getProtectionDomain().getCodeSource();
         System.out.println("path: " + cs.getLocation().getPath());
 
         // Get all granted permissions

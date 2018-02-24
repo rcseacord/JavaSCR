@@ -26,9 +26,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
-
 class Cardinality {
 
 	// returns the number of occurrences of Object obj in Collection col.
@@ -47,7 +44,7 @@ class Cardinality {
 
 	public static void main(String[] args) {
 		// a non-null List of nullable Strings
-		@NonNull List<String> myList = new ArrayList<>();
+		List<String> myList = new ArrayList<>();
 		myList.add("Java"); 
 		myList.add("C"); 
 		myList.add(null);

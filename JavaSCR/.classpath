@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="ser05j/BikeFilter.java" kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_131"/>
-	<classpathentry kind="lib" path="C:/Users/rseacord/Documents/NCC Training/Java Course/checker-qual.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_131/jre/lib/SerialKiller-0.4-all.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_131/jre/lib/commons-io-2.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rseacord/javassist/lib/javassist.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_152"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/java/checker-framework-2.2.2/checker-framework-2.2.2/checker/dist/checker-qual.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/java/SerialKiller-0.4-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/java/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/java/jboss-javassist-javassist-rel_3_22_00_ga-46-g40d3223/jboss-javassist-javassist-40d3223/javassist.jar"/>
 	<classpathentry kind="lib" path="C:/Users/rseacord/java/sacclib.jar" sourcepath="/acclib/src/acclib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/rseacord/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0.jar" sourcepath="C:/Users/rseacord/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/rseacord/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

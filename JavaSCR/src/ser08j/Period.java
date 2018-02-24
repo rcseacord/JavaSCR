@@ -67,7 +67,23 @@ public final class Period implements Serializable {
   public String toString() {
     return this.start + " - " + this.end;
   }
-  
+
+  // readObject method with defensive copying and validity checking
+ // This will defend against BogusPeriod and MutablePeriod attacks.
+private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+  java.io.ObjectInputStream.GetField fields = ois.readFields();
+
+  // Defensively copy mutable fields
+  Date tempDate = ((Date) fields.get("start", new Date()));
+  this.start = new Date(tempDate.getTime());
+  tempDate = ((Date) fields.get("end", new Date()));
+  this.end = new Date(tempDate.getTime());
+
+  // Check that our invariants are satisfied
+  if (this.start.compareTo(this.end) > 0)
+    throw new InvalidObjectException(this.start + " after " + this.end);
+}
+
   @SuppressWarnings("deprecation")
   public static void main(String[] args) {
     Date start = new Date();

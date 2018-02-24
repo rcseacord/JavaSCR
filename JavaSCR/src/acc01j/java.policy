@@ -1,7 +1,4 @@
 // Policy file for acc01j
-keystore "file:${user.home}/classkeystore", "pkcs12";
-keystorePasswordURL "file:/C:/Users/rseacord/kspass.txt";
-
 grant codeBase "file:${user.home}/git/JavaSCR/-" {
   // required to view all granted permissions
   permission java.lang.RuntimePermission "getProtectionDomain";

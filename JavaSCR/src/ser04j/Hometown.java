@@ -73,6 +73,7 @@ public final class Hometown implements Serializable {
     String readTown;
     ObjectInputStream.GetField fields = in.readFields();
     readTown = (String) fields.get("town", null);
+    validateInput(readTown);
     this.town = readTown;
   }
 

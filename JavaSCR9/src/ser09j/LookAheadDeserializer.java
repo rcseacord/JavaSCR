@@ -52,7 +52,7 @@ public class LookAheadDeserializer {
     Object obj;
     try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buffer))) {
       // (2) TODO: enable custom filter
-      // ois.setObjectInputFilter(new BikeFilter());
+      ois.setObjectInputFilter(new BikeFilter());
       obj = ois.readObject();
     }
     return obj;
@@ -61,8 +61,8 @@ public class LookAheadDeserializer {
   public static void main(String[] args) throws ClassNotFoundException, IOException {
     
     // (3) TODO: enable process-wide filter 
-    // Properties props = System.getProperties();
-    // props.setProperty("jdk.serialFilter", "!*;ser09j.Bicycle;maxdepth=1;maxrefs=1;maxbytes=78;maxarray=10"); 
+    //Properties props = System.getProperties();
+    //props.setProperty("jdk.serialFilter", "ser09j.Bicycle;!*;maxdepth=1;maxrefs=1;maxbytes=78;maxarray=10");
     
     byte[] serializedBicycle = null;
     byte[] serializedFile = null;
@@ -91,13 +91,13 @@ public class LookAheadDeserializer {
 
     // Deserialize DoS
     // (4) TODO: Wouter Coekaerts DoS Attack
-//    try {
-//       System.out.println("Attempting DoS Attack"); 
-//       deserialize(DoSpayload());
-//      System.out.println("DoS has been deserialized."); 
-//    } catch (ClassNotFoundException | IOException e) {
-//      e.printStackTrace();
-//    }
+    try {
+       System.out.println("Attempting DoS Attack");
+       deserialize(DoSpayload());
+      System.out.println("DoS has been deserialized.");
+    } catch (ClassNotFoundException | IOException e) {
+      e.printStackTrace();
+    }
 
   } // end main
 } // end LookAheadDeserializer
