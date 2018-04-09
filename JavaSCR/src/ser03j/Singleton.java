@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -62,31 +62,6 @@ public final class Singleton extends Number {
   @Override
   public long longValue() {
     return 0;
-  }
-
-
-
-  /**
-   * @param out not used, but required to match signature
-   */
-  @SuppressWarnings("static-method")
-  private void writeObject(java.io.ObjectOutputStream out) throws IOException {
-    throw new IOException("Not serializable");
-  }
-
-  /**
-   * @param in not used, but required to match signature
-   * @throws IOException to prevent deserialization
-   * @throws ClassNotFoundException not used, but required to match signature
-   */
-  @SuppressWarnings("static-method")
-  private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
-    throw new IOException("Not deserializable");
-  }
-
-  @SuppressWarnings({ "unused", "static-method" })
-  private void readObjectNoData() throws ObjectStreamException {
-     throw new InvalidObjectException("Not deserializable");
   }
 
 } // end class Singleton
