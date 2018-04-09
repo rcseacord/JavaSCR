@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -68,22 +68,6 @@ public final class Period implements Serializable {
     return this.start + " - " + this.end;
   }
 
-  // readObject method with defensive copying and validity checking
- // This will defend against BogusPeriod and MutablePeriod attacks.
-private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-  java.io.ObjectInputStream.GetField fields = ois.readFields();
-
-  // Defensively copy mutable fields
-  Date tempDate = ((Date) fields.get("start", new Date()));
-  this.start = new Date(tempDate.getTime());
-  tempDate = ((Date) fields.get("end", new Date()));
-  this.end = new Date(tempDate.getTime());
-
-  // Check that our invariants are satisfied
-  if (this.start.compareTo(this.end) > 0)
-    throw new InvalidObjectException(this.start + " after " + this.end);
-}
-
   @SuppressWarnings("deprecation")
   public static void main(String[] args) {
     Date start = new Date();
@@ -140,16 +124,10 @@ private void readObject(ObjectInputStream ois) throws IOException, ClassNotFound
 
 
 
-// readObject method with validity checking - Page 304
-// This will defend against BogusPeriod attack but not MutablePeriod.
-// private void readObject(ObjectInputStream s)
-// throws IOException, ClassNotFoundException {
-// s.defaultReadObject();
-//
-// // Check that our invariants are satisfied
-// if (start.compareTo(end) > 0)
-// throw new InvalidObjectException(start +" after "+ end);
-// }
+
+
+
+
 
 // readObject method with defensive copying and validity checking
 // This will defend against BogusPeriod and MutablePeriod attacks.
