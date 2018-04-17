@@ -9,7 +9,6 @@ class BikeFilter implements ObjectInputFilter {
     System.out.println("filterInfo.references = " + filterInfo.references()); 
     System.out.println("filterInfo.depth = " + filterInfo.depth()); 
     System.out.println("filterInfo.streamBytes = " + filterInfo.streamBytes());
-    System.out.println("filterInfo.depth = " + filterInfo.depth()); 
     System.out.println("filterInfo.serialClass = " + filterInfo.serialClass().getCanonicalName());
 
     long maxStreamBytes = 78;   // Maximum allowed bytes in the stream.
