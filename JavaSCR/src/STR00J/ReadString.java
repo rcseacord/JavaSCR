@@ -25,56 +25,55 @@ package STR00J;
 import java.io.UnsupportedEncodingException;
 
 class ReadString {
-	
-	public static void main(String[] args) {
-		String str = ""; //$NON-NLS-1$
-		int offset; // initialized to zero
 
-		// A = 41 Ω = CE  A9   語  = E8  AA  9E  
-		// Ugaritic letter delta = F0 90 8E 84  
-		byte[] utf8_data = { 
-				(byte) 0x41, (byte) 0xCE, (byte) 0xA9, (byte) 0xE8,
-				(byte) 0xAA, (byte) 0x9E, (byte) 0xF0, (byte) 0x90,
-				(byte) 0x8E, (byte) 0x84, (byte) 0x41, (byte) 0x41 
-				};
+  public static void main(String[] args) {
+    String str = "";
+    int offset; // initialized to zero
 
-		// A = 0041 ß = 00DF
-		// 東 = 6771  𐐀  = D801 DC00
-		byte[] utf16_data = { 
-				(byte) 0x00, (byte) 0x41, (byte) 0x00, (byte) 0xDF, 
-				(byte) 0x67, (byte) 0x71, (byte) 0xD8, (byte) 0x01, 
-				(byte) 0xDC, (byte) 0x00, (byte) 0x00, (byte) 0x41
-				};	
-		
-		try {
-			// Read UTF-8 Data from 4 byte buffer
-			for (offset = 0; offset < utf8_data.length; offset += 4) {
-				str += new String(utf8_data, offset, 4, "UTF-8"); //$NON-NLS-1$
-			}
-			
-			// convert full string
-			String reference_utf8_str = new String(utf8_data, "UTF-8"); //$NON-NLS-1$
-			
-			if (!reference_utf8_str.equals(str)) {
-				System.out.println("UTF-8 strings are not equal"); //$NON-NLS-1$
-			}
-			
-			// Read UTF-16 Data from 4 byte buffer
-			str = ""; //$NON-NLS-1$
-			for (offset = 0; offset < utf16_data.length; offset += 4) {
-				str += new String(utf16_data, offset, 4, "UTF-16"); //$NON-NLS-1$
-			}
-				
-			// print full string
-			String reference_utf16_str = new String(utf16_data, "UTF-16"); //$NON-NLS-1$
-			
-			if (!reference_utf16_str.equals(str)) {
-				System.out.println("UTF-16 strings are not equal"); //$NON-NLS-1$
-			}
-		
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}
+    // A = 41 Ω = CE  A9   語  = E8  AA  9E
+    // Ugaritic letter delta = F0 90 8E 84
+    byte[] utf8_data = {
+        (byte) 0x41, (byte) 0xCE, (byte) 0xA9, (byte) 0xE8,
+        (byte) 0xAA, (byte) 0x9E, (byte) 0xF0, (byte) 0x90,
+        (byte) 0x8E, (byte) 0x84, (byte) 0x41, (byte) 0x41
+    };
 
-}
+    // A = 0041 ß = 00DF
+    // 東 = 6771  𐐀  = D801 DC00
+    byte[] utf16_data = {
+        (byte) 0x00, (byte) 0x41, (byte) 0x00, (byte) 0xDF,
+        (byte) 0x67, (byte) 0x71, (byte) 0xD8, (byte) 0x01,
+        (byte) 0xDC, (byte) 0x00, (byte) 0x00, (byte) 0x41
+    };
+
+    try {
+      // Read UTF-8 Data from 4 byte buffer
+      for (offset = 0; offset < utf8_data.length; offset += 4) {
+        str += new String(utf8_data, offset, 4, "UTF-8");
+      }
+
+      // convert full string
+      String reference_utf8_str = new String(utf8_data, "UTF-8");
+
+      if (!reference_utf8_str.equals(str)) {
+        System.out.println("UTF-8 strings are not equal");
+      }
+
+      // Read UTF-16 Data from 4 byte buffer
+      str = "";
+      for (offset = 0; offset < utf16_data.length; offset += 4) {
+        str += new String(utf16_data, offset, 4, "UTF-16");
+      }
+
+      // print full string
+      String reference_utf16_str = new String(utf16_data, "UTF-16");
+
+      if (!reference_utf16_str.equals(str)) {
+        System.out.println("UTF-16 strings are not equal");
+      }
+
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+    }
+  } // main
+} // class REadString

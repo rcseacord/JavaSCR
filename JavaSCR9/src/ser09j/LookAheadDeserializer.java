@@ -52,7 +52,7 @@ public class LookAheadDeserializer {
     Object obj;
     try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buffer))) {
       // (2) TODO: enable custom filter
-      ois.setObjectInputFilter(new BikeFilter());
+      // ois.setObjectInputFilter(new BikeFilter());
       obj = ois.readObject();
     }
     return obj;

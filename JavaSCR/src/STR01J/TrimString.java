@@ -29,7 +29,7 @@ class TrimString {
 		int i;
 		for (i = 0; i < string.length(); i += 1) {
 			ch = string.charAt(i);
-			if (!Character.isLetter(ch)) {
+			if (Character.isLetter(ch)) {
 				break;
 			}
 		}
@@ -37,12 +37,11 @@ class TrimString {
 	}
 
 	public static void main(String[] args) {
-		String s1 = trim("Aß東𐐀001"); //$NON-NLS-1$
+		String s1 = trim("001𐐀Aß東");
 		System.out.println(s1);
-		String s2 = trim("𐐀𐐀𐐀𐐀𐐀𐐀𐐀𐐀1"); //$NON-NLS-1$
+		String s2 = trim("1234567𐐀𐐀𐐀𐐀𐐀𐐀𐐀𐐀");
 		System.out.println(s2);
 	}
-
 }
 
 
@@ -88,14 +87,14 @@ class TrimString {
 /*
     // Fast solution 
   	public static String trim(String string) {
-		boolean nonLetterFound = false;
+		boolean letterFound = false;
 		StringBuilder sb = new StringBuilder(string.length());
 		for (int ch : (Iterable<Integer>) string.codePoints()::iterator) {
 			if (nonLetterFound) {
 				sb.appendCodePoint(ch);
 			} else {
-				if (!Character.isLetter(ch)) {
-					nonLetterFound = true;
+				if (Character.isLetter(ch)) {
+					letterFound = true;
 					sb.appendCodePoint(ch);
 				}
 			}
@@ -112,7 +111,7 @@ class TrimString {
         // if by Character.toCodePoint and the result is passed to the stream. 
         for (int ch : (Iterable<Integer>)string.codePoints()::iterator) {
             // determine if code point is character
-            if (!Character.isLetter(ch)) {
+            if (Character.isLetter(ch)) {
                 break;
             }
             i++;
@@ -126,7 +125,7 @@ class TrimString {
     int i;
     for (i = 0; i < string.length(); i = string.offsetByCodePoints(i,  1)) {
       int cp = string.codePointAt(i);
-      if (!Character.isLetter(cp)) {
+      if (Character.isLetter(cp)) {
         break;
       }
     }

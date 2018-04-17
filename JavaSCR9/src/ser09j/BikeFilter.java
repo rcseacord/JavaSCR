@@ -8,8 +8,7 @@ class BikeFilter implements ObjectInputFilter {
   public Status checkInput(FilterInfo filterInfo) {
     System.out.println("filterInfo.references = " + filterInfo.references()); 
     System.out.println("filterInfo.depth = " + filterInfo.depth()); 
-    System.out.println("filterInfo.streamBytes = " + filterInfo.streamBytes()); 
-    System.out.println("filterInfo.references = " + filterInfo.references()); 
+    System.out.println("filterInfo.streamBytes = " + filterInfo.streamBytes());
     System.out.println("filterInfo.depth = " + filterInfo.depth()); 
     System.out.println("filterInfo.serialClass = " + filterInfo.serialClass().getCanonicalName());
 
@@ -30,6 +29,6 @@ class BikeFilter implements ObjectInputFilter {
         return Status.REJECTED;
       }      
     }
-    return Status.UNDECIDED;      
+    return Status.UNDECIDED;
   } // end checkInput
 } // end class BikeFilter

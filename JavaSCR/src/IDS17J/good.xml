@@ -1,4 +1,4 @@
  <!DOCTYPE foo [  
    <!ELEMENT foo ANY >
-   <!ENTITY copyright SYSTEM "file:src\IDS17J\copyright" >]>
+   <!ENTITY copyright SYSTEM "file:./JavaSCR/src/IDS17J/copyright" >]>
    <foo>&copyright;</foo>

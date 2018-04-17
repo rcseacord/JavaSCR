@@ -59,7 +59,7 @@ class XXE {
 
 	public static void main(String[] args) throws ParserConfigurationException {
 
-		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) { 
+		try (FileInputStream fis = new FileInputStream("JavaSCR/src/IDS17J/evil.xml")) {
 			receiveXMLStreamBad(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {
@@ -70,7 +70,7 @@ class XXE {
 			}
 		}
 
-		try (FileInputStream fis = new FileInputStream("src/IDS17J/good.xml")) { 
+		try (FileInputStream fis = new FileInputStream("JavaSCR/src/IDS17J/good.xml")) {
 			receiveXMLStream(fis, new DefaultHandler());
 		} catch (SAXException | IOException ex) {
 			System.err.println(ex);
@@ -80,7 +80,7 @@ class XXE {
 			}
 		}
 		
-		try (FileInputStream fis = new FileInputStream("src/IDS17J/evil.xml")) { 
+		try (FileInputStream fis = new FileInputStream("JavaSCR/src/IDS17J/evil.xml")) {
 			receiveXMLStream(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {

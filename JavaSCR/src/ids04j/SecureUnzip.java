@@ -87,7 +87,7 @@ public class SecureUnzip {
 
   public static void main(String[] args) {
     try {
-      unzip("./src/ids04j/10GB/10GB.zip"); 
+      unzip("JavaSCR/src/ids04j/10GB/10GB.zip");
     } catch (IOException e) {
       System.err.println("Could not unzip file.");
     }

@@ -73,6 +73,7 @@ class Cardinality {
 
 // returns the number of occurrences of Object obj in Collection col.
 /*
+import java.util.Objects;
 public static int cardinality(@Nullable Object obj, final Collection<?> col) {
 	int count = 0;
 	if (col == null) {

@@ -28,17 +28,17 @@ import java.util.regex.Matcher;
 
 class ValidateString {
 	
-	private static String NormalizeandValidate(String input) {
+	private static String NormalizeThenValidate(String input) {
 
 		// Validate
-		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets //$NON-NLS-1$
+		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
 		String s = input;
     Matcher matcher = pattern.matcher(s);
 		if (matcher.find()) {
 			// Found black listed tag
 			throw new IllegalStateException();
 		}
-    System.out.println("valid input"); //$NON-NLS-1$
+    System.out.println("valid input");
 		
 		// Normalize
 		s = Normalizer.normalize(s, Form.NFKC);
@@ -50,10 +50,10 @@ class ValidateString {
 		// Assume input is user controlled
 		// \uFE64 is normalized to < and \uFE65 is normalized to > using the
 		// NFKC normalization form
-		String input = "\uFE64" + "script" + "\uFE65"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		System.out.println("unnormalized string: " + input); //$NON-NLS-1$
-		input = NormalizeandValidate(input);
-		System.out.println("normalized string: " + input); //$NON-NLS-1$
+		String input = "\uFE64" + "script" + "\uFE65";
+		System.out.println("unnormalized string: " + input);
+		input = NormalizeThenValidate(input);
+		System.out.println("normalized string: " + input);
 	}
 }
 
@@ -97,7 +97,7 @@ class ValidateString {
 /*
  public class ValidateString {
 	
-	public static Boolean NormalizeandValidate(String s) {
+	public static Boolean NormalizeThenValidate(String s) {
 		// Normalize
 		s = Normalizer.normalize(s, Form.NFKC);
 

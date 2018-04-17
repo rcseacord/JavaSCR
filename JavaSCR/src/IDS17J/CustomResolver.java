@@ -32,13 +32,13 @@ class CustomResolver implements EntityResolver {
   public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
 
     // Check for known good entities
-    String entityPath = "file:src/IDS17J/copyright"; //$NON-NLS-1$
+    String entityPath = "file:./JavaSCR/src/IDS17J/copyright";
     if (systemId.equals(entityPath)) {
-      System.out.println("Resolving entity: " + publicId + " " + systemId); //$NON-NLS-1$ //$NON-NLS-2$
+      System.out.println("Resolving entity. Public ID " + publicId + ", System ID " + systemId);
       return new InputSource(entityPath);
     }
     // Disallow unknown entities
-    System.out.println("Disallowing unknown entity: " + publicId + " " + systemId); //$NON-NLS-1$ //$NON-NLS-2$
+    System.out.println("Disallowing unknown entity: " + publicId + " " + systemId);
     return null;
   }
 }

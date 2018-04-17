@@ -55,9 +55,9 @@ class Malicious {
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     Singleton sc = (Singleton) serialCopy(Singleton.getInstance());
-    // Prints false; indicates new instance
+
     //noinspection NumberEquality
-    System.out.println(sc == Singleton.getInstance());
+    System.out.println(sc == Singleton.getInstance()); // Prints false indicating new instance
     System.out.println("Balance = " + sc.getBalance());
   }
 
