@@ -34,8 +34,8 @@ import java.util.Calendar;
 
 public final class PartTwo implements AutoCloseable {
   private static final CopyOption[] options = { StandardCopyOption.COPY_ATTRIBUTES };
-  private static final Charset charset = Charset.forName("US-ASCII"); //$NON-NLS-1$
-  private static final String s = "File ID"; //$NON-NLS-1$
+  private static final Charset charset = Charset.forName("US-ASCII");
+  private static final String s = "File ID";
   private final Path filepath;
   private BufferedWriter writer;
 
@@ -48,7 +48,7 @@ public final class PartTwo implements AutoCloseable {
   
   // copy constructor
   public PartTwo(PartTwo p2) throws IOException {
-    this.filepath = Paths.get(p2.filepath + "copy"); //$NON-NLS-1$
+    this.filepath = Paths.get(p2.filepath + "copy");
     Files.copy(p2.filepath, this.filepath, options);
     this.writer = Files.newBufferedWriter(this.filepath, charset);
   }

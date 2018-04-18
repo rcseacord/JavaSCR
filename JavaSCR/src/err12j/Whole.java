@@ -51,7 +51,7 @@ class Whole {
     return this.p2;
   }
 
-  private Whole move(Whole Source) throws IOException {
+  private Whole copy(Whole Source) throws IOException {
     PartOne t1 = new PartOne(Source.getp1());
     if (t1 != null) { // not necessary for copy constructor
       try {
@@ -75,18 +75,11 @@ class Whole {
             // Commit the change to the system state.
             // Importantly it won't throw.
             // Copy
-            //p1 = t1;
-            //t1 = null;
-            //p2 = t2;
-            //t2 = null;
-            // Move
-            PartOne swap1 = t1;
-            t1 = this.p1;
-            this.p1 = swap1;
-            
-            PartTwo swap2 = t2;
-            t2 = this.p2;
-            this.p2 = swap2;
+            p1 = t1;
+            t1 = null;
+            p2 = t2;
+            t2 = null;
+
           } finally {
             // frees the temporary if we passed the
             // pivot uneventfully.
@@ -106,21 +99,21 @@ class Whole {
 
   public static void main(String[] args) {
     try {
-      Whole a = new Whole(Paths.get("p1"), Paths.get("p2")); //$NON-NLS-1$ //$NON-NLS-2$
+      Whole a = new Whole(Paths.get("p1"), Paths.get("p2"));
       System.out.println(a.toString());
-      Whole b = a.move(a);
+      Whole b = a.copy(a);
       System.out.println(b.toString());
     } 
     catch (IOException e) {
       e.printStackTrace();
     } 
     finally {
-      String[] files = { "p1", "p2", "p1copy", "p2copy" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+      String[] files = { "p1", "p2", "p1copy", "p2copy" };
       for (String file : files) {
         try {
           Files.delete(Paths.get(file));
         } catch (IOException e) {
-          System.err.println("Couldn't delete file " + file); //$NON-NLS-1$
+          System.err.println("Couldn't delete file " + file);
         }
       } // end for
     } // end finally
@@ -171,6 +164,7 @@ class Whole {
 
 /*
 // Move
+// Might want to allocate storage before swap point
 PartOne swap1 = t1;
 t1 = p1;
 p1 = swap1;
