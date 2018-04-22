@@ -22,9 +22,7 @@
 
 package ser03j;
 
-import java.io.IOException;
-import java.io.InvalidObjectException;
-import java.io.ObjectStreamException;
+import java.io.NotSerializableException;
 
 public final class Singleton extends Number {
   private static final long serialVersionUID = 1L;
@@ -96,7 +94,7 @@ public final class Singleton extends Number {
 //   */
 //  @SuppressWarnings("static-method")
 //  private void writeObject(java.io.ObjectOutputStream out) throws IOException {
-//    throw new IOException("Not serializable");
+//    throw new NotSerializableException("Not serializable");
 //  }
 //  
 //  /**
@@ -106,11 +104,11 @@ public final class Singleton extends Number {
 //   */
 //  @SuppressWarnings("static-method")
 //  private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
-//    throw new IOException("Not deserializable");
+//    throw new NotSerializableException("Not deserializable");
 //  }
 //  
 //  @SuppressWarnings({ "unused", "static-method" })
 //  private void readObjectNoData() throws ObjectStreamException {
-//     throw new InvalidObjectException("Not deserializable");
+//     throw new NotSerializableException("Not deserializable");
 //  }
 

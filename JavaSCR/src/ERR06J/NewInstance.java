@@ -28,11 +28,11 @@ import java.lang.reflect.InvocationTargetException;
 public class NewInstance {
   private static Throwable throwable;
 
-  public NewInstance() throws Throwable {
+  private NewInstance() throws Throwable {
     throw throwable;
   }
 
-  public static synchronized void undeclaredThrow(Throwable throwable) throws InvocationTargetException {
+  private static synchronized void undeclaredThrow(Throwable throwable) throws InvocationTargetException {
     // These exceptions should not be passed
     if (throwable instanceof IllegalAccessException || throwable instanceof InstantiationException) {
       // Unchecked, no declaration required
@@ -41,9 +41,9 @@ public class NewInstance {
 
     NewInstance.throwable = throwable;
     try {
-      NewInstance.class.getConstructor().newInstance();
+      NewInstance.class.newInstance();
     } 
-    catch (InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException e) {
+    catch (InstantiationException | IllegalAccessException | SecurityException e) {
       e.printStackTrace();
     } finally { // Avoid memory leak
       NewInstance.throwable = null;
@@ -69,3 +69,38 @@ public class NewInstance {
     }
   } // end main
 } // end class newInstance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    +      NewInstance.class.getConstructor().newInstance();
+//    -      NewInstance.class.newInstance();
+//
+//    +    catch (InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException e) {
+//    -    catch (InstantiationException | IllegalAccessException | SecurityException e) {
+
+
+
