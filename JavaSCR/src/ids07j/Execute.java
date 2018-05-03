@@ -29,11 +29,12 @@ import java.util.Objects;
 
 public class Execute {
   public static void main(String[] args) throws Exception {
-    System.out.println("------------- rt.exec");
-    // String dir = System.getProperty("dir");
-    String dir = "&calc";
+    // See what sort of arguments are passed
+    System.out.println("------------- rt.exec PrintArgs Path with Spaces");
+    String PrintArgs = "C:\\Users\\rseacord\\source\\repos\\PrintArgs\\Release\\PrintArgs.exe ";
     Runtime rt = Runtime.getRuntime();
-    Process proc = rt.exec("cmd.exe /C dir " + dir);
+    // PrintArgs.exe argument1 "argument 2"  "\some\path with\spaces"
+    Process proc = rt.exec(PrintArgs + "argument1 \"argument 2\"  \"\\some\\path with\\spaces\"");
     int result = proc.waitFor();
     if (result != 0) {
       System.out.println("process error: " + result);
@@ -45,17 +46,84 @@ public class Execute {
       System.out.print((char) c);
     }
 
+    System.out.println("------------- rt.exec PrintArgs Nested Quotes");
+    rt = Runtime.getRuntime();
+    proc = rt.exec(PrintArgs + "argument1 \"she said, \"you had me at hello\"\"  \"\\some\\path with\\spaces\"");
+    result = proc.waitFor();
+    if (result != 0) {
+      System.out.println("process error: " + result);
+    }
+    in = (result == 0) ? proc.getInputStream() :
+        proc.getErrorStream();
+    while ((c = in.read()) != -1) {
+      System.out.print((char) c);
+    }
+
+    System.out.println("------------- rt.exec PrintArgs Unbalanced Quotes");
+    rt = Runtime.getRuntime();
+    proc = rt.exec(PrintArgs + "argument1 \"argument\"2\" argument3 argument4");
+    result = proc.waitFor();
+    if (result != 0) {
+      System.out.println("process error: " + result);
+    }
+    in = (result == 0) ? proc.getInputStream() :
+        proc.getErrorStream();
+    while ((c = in.read()) != -1) {
+      System.out.print((char) c);
+    }
+
+    System.out.println("------------- rt.exec PrintArgs trailing backslash");
+    rt = Runtime.getRuntime();
+    proc = rt.exec(PrintArgs + "\"\\some\\directory with\\spaces\\\" argument2");
+    result = proc.waitFor();
+    if (result != 0) {
+      System.out.println("process error: " + result);
+    }
+    in = (result == 0) ? proc.getInputStream() :
+        proc.getErrorStream();
+    while ((c = in.read()) != -1) {
+      System.out.print((char) c);
+    }
+
+    // Use ProcessBuilder and separate commands and each argument
+    System.out.println("------------- ProcessBuilder PrintArgs Unbalanced Quotes");
+    String[] PrintArgsCommand = {PrintArgs, "argument1 \"argument\"2\" argument3 argument4"};
+    ProcessBuilder pb = new ProcessBuilder(PrintArgsCommand);
+    proc = pb.start();
+    result = proc.waitFor();
+    if (result != 0) {
+      System.out.println("process error: " + result);
+    }
+    in = (result == 0) ? proc.getInputStream() : proc.getErrorStream();
+    while ((c = in.read()) != -1) {
+      System.out.print((char) c);
+    }
+
+    System.out.println("------------- rt.exec");
+    // String dir = System.getProperty("dir");
+    String dir = "&calc";
+    rt = Runtime.getRuntime();
+    proc = rt.exec("cmd.exe /C dir " + dir);
+    result = proc.waitFor();
+    if (result != 0) {
+      System.out.println("process error: " + result);
+    }
+    in = (result == 0) ? proc.getInputStream() :
+        proc.getErrorStream();
+    while ((c = in.read()) != -1) {
+      System.out.print((char) c);
+    }
+
     // Using ProcessBuilder incorrectly
     System.out.println("------------- Using ProcessBuilder incorrectly");
-    ProcessBuilder b = new ProcessBuilder("C:\\Windows\\System32\\cmd.exe /C dir " + dir);
+    pb = new ProcessBuilder("C:\\Windows\\System32\\cmd.exe /C dir " + dir);
     try {
-      Process p1 = b.start();
-      result = p1.waitFor();
+      proc = pb.start();
+      result = proc.waitFor();
       if (result != 0) {
         System.out.println("process error: " + result);
       }
-      in = (result == 0) ? proc.getInputStream() :
-          proc.getErrorStream();
+      in = (result == 0) ? proc.getInputStream() : proc.getErrorStream();
       while ((c = in.read()) != -1) {
         System.out.print((char) c);
       }
@@ -67,14 +135,13 @@ public class Execute {
     // Use ProcessBuilder and separate commands and each argument
     System.out.println("------------- Using ProcessBuilder correctly");
     String[] command = {"C:\\Windows\\System32\\cmd.exe", "/C", "dir", dir};
-    ProcessBuilder pb = new ProcessBuilder(command);
-    Process p2 = pb.start();
-    result = p2.waitFor();
+    pb = new ProcessBuilder(command);
+    proc = pb.start();
+    result = proc.waitFor();
     if (result != 0) {
       System.out.println("process error: " + result);
     }
-    in = (result == 0) ? proc.getInputStream() :
-        proc.getErrorStream();
+    in = (result == 0) ? proc.getInputStream() : proc.getErrorStream();
     while ((c = in.read()) != -1) {
       System.out.print((char) c);
     }
