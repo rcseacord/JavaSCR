@@ -29,48 +29,80 @@ import java.util.regex.Pattern;
 
 class TagFilter {
 
-	private static String filterStringBad(String str) {
-		String s = Normalizer.normalize(str, Form.NFKC);
-
-		// Validate input
-		Pattern pattern = Pattern.compile("<script>"); //$NON-NLS-1$
-		Matcher matcher = pattern.matcher(s);
-		if (matcher.find()) {
-			throw new IllegalArgumentException("Invalid input"); //$NON-NLS-1$
-		}
-
-		// Deletes all noncharacter code points
-		s = s.replaceAll("[\\p{Cn}]", ""); //$NON-NLS-1$ //$NON-NLS-2$
-		return s;
-	}
-
 	private static String filterString(String str) {
 		String s = Normalizer.normalize(str, Form.NFKC);
 
-		// Replaces all noncharacter code points with Unicode U+FFFD
-		s = s.replaceAll("[\\p{Cn}]", "\uFFFD"); //$NON-NLS-1$ //$NON-NLS-2$
-
 		// Validate input
-		Pattern pattern = Pattern.compile("<script>"); //$NON-NLS-1$
+		Pattern pattern = Pattern.compile("<script>");
 		Matcher matcher = pattern.matcher(s);
 		if (matcher.find()) {
-			throw new IllegalArgumentException("Invalid input"); //$NON-NLS-1$
+			throw new IllegalArgumentException("Invalid input");
 		}
+
+		// Remove all noncharacter code points
+		s = s.replaceAll("[\\p{Cn}]", "");
 		return s;
 	}
 
 	public static void main(String[] args) {
 		// "\uFDEF" is a noncharacter code point
-		String maliciousInput = "<scr" + "\uFDEF" + "ipt>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		String sb = filterStringBad(maliciousInput);
+		String maliciousInput = "<scr" + "\uFDEF" + "ipt>";
+		String sb = filterString(maliciousInput);
 		System.out.println(sb);
-
-		String sg = filterString(maliciousInput);
-		System.out.println(sg);
-
-		// String filtered by filterStringBad()
-		String s = filterString(sb);
-		System.out.println(s);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//	private static String filterString(String str) {
+//		String s = Normalizer.normalize(str, Form.NFKC);
+//
+//		// Replaces all noncharacter code points with Unicode U+FFFD
+//		s = s.replaceAll("[\\p{Cn}]", "\uFFFD");
+//
+//		// Validate input
+//		Pattern pattern = Pattern.compile("<script>");
+//		Matcher matcher = pattern.matcher(s);
+//		if (matcher.find()) {
+//			throw new IllegalArgumentException("Invalid input");
+//		}
+//		return s;
+//	}
