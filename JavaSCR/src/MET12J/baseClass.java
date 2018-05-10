@@ -26,7 +26,7 @@ class baseClass {
 	@Override
   protected void finalize() throws Throwable {
 		super.finalize();
-		System.out.println("Superclass finalize!"); //$NON-NLS-1$
+		System.out.println("Superclass finalize!");
 		// Calls the doLogic() method, which happens to be overridden in the
 		// SubClass. This resurrects a reference to SubClass that not only
 		// prevents it from being garbage-collected but also prevents it
@@ -36,6 +36,6 @@ class baseClass {
 	}
 
 	void doLogic() throws Throwable {
-		System.out.println("This is super-class!"); //$NON-NLS-1$
+		System.out.println("This is super-class!");
 	}
 }

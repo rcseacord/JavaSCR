@@ -65,7 +65,7 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="jdk" jdkName="9.0 (1)" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="10" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library name="commons-collections4-4.0.jar">
         <CLASSES>
@@ -80,5 +80,14 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="acclib" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/redist/annotations-java8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -48,12 +48,16 @@ class listUtility {
 
 		// This Java runtime does not throw a ClassCastException until the value
 		// is read and has an invalid type (an int rather than a String).
-		// System.out.println(list.get(0)); // Throws ClassCastException
+		try {
+			System.out.println(list.get(0)); // Throws ClassCastException
+		}
+		catch (ClassCastException cce) {
+			cce.printStackTrace();
+		}
 
-		// If the addToList() method is legacy code that cannot be
-		// changed, you can create a checked list view 
-		// by using the Collections.checkedList() method. This method
-		// returns a wrapper collection that performs runtime type checking in
+		// If the addToList() method is legacy code that cannot be changed,
+		// create a checked list view y using the Collections.checkedList() method.
+		// This method returns a wrapper collection that performs runtime type checking in
 		// its implementation of the add() method before delegating to the
 		// back-end List<String>.
 		List<String> backlist = new ArrayList<>();
