@@ -19,24 +19,6 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="checker-qual.jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/checker-framework-2.2.2/checker-framework-2.2.2/checker/dist/checker-qual.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="SerialKiller-0.4-all.jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/SerialKiller-0.4-all.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="commons-io-2.5.jar">
         <CLASSES>
           <root url="jar://$USER_HOME$/java/commons-io-2.5.jar!/" />
