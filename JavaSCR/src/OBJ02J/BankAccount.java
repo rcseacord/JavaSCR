@@ -42,19 +42,52 @@ class BankAccount extends Account {
 		// Enforce security manager check
 		try {
 			account.withdraw(200.0);
-		  System.out.println("Withdrawal successful."); //$NON-NLS-1$
+		  System.out.println("Withdrawal successful.");
 		} catch (SecurityException e) {
-			System.err.println("Withdrawal failed."); //$NON-NLS-1$
+			System.err.println("Withdrawal failed.");
 			e.printStackTrace();
 		}
 
 		// Client uses new overdraft method.
-		/*
-		if (!result) {
-			result = account.overdraft();
-		}
-		//
-		System.out.println("Withdrawal successful? " + result);
-		*/
+		// System.out.println("Withdrawal successful? " + account.overdraft());
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  boolean overdraft() {
+//    if (!securityCheck()) {
+//      throw new SecurityException();
+//    }
+//    return super.overdraft();
+//  }

@@ -24,21 +24,19 @@ package OBJ02J;
 
 class Account {
   // Maintains all banking-related data such as account balance
-  private double balance = 100;
+  private double balance = 1000;
 
   void withdraw(double amount) {
     if ((this.balance - amount) >= 0) {
       this.balance -= amount;
-      System.out.println("Withdrawal successful. The balance is : " + this.balance); //$NON-NLS-1$
+      System.out.println("Withdrawal successful. The balance is : " + this.balance);
     }
   }
 
-	/*
-	boolean overdraft() {
-		balance += 300; // Add 300 in case there is an overdraft
-		System.out.println("Added back-up amount. The balance is :" + balance);
-		return true;
-	}
-	*/
+//	boolean overdraft() {
+//		balance -= 100; // Withdraw 100 to cover overdraft
+//		System.out.println("Overdraft. The balance is :" + balance);
+//		return true;
+//	}
 
 }
