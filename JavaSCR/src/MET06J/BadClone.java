@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@ package MET06J;
 import java.net.HttpCookie;
 
 class BadClone implements Cloneable {
-	private HttpCookie[] cookies;
+	protected HttpCookie[] cookies;
 
 	BadClone(HttpCookie[] c) {
 			this.cookies = c;
@@ -45,13 +45,13 @@ class BadClone implements Cloneable {
 	void doSomething() { // Overridable
 		// Initializes hc to correct values
 		for (int i = 0; i < this.cookies.length; i++) {
-			this.cookies[i].setValue("" + i * 2); //$NON-NLS-1$
+			this.cookies[i].setValue("" + i * 2); 
 		}
 	}
 
 	void printValues() { // Overridable
 		for (HttpCookie cookie : this.cookies) {
-			System.out.println("value: " + cookie.getValue() + ", domain:" + cookie.getDomain());  //$NON-NLS-1$//$NON-NLS-2$
+			System.out.println("value: " + cookie.getValue() + ", domain:" + cookie.getDomain());  
 		}
 	}
 

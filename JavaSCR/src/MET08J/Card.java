@@ -22,28 +22,45 @@
 
 package MET08J;
 
-public class card {
+import com.google.common.testing.EqualsTester;
+
+import java.util.Objects;
+
+public class Card {
 	private final int number;
 
-	public card(int number) {
+	public Card(int number) {
 		this.number = number;
 	}
 
-	@Override
+  @Override
   public boolean equals(Object o) {
-		if (!(o instanceof card)) {
-			return false;
-		}
+    if (this == o) return true;
+    if (!(o instanceof Card)) return false;
+    Card card = (Card) o;
+    return number == card.number;
+  }
 
-		card c = (card) o;
-		return c.number == number;
-	}
-
-	// Comply with MET09-J
-	@Override
+  @Override
   public int hashCode() {
-		/* ... */
-		return 0;
-	}
+    return Objects.hash(number);
+  }
 
-}
+  public static void main(String[] args) {
+    Card p1 = new Card(1);
+    Card p2 = new Card(1);
+    Card p3 = new Card(1);
+    Card p4 = new Card(2);
+    Card p5 = new Card(2);
+
+    System.out.println(p1.equals(p2)); // Returns true
+    System.out.println(p2.equals(p3)); // Returns true
+    System.out.println(p1.equals(p3)); // Returns true
+
+    new EqualsTester()
+        .addEqualityGroup(p1, p2, p3)
+        .addEqualityGroup(p4, p5)
+        .testEquals();
+
+  } // end main
+} // end class

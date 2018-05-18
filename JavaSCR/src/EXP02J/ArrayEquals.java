@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +26,7 @@ import java.util.Arrays;
 
 class ArrayEquals {
 
+	@SuppressWarnings("ArrayEquals")
 	public static void main(String[] args) {
 		int[] arr1 = new int[20]; // initialized to 0
 		int[] arr2 = new int[20]; // initialized to 0

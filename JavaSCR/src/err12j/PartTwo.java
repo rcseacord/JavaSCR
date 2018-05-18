@@ -56,7 +56,7 @@ public final class PartTwo implements AutoCloseable {
   public void setNow(Calendar rightNow) throws IOException {
     this.writer.write(rightNow.toString());  
     this.writer.flush();
- // throw new IOException("injected fault");
+    // throw new IOException("injected fault");
   }
   
   @Override

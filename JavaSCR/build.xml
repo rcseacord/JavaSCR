@@ -79,11 +79,6 @@
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
-    <target name="caseInsensitiveStringGood">
-        <java classname="MET08J.caseInsensitiveStringGood" failonerror="true" fork="yes">
-            <classpath refid="JavaSCR.classpath"/>
-        </java>
-    </target>
     <target name="compNaN">
         <java classname="NUM07J.compNaN" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
@@ -139,11 +134,6 @@
     </target>
     <target name="FPinput">
         <java classname="NUM08J.FPinput" failonerror="true" fork="yes">
-            <classpath refid="JavaSCR.classpath"/>
-        </java>
-    </target>
-    <target name="goodCreditCard">
-        <java classname="MET09J.goodCreditCard" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

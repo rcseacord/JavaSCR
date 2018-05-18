@@ -20,31 +20,104 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package MET11J;
+package MET09J;
 
-import java.io.Serializable;
+import com.google.common.testing.EqualsTester;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
-final class MyKey implements Serializable {
+final class CreditCard {
+  private final int number;
 
-	private static final long serialVersionUID = -1723490604407166154L;
-	private final Integer value;
+  private CreditCard(int number) {
+    this.number = number;
+  }
 
-	public MyKey(Integer value) {
-		this.value = value;
-	}
+//	  @Override
+//    public boolean equals(Object o) {
+//	    if (o == this) {
+//	      return true;
+//	    }
+//	    if (!(o instanceof badCreditCard)) {
+//	      return false;
+//	    }
+//	    badCreditCard cc = (badCreditCard)o;
+//	    return cc.number == number;
+//	  }
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (!(o instanceof MyKey)) return false;
-    MyKey myKey = (MyKey) o;
-    return Objects.equals(value, myKey.value);
+    if (!(o instanceof CreditCard)) return false;
+    CreditCard that = (CreditCard) o;
+    return number == that.number;
   }
+
+  public static void main(String[] args) {
+    CreditCard cc_a = new CreditCard(100);
+    CreditCard cc_b = new CreditCard(100);
+    CreditCard cc_c = new CreditCard(200);
+    Map<CreditCard, String> m = new HashMap<>();
+    m.put(cc_a, "4111111111111111");
+    // The expected retrieved value is 4111111111111111;
+    // the actual retrieved value is null.
+    System.out.println(m.get(new CreditCard(100)));
+
+    new EqualsTester()
+        .addEqualityGroup(cc_a, cc_b)
+        .addEqualityGroup(cc_c)
+        .testEquals();
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //  @Override
 //  public int hashCode() {
-//    return Objects.hash(value);
+//    return Objects.hash(number);
 //  }
-
-}

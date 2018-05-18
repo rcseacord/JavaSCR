@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,23 +24,24 @@ package NUM07J;
 
 class compNaN {
 
+	@SuppressWarnings({"EqualsNaN", "IdentityBinaryExpression"})
 	public static void main(String[] args) {
-		// Do not perform a direct comparisons with�NaN
+		// Do not perform a direct comparisons with NaN
 		double x = 0.0;
 		double result = Math.cos(1 / x); // returns NaN
 		// comparison is always false!
 		if (result == Double.NaN) {
-			System.out.println("result is NaN"); //$NON-NLS-1$
+			System.out.println("result is NaN"); 
 		}
 
-		// Use the�isNaN() method to check whether the specified value is�NaN
+		// Use the isNaN() method to check whether the specified value is NaN
 		if (Double.isNaN(result)) {
-			System.out.println("result is NaN"); //$NON-NLS-1$
+			System.out.println("result is NaN"); 
 		}
 
 		// true if and only if x is NaN
 		if (result != result) {
-			System.out.println("result is NaN"); //$NON-NLS-1$
+			System.out.println("result is NaN"); 
 		}
 		
 		x = Math.cos(1 / x); // returns NaN
@@ -48,10 +49,10 @@ class compNaN {
 		
 		// false if x or y is NaN
 		if ((x<y) == !(x>=y)) {
-			System.out.println("x and y are not NaN"); //$NON-NLS-1$
+			System.out.println("x and y are not NaN"); 
 		}
 		else {
-			System.out.println("result is NaN"); //$NON-NLS-1$
+			System.out.println("result is NaN"); 
 		}	
 	}
 }

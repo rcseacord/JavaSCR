@@ -23,47 +23,53 @@
 package MET08J;
 
 
+import com.google.common.testing.EqualsTester;
+
+import java.util.Objects;
+
 class xCardGood {
-  final private String type;
+  final private String suit;
   
   // Composition: private card field added
-  final private card card;
+  final private Card card;
  
-  private xCardGood(int number, String type) {
-    this.card = new card(number);
-    this.type = type;
+  private xCardGood(int number, String suit) {
+    this.card = new Card(number);
+    this.suit = suit;
   }
  
   // new viewCard() method added
-  public card viewCard() {
+  public Card viewCard() {
     return this.card;
   }
  
   @Override
   public boolean equals(Object o) {
-    if (!(o instanceof xCardGood)) {
-      return false;
-    }
- 
+    if (this == o) return true;
+    if (!(o instanceof xCardGood)) return false;
     xCardGood cp = (xCardGood)o;
-    return cp.card.equals(this.card) && cp.type.equals(this.type);
+    return cp.card.equals(this.card) && cp.suit.equals(this.suit);
   }
- 
-	// Comply with MET09-J
-	@Override
+
+  @Override
   public int hashCode() {
-		/* ... */
-		return 0;
-	}
- 
+    return Objects.hash(this.card, suit);
+  }
+
   public static void main(String[] args) {
-    xCardGood p1 = new xCardGood(1, "type1"); //$NON-NLS-1$
-    card p2 = new card(1);
-    xCardGood p3 = new xCardGood(1, "type2"); //$NON-NLS-1$
-    xCardGood p4 = new xCardGood(1, "type1"); //$NON-NLS-1$
+    xCardGood p1 = new xCardGood(1, "heart");
+    Card p2 = new Card(1);
+    xCardGood p3 = new xCardGood(1, "diamond");
+    xCardGood p4 = new xCardGood(1, "heart");
     System.out.println(p1.equals(p2)); // Prints false
     System.out.println(p2.equals(p3)); // Prints false
     System.out.println(p1.equals(p3)); // Prints false
     System.out.println(p1.equals(p4)); // Prints true
+
+    new EqualsTester()
+        .addEqualityGroup(p1, p4)
+        .addEqualityGroup(p2)
+        .addEqualityGroup(p3)
+        .testEquals();
   }
 }

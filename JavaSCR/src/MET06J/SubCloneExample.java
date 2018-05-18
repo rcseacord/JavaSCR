@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -37,21 +37,21 @@ class SubCloneExample extends BadClone {
 		return clone;
 	}
 
-/*  Malicious override sets the values of the domain names. 
-	void doSomething() { 
-		// Erroneously called from badClone::clone()
-		// Objects are modified before deep copy occurs
-		for (int i = 0; i < cookies.length; i++) {
-			cookies[i].setDomain(i + ".foo.com");
-		}
-		return;
-	}
-*/
+	// Malicious override sets the values of the domain names.
+//	void doSomething() {
+//		// Erroneously called from badClone::clone()
+//		// Objects are modified before deep copy occurs
+//		for (int i = 0; i < cookies.length; i++) {
+//			cookies[i].setDomain(i + ".foo.com");
+//		}
+//		return;
+//	}
+
 	public static void main(String[] args) throws CloneNotSupportedException {
 		HttpCookie[] hc = new HttpCookie[5];
 		// Cookie values initialized to "0"
 		for (int i = 0; i < hc.length; i++) {
-			hc[i] = new HttpCookie("cookie" + i, "0"); //$NON-NLS-1$ //$NON-NLS-2$
+			hc[i] = new HttpCookie("cookie" + i, "0");
 		}
 		BadClone bc = new SubCloneExample(hc);
 		bc.clone();

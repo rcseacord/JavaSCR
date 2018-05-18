@@ -75,13 +75,14 @@ class safeArithmetic {
 		return Math.abs(a);
 	}
 
+  @SuppressWarnings("ConstantOverflow")
 	static public void main(String[] args) {
 		try {
 			System.out.println(safeAdd(5, 10));
 		} catch (ArithmeticException ae) {
 			System.err.println("ArithmeticException: " + ae.getMessage()); //$NON-NLS-1$
 		}
-		
+
 		System.out.println(5 + Integer.MAX_VALUE);
 		
 		try {

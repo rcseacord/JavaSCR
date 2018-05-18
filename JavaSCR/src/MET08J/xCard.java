@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,49 +22,59 @@
 
 package MET08J;
 
-class xCard extends card {
-	  final private String type;
-	  private xCard(int number, String type) {
-	    super(number);
-	    this.type = type;
-	  }
-	 
-	  @Override
-    public boolean equals(Object o) {
-	    if (!(o instanceof card)) {
-	      return false;
-	    }
-	 
-	    // Normal Card, do not compare type
-	    if (!(o instanceof xCard)) {
-	      return o.equals(this);
-	    }
-	 
-	    // It is an xCard, compare type as well
-	    xCard xc = (xCard)o;
-	    return super.equals(o) && xc.type == this.type;
-	  }
-	 
-		// Comply with MET09-J
-		@Override
-    public int hashCode() {
-			/* ... */
-			return 0;
-		}
-	 
-	  public static void main(String[] args) {
-	    xCard p1 = new xCard(1, "type1"); //$NON-NLS-1$
-	    card p2 = new card(1);
-	    xCard p3 = new xCard(1, "type2"); //$NON-NLS-1$
-	    
-	    // p1 and p2 compare equal and p2 and p3 compare equal, 
-	    // but p1 and p3 compare unequal, violating the transitivity requirement. 
-	    // The problem is that the Card class has no knowledge of the XCard class 
-	    // and consequently cannot determine that p2 and p3 have different values 
-	    // for the field type.
-	    System.out.println(p1.equals(p2)); // Returns true
-	    System.out.println(p2.equals(p3)); // Returns true
-	    System.out.println(p1.equals(p3)); // Returns false
-	                                       // violating transitivity
-	  }
-	}
+import com.google.common.testing.EqualsTester;
+
+import java.util.Objects;
+
+class xCard extends Card {
+  final private String suit;
+
+  private xCard(int number, String type) {
+    super(number);
+    this.suit = type;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+//    if (this == o) return true;
+//    if (!(o instanceof xCard)) return false;
+//    if (!super.equals(o)) return false;
+//    xCard xCard = (xCard) o;
+//    return Objects.equals(suit, xCard.suit);
+    if (this == o) return true;
+    if (!(o instanceof Card)) return false;
+
+    // Normal Card, do not compare type
+    if (!(o instanceof xCard)) return o.equals(this);
+
+    // It is an xCard, compare type as well
+    xCard xc = (xCard) o;
+    return super.equals(o) && Objects.equals(suit, xc.suit);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), suit);
+  }
+
+  public static void main(String[] args) {
+    xCard p1 = new xCard(1, "heart");
+    Card p2 = new Card(1);
+    xCard p3 = new xCard(1, "diamond");
+
+    // p1 and p2 compare equal and p2 and p3 compare equal,
+    // but p1 and p3 compare unequal, violating the transitivity requirement.
+
+    // The Card class has no knowledge of the XCard class
+    // and consequently cannot determine that p2 and p3 have different values
+    // for the field type.
+    System.out.println(p1.equals(p2)); // Returns true
+    System.out.println(p2.equals(p3)); // Returns true
+    System.out.println(p1.equals(p3)); // Returns false, violating transitivity
+
+    new EqualsTester()
+        .addEqualityGroup(p1, p2)
+        .addEqualityGroup(p3)
+        .testEquals();
+  } // end main
+} // end class xCard

@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +26,7 @@ import java.util.HashSet;
 
 class ShortSet {
 
+	@SuppressWarnings("CollectionIncompatibleType")
 	public static void main(String[] args) {
 		HashSet<Short> s = new HashSet<>();
 		for (int i = 0; i < 10; i++) {
