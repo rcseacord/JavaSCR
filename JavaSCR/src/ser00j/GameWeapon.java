@@ -26,11 +26,14 @@ import java.io.*;
 
 public class GameWeapon implements Serializable {
   private static final long serialVersionUID = -2219161247533868418L;
-  private WeaponStore ws;
+
   private String Weapon = "BFG";
   private static final ObjectStreamField[] serialPersistentFields = {
       new ObjectStreamField("ws", WeaponStore.class)
   };
+
+  // What happens if transient and serialPersistentFields conflict?
+  /* transient */ private WeaponStore ws;
 
   public GameWeapon() {
     ws = new WeaponStore();

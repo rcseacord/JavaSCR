@@ -23,8 +23,6 @@
 package ser08j;
 
 import java.io.IOException;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -34,14 +32,10 @@ public final class Period implements Serializable {
   private Date end;
 
   /**
-   * @param start
-   *          the beginning of the period
-   * @param end
-   *          the end of the period; must not precede start
-   * @throws IllegalArgumentException
-   *           if start is after end
-   * @throws NullPointerException
-   *           if start or end is null
+   * @param start the beginning of the period
+   * @param end   the end of the period; must not precede start
+   * @throws IllegalArgumentException if start is after end
+   * @throws NullPointerException     if start or end is null
    */
   public Period(Date start, Date end) {
     // Make defensive copies of each mutable constructor parameter and 
@@ -81,8 +75,13 @@ public final class Period implements Serializable {
     pEnd.setYear(69);
     System.out.println(p);
   } // end main()
-  
+
 }  // end Serializable class Period
+
+
+
+
+
 
 
 

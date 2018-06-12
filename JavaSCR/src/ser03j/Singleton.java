@@ -22,7 +22,9 @@
 
 package ser03j;
 
+import java.io.IOException;
 import java.io.NotSerializableException;
+import java.io.ObjectStreamException;
 
 public final class Singleton extends Number {
   private static final long serialVersionUID = 1L;
@@ -36,10 +38,10 @@ public final class Singleton extends Number {
     // Perform security checks and parameter validation
   }
 
-  private int balance = 1000;
+  private final int data = 1000;
 
   protected int getBalance() {
-    return this.balance;
+    return this.data;
   }
 
   @Override
