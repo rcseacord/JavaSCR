@@ -23,6 +23,8 @@
 package ser08j;
 
 import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -77,16 +79,6 @@ public final class Period implements Serializable {
   } // end main()
 
 }  // end Serializable class Period
-
-
-
-
-
-
-
-
-
-
 
 
 

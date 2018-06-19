@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,16 @@
 
 package ser09j;
 
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.ObjectInputStream;
 
-public class Singleton implements Serializable {
-  public static final Singleton INSTANCE = new Singleton();
-  private int value;
-
-  private Singleton() { }
-
-  static void serialize(Object o) throws IOException {
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
-      oos.writeObject(o);
+public class DeserializeEnumSingletonUseCase {
+     public static void main(String[] args) throws ClassNotFoundException, IOException {
+       try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("tempdata.ser"))) {
+        EnumSingleton one = (EnumSingleton) ois.readObject();
+        System.out.println("one = " + one.getValue());
+        System.out.println("EnumSingleton.INSTANCE = " + EnumSingleton.INSTANCE.getValue());
+      }
     }
-  }
-
-  public int getValue() {
-    return this.value;
-  }
-
-  public void setValue(int value) {
-    this.value = value;
-  }
-
-  public static void main(String[] args) throws IOException {
-    Singleton.INSTANCE.setValue(42);
-    System.out.println("Singleton.INSTANCE = " + Singleton.INSTANCE.getValue());
-    serialize(Singleton.INSTANCE);
-  }
-}
+ }

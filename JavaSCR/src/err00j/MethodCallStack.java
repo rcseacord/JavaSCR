@@ -5,51 +5,51 @@ import java.lang.UnsupportedOperationException;
 class MethodCallStack {
 
 	public static void main(String[] args) {
-		System.out.println("Enter main()"); //$NON-NLS-1$
+		System.out.println("Enter main()"); 
 		try {
 		  methodA();
 		}
 		catch (UnsupportedOperationException uoe) {
 			uoe.printStackTrace();
 		}
-		System.out.println("Exit main()"); //$NON-NLS-1$
+		System.out.println("Exit main()"); 
 	}
 
 	private static void methodA() {
-		System.out.println("Enter methodA()"); //$NON-NLS-1$
+		System.out.println("Enter methodA()"); 
 		try {
 			  methodB();
 			}
 			finally {
-				System.out.println("methodA() finally block"); //$NON-NLS-1$
+				System.out.println("methodA() finally block"); 
 			}
-		System.out.println("Exit methodA()"); //$NON-NLS-1$
+		System.out.println("Exit methodA()"); 
 	}
 
 	private static void methodB() {
-		System.out.println("Enter methodB()"); //$NON-NLS-1$
+		System.out.println("Enter methodB()"); 
 		try {
 			  methodC();
 			}
 			finally {
-				System.out.println("methodB() finally block"); //$NON-NLS-1$
+				System.out.println("methodB() finally block"); 
 			}
-		System.out.println("Exit methodB()"); //$NON-NLS-1$
+		System.out.println("Exit methodB()"); 
 	}
 
 	private static void methodC() {
-		System.out.println("Enter methodC()"); //$NON-NLS-1$
+		System.out.println("Enter methodC()"); 
 		try {
 		  methodD();
 		}
 		finally {
-			System.out.println("methodC() finally block"); //$NON-NLS-1$
+			System.out.println("methodC() finally block"); 
 		}
-		System.out.println("Exit methodC()"); //$NON-NLS-1$
+		System.out.println("Exit methodC()"); 
 	}
 	
 	private static void methodD() {
-		System.out.println("Enter methodD()"); //$NON-NLS-1$
+		System.out.println("Enter methodD()"); 
 		throw new UnsupportedOperationException();
 		// unreachable
 	}

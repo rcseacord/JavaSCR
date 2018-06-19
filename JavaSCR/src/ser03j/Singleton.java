@@ -92,6 +92,8 @@ public final class Singleton extends Number {
 
 
 //  /**
+//   * This method is called first during serialization so it is the method triggered
+//   * by the Malicious class
 //   * @param out not used, but required to match signature
 //   */
 //  @SuppressWarnings("static-method")
