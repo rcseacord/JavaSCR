@@ -23,6 +23,7 @@ import static com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl.DESERIA
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 
 import com.sun.org.apache.xalan.internal.xsltc.DOM;
 import com.sun.org.apache.xalan.internal.xsltc.TransletException;
@@ -53,19 +54,17 @@ public class TemplatesUtil {
     System.setProperty("java.rmi.server.useCodebaseOnly", "false");
   }
 
-  public static final String ANN_INV_HANDLER_CLASS = "sun.reflect.annotation.AnnotationInvocationHandler";
-
-  public static class StubTransletPayload extends AbstractTranslet implements Serializable {
+   public static class StubTransletPayload extends AbstractTranslet implements Serializable {
 
     private static final long serialVersionUID = -5971610431559700674L;
 
 
     @Override
-    public void transform ( DOM document, SerializationHandler[] handlers ) throws TransletException {}
+    public void transform ( DOM document, SerializationHandler[] handlers ) {}
 
 
     @Override
-    public void transform ( DOM document, DTMAxisIterator iterator, SerializationHandler handler ) throws TransletException {}
+    public void transform ( DOM document, DTMAxisIterator iterator, SerializationHandler handler ) {}
   }
 
   // required to make TemplatesImpl happy
@@ -75,7 +74,7 @@ public class TemplatesUtil {
   }
 
 
-  public static Object createTemplatesImpl ( final String[] args ) throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException, CannotCompileException, NotFoundException, NoSuchFieldException {
+  public static Object createTemplatesImpl ( final String[] args ) throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException, CannotCompileException, NotFoundException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
     if ( Boolean.parseBoolean(System.getProperty("properXalan", "false")) ) {
       return createTemplatesImpl(
           args,
@@ -88,10 +87,10 @@ public class TemplatesUtil {
   }
 
 
-  public static <T> T createTemplatesImpl ( final String[] args, Class<T> tplClass, Class<?> abstTranslet, Class<?> transFactory )
+  private static <T> T createTemplatesImpl(final String[] args, Class<T> tplClass, Class<?> abstTranslet, Class<?> transFactory)
       throws NotFoundException, IllegalAccessException, InstantiationException,
-      CannotCompileException, NoSuchFieldException, IOException {
-    final T templates = tplClass.newInstance();
+      CannotCompileException, NoSuchFieldException, IOException, NoSuchMethodException, InvocationTargetException {
+    final T templates = tplClass.getConstructor().newInstance();
 
     // use template gadget class
     ClassPool pool = ClassPool.getDefault();
@@ -132,7 +131,7 @@ public class TemplatesUtil {
 
     // required to make TemplatesImpl happy
     Reflections.setFieldValue(templates, "_name", "Pwnr");
-    Reflections.setFieldValue(templates, "_tfactory", transFactory.newInstance());
+    Reflections.setFieldValue(templates, "_tfactory", transFactory.getConstructor().newInstance());
     return templates;
   }
 }
