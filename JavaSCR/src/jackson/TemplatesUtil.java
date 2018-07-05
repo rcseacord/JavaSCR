@@ -26,7 +26,6 @@ import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 
 import com.sun.org.apache.xalan.internal.xsltc.DOM;
-import com.sun.org.apache.xalan.internal.xsltc.TransletException;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
@@ -75,7 +74,7 @@ public class TemplatesUtil {
 
 
   public static Object createTemplatesImpl ( final String[] args ) throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException, CannotCompileException, NotFoundException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
-    if ( Boolean.parseBoolean(System.getProperty("properXalan", "false")) ) {
+    if ( Boolean.parseBoolean(System.getProperty("upstreamXalan", "false")) ) {
       return createTemplatesImpl(
           args,
           Class.forName("org.apache.xalan.xsltc.trax.TemplatesImpl"),
