@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,7 @@ class CharsetConversion {
     CharsetDecoder decoder = StandardCharsets.UTF_16.newDecoder();
 
     // Use String constructor
-    BigInteger x = new BigInteger("530500452766"); //$NON-NLS-1$
+    BigInteger x = new BigInteger("530500452766");
     byte[] byteArray = x.toByteArray();
     String s = new String(byteArray);
     System.out.println(s);

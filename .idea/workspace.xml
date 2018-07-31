@@ -2,39 +2,20 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
+    <option name="CUSTOM_SCOPE_NAME" value="Current File" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f3f6dda-8130-4c2c-a3ca-92fbea47272d" name="Default" comment="back to first position">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guava_25_0_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guava_testlib_25_0_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSCR/src/MET09J/CreditCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/rseacord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/rseacord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/excludeFromValidation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/excludeFromValidation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSCR/JavaSCR.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/JavaSCR.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/EXP02J/ArrayEquals.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/EXP02J/ArrayEquals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/EXP04J/ShortSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/EXP04J/ShortSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET06J/BadClone.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET06J/BadClone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET06J/SubCloneExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET06J/SubCloneExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/card.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET08J/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/caseInsensitiveString.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET08J/CaseInsensitiveString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/caseInsensitiveStringGood.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/xCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET08J/xCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/xCardGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET08J/xCardGood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET09J/badCreditCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET09J/goodCreditCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET11J/BadSerialHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET11J/SerialHasher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET11J/GoodSerialHasher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET11J/MyKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/MET11J/MyKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM00J/safeArithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/NUM00J/safeArithmetic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM07J/compNaN.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/NUM07J/compNaN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err12j/PartOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/err12j/PartOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err12j/PartTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/err12j/PartTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err12j/Whole.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/err12j/Whole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acclib/acclib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/acclib/acclib.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR/src/STR00J/ReadString.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/STR00J/ReadString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR/src/STR05J/CharsetConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/STR05J/CharsetConversion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackson/DOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/jackson/DOS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackson/TemplatesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/src/jackson/TemplatesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/acclib/bin/" />
     <ignored path="$PROJECT_DIR$/JavaSCR/bin/" />
@@ -46,28 +27,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/JavaSCR$Cage.ic" NAME="Cage Coverage Results" MODIFIED="1530802480721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>jackson.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SerialHasher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET11J/SerialHasher.java">
+      <file leaf-file-name="Execute.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="508">
+              <caret line="115" selection-start-line="115" selection-end-line="115" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyKey.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET11J/MyKey.java">
+      <file leaf-file-name="BikeFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="468">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -88,7 +68,21 @@
       <find>classLoader</find>
       <find>start</find>
       <find>//$NON-NLS-2$</find>
+      <find>module</find>
+      <find>//$NON-NLS-2$ //$NON-NLS-3$</find>
+      <find>dir</find>
       <find>//$NON-NLS-1$</find>
+      <find>createTemplat</find>
+      <find>setFieldValue</find>
+      <find>create</find>
+      <find>writeObject</find>
+      <find>property</find>
+      <find>transFactor</find>
+      <find>templates</find>
+      <find>Transformer</find>
+      <find>transform(</find>
+      <find>StubTransletPayload</find>
+      <find>Foo</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\rseacord\java\jboss-javassist-javassist-rel_3_22_00_ga-46-g40d3223\jboss-javassist-javassist-40d3223\javassist.jar</dir>
@@ -100,43 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JavaSCR/src/ser00j/GameWeapon.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/good.xml" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/evil.xml" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/CustomResolver.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/XXE.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ids04j/SecureUnzip.java" />
-        <option value="$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/err11j/Employer.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/err11j/EmployeeDAO.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/err11j/DAOException.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ser101j/Person.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ser04j/Hometown.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingleton.java" />
-        <option value="$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ser03j/Singleton.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ERR06J/NewInstance.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/err13j/DefaultUncaughtExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/err12j/PartTwo.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/err12j/Whole.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/err12j/PartOne.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/acc04j/NotSafe.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS11J/TagFilter.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/MET12J/baseClass.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/OBJ03J/listUtility.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/OBJ03J/UnsafeVarargs.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/OBJ03J/Box.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS08J/ReDoS.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/OBJ02J/Account.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/OBJ02J/BankAccount.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/NUM00J/safeArithmetic.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/NUM07J/compNaN.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/EXP04J/ShortSet.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/EXP02J/ArrayEquals.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/MET06J/BadClone.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/MET06J/SubCloneExample.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/MET08J/caseInsensitiveStringGood.java" />
@@ -151,6 +108,43 @@
         <option value="$PROJECT_DIR$/JavaSCR/src/MET11J/GoodSerialHasher.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/MET11J/MyKey.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/MET11J/BadSerialHasher.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/password" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/CustomResolver.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/ClassFiles.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingletonUseCase.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/IDS01J/ValidateString.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/IDS08J/ReDoS.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/IDS11J/TagFilter.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/IDS16J/schema.xsd" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser101j/Person.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser00j/GameWeapon.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser04j/Hometown.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser09j/Singleton.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/err00j/MethodCallStack.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/STR01J/TrimString.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser03j/Singleton.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingleton.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeSingleton.java" />
+        <option value="$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java" />
+        <option value="$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/STR00J/ReadString.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/Reflections.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/Gadgets.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackson/Exploit.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackson/Marshal.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackson/TemplatesUtil.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackson/Cage.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackpoly/Zoo.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackson/DOS.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackpoly/Polymorphism.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackpoly/Animal.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackpoly/Elephant.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/jackpoly/Lion.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/STR05J/CharsetConversion.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java" />
       </list>
     </option>
   </component>
@@ -164,10 +158,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-87" />
-    <option name="y" value="-1027" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="x" value="2179" />
+    <option name="y" value="318" />
+    <option name="width" value="1241" />
+    <option name="height" value="671" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -176,156 +170,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acclib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="acc01j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="EXP01J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ids07j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS08J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS11J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="MET06J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="MET08J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="MET09J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="MET11J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="OBJ02J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="OBJ03J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ser00j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ser02j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ser03j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ser04j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
-              <item name=".settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ser09j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="annotations-java8.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JavaSCR" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JavaSCR" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Default">
           <expand>
@@ -377,15 +222,199 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JavaSCR" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JavaSCR" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acclib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acclib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="acc01j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="acc04j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DCL02J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="err00j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="err10j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="EXP01J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="IDS01J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ids04j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="IDS06J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ids07j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jackpoly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jackson" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ser05j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ser06j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ser07j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ser08j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ser09j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ser101j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="STR00J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="STR01J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
+              <item name=".settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ser09j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="annotations-java8.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/JavaSCR/src" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JavaSCR/lib" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$USER_HOME$/java/jackson-databind-2.7.3.jar!/" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -403,67 +432,71 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BadSerialHasher">
+  <component name="RunManager" selected="Application.Execute">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="BadSerialHasher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MET11J.BadSerialHasher" />
+    <configuration name="Cage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8.0_40" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="jackson.Cage" />
       <module name="JavaSCR" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MET11J.*" />
+          <option name="PATTERN" value="jackson.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
-    <configuration name="CreditCard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MET09J.CreditCard" />
+    <configuration name="DOS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jackson.DOS" />
       <module name="JavaSCR" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MET09J.*" />
+          <option name="PATTERN" value="jackson.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
-    <configuration name="GoodSerialHasher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MET11J.GoodSerialHasher" />
+    <configuration name="Execute" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ids07j.Execute" />
       <module name="JavaSCR" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MET11J.*" />
+          <option name="PATTERN" value="ids07j.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Polymorphism" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8.0_40" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="jackpoly.Polymorphism" />
+      <module name="JavaSCR" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jackpoly.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="ReadString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="STR00J.ReadString" />
+      <module name="JavaSCR" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="STR00J.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="xCard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MET08J.xCard" />
-      <module name="JavaSCR" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MET08J.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="xCardGood" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MET08J.xCardGood" />
-      <module name="JavaSCR" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MET08J.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -504,19 +537,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.xCard" />
-      <item itemvalue="Application.xCardGood" />
-      <item itemvalue="Application.CreditCard" />
-      <item itemvalue="Application.BadSerialHasher" />
-      <item itemvalue="Application.GoodSerialHasher" />
+      <item itemvalue="Application.Execute" />
+      <item itemvalue="Application.ReadString" />
+      <item itemvalue="Application.Cage" />
+      <item itemvalue="Application.Polymorphism" />
+      <item itemvalue="Application.DOS" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BadSerialHasher" />
-        <item itemvalue="Application.GoodSerialHasher" />
-        <item itemvalue="Application.CreditCard" />
-        <item itemvalue="Application.xCardGood" />
-        <item itemvalue="Application.xCard" />
+        <item itemvalue="Application.Execute" />
+        <item itemvalue="Application.Polymorphism" />
+        <item itemvalue="Application.Cage" />
+        <item itemvalue="Application.DOS" />
+        <item itemvalue="Application.ReadString" />
       </list>
     </recent_temporary>
   </component>
@@ -562,7 +595,24 @@
       <workItem from="1526388238642" duration="10933000" />
       <workItem from="1526429873630" duration="22421000" />
       <workItem from="1526574883915" duration="6000" />
-      <workItem from="1526582426520" duration="602000" />
+      <workItem from="1526582426520" duration="2416000" />
+      <workItem from="1527090463700" duration="14164000" />
+      <workItem from="1527176367192" duration="14395000" />
+      <workItem from="1528806002459" duration="63000" />
+      <workItem from="1528806344065" duration="10422000" />
+      <workItem from="1528917319325" duration="628000" />
+      <workItem from="1528980035261" duration="13868000" />
+      <workItem from="1529067718808" duration="14592000" />
+      <workItem from="1529328406802" duration="3177000" />
+      <workItem from="1529427606163" duration="1156000" />
+      <workItem from="1529428995862" duration="5913000" />
+      <workItem from="1529675932133" duration="4035000" />
+      <workItem from="1530199529883" duration="5353000" />
+      <workItem from="1530549166989" duration="64824000" />
+      <workItem from="1531353718884" duration="6395000" />
+      <workItem from="1531942899930" duration="2387000" />
+      <workItem from="1532088659461" duration="3312000" />
+      <workItem from="1533059207139" duration="804000" />
     </task>
     <task id="LOCAL-00001" summary="back to first position">
       <created>1524088810989</created>
@@ -606,46 +656,55 @@
       <option name="project" value="LOCAL" />
       <updated>1526051470206</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="recover">
+      <created>1527183819374</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1527183819374</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284477000" />
+    <option name="totallyTimeSpent" value="451779000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-1088" width="1936" height="1096" extended-state="6" />
+    <frame x="1912" y="-8" width="2576" height="1456" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.68359375" weight="0.43228453" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.22760417" side_tool="true" visible="true" weight="0.28064844" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.2765625" side_tool="true" visible="true" weight="0.40905717" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32930845" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.77239585" weight="0.28064844" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85546875" weight="0.32831737" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14635417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0984375" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.75208336" weight="0.36372846" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7234375" visible="true" weight="0.40905717" />
       <window_info anchor="bottom" id="Dependency Viewer" order="9" sideWeight="0.49947917" weight="0.40222898" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.7109375" weight="0.2532928" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="7" sideWeight="0.8510417" weight="0.30192503" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49583334" weight="0.34549138" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Module Dependencies" order="4" visible="true" weight="0.07395833" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.496875" weight="0.34549138" />
+      <window_info anchor="bottom" id="Inspection Results" order="7" sideWeight="0.80364585" weight="0.34751773" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,26 +720,21 @@
     <MESSAGE value="expanded example" />
     <MESSAGE value="turned into exericse" />
     <MESSAGE value="expanded to an exercise" />
-    <option name="LAST_COMMIT_MESSAGE" value="expanded to an exercise" />
+    <MESSAGE value="recover" />
+    <option name="LAST_COMMIT_MESSAGE" value="recover" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser00j/GameWeapon.java</url>
-          <line>61</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java</url>
-          <line>68</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -704,7 +758,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeSingleton.java</url>
-          <line>33</line>
+          <line>34</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
@@ -722,13 +776,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser00j/GameWeapon.java</url>
-          <line>50</line>
+          <line>53</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser00j/GameWeapon.java</url>
-          <line>41</line>
+          <line>44</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
@@ -758,13 +812,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java</url>
-          <line>52</line>
+          <line>48</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java</url>
-          <line>66</line>
+          <line>62</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
@@ -782,7 +836,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingleton.java</url>
-          <line>12</line>
+          <line>11</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
@@ -830,19 +884,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java</url>
-          <line>72</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java</url>
-          <line>69</line>
+          <line>65</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java</url>
-          <line>70</line>
+          <line>69</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
@@ -854,7 +908,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java</url>
-          <line>55</line>
+          <line>54</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -920,7 +974,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/STR01J/TrimString.java</url>
-          <line>39</line>
+          <line>41</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
@@ -992,31 +1046,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java</url>
-          <line>65</line>
+          <line>61</line>
           <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>101</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>117</line>
+          <line>96</line>
           <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>135</line>
+          <line>107</line>
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>149</line>
+          <line>115</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
@@ -1027,12 +1081,6 @@
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/io/ObjectInputStream.java</url>
           <line>1038</line>
           <properties />
@@ -1040,31 +1088,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>32</line>
+          <line>48</line>
           <properties />
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>48</line>
+          <line>54</line>
           <properties />
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>61</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>88</line>
+          <line>73</line>
           <properties />
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java</url>
-          <line>74</line>
+          <line>66</line>
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
@@ -1097,12 +1145,6 @@
           <line>40</line>
           <properties />
           <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/String.java</url>
-          <line>2120</line>
-          <properties />
-          <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/NUM00J/safeArithmetic.java</url>
@@ -1151,376 +1193,553 @@
           <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS08J/ReDoS.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java</url>
+          <line>145</line>
+          <properties />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java</url>
+          <line>132</line>
+          <properties />
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java</url>
+          <line>119</line>
+          <properties />
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java</url>
+          <line>120</line>
+          <properties />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS17J/XXE.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/IDS17J/XXE.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/ser06j/SerialDOS.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeSingleton.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingleton.java</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java</url>
+          <line>93</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/jackson/Cage.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/jackson/DOS.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/jackson/DOS.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/java/xalan-j_2_7_2/xalan.jar!/org/apache/xalan/xsltc/runtime/AbstractTranslet.class</url>
+          <line>232</line>
+          <properties />
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/java/xalan-j_2_7_2/xalan.jar!/org/apache/xalan/xsltc/trax/TemplatesImpl.class</url>
+          <line>175</line>
+          <properties />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/java/xalan-j_2_7_2/xalan.jar!/org/apache/xalan/xsltc/trax/TemplatesImpl.class</url>
+          <line>208</line>
+          <properties />
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/java/jackson-databind-2.7.3.jar!/com/fasterxml/jackson/databind/deser/impl/SetterlessProperty.class</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/jackson/Cage.java</url>
+          <line>114</line>
+          <properties />
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/jackson/TemplatesUtil.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/jackson/TemplatesUtil.java</url>
+          <line>118</line>
+          <properties />
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaSCR/src/jackpoly/Polymorphism.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="107" />
+      <option name="time" value="134" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="s2" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser00j/GameWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+          <folding>
+            <element signature="e#1596#1597#0" expanded="true" />
+            <element signature="e#1628#1629#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#2249#2250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser04j/Hometown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="286">
+          <caret line="74" column="28" lean-forward="true" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET12J/baseClass.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser08j/MutablePeriod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state relative-caret-position="234">
+          <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/IDS11J/TagFilter.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser07j/Period.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state relative-caret-position="104">
+          <caret line="47" column="41" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="41" />
+          <folding>
+            <element signature="e#1727#1728#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <element signature="e#1985#1986#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/ser09j/Bicycle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaSCR/src/EXP01J/Cardinality.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-199">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-12">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ03J/Lister.java" />
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ03J/Box.class" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/err00j/MethodCallStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/EXP03J/IntegerComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ03J/UnsafeVarargs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
-          <folding>
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ03J/listUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret selection-end-line="20" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#2615#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ03J/Box.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/io/ObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="1038" selection-start-line="1038" selection-end-line="1038" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/PriorityQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="803" selection-start-line="803" selection-end-line="803" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/io/ObjectStreamClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3994">
-          <caret line="1161" selection-start-line="1161" selection-end-line="1161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java" />
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ02J/BankAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ02J/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="2022" selection-start-line="2022" selection-end-line="2022" />
-          <folding>
-            <element signature="e#80918#80919#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/regex/Pattern.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="1129" selection-start-line="1129" selection-end-line="1129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/regex/Matcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="246" column="61" selection-start-line="246" selection-start-column="61" selection-end-line="246" selection-end-column="61" />
+        <state relative-caret-position="338">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaSCR/src/acc01j/AppClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        <state relative-caret-position="118">
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/String.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/OBJ02J/BankAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="2120" selection-start-line="2120" selection-end-line="2120" />
-          <folding>
-            <element signature="e#82667#82668#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-208">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/regex/Pattern.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="1092" selection-start-line="1092" selection-end-line="1092" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/regex/Matcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="225" column="44" lean-forward="true" selection-start-line="225" selection-start-column="44" selection-end-line="225" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/IDS08J/ReDoS.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/STR01J/TrimString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/NUM07J/compNaN.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser03j/Malicious.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        <state relative-caret-position="93">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/EXP04J/ShortSet.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser03j/Singleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="182">
+          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/EXP02J/ArrayEquals.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/NUM00J/safeArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
+        <state relative-caret-position="1566">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
           <folding>
-            <element signature="e#2765#2802#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET06J/SubCloneExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="40" selection-start-line="40" selection-start-column="2" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="e#1269#1270#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET06J/BadClone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="44" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/JavaSCR/lib/guava-testlib-25.0-jre.jar!/com/google/common/testing/EqualsTester.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/java/guava-25.0/guava-25.0/guava-testlib/src/com/google/common/testing/EqualsTester.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/instrument/InstrumentationImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/JavaSCR/lib/guava-25.0-jre-sources.jar!/com/google/common/collect/Lists.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="380" selection-start-line="380" selection-end-line="380" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/JavaSCR/lib/guava-25.0-jre-sources.jar!/com/google/common/base/Preconditions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="883" selection-start-line="883" selection-end-line="883" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="2131" selection-start-line="2131" selection-end-line="2131" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET08J/caseInsensitiveStringGood.java" />
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET08J/xCard.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingletonUseCase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="12" column="96" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser09j/Singleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="44" lean-forward="true" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/io/ObjectInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39988">
+          <caret line="1584" selection-start-line="1584" selection-end-line="1584" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2054">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/STR00J/ReadString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="21" selection-end-line="21" />
           <folding>
-            <element signature="e#0#2533#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1983#1984#0" expanded="true" />
-            <element signature="e#2036#2037#0" expanded="true" />
+            <element signature="e#0#2821#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/JavaSCR/lib/guava-testlib-25.0-jre-sources.jar!/com/google/common/testing/EqualsTester.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser05j/Gadgets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="-457">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET09J/goodCreditCard.java" />
-    <entry file="file://$PROJECT_DIR$/JavaSCR/build.xml">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser05j/Reflections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+        <state relative-caret-position="-596">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET08J/xCardGood.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackson/Exploit.java" />
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/JavaType.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+        <state relative-caret-position="423">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-core-2.7.9.jar!/com/fasterxml/jackson/core/JsonFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="300" selection-start-line="300" selection-end-line="300" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/type/TypeFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="286" selection-start-line="286" selection-end-line="286" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/deser/impl/TypeWrappedDeserializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="402" selection-start-line="402" selection-end-line="402" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="1578" selection-start-line="1578" selection-end-line="1578" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/deser/SettableBeanProperty.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/com/sun/org/apache/xalan/internal/xsltc/trax/TemplatesImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="400" column="9" selection-start-line="400" selection-start-column="9" selection-end-line="400" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/JsonMappingException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-core-2.7.3.jar!/com/fasterxml/jackson/core/util/TextBuffer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-465">
+          <caret line="245" selection-start-line="245" selection-end-line="245" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser06j/SerialDOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="60" column="14" lean-forward="true" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackson/DOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1770#1771#0" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET09J/CreditCard.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="60" column="42" lean-forward="true" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+        <state relative-caret-position="92">
+          <caret line="93" column="15" lean-forward="true" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#4198#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET08J/Card.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackson/TemplatesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="62" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET08J/CaseInsensitiveString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="125" column="47" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="47" />
+        <state relative-caret-position="2210">
+          <caret line="118" column="107" selection-start-line="118" selection-start-column="101" selection-end-line="118" selection-end-column="107" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET11J/GoodSerialHasher.java" />
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET11J/SerialHasher.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackson/Cage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.3.jar!/com/fasterxml/jackson/databind/deser/impl/SetterlessProperty.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1222">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/xalan-j_2_7_2/xalan.jar!/org/apache/xalan/xsltc/trax/TemplatesImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3770">
+          <caret line="175" selection-start-line="175" selection-end-line="175" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/xalan-j_2_7_2/xalan.jar!/org/apache/xalan/xsltc/runtime/AbstractTranslet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5564">
+          <caret line="241" column="26" selection-start-line="241" selection-start-column="26" selection-end-line="241" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackpoly/Zoo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackpoly/Elephant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackpoly/Lion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="18" />
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/MET11J/MyKey.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackpoly/Animal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="234">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/jackpoly/Polymorphism.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ser09j/EnumSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/STR05J/CharsetConversion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -1566,7 +1785,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>1.8.0_40</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
