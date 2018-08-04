@@ -6,193 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f3f6dda-8130-4c2c-a3ca-92fbea47272d" name="Default" comment="back to first position">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_7_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_7_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_25_0_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_testlib_26_0_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_serializer_2_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_xalan_2_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_3_04.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSCR9/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/JavaSCR.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/JavaSCR.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/DCL00J/Cycle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/DCL02J/ProcessElems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR01J/ExceptionExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR01J/ExceptionReporter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR01J/ExceptionReporterExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR01J/ExceptionReporterPermission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR01J/FilteredExceptionReporter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR01J/Reporter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR03J/Dimensions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR03J/VolumeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR03J/WeightException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR06J/NewInstance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR06J/Parser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR08J/divideException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ERR08J/divideExceptionGood.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/EXP01J/Cardinality.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/EXP02J/ArrayEquals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/EXP03J/IntegerComparator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/EXP04J/ShortSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS01J/ValidateString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS06J/Formatter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS08J/LogSearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS08J/ReDoS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS08J/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS11J/TagFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS16J/CustomResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS16J/schema.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS17J/CustomResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS17J/XXE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS17J/copyright" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS17J/evil.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS17J/good.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/IDS17J/password" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET05J/overridable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET05J/subClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET05J/superClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET06J/BadClone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET06J/SubCloneExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/CaseInsensitiveString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/xCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET08J/xCardGood.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET09J/CreditCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET11J/MyKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET11J/SerialHasher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET12J/baseClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/MET12J/subClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/METOOJ/ElementaryParticle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM00J/safeArithmetic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM01J/BitwiseAndArithmetic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM03J/UIDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM03J/UnsignedInteger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM04J/PreciseComputation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM05J/DenormalizedNumbers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM07J/compNaN.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM08J/FPinput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM12J/Conversions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/NUM13J/IntToFPConverions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ01J/FieldTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ01J/FieldTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ01J/Fred.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ01J/PrivReflection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ01J/PrivReflection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ01J/SuperFieldTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ01J/java.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ02J/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ02J/BankAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ03J/Box.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ03J/UnsafeVarargs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ03J/listUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ04J/ClonableMutableClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ04J/MutableClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ06J/mutableInputs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ07J/MalSubclass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ07J/SensitiveClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ08J/Coordinates.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ08J/InsiderThreat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ08J/LambdaScopeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ08JA/Spy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ11J/AttackerApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ11J/BankOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ11J/Interceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ11J/Storage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/OBJ11J/UserApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/STR00J/ReadString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/STR01J/TrimString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/STR03J/ByteToString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/STR05J/CharsetConversion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc01j/AppClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc01j/java.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc02j/RefAppClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc02j/java.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc03j/RestrictedPackages.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc04j/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc04j/NotSafe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc04j/UnSecurityManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/acc04j/java.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err00j/MethodCallStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err10j/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err10j/Rollback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err11j/DAOException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err11j/DatabaseUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err11j/EmployeeDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err11j/EmployeeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err11j/Employer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err11j/Program.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err12j/PartOne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err12j/PartTwo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err12j/Whole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/err13j/DefaultUncaughtExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/exp05j/StringObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/exp06j/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/exp06j/CommandFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.7z" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.bz2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.lz4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.lzfse" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.xar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.xz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/10GB/10GB.zst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids04j/SecureUnzip.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ids07j/Execute.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackpoly/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackpoly/Elephant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackpoly/Lion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackpoly/Polymorphism.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackpoly/Zoo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackson/Cage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackson/DOS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/jackson/TemplatesUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/obj14j/Leak.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/obj14j/Leak.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/obj14j/Spy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser00j/GameWeapon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser00j/WeaponStore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser02j/MapSerializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser02j/SerializableMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser03j/Malicious.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser03j/Singleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser04j/Hometown.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser05j/ClassFiles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser05j/Gadgets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser05j/Reflections.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser06j/SerialDOS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser07j/Period.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser08j/BogusPeriod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser08j/MutablePeriod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser08j/Period.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeEnumSingletonUseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser09j/DeserializeSingleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser09j/EnumSingleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser09j/Singleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR/src/ser101j/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR9/JavaSCR9.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR9/JavaSCR9.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/Bicycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/acclib/bin/" />
     <ignored path="$PROJECT_DIR$/JavaSCR/bin/" />
     <ignored path="$PROJECT_DIR$/JavaSCR9/bin/" />
     <ignored path="$PROJECT_DIR$/JavaSCR/target/" />
+    <ignored path="$PROJECT_DIR$/JavaSCR9/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,11 +34,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CustomResolver.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/IDS16J/CustomResolver.java">
+      <file leaf-file-name="TrimString.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/STR01J/TrimString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+            <state relative-caret-position="-139">
+              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaSCR9/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LookAheadDeserializer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaSCR/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="10" selection-start-line="10" selection-end-line="21" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -265,8 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JavaSCR/src/MET11J/BadSerialHasher.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/password" />
         <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/CustomResolver.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/ClassFiles.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java" />
@@ -304,11 +156,6 @@
         <option value="$PROJECT_DIR$/JavaSCR/src/IDS01J/ValidateString.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/IDS08J/LogSearch.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/IDS08J/ReDoS.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/STR01J/TrimString.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser101j/Person.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser00j/GameWeapon.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser04j/Hometown.java" />
-        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java" />
         <option value="$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/jackson/Cage.java" />
         <option value="$PROJECT_DIR$/JavaSCR/pom.xml" />
@@ -316,6 +163,13 @@
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/IDS01J/ValidateString.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ids04j/SecureUnzip.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/IDS11J/TagFilter.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser00j/GameWeapon.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser04j/Hometown.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/MutablePeriod.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser101j/Person.java" />
+        <option value="$PROJECT_DIR$/JavaSCR/src/main/java/STR01J/TrimString.java" />
+        <option value="$PROJECT_DIR$/JavaSCR9/pom.xml" />
       </list>
     </option>
   </component>
@@ -335,11 +189,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="174" />
+    <option name="y" value="-901" />
+    <option name="width" value="1536" />
+    <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -465,7 +319,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS01J" type="462c0819:PsiDirectoryNode" />
+              <item name="ser00j" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
@@ -473,7 +327,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ids04j" type="462c0819:PsiDirectoryNode" />
+              <item name="ser02j" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
@@ -481,79 +335,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS06J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ids07j" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS08J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS11J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS16J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IDS17J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jackpoly" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jackson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="MET05J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="MET06J" type="462c0819:PsiDirectoryNode" />
+              <item name="ser03j" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
@@ -562,6 +344,22 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ser04j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ser05j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ser06j" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
@@ -581,6 +379,54 @@
             </path>
             <path>
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ser09j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ser101j" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="STR00J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="STR01J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="STR03J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="STR05J" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -597,6 +443,21 @@
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSCR9" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ser09j" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -650,19 +511,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Polymorphism">
+  <component name="RunManager" selected="Application.LookAheadDeserializer">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="Cage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8.0_40" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="jackson.Cage" />
+    <configuration name="GameWeapon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ser00j.GameWeapon" />
       <module name="JavaSCR" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jackson.*" />
+          <option name="PATTERN" value="ser00j.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -689,24 +548,24 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Period (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ser07j.Period" />
+    <configuration name="Period" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ser08j.Period" />
       <module name="JavaSCR" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ser07j.*" />
+          <option name="PATTERN" value="ser08j.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Polymorphism" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="jackpoly.Polymorphism" />
+    <configuration name="TrimString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="STR01J.TrimString" />
       <module name="JavaSCR" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jackpoly.*" />
+          <option name="PATTERN" value="STR01J.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -753,19 +612,19 @@
       <listeners />
     </configuration>
     <list>
+      <item itemvalue="Application.GameWeapon" />
+      <item itemvalue="Application.Period" />
       <item itemvalue="Application.MutablePeriod" />
-      <item itemvalue="Application.Period (1)" />
+      <item itemvalue="Application.TrimString" />
       <item itemvalue="Application.LookAheadDeserializer" />
-      <item itemvalue="Application.Cage" />
-      <item itemvalue="Application.Polymorphism" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Polymorphism" />
-        <item itemvalue="Application.Cage" />
         <item itemvalue="Application.LookAheadDeserializer" />
-        <item itemvalue="Application.Period (1)" />
+        <item itemvalue="Application.TrimString" />
         <item itemvalue="Application.MutablePeriod" />
+        <item itemvalue="Application.Period" />
+        <item itemvalue="Application.GameWeapon" />
       </list>
     </recent_temporary>
   </component>
@@ -833,7 +692,7 @@
       <workItem from="1533125565467" duration="18231000" />
       <workItem from="1533214681418" duration="13293000" />
       <workItem from="1533302483989" duration="3359000" />
-      <workItem from="1533319948966" duration="390000" />
+      <workItem from="1533319948966" duration="3673000" />
     </task>
     <task id="LOCAL-00001" summary="back to first position">
       <created>1524088810989</created>
@@ -888,26 +747,26 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="489956000" />
+    <option name="totallyTimeSpent" value="493239000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-1088" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.67864585" weight="0.3100304" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.1516927" side_tool="true" visible="true" weight="0.16552667" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.153125" side_tool="true" visible="true" weight="0.331307" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32930845" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8483073" weight="0.3885089" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.846875" visible="true" weight="0.331307" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16145833" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15833333" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -916,7 +775,6 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7161458" weight="0.40629274" />
       <window_info anchor="bottom" id="Dependency Viewer" order="9" sideWeight="0.49947917" weight="0.40222898" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.6796875" weight="0.31053352" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Inspection Results" order="7" sideWeight="0.80364585" weight="0.34751773" />
@@ -952,12 +810,6 @@
           <line>64</line>
           <properties />
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser101j/Person.java</url>
@@ -1038,12 +890,6 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/MutablePeriod.java</url>
           <line>67</line>
           <properties />
@@ -1105,30 +951,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java</url>
-          <line>84</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java</url>
+          <url>file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java</url>
           <line>70</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java</url>
+          <url>file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/BikeFilter.java</url>
           <line>16</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java</url>
+          <url>file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java</url>
           <line>55</line>
           <properties />
           <option name="timeStamp" value="41" />
@@ -1183,7 +1023,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/STR01J/TrimString.java</url>
-          <line>41</line>
+          <line>36</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
@@ -1195,7 +1035,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser04j/Hometown.java</url>
-          <line>81</line>
+          <line>79</line>
           <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
@@ -1252,12 +1092,6 @@
           <line>8</line>
           <properties />
           <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/JavaSCR/src/main/java/ids07j/Execute.java</url>
@@ -1475,7 +1309,7 @@
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java</url>
+          <url>file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java</url>
           <line>94</line>
           <properties />
           <option name="timeStamp" value="120" />
@@ -1569,13 +1403,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/deser/SettableBeanProperty.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="306" selection-start-line="306" selection-end-line="306" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/com/sun/org/apache/xalan/internal/xsltc/trax/TemplatesImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1686,47 +1513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/STR00J/ReadString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="890">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#0#2821#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/STR01J/TrimString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="878">
-          <caret line="156" column="31" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser05j/RCE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-          <folding>
-            <element signature="e#0#4198#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3848#3875#1" expanded="true" />
-            <element signature="e#3985#4012#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/io/ObjectStreamClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="719">
           <caret line="686" selection-start-line="686" selection-end-line="686" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser06j/SerialDOS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
@@ -1737,72 +1527,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser101j/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser00j/WeaponStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="28" column="51" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser00j/GameWeapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser04j/Hometown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="74" column="21" lean-forward="true" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/MutablePeriod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="77" column="1" lean-forward="true" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser07j/Period.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
-            <element signature="e#1985#1986#0" expanded="true" />
-            <element signature="e#2030#2031#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java">
+    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/BikeFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
@@ -1903,13 +1631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ids04j/SecureUnzip.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1938,8 +1659,125 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/IDS16J/CustomResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="156">
           <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser00j/WeaponStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser00j/GameWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+          <folding>
+            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#2213#2214#0" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser04j/Hometown.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1593">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser05j/RCE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1096">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#0#4198#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser06j/SerialDOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser07j/Period.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="e#1727#1728#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <element signature="e#1985#1986#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/MutablePeriod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser08j/Period.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/ser101j/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/STR00J/ReadString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="e#0#2821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/src/main/java/STR01J/TrimString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="10" selection-start-line="10" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR9/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
         </state>
       </provider>
     </entry>
