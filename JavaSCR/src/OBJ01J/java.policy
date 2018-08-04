@@ -1,8 +1,0 @@
-// Policy file for OBJ01J
-grant codeBase "file:/C:/Users/rseacord/git/JavaSCR/-" {
-  // required to view all granted permissions
-  permission java.lang.RuntimePermission "getProtectionDomain";
-  permission java.security.SecurityPermission "getPolicy";
-  // uncomment out following line to make private fields accessible 
-//  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
-};

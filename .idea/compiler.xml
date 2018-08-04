@@ -3,5 +3,16 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="error-prone" />
     <option name="USE_RELEASE_OPTION" value="false" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="JavaSCR" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JavaSCR" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
