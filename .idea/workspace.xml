@@ -6,20 +6,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f3f6dda-8130-4c2c-a3ca-92fbea47272d" name="Default" comment="back to first position">
-      <change afterPath="$PROJECT_DIR$/JavaSCR9/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acclib/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR9/JavaSCR9.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSCR9/JavaSCR9.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/Bicycle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/BikeFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSCR9/src/ser09j/LookAheadDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acclib/acclib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/acclib/acclib.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/acclib/src/acclib/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acclib/src/acclib/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acclib/src/acclib/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acclib/src/acclib/acclib.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acclib/src/acclib/acclib/LibClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acclib/src/acclib/java.policy" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/acclib/bin/" />
     <ignored path="$PROJECT_DIR$/JavaSCR/bin/" />
     <ignored path="$PROJECT_DIR$/JavaSCR9/bin/" />
     <ignored path="$PROJECT_DIR$/JavaSCR/target/" />
     <ignored path="$PROJECT_DIR$/JavaSCR9/target/" />
+    <ignored path="$PROJECT_DIR$/acclib/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,11 +56,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LookAheadDeserializer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LookAheadDeserializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="498">
               <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/acclib/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -119,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JavaSCR/src/IDS17J/CustomResolver.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/ClassFiles.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/ser05j/RCE.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/IDS16J/OnlineStore.java" />
@@ -170,6 +182,7 @@
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/ser101j/Person.java" />
         <option value="$PROJECT_DIR$/JavaSCR/src/main/java/STR01J/TrimString.java" />
         <option value="$PROJECT_DIR$/JavaSCR9/pom.xml" />
+        <option value="$PROJECT_DIR$/acclib/pom.xml" />
       </list>
     </option>
   </component>
@@ -264,6 +277,27 @@
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
               <item name="acclib" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acclib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acclib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acclib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="acclib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaSCR" type="b2602c69:ProjectViewProjectNode" />
@@ -692,7 +726,7 @@
       <workItem from="1533125565467" duration="18231000" />
       <workItem from="1533214681418" duration="13293000" />
       <workItem from="1533302483989" duration="3359000" />
-      <workItem from="1533319948966" duration="3673000" />
+      <workItem from="1533319948966" duration="4723000" />
     </task>
     <task id="LOCAL-00001" summary="back to first position">
       <created>1524088810989</created>
@@ -747,26 +781,26 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493239000" />
+    <option name="totallyTimeSpent" value="494289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1088" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.67864585" weight="0.3100304" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.6770833" visible="true" weight="0.3100304" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.153125" side_tool="true" visible="true" weight="0.331307" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.32291666" side_tool="true" visible="true" weight="0.3100304" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32930845" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.846875" visible="true" weight="0.331307" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.846875" weight="0.331307" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15833333" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19322917" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1403,13 +1437,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/com/sun/org/apache/xalan/internal/xsltc/trax/TemplatesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="400" column="9" selection-start-line="400" selection-start-column="9" selection-end-line="400" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/java/jackson-databind-2.7.0.jar!/com/fasterxml/jackson/databind/JsonMappingException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -1760,6 +1787,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JavaSCR/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -1774,10 +1808,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaSCR9/src/main/java/ser09j/LookAheadDeserializer.java">
+    <entry file="file://$PROJECT_DIR$/acclib/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+        <state relative-caret-position="390">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1835,12 +1869,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>JavaSCR</last-edited>
+          <last-edited>acclib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
