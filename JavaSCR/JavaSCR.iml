@@ -22,15 +22,6 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="commons-io-2.5.jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/commons-io-2.5.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="javassist.jar">
         <CLASSES>
           <root url="jar://$USER_HOME$/java/jboss-javassist-javassist-rel_3_22_00_ga-46-g40d3223/jboss-javassist-javassist-40d3223/javassist.jar!/" />
@@ -51,19 +42,6 @@
       </library>
     </orderEntry>
     <orderEntry type="jdk" jdkName="1.8.0_40" jdkType="JavaSDK" />
-    <orderEntry type="module-library">
-      <library name="commons-collections4-4.0.jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$USER_HOME$/java/commons-collections4-4.0-bin/commons-collections4-4.0/commons-collections4-4.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="module" module-name="acclib" />
     <orderEntry type="module-library">
       <library>
@@ -74,54 +52,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES />
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$USER_HOME$/java/guava-25.0/guava-25.0/guava-testlib/src" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="guava-25.0-jre" level="project" />
-    <orderEntry type="library" name="guava-testlib-25.0-jre" level="project" />
     <orderEntry type="library" name="junit" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/jackson-annotations-2.7.9.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/xalan-j_2_7_2/xalan.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/jackson-core-2.7.3.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/java/jackson-databind-2.7.3.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.9" level="project" />

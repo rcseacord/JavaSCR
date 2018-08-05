@@ -16,7 +16,7 @@
     <bytecodeTargetLevel>
       <module name="acclib" target="1.8" />
       <module name="JavaSCR" target="1.8" />
-      <module name="JavaSCR9" target="1.8" />
+      <module name="JavaSCR9" target="1.10" />
     </bytecodeTargetLevel>
   </component>
 </project>
