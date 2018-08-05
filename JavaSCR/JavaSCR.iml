@@ -41,7 +41,6 @@
       </library>
     </orderEntry>
     <orderEntry type="jdk" jdkName="1.8.0_40" jdkType="JavaSDK" />
-    <orderEntry type="module" module-name="acclib" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -71,5 +70,6 @@
     <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:2.5.2" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.11" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="module" module-name="acclib" />
   </component>
 </module>
