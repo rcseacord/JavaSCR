@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="jar://$USER_HOME$/java/checker-framework-2.2.2/checker-framework-2.2.2/checker/dist/checker-qual.jar!/" />
     <libelement value="jar://$USER_HOME$/java/SerialKiller-0.4-all.jar!/" />
     <libelement value="jar://$USER_HOME$/java/commons-io-2.5.jar!/" />
     <libelement value="jar://$USER_HOME$/java/jboss-javassist-javassist-rel_3_22_00_ga-46-g40d3223/jboss-javassist-javassist-40d3223/javassist.jar!/" />
