@@ -27,6 +27,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Field;
 import java.util.Objects;
 
 enum Gender {
@@ -40,7 +41,8 @@ public class Person implements java.io.Serializable {
   private String socialSecurity;
   private int age;
   private Person spouse;
-//  private Gender gender;
+  // Gender field must be public for reflection to work
+//  public Gender gender;
 
   public Person(String fn, String ln, String socialSecurity, int a) {
     this.firstName = fn;
@@ -62,7 +64,6 @@ public class Person implements java.io.Serializable {
   public String getFirstName() {
     return this.firstName;
   }
-
   public void setFirstName(String value) {
     this.firstName = value;
   }
@@ -70,7 +71,6 @@ public class Person implements java.io.Serializable {
   public String getLastName() {
     return this.lastName;
   }
-
   public void setLastName(String value) {
     this.lastName = value;
   }
@@ -78,7 +78,6 @@ public class Person implements java.io.Serializable {
   public int getAge() {
     return this.age;
   }
-
   public void setAge(int value) {
     this.age = value;
   }
@@ -86,7 +85,6 @@ public class Person implements java.io.Serializable {
   public Person getSpouse() {
     return this.spouse;
   }
-
   public void setSpouse(Person value) {
     this.spouse = value;
   }
@@ -94,7 +92,6 @@ public class Person implements java.io.Serializable {
   public String getSocialSecurity() {
     return this.socialSecurity;
   }
-
   public void setSocialSecurity(String value) {
     this.socialSecurity = value;
   }
@@ -106,19 +103,33 @@ public class Person implements java.io.Serializable {
   }
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
-    Person p1 = new Person("John", "Doe", "012-34-5678", 25);   
-    Person p2 = new Person("Jane", "Doe", "987-65-4321", 24);   
+    Person p1 = new Person(
+        "John",
+        "Doe",
+        "012-34-5678",
+        25
+//       , Gender.MALE
+    );
 
-    // Create objects with new Gender field
-//    p1 = new Person("John", "Doe", "012-34-5678", 25, Gender.MALE);
-//    p2 = new Person("Jane", "Doe", "987-65-4321", 24, Gender.FEMALE);
+    Person p2 = new Person(
+        "Jane",
+        "Doe",
+        "987-65-4321",
+        24
+//       , Gender.FEMALE
+    );
 
     p1.setSpouse(p2);
     p2.setSpouse(p1);
 
-    // Comment out when serializing Person with Gender field
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
-      oos.writeObject(p1);
+    // Only serialize Person when gender field is not present
+    Class<?> personClass = p1.getClass();
+    try {
+      Field genderField = personClass.getField("gender");
+    } catch (NoSuchFieldException e) {
+      try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))) {
+        oos.writeObject(p1);
+      }
     }
 
     Person p;
@@ -133,8 +144,6 @@ public class Person implements java.io.Serializable {
       System.out.println("Object successfully deserialized");
     }
 
-    // Clean up the file
-    // new File("tempdata.ser").delete();
 
   } // end main
 } // end class
