@@ -57,6 +57,8 @@ class Box<T> {
 		Box<String> stringBox = new Box<>();
 		rawBox = stringBox;       // OK
 		rawBox.set(8);  // warning: unchecked invocation to set(T)
+		// The "unchecked" warning is disabled, by default, though the compiler gives a hint.
+		// To see all "unchecked" warnings, recompile with -Xlint:unchecked.
 
 		// Assigning a raw type to a parameterized type, creates a warning:
 		rawBox = new Box();  // rawBox is a raw type of Box<T>
