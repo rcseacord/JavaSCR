@@ -22,13 +22,7 @@
 
 package ser04j;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.nio.file.AccessDeniedException;
 
 public final class Hometown implements Serializable {
@@ -64,7 +58,6 @@ public final class Hometown implements Serializable {
 
   @SuppressWarnings("static-method")
   private void writeObject(ObjectOutputStream out) throws IOException {
-    System.out.println("writeObject called");
     out.defaultWriteObject();
   }
 
@@ -75,14 +68,52 @@ public final class Hometown implements Serializable {
     this.town = readTown;
   }
 
+  // tamper with the serialized data to change home town to Moscow
+  public static void makeWarsawMoscow(String fileName) throws IOException {
+    RandomAccessFile hometownFile = new RandomAccessFile(fileName, "rw");
+    byte[] buffer1 = new byte[100];
+    byte[] buffer2 = new byte[4];
+    byte[] moscowBytes = "Moscow".getBytes("US-ASCII");
+
+    // home town name starts 68 bytes in
+    hometownFile.readFully(buffer1, 0, 67);
+
+    // skip over "Warsaw" in file
+    if (moscowBytes.length != hometownFile.skipBytes(moscowBytes.length)) {
+      throw new RuntimeException("Failed to modify hometown file.");
+    }
+
+    // read the rest of the file
+    int endLength = hometownFile.read(buffer2);
+
+    hometownFile.close();
+
+    // copy moscow to serialzation data
+    System.arraycopy(moscowBytes, 0, buffer1, 67, moscowBytes.length);
+
+    // copy the end of the serialzed data
+    System.arraycopy(buffer2, 0, buffer1, 67+moscowBytes.length, endLength);
+
+    // delete the original serialized file
+    new File(fileName).delete();
+
+    // create a new serialized file with our modified hometown
+    FileOutputStream serialOS = new FileOutputStream(fileName);
+    serialOS.write(buffer1);
+    serialOS.close();
+  }
+
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     // Create Hometown object
     Hometown ht = new Hometown("Warsaw");
-    System.out.println("Home town is " + ht.getTown());
+    System.out.println("My home town is " + ht.getTown());
     try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("tempdata.ser"))
     ) {
       oos.writeObject(ht);
     }
+
+    makeWarsawMoscow("tempdata.ser");
+
     // Construct a new object through deserialization
     try (
         // Edit tempdata.ser in %userprofile%\git\JavaSCR
@@ -90,7 +121,7 @@ public final class Hometown implements Serializable {
     ) {
       ht = (Hometown) ois.readObject();
     }
-    System.out.println("My town is " + ht.getTown());
+    System.out.println("My home town is " + ht.getTown());
 
     // Clean up the file
     if (!new File("tempdata.ser").delete()) {
