@@ -37,7 +37,7 @@ class ReDoS {
 		
 		System.out.println(ax4.matches("^(a+)+$"));
 		System.out.println(ax16.matches("^(a+)+$"));
-		// System.out.println(ax32.matches("^(a+)+$"));
+		System.out.println(ax32.matches("^(a+)+$"));
 		
 		System.out.println(a002.matches("(aa|aab?)*"));
 		System.out.println(a003.matches("(aa|aab?)*"));
