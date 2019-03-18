@@ -1,9 +1,7 @@
 package SSRF;
 
-import java.net.InetAddress;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.UnknownHostException;
+import java.io.IOException;
+import java.net.*;
 import java.util.stream.IntStream;
 
 class URI2IP {
@@ -16,7 +14,7 @@ class URI2IP {
    * @param cidrString the subnet in CIDR notation
    * @return true if the IP lies within the subnet, false otherwise
    */
-  static boolean cidrMatch(String ipString, String cidrString) throws UnknownHostException {
+  private static boolean cidrMatch(String ipString, String cidrString) throws UnknownHostException {
     String[] parts = cidrString.split("/");
 
     byte[] ip = InetAddress.getByName(ipString).getAddress();
@@ -58,14 +56,81 @@ class URI2IP {
     return true;
   }
 
-  static String Uri2Ip(String uri) throws URISyntaxException, UnknownHostException {
+  private static String Uri2Ip(String uri) throws URISyntaxException, UnknownHostException {
     URI yuri = new URI(uri);
     InetAddress address = InetAddress.getByName(yuri.getHost());
     return address.getHostAddress();
   }
 
   public static void main(String[] args) throws URISyntaxException, UnknownHostException {
+    // Equivalency issues
+
+    // Relative URI references
+    URI yuri1 = new URI("http://example.com/intro#chap1");
+    URI yuri2 = new URI("intro#chap1");
+    if (yuri1.normalize() == yuri2.normalize()) {
+      System.out.println(yuri1.normalize() + " equals " + yuri2.normalize());
+    }
+    else {
+      System.out.println(yuri1.normalize() + " does not equal " + yuri2.normalize());
+    }
+
+    // RFC2396-Sensitive Comparison. RFC2396 does not authorize the removal of the /./ and b/../ fragments
+    // except in the case of relative URI references, but that this is arguably an inconsistency and that
+    // software often does so anyhow.
+    yuri1 = new URI("example://a/b/c/%7A");
+    yuri2 = new URI("eXAMPLE://a/./b/../b/c/%7a");
+    if (yuri1.normalize() == yuri2.normalize()) {
+      System.out.println(yuri1.normalize() + " equals " + yuri2.normalize());
+    }
+    else {
+      System.out.println(yuri1.normalize() + " does not equal " + yuri2.normalize());
+    }
+
+    // %-Escaping Issues
+    // Software applying RFC2396's rules would not find these equivalent, since the %2f is being used explicitly to
+    // escape the special semantics in URIs of the / character.
+    yuri1 = new URI("http://a/b");
+    yuri2 = new URI("http://a%2fb");
+    if (yuri1.normalize() == yuri2.normalize()) {
+      System.out.println(yuri1.normalize() + " equals " + yuri2.normalize());
+    }
+    else {
+      System.out.println(yuri1.normalize() + " does not equal " + yuri2.normalize());
+    }
+
+    // Software applying RFC2396's rules might consider these equivalent, since %61 encodes the character a in both
+    // ASCII and UTF-8, but context becomes significant. RFC2396 does not constrain the character-to-octet mapping
+    // scheme used in URIs. If the second URI had been generated on a machine in which the EBCDIC character-to-octet
+    // mapping was in use, the %61 would encode the character / (quite naturally, since / must be encoded but a need
+    // never be).
+    yuri1 = new URI("http://dir/a");
+    yuri2 = new URI("http://dir/%61");
+    if (yuri1.normalize() == yuri2.normalize()) {
+      System.out.println(yuri1.normalize() + " equals " + yuri2.normalize());
+    }
+    else {
+      System.out.println(yuri1.normalize() + " does not equal " + yuri2.normalize());
+    }
+
+    // Scheme-Sensitive Processing
+    yuri1 = new URI("http://example.com/");
+    yuri2 = new URI("http://example.com:80/");
+    if (yuri1.normalize() == yuri2.normalize()) {
+      System.out.println(yuri1.normalize() + " equals " + yuri2.normalize());
+    }
+    else {
+      System.out.println(yuri1.normalize() + " does not equal " + yuri2.normalize());
+    }
+
     System.out.println(URI2IP.Uri2Ip("https://www.nccgroup.com"));
+
+    System.out.println(new URI("http://169.254.0.0/").getHost());
+    System.out.println(InetAddress.getByName("127.0.0.1").getHostAddress());
+    System.out.println(InetAddress.getByName("127.0.0").getHostAddress());
+    System.out.println(InetAddress.getByName("127.0").getHostAddress());
+    System.out.println(InetAddress.getByName("127").getHostAddress());
+
     URI yuri = new URI("127.0.0.1");
     System.out.println(yuri);
     System.out.println(yuri.normalize());
@@ -94,5 +159,22 @@ class URI2IP {
     else {
       System.out.println("169.254.0.0 is NOT in the range of 127.0.0.0/8");
     }
+
+    try {
+      URL earl = new URL("https://10.0.0.33 %0D%0AHELO nccgroup.com%0D%0AMAIL FROM…:25/");
+      System.out.println("earl Query is: " + earl.getQuery());
+      System.out.println("earl Path is: " + earl.getPath());
+      System.out.println("earl UserInfo is: " + earl.getUserInfo());
+      System.out.println("earl Authority is: " + earl.getAuthority());
+      System.out.println("earl Host is: " + earl.getHost());
+      System.out.println("earl Port is: " + earl.getPort());
+      System.out.println("earl Protocol is: " + earl.getProtocol());
+      System.out.println("earl File is: " + earl.getFile());
+      System.out.println("earl Ref is: " + earl.getRef());
+      earl.getContent();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
   }
 }
