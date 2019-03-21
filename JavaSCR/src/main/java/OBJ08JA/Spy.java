@@ -34,8 +34,8 @@ class Spy {
 		
 	    System.out.println(ic.getX());
 	    System.out.println(ic.getY());
-		
-		final Method methods[] = Coordinates.class.getDeclaredMethods();
+
+    final Method[] methods = Coordinates.class.getDeclaredMethods();
 
 		// Enumerate methods
 		for (Method method : methods) {

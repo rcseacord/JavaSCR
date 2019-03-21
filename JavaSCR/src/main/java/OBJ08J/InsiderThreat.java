@@ -33,8 +33,8 @@ class InsiderThreat {
 		Coordinates ic = new Coordinates();
 		
 	    System.out.println("(" + ic.getX() + "," + ic.getY() + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		
-		final Method methods[] = Coordinates.class.getDeclaredMethods();
+
+		final Method[] methods = Coordinates.class.getDeclaredMethods();
 
 		// Enumerate methods
 		for (Method method : methods) {
@@ -48,7 +48,7 @@ class InsiderThreat {
 	    System.out.println("(" + x + "," + y + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	    
 	    LambdaScopeTest lst = new LambdaScopeTest();
-		final Method lmethods[] = LambdaScopeTest.class.getDeclaredMethods();
+		final Method[] lmethods = LambdaScopeTest.class.getDeclaredMethods();
 
 		// Enumerate methods
 		for (Method lmethod : lmethods) {

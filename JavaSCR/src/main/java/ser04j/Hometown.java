@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@
 package ser04j;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.AccessDeniedException;
 
 public final class Hometown implements Serializable {
@@ -73,7 +74,7 @@ public final class Hometown implements Serializable {
     RandomAccessFile hometownFile = new RandomAccessFile(fileName, "rw");
     byte[] buffer1 = new byte[100];
     byte[] buffer2 = new byte[4];
-    byte[] moscowBytes = "Moscow".getBytes("US-ASCII");
+    byte[] moscowBytes = "Moscow".getBytes(StandardCharsets.US_ASCII);
 
     // home town name starts 68 bytes in
     hometownFile.readFully(buffer1, 0, 67);

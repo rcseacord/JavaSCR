@@ -57,7 +57,7 @@ public class SecureUnzip {
       while ((entry = zis.getNextEntry()) != null) {
         System.out.println("Extracting: " + entry); 
         int count;
-        byte data[] = new byte[BUFFER];
+        byte[] data = new byte[BUFFER];
         // Write the files to the disk, but ensure that the filename is valid,
         // and that the file is not insanely big
         String name = validateFilename(entry.getName(), "."); 

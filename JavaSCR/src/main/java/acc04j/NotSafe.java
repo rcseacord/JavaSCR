@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 // Cleaned up version of PoC by Jeff Dileo
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,8 +56,7 @@ public class NotSafe {
     // Reading the value of the unsafe field to get the unsafe object handle
     Object unsafe = unsafe_field.get(null);
     System.out.println(unsafe);
-    Class<? extends Object> unsafeClass = unsafe.getClass();
-    return unsafeClass;
+    return unsafe.getClass();
   }
 
   public static void main(String[] argv) throws NoSuchFieldException, SecurityException, ClassNotFoundException,

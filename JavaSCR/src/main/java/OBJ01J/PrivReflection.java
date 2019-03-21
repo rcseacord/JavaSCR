@@ -30,7 +30,7 @@ import java.security.Policy;
 import java.util.Enumeration;
 
 class PrivReflection {
-  public static void main(String args[]) throws Exception {
+  public static void main(String[] args) throws Exception {
     SecurityManager sm = System.getSecurityManager();
     if (sm != null) {
       System.out.println("Security manager installed.");
@@ -54,7 +54,7 @@ class PrivReflection {
 
     // Returns an array of Field objects reflecting
     // all the fields declared by the class (including private)
-    final Field fields[] = FieldTest.class.getDeclaredFields();
+    final Field[] fields = FieldTest.class.getDeclaredFields();
 
     // Enumerate fields
     for (Field field : fields) {

@@ -226,7 +226,7 @@
         </java>
     </target>
     <target name="ReadString">
-        <java classname="STR00J.ReadString" failonerror="true" fork="yes">
+        <java classname="ReadString" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
@@ -288,7 +288,7 @@
         </java>
     </target>
     <target name="TrimString">
-        <java classname="STR01J.TrimString" failonerror="true" fork="yes">
+        <java classname="TrimString" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

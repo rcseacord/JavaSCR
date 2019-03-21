@@ -22,6 +22,8 @@
 
 package OBJ11J;
 
+import java.util.Objects;
+
 // Invoke class and gain access to restricted features
 class AttackerApp {
 
@@ -33,7 +35,7 @@ class AttackerApp {
 		Storage.store(i);
 
 		// Now invoke any instance method of BankOperations class
-		i.greet();
+		Objects.requireNonNull(i).greet();
 
 		UserApp.main(args); // Invoke the original UserApp
 	}

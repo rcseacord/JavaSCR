@@ -72,7 +72,7 @@ class Main {
       System.out.println("==========");
 
       ObjectStreamField osf = new ObjectStreamField("s", long.class);
-      ObjectStreamField osfarr[] = new ObjectStreamField[]{osf};
+      ObjectStreamField[] osfarr = new ObjectStreamField[]{osf};
 
       Class<?> FieldReflector = Class.forName("java.io.ObjectStreamClass$FieldReflector");
       Constructor<?> FieldReflector_cons = FieldReflector.getDeclaredConstructors()[0];
@@ -91,7 +91,7 @@ class Main {
       System.out.println(System.err);
       System.out.println(System.getSecurityManager());
 
-      byte zeros[] = new byte[8];
+      byte[] zeros = new byte[8];
       setPrimFieldValues.invoke(fr, System.class, zeros);
 
       System.out.println(System.err);

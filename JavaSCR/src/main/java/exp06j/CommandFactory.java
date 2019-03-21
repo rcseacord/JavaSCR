@@ -66,6 +66,7 @@ public class CommandFactory {
 class Program {
   public static void main(String[] args) throws InterruptedException {
     CommandFactory factory = new CommandFactory();
+    //noinspection InfiniteLoopStatement
     while (true) {
       Command command = factory.getCommand();
       // Since the CommandFactory can return null commands,

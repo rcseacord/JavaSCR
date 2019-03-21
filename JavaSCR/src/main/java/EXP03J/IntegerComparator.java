@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -34,39 +34,39 @@ class IntegerComparator {
 	final private static Comparator<Integer> cmp = (i, j) -> i < j ? -1 : (i > j ? 1 : 0);
 
 	public static void main(String[] args) {
-		System.out.println("cmpWrong less than: " //$NON-NLS-1$
+		System.out.println("cmpWrong less than: "
 				+ cmpWrong.compare(2147483646, 2147483647));
-		System.out.println("cmpWrong equal to: " //$NON-NLS-1$
+		System.out.println("cmpWrong equal to: "
 				+ cmpWrong.compare(2147483647, 2147483647));
-		System.out.println("cmpWrong greater than: " //$NON-NLS-1$
+		System.out.println("cmpWrong greater than: "
 				+ cmpWrong.compare(2147483647, 2147483646));
 		
-		System.out.println("cmpWrong equal to with memoized value: " //$NON-NLS-1$
+		System.out.println("cmpWrong equal to with memoized value: "
 				+ cmpWrong.compare(7, 7));
 
-		System.out.println("cmp less than: " //$NON-NLS-1$
+		System.out.println("cmp less than: "
 				+ cmp.compare(2147483646, 2147483647));
-		System.out.println("cmp equal to: " //$NON-NLS-1$
+		System.out.println("cmp equal to: "
 				+ cmp.compare(2147483647, 2147483647));
-		System.out.println("cmp greater than: " //$NON-NLS-1$
+		System.out.println("cmp greater than: "
 				+ cmp.compare(2147483647, 2147483646));
 		
 		// Constructors for class Boolean return distinct objects.
-		Boolean b1 = new Boolean("true"); //$NON-NLS-1$
-		Boolean b2 = new Boolean("true"); //$NON-NLS-1$
+		Boolean b1 = new Boolean("true");
+		Boolean b2 = new Boolean("true");
 
 		if (b1 != b2) { // never equal
-			System.out.println("Never equal"); //$NON-NLS-1$
+			System.out.println("Never equal");
 		}
 
 		// When comparing a primitive to a boxed value the latter is unboxed.
 		if (b1 == (boolean)b2) { // always equal
-			System.out.println("Equal for the same values"); //$NON-NLS-1$
+			System.out.println("Equal for the same values");
 		}
 		
 		b2 = false;
 		if (b1 == (boolean)b2) { // always 
-			System.out.println("Not equal for different values"); //$NON-NLS-1$
+			System.out.println("Not equal for different values");
 		}
 		
 		// The values of autoboxed Boolean variables may be compared using the
@@ -75,21 +75,21 @@ class IntegerComparator {
 		b1 = true;
 		b2 = true;
 		if (b1 == b2) { // always equal
-			System.out.println("Always equal"); //$NON-NLS-1$
+			System.out.println("Always equal");
 		}
 		
 		b1 = Boolean.TRUE;
 		if (b1 == b2) { // always equal
-			System.out.println("Always equal"); //$NON-NLS-1$
+			System.out.println("Always equal");
 		}
 		
 		// The object b is unboxed because the value on the right
 		// of the == is a primitive type (boolean).  So the comparison
 		// is always comparing the primitive value true with itself.
 
-		Boolean b = new Boolean("true"); //$NON-NLS-1$
+		Boolean b = new Boolean("true");
 		if (b == true) { 
-			System.out.println("Always equal"); //$NON-NLS-1$
+			System.out.println("Always equal");
 		}
 		
 	}

@@ -29,7 +29,7 @@ public class LookAheadDeserializer {
     }
   }
 
-  static byte[] DoSpayload() throws IOException {
+  private static byte[] DoSpayload() throws IOException {
     Set<Object> root = new HashSet<>();
     Set<Object> s1 = root;
     Set<Object> s2 = new HashSet<>();
