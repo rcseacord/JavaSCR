@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,27 +22,14 @@
 
 package ser06j;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+import ser09j.Bicycle;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.HashSet;
 import java.util.Set;
+import serial.Serial;
 
 // java serialization DoS
 public class SerialDOS {
-
-  static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
-      oos.writeObject(o);
-      return ba.toByteArray();
-    }
-  }
-
-  static Object deserialize(byte[] bytes) throws ClassNotFoundException, IOException {
-    return new ObjectInputStream(new ByteArrayInputStream(bytes)).readObject();
-  }
 
   // Deserializing the HashSet will recurse indefinitely, consuming CPU
   static byte[] DoSpayload() throws IOException {
@@ -60,18 +47,18 @@ public class SerialDOS {
       s1 = t1;
       s2 = t2;
     }
-    return serialize(root);
+    return Serial.serialize(root);
   }
 
   public static void main(String[] args) throws InterruptedException {
     // start a thread to deserialize the DoS payload
     new Thread(() -> {
       try {
-        deserialize(DoSpayload());
+        Bicycle myBike = (Bicycle) Serial.deserialize(DoSpayload());
+        System.out.println(myBike.getName() + " has been deserialized.");
       } catch (ClassNotFoundException | IOException e) {
         e.printStackTrace();
       }
-      System.out.println("DoS has been deserialized.");
     }).start();
 
     // give the thread 10 seconds to complete

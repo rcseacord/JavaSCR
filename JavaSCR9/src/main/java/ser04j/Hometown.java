@@ -24,7 +24,7 @@ package ser04j;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.AccessDeniedException;
+import java.nio.file.*;
 
 public final class Hometown implements Serializable {
   private static final long serialVersionUID = 6515419803685137985L;
@@ -89,14 +89,25 @@ public final class Hometown implements Serializable {
 
     hometownFile.close();
 
-    // copy moscow to serialzation data
+    // copy moscow to serialization data
     System.arraycopy(moscowBytes, 0, buffer1, 67, moscowBytes.length);
 
-    // copy the end of the serialzed data
+    // copy the end of the serialized data
     System.arraycopy(buffer2, 0, buffer1, 67+moscowBytes.length, endLength);
 
     // delete the original serialized file
-    new File(fileName).delete();
+    // new File(fileName).delete();
+
+    try {
+      Files.delete(Paths.get(fileName));
+    } catch (NoSuchFileException x) {
+      System.err.format("%s: no such" + " file or directory%n", fileName);
+    } catch (DirectoryNotEmptyException x) {
+      System.err.format("%s not empty%n", fileName);
+    } catch (IOException x) {
+      // File permission problems are caught here.
+      System.err.format("File permission error deleting %s%n", fileName);
+    }
 
     // create a new serialized file with our modified hometown
     FileOutputStream serialOS = new FileOutputStream(fileName);

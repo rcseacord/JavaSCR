@@ -22,10 +22,6 @@
 
 package ser03j;
 
-import java.io.IOException;
-import java.io.NotSerializableException;
-import java.io.ObjectStreamException;
-
 public final class Singleton extends Number {
   private static final long serialVersionUID = 1L;
   private static final Singleton INSTANCE = new Singleton();

@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,24 +22,11 @@
 
 package ser03j;
 
+import serial.Serial;
+
 import java.io.*;
 
 class Malicious {
-
-  private static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
-      oos.writeObject(o);
-      return ba.toByteArray();
-    }
-  }
-
-  private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException {
-    Object obj;
-    try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buffer))) {
-      obj = ois.readObject();
-    }
-    return obj;
-  }
 
   /**
    * Copies a specified Object by serializing then deserializing the object.
@@ -50,7 +37,7 @@ class Malicious {
    * @return copy of obj
    */
   private static Object serialCopy(Object obj) throws IOException, ClassNotFoundException {
-    return deserialize(serialize(obj));
+    return Serial.deserialize(Serial.serialize(obj));
   } // end serialCopy()
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {

@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -47,14 +47,14 @@ import javax.crypto.SealedObject;
 class MapSerializer {
   private static SerializableMap<String, String> buildMap() {
     SerializableMap<String, String> map = new SerializableMap<>();
-    map.setData("John Doe", "012-34-5678");  //$NON-NLS-2$
-    map.setData("Jane Doe", "987-65-4321");  //$NON-NLS-2$
+    map.setData("John Doe", "012-34-5678");  
+    map.setData("Jane Doe", "987-65-4321");  
     return map;
   }
 
   private static void InspectMap(SerializableMap<String, String> map) {
-    System.out.println("John Doe CC#: " + map.getData("John Doe"));  //$NON-NLS-2$
-    System.out.println("Jane Doe CC#: " + map.getData("Jane Doe"));  //$NON-NLS-2$
+    System.out.println("John Doe CC#: " + map.getData("John Doe"));  
+    System.out.println("Jane Doe CC#: " + map.getData("Jane Doe"));  
   }
 
   @SuppressWarnings("unchecked")
