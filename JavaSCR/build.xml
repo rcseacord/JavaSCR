@@ -313,7 +313,7 @@
         </java>
     </target>
     <target name="ValidateString">
-        <java classname="IDS01J.ValidateString" failonerror="true" fork="yes">
+        <java classname="ValidateString" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

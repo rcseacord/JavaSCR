@@ -22,13 +22,12 @@
 
 package STR00J;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 
 class ReadString {
 
   public static void main(String[] args) {
-    String str = "";
+    StringBuilder str = new StringBuilder();
     int offset; // initialized to zero
 
     // A = 41 Ω = CE  A9   語  = E8  AA  9E
@@ -49,26 +48,26 @@ class ReadString {
 
     // Read UTF-8 Data from 4 byte buffer
     for (offset = 0; offset < utf8_data.length; offset += 4) {
-      str += new String(utf8_data, offset, 4, StandardCharsets.UTF_8);
+      str.append(new String(utf8_data, offset, 4, StandardCharsets.UTF_8));
     }
 
     // convert full string
     String reference_utf8_str = new String(utf8_data, StandardCharsets.UTF_8);
 
-    if (!reference_utf8_str.equals(str)) {
+    if (!reference_utf8_str.equals(str.toString())) {
       System.out.println("UTF-8 strings are not equal");
     }
 
     // Read UTF-16 Data from 4 byte buffer
-    str = "";
+    str = new StringBuilder();
     for (offset = 0; offset < utf16_data.length; offset += 4) {
-      str += new String(utf16_data, offset, 4, StandardCharsets.UTF_16);
+      str.append(new String(utf16_data, offset, 4, StandardCharsets.UTF_16));
     }
 
     // print full string
     String reference_utf16_str = new String(utf16_data, StandardCharsets.UTF_16);
 
-    if (!reference_utf16_str.equals(str)) {
+    if (!reference_utf16_str.equals(str.toString())) {
       System.out.println("UTF-16 strings are not equal");
     }
 

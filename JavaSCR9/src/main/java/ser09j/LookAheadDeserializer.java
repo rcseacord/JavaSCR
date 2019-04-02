@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import ser09j.Bicycle;
+import serial.Serial;
 
 import java.util.HashSet;
 import java.util.Properties;
@@ -22,14 +23,7 @@ import java.util.Set;
  */
 public class LookAheadDeserializer {
 
-  private static byte[] serialize(Object o) throws IOException {
-    try (ByteArrayOutputStream ba = new ByteArrayOutputStream(); ObjectOutputStream oos = new ObjectOutputStream(ba)) {
-      oos.writeObject(o);
-      return ba.toByteArray();
-    }
-  }
-
-  private static byte[] DoSpayload() throws IOException {
+   private static byte[] DoSpayload() throws IOException {
     Set<Object> root = new HashSet<>();
     Set<Object> s1 = root;
     Set<Object> s2 = new HashSet<>();
@@ -44,34 +38,30 @@ public class LookAheadDeserializer {
       s1 = t1;
       s2 = t2;
     }
-    return serialize(root);
+    return Serial.serialize(root);
   }
 
-    
   private static Object deserialize(byte[] buffer) throws IOException, ClassNotFoundException {
-    Object obj;
-    try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buffer))) {
-      // (2) TODO: enable custom filter
-      // ois.setObjectInputFilter(new BikeFilter());
-      obj = ois.readObject();
-    }
-    return obj;
+    BikeFilter filter = null;
+    // (2) TODO: enable custom filter
+    filter = new BikeFilter();
+    return Serial.deserialize(buffer, filter);
   }
 
   public static void main(String[] args) throws ClassNotFoundException, IOException {
     
     // (3) TODO: enable process-wide filter 
     //Properties props = System.getProperties();
-    //props.setProperty("jdk.serialFilter", "ser09j.Bicycle;!*;maxdepth=1;maxrefs=1;maxbytes=78;maxarray=10");
+    //props.setProperty("jdk.serialFilter", "maxdepth=1;maxrefs=1;maxbytes=78;maxarray=10;ser09j.Bicycle;!*");
     
     byte[] serializedBicycle = null;
     byte[] serializedFile = null;
     try {
       // Serialize a Bicycle instance
-      serializedBicycle = serialize(new Bicycle(0, "Unicycle", 1));
+      serializedBicycle = Serial.serialize(new Bicycle(0, "Unicycle", 1));
       
       // Serialize a File instance
-      serializedFile = serialize(new File("file.txt")); 
+      serializedFile = Serial.serialize(new File("file.txt"));
     } catch (IOException e1) {
       e1.printStackTrace();
     } 
