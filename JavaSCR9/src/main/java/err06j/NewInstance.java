@@ -1,6 +1,6 @@
 //The MIT License (MIT)
 //
-//Copyright (c) 2016 Robert C. Seacord
+//Copyright (c) 2020 Robert C. Seacord
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -20,10 +20,9 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package ERR06J;
+package err06j;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 
 public class NewInstance {
   private static Throwable throwable;
@@ -32,7 +31,7 @@ public class NewInstance {
     throw throwable;
   }
 
-  private static synchronized void undeclaredThrow(Throwable throwable) throws InvocationTargetException {
+  private static synchronized void undeclaredThrow(Throwable throwable) {
     // These exceptions should not be passed
     if (throwable instanceof IllegalAccessException || throwable instanceof InstantiationException) {
       // Unchecked, no declaration required
@@ -42,8 +41,8 @@ public class NewInstance {
     NewInstance.throwable = throwable;
     try {
       NewInstance.class.newInstance();
-    } 
-    catch (InstantiationException | IllegalAccessException | SecurityException e) {
+    }
+    catch (ReflectiveOperationException e) {
       e.printStackTrace();
     } finally { // Avoid memory leak
       NewInstance.throwable = null;
@@ -60,12 +59,7 @@ public class NewInstance {
     try {
       NewInstance.undeclaredThrow(new IOException("IOException"));
     } catch (Exception e) {
-      if (e instanceof IOException) {
-        System.err.println("IOException occurred");
-        e.printStackTrace();
-      } else {
-        e.printStackTrace();
-      }
+      e.printStackTrace();
     }
   } // end main
 } // end class newInstance
@@ -96,11 +90,21 @@ public class NewInstance {
 
 
 
-//    +      NewInstance.class.getConstructor().newInstance();
-//    -      NewInstance.class.newInstance();
+//  private static synchronized void undeclaredThrow(Throwable throwable) {
+//    // These exceptions should not be passed
+//    if (throwable instanceof IllegalAccessException || throwable instanceof InstantiationException) {
+//      // Unchecked, no declaration required
+//      throw new IllegalArgumentException();
+//    }
 //
-//    +    catch (InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException e) {
-//    -    catch (InstantiationException | IllegalAccessException | SecurityException e) {
-
-
-
+//    NewInstance.throwable = throwable;
+//    try {
+//      // NewInstance.class.newInstance();
+//      NewInstance.class.getDeclaredConstructor().newInstance();
+//    }
+//    catch (ReflectiveOperationException e) {
+//      e.printStackTrace();
+//    } finally { // Avoid memory leak
+//      NewInstance.throwable = null;
+//    }
+//  }
