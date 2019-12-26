@@ -26,11 +26,11 @@ package DCL00J;
 class Cycle {
 	private final int balance;
 
-	// Class variable is initialized to a new instance of the Cycle class
-	private static final Cycle c = new Cycle();
-	
 	// Deposit initialized at runtime
 	private static final int deposit = (int) (Math.random() * 100) + 10;
+	// Class variable is initialized to a new instance of the Cycle class
+	private static final Cycle c = new Cycle();
+
 
 	private Cycle() {
 		// Calculate the account balance by subtracting the

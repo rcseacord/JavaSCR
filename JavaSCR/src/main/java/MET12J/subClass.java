@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -52,7 +52,7 @@ class subClass extends baseClass {
 	 
 	    // Inconsistent object state
 	    System.out.println(
-	        "This is sub-class! The date object is: " + this.d); //$NON-NLS-1$
+	        "This is sub-class! The date object is: " + this.d);
 	    // 'd' is already null
 	  }
 	  
@@ -60,8 +60,10 @@ class subClass extends baseClass {
 	public static void main(String[] args) {
 		    try {
 		      baseClass bc = new subClass();
+		      // todo: this needs to be fixed
 		      // Artificially simulate finalization (do not do this)
-		      System.runFinalizersOnExit(true);
+					System.runFinalization();
+		  //    System.runFinalizersOnExit(true);
 		    } catch (Throwable t) {
 		      // Handle error
 		    }

@@ -113,7 +113,7 @@ public class Cage {
       IllegalAccessException, ClassNotFoundException, InstantiationException, CannotCompileException,
       NotFoundException, IOException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
     Properties props = System.getProperties();
-    props.setProperty("upstreamXalan", "false");
+    props.setProperty("upstreamXalan", "true");
 
     // Writes gadget by hand and then deserializes using unmarshal
     String json = rcePayload();

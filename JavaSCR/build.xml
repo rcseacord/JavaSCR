@@ -200,7 +200,7 @@
         </java>
     </target>
     <target name="newInstance">
-        <java classname="ERR06J.NewInstance" failonerror="true" fork="yes">
+        <java classname="err06j.NewInstance" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

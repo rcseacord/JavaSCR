@@ -32,15 +32,15 @@ class TagFilter {
 	private static String filterString(String str) {
 		String s = Normalizer.normalize(str, Form.NFKC);
 
+		// Replaces all noncharacter code points with Unicode U+FFFD
+		s = s.replaceAll("[\\p{Cn}]", "\uFFFD");
+
 		// Validate input
 		Pattern pattern = Pattern.compile("<script>");
 		Matcher matcher = pattern.matcher(s);
 		if (matcher.find()) {
 			throw new IllegalArgumentException("Invalid input");
 		}
-
-		// Remove all noncharacter code points
-		s = s.replaceAll("[\\p{Cn}]", "");
 		return s;
 	}
 

@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2019 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +37,7 @@ class ReDoS {
 		
 		System.out.println(ax4.matches("^(a+)+$"));
 		System.out.println(ax16.matches("^(a+)+$"));
-		System.out.println(ax32.matches("^(a+)+$"));
+	 // System.out.println(ax32.matches("^(a+)+$"));
 		
 		System.out.println(a002.matches("(aa|aab?)*"));
 		System.out.println(a003.matches("(aa|aab?)*"));
