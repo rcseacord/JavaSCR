@@ -1,6 +1,6 @@
 //The MIT License (MIT)
 //
-//Copyright (c) 2016 Robert C. Seacord
+//Copyright (c) 2020 Robert C. Seacord
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -20,19 +20,19 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-package ERR06J;
+package err06j;
 
 import java.awt.AWTException;
 import java.io.IOException;
 
 class Parser<T extends Exception> {
   @SuppressWarnings("unchecked")
-  public void parse(String s) throws T {     // OK
-      throw (T) new AWTException("oopsie"); //$NON-NLS-1$
+  public void parse(String s) throws T {
+      throw (T) new AWTException(s);
   }
   
   public static void main(String[] args) {
-    String s = "my new string"; //$NON-NLS-1$
+    String s = "my new string";
     Parser<IOException> p = new Parser<>();
     try {
       p.parse(s);
