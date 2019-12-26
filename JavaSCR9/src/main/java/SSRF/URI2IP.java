@@ -29,6 +29,10 @@ import java.util.stream.IntStream;
 class URI2IP {
 
   /** Check if the given IP address lies within the subnet given in CIDR notation.
+   *  Classless Inter-Domain Routing
+   *  The notation is constructed from an IP address, a slash ('/') character, and a decimal number.
+   *  The number is the count of leading 1 bits in the subnet mask.
+   *  Larger values here indicate smaller networks.
    *
    * Supports IPv4 and IPv6.
    *
@@ -147,58 +151,59 @@ class URI2IP {
       System.out.println(yuri1.normalize() + " does not equal " + yuri2.normalize());
     }
 
-    System.out.println(URI2IP.Uri2Ip("https://www.nccgroup.com"));
-
-    System.out.println(new URI("http://169.254.0.0/").getHost());
-    System.out.println(InetAddress.getByName("127.0.0.1").getHostAddress());
-    System.out.println(InetAddress.getByName("127.0.0").getHostAddress());
-    System.out.println(InetAddress.getByName("127.0").getHostAddress());
-    System.out.println(InetAddress.getByName("127").getHostAddress());
-
-    URI yuri = new URI("127.0.0.1");
-    System.out.println(yuri);
-    System.out.println(yuri.normalize());
-    yuri = new URI("1");
-    System.out.println(yuri);
-    System.out.println(yuri.normalize());
-    yuri = new URI("123.123.123");
-    System.out.println(yuri);
-    System.out.println(yuri.normalize());
-
-    if (cidrMatch("127.0.0.1", "127.0.0.0/8")) {
-      System.out.println("127.0.0.1 is in the range of 127.0.0.0/8");
-    }
-    else {
-      System.out.println("127.0.0.1 is NOT in the range of 127.0.0.0/8");
-    }
-    if (cidrMatch("123.123.123", "127.0.0.0/8")) {
-      System.out.println("123.123.123 is in the range of 127.0.0.0/8");
-    }
-    else {
-      System.out.println("123.123.123 is NOT in the range of 127.0.0.0/8");
-    }
-    if (cidrMatch("169.254.0.0", "127.0.0.0/8")) {
-      System.out.println("169.254.0.0 is in the range of 127.0.0.0/8");
-    }
-    else {
-      System.out.println("169.254.0.0 is NOT in the range of 127.0.0.0/8");
-    }
-
-    try {
-      URL earl = new URL("https://10.0.0.33 %0D%0AHELO nccgroup.com%0D%0AMAIL FROM…:25/");
-      System.out.println("earl Query is: " + earl.getQuery());
-      System.out.println("earl Path is: " + earl.getPath());
-      System.out.println("earl UserInfo is: " + earl.getUserInfo());
-      System.out.println("earl Authority is: " + earl.getAuthority());
-      System.out.println("earl Host is: " + earl.getHost());
-      System.out.println("earl Port is: " + earl.getPort());
-      System.out.println("earl Protocol is: " + earl.getProtocol());
-      System.out.println("earl File is: " + earl.getFile());
-      System.out.println("earl Ref is: " + earl.getRef());
-      earl.getContent();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    System.exit(0);
+//    System.out.println(URI2IP.Uri2Ip("https://www.nccgroup.com"));
+//
+//    System.out.println(new URI("http://169.254.0.0/").getHost());
+//    System.out.println(InetAddress.getByName("127.0.0.1").getHostAddress());
+//    System.out.println(InetAddress.getByName("127.0.0").getHostAddress());
+//    System.out.println(InetAddress.getByName("127.0").getHostAddress());
+//    System.out.println(InetAddress.getByName("127").getHostAddress());
+//
+//    URI yuri = new URI("127.0.0.1");
+//    System.out.println(yuri);
+//    System.out.println(yuri.normalize());
+//    yuri = new URI("1");
+//    System.out.println(yuri);
+//    System.out.println(yuri.normalize());
+//    yuri = new URI("123.123.123");
+//    System.out.println(yuri);
+//    System.out.println(yuri.normalize());
+//
+//    if (cidrMatch("127.0.0.1", "127.0.0.0/8")) {
+//      System.out.println("127.0.0.1 is in the range of 127.0.0.0/8");
+//    }
+//    else {
+//      System.out.println("127.0.0.1 is NOT in the range of 127.0.0.0/8");
+//    }
+//    if (cidrMatch("123.123.123", "127.0.0.0/8")) {
+//      System.out.println("123.123.123 is in the range of 127.0.0.0/8");
+//    }
+//    else {
+//      System.out.println("123.123.123 is NOT in the range of 127.0.0.0/8");
+//    }
+//    if (cidrMatch("169.254.0.0", "127.0.0.0/8")) {
+//      System.out.println("169.254.0.0 is in the range of 127.0.0.0/8");
+//    }
+//    else {
+//      System.out.println("169.254.0.0 is NOT in the range of 127.0.0.0/8");
+//    }
+//
+//    try {
+//      URL earl = new URL("https://10.0.0.33 %0D%0AHELO nccgroup.com%0D%0AMAIL FROM…:25/");
+//      System.out.println("earl Query is: " + earl.getQuery());
+//      System.out.println("earl Path is: " + earl.getPath());
+//      System.out.println("earl UserInfo is: " + earl.getUserInfo());
+//      System.out.println("earl Authority is: " + earl.getAuthority());
+//      System.out.println("earl Host is: " + earl.getHost());
+//      System.out.println("earl Port is: " + earl.getPort());
+//      System.out.println("earl Protocol is: " + earl.getProtocol());
+//      System.out.println("earl File is: " + earl.getFile());
+//      System.out.println("earl Ref is: " + earl.getRef());
+//      earl.getContent();
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
 
   }
 }

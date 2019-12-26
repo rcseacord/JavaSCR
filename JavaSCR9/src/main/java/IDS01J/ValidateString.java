@@ -29,19 +29,17 @@ import java.util.regex.Matcher;
 class ValidateString {
 
 	private static String NormalizeThenValidate(String input) {
+		// Normalize
+		String s = Normalizer.normalize(input, Form.NFKC);
 
 		// Validate
 		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
-		String s = input;
 		Matcher matcher = pattern.matcher(s);
 		if (matcher.find()) {
 			// Found black listed tag
 			throw new IllegalStateException();
 		}
 		System.out.println("valid input");
-
-		// Normalize
-		s = Normalizer.normalize(s, Form.NFKC);
 
 		return s;
 	}
