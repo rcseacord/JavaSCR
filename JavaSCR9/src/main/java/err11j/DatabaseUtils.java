@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2019 Robert C. Seacord
+// Copyright (c) 2020 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,16 +22,10 @@
 
 package err11j;
 
-class Program {
-	public static void main(String[] args) {
-		EmployeeDAO dao = new EmployeeDAO();
-		Employer manager = new Employer(dao);
+import java.sql.*;
 
-		try {
-			Employer.findEmployee("Spiff");
-		} 
-		catch (EmployeeException ex) {
-			ex.printStackTrace();
-		}
-	}
+class DatabaseUtils {
+    public static void executeQuery(String sql) throws SQLException {
+        throw new SQLException("Oopsie!" + sql);
+    }
 }

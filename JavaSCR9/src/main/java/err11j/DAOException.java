@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2019 Robert C. Seacord
+// Copyright (c) 2020 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,24 +22,11 @@
 
 package err11j;
 
-class Employer {
-	 
-    final private EmployeeDAO dao;
- 
-    public Employer(EmployeeDAO dao) {
-        this.dao = dao;
-    }
- 
-    public static void findEmployee(String keyword) throws EmployeeException {
-        try {
-            EmployeeDAO.list();
-        } catch (DAOException ex) {
-            throw new EmployeeException("Can't find employee " + keyword); 
-        }
-    }
+class DAOException extends Exception {
+	private static final long serialVersionUID = 3502193523257182899L;
 
-    public EmployeeDAO getDao() {
-      return this.dao;
+	public DAOException(String message) {
+        super(message);
     }
 }
 
@@ -68,4 +55,24 @@ class Employer {
 
 
 
-// throw new EmployeeException("Can't find employee", ex);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+public DAOException(String message, Throwable cause) {
+  super(message, cause);
+}
+*/
