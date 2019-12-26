@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2020 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,17 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package ERR03J;
+package err03j;
 
 class Dimensions {
   private int l, w, h;
   private static final int PAD = 2;
   static public final int MAX_DIM = 12;
 
+  @SuppressWarnings("SameParameterValue")
   private Dimensions(int l, int w, int h) throws VolumeException {
     // Validate invariants
     if (l > MAX_DIM - PAD || w > MAX_DIM - PAD || h > MAX_DIM - PAD) {
-      throw new VolumeException("Volume exceeded in ctor"); //$NON-NLS-1$
+      throw new VolumeException("Volume exceeded in constructor");
     }
     this.l = l;
     this.w = w;
@@ -42,7 +43,7 @@ class Dimensions {
     this.w += PAD;
     this.h += PAD;
     if (weight <= 0 || weight > 20)
-      throw new WeightException("Package overweight"); //$NON-NLS-1$
+      throw new WeightException("Package overweight");
     int volume = this.l * this.w * this.h; // 12 * 12 * 12 = 1728
     this.l -= PAD;
     this.w -= PAD;
@@ -56,13 +57,13 @@ class Dimensions {
     try {
       System.out.println(d.getVolumePackage(21));
     } catch (WeightException e) {
-      System.out.println(e.getMessage() + ": lighten re-weigh"); //$NON-NLS-1$
+      System.out.println(e.getMessage() + ": lighten re-weigh");
     }
     
     try {
       System.out.println(d.getVolumePackage(19)); // 2744 instead of 1728
     } catch (WeightException e) {
-      System.out.println(e.getMessage() + ": lighten re-weigh"); //$NON-NLS-1$
+      System.out.println(e.getMessage() + ": lighten re-weigh");
     }
   } // end main
 }  // end Class Dimensions

@@ -1,4 +1,4 @@
-package ERR03J;
+package err03j;
 
 public class VolumeException extends Exception {
   private static final long serialVersionUID = -3743672199596492460L;
