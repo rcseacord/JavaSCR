@@ -100,7 +100,7 @@
         </java>
     </target>
     <target name="Dimensions">
-        <java classname="ERR03J.Dimensions" failonerror="true" fork="yes">
+        <java classname="err03j.Dimensions" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
