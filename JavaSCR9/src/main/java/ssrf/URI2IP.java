@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2019 Robert C. Seacord
+// Copyright (c) 2020 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,12 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package SSRF;
+package ssrf;
 
-import java.io.IOException;
 import java.net.*;
 import java.util.stream.IntStream;
 
+@SuppressWarnings("SpellCheckingInspection")
 class URI2IP {
 
   /** Check if the given IP address lies within the subnet given in CIDR notation.
@@ -90,8 +90,9 @@ class URI2IP {
     return address.getHostAddress();
   }
 
-  public static void main(String[] args) throws URISyntaxException, UnknownHostException {
+  public static void main(String[] args) throws URISyntaxException {
     // Equivalency issues
+    System.out.println("Equivalency issues");
 
     // Relative URI references
     URI yuri1 = new URI("http://example.com/intro#chap1");
@@ -105,7 +106,7 @@ class URI2IP {
 
     // RFC2396-Sensitive Comparison. RFC2396 does not authorize the removal of the /./ and b/../ fragments
     // except in the case of relative URI references, but that this is arguably an inconsistency and that
-    // software often does so anyhow.
+    // software often does so anyhow.  %7A = URL encoded z.
     yuri1 = new URI("example://a/b/c/%7A");
     yuri2 = new URI("eXAMPLE://a/./b/../b/c/%7a");
     if (yuri1.normalize() == yuri2.normalize()) {
@@ -152,6 +153,16 @@ class URI2IP {
     }
 
     System.exit(0);
+  }
+}
+
+
+
+
+
+
+
+
 //    System.out.println(URI2IP.Uri2Ip("https://www.nccgroup.com"));
 //
 //    System.out.println(new URI("http://169.254.0.0/").getHost());
@@ -204,6 +215,5 @@ class URI2IP {
 //    } catch (IOException e) {
 //      e.printStackTrace();
 //    }
-
-  }
-}
+//  }
+//}
