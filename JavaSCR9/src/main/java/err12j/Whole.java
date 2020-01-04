@@ -53,9 +53,11 @@ class Whole {
 
   private Whole move(Whole Source) throws IOException {
     PartOne t1 = new PartOne(Source.getp1());
+    //noinspection ConstantConditions
     if (t1 != null) { // not necessary for copy constructor
       try {
         PartTwo t2 = new PartTwo(Source.getp2());
+        //noinspection ConstantConditions
         if (t2 != null) { // not necessary for copy constructor
           try {
             // methods that might throw

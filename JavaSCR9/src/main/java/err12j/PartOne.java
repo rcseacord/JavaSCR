@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2020 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@ package err12j;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,31 +33,30 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Calendar;
 
-public final class PartTwo implements AutoCloseable {
+public final class PartOne implements AutoCloseable {
   private static final CopyOption[] options = { StandardCopyOption.COPY_ATTRIBUTES };
-  private static final Charset charset = Charset.forName("US-ASCII");
+  private static final Charset charset = StandardCharsets.US_ASCII;
   private static final String s = "File ID";
-  private final Path filepath;
+  private final Path file_path;
   private BufferedWriter writer;
 
-  public PartTwo(Path pathname) throws IOException {
-    this.filepath = pathname;
-    this.writer = Files.newBufferedWriter(this.filepath, charset);
+  public PartOne(Path pathname) throws IOException {
+    this.file_path = pathname;
+    this.writer = Files.newBufferedWriter(this.file_path, charset);
     this.writer.write(s, 0, s.length());
     this.writer.flush();
   }
-  
+
   // copy constructor
-  public PartTwo(PartTwo p2) throws IOException {
-    this.filepath = Paths.get(p2.filepath + "copy");
-    Files.copy(p2.filepath, this.filepath, options);
-    this.writer = Files.newBufferedWriter(this.filepath, charset);
+  public PartOne(PartOne p1) throws IOException {
+    this.file_path = Paths.get(p1.file_path + "copy");
+    Files.copy(p1.file_path, this.file_path, options);
+    this.writer = Files.newBufferedWriter(this.file_path, charset);
   }
 
   public void setNow(Calendar rightNow) throws IOException {
-    this.writer.write(rightNow.toString());  
+    this.writer.write(rightNow.toString());
     this.writer.flush();
-    // throw new IOException("injected fault");
   }
   
   @Override
@@ -65,8 +65,7 @@ public final class PartTwo implements AutoCloseable {
       this.writer.close();
     } finally {
       this.writer = null;
-      Files.delete(this.filepath);
+      Files.delete(this.file_path);
     }
   }
-
 }
