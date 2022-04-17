@@ -29,19 +29,18 @@ import java.util.regex.Matcher;
 class ValidateString {
 
 	private static String NormalizeThenValidate(String input) {
-		// Normalize
-		String s = Normalizer.normalize(input, Form.NFKC);
 
 		// Validate
 		Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
-		Matcher matcher = pattern.matcher(s);
+		Matcher matcher = pattern.matcher(input);
 		if (matcher.find()) {
 			// Found black listed tag
 			throw new IllegalStateException();
 		}
 		System.out.println("valid input");
 
-		return s;
+		// Normalize
+		return Normalizer.normalize(input, Form.NFKC);
 	}
 
 	public static void main(String[] args) {
@@ -49,7 +48,7 @@ class ValidateString {
 		// \uFE64 is normalized to < and \uFE65 is normalized to > using the
 		// NFKC normalization form
 		String input = "\uFE64" + "script" + "\uFE65";
-		System.out.println("unnormalized string: " + input);
+		System.out.println("non-normalized string: " + input);
 		input = NormalizeThenValidate(input);
 		System.out.println("normalized string: " + input);
 	}

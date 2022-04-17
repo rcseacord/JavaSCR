@@ -7,18 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="JavaSCR9" />
         <module name="acclib" />
         <module name="JavaSCR" />
-        <module name="JavaSCR9" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="acclib" target="1.8" />
-      <module name="JavaSCR" target="1.8" />
-      <module name="JavaSCR9" target="1.11" />
+      <module name="JavaSCR" target="11" />
+      <module name="JavaSCR9" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-Xlint:unchecked" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="JavaSCR" options="" />
+      <module name="JavaSCR9" options="" />
+      <module name="acclib" options="" />
+    </option>
   </component>
 </project>
