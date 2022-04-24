@@ -55,7 +55,7 @@
         </java>
     </target>
     <target name="BankAccount">
-        <java classname="OBJ02J.BankAccount" failonerror="true" fork="yes">
+        <java classname="bankHeist.BankAccount" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
