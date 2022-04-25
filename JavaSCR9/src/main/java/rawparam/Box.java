@@ -27,6 +27,7 @@ import java.util.List;
 
 /**
  * Generic version of the Box class.
+ *
  * @param <T> the type of the value being boxed
  */
 
@@ -36,40 +37,47 @@ class Box<T> {
     // T stands for "Type"
     private T t;
 
-    void set(T t) { this.t = t; }
-    public T get() { return t; }
-    
-	public static void main(String[] args) {
-    // invocation of the set method is allowed if the argument is compatible with Number
-    Box<Number> box = new Box<>();
-    Integer i = 10;
-    Double d = 10.1;
-    box.set(i);   // OK
-    box.set(d);  // OK
+    void set(T t) {
+        this.t = t;
+    }
 
-		Box<Integer> intBox = new Box<>();
-		intBox.set(1);
-		
-		// If the actual type argument is omitted, a raw type of Box<T> is created:
-		Box rawBox;
-		
-		// For backward compatibility, assigning a parameterized type to its raw type is allowed:
-		Box<String> stringBox = new Box<>();
-		rawBox = stringBox;       // OK
-		rawBox.set(8);  // warning: unchecked invocation to set(T)
-		// The "unchecked" warning is disabled, by default, though the compiler gives a hint.
-		// To see all "unchecked" warnings, recompile with -Xlint:unchecked.
+    public T get() {
+        return t;
+    }
 
-		// Assigning a raw type to a parameterized type, creates a warning:
-		rawBox = new Box();  // rawBox is a raw type of Box<T>
-		intBox = rawBox;     // warning: unchecked conversion
+    public static void main(String[] args) {
+        // invocation of the set method is allowed if the argument is compatible with Number
+        Box<Number> box = new Box<>();
+        Integer i = 10;
+        Double d = 10.1;
+        box.set(i);  // OK
+        box.set(d);  // Warning: Raw use of parameterized class 'Box'
 
-		List<String> ls = (List) new ArrayList();   // warning: unchecked conversion
-		
-		if (intBox.getClass() == stringBox.getClass()) {
-			System.out.println("intBox.getClass() == stringBox.getClass()");
-		}
+        Box<Integer> intBox = new Box<>();
+        intBox.set(1);
 
-	}
+        // If the actual type argument is omitted, a raw type of Box<T> is created:
+        Box rawBox;
+
+        // For backward compatibility, assigning a parameterized type to its raw type is allowed:
+        Box<String> stringBox = new Box<>();
+        rawBox = stringBox; // Warning: Raw use of parameterized class 'Box'
+        rawBox.set(8);  // Warning: Unchecked assignment: 'rawparam.Box' to 'rawparam.Box<java.lang.Integer>'
+
+        // Assigning a raw type to a parameterized type, creates a warning:
+        rawBox = new Box();  // Warning: Raw use of parameterized class 'Box'
+        intBox = rawBox;
+
+        // Warning: Raw use of parameterized class 'List'
+        // Warning: Raw use of parameterized class 'ArrayList'
+        // Warning: Unchecked assignment: 'java.util.List' to 'java.util.List<java.lang.String>'
+        List<String> ls = (List) new ArrayList();
+
+        // Warning: Condition 'intBox.getClass() == stringBox.getClass()' is always 'true'
+        if (intBox.getClass() == stringBox.getClass()) {
+            System.out.println("intBox.getClass() == stringBox.getClass()");
+        }
+
+    }
 
 }
