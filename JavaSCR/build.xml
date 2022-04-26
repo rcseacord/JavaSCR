@@ -65,7 +65,7 @@
         </java>
     </target>
     <target name="Box">
-        <java classname="OBJ03J.Box" failonerror="true" fork="yes">
+        <java classname="varArgs.Box" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
@@ -169,7 +169,7 @@
         </java>
     </target>
     <target name="listUtility">
-        <java classname="OBJ03J.listUtility" failonerror="true" fork="yes">
+        <java classname="varArgs.listUtility" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
@@ -298,7 +298,7 @@
         </java>
     </target>
     <target name="UnsafeVarargs">
-        <java classname="OBJ03J.UnsafeVarargs" failonerror="true" fork="yes">
+        <java classname="varArgs.UnsafeVarargs" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

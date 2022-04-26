@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package OBJ03J;
+package varArgs;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,17 +34,16 @@ class listUtility {
 	}
 
 	// Correctly typed object added to parameterized list.
-	/*
-	private static void addToList(List<String> list, String obj) {
-		list.add(obj); // Unchecked warning }
-	}
-	*/
+//	private static void addToList(List<String> list, String obj) {
+//		list.add(obj); // Unchecked warning
+//	}
 
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		// The call to addToList(list, 42) succeeds in adding an integer to
 		// list, although it is of type List<String>.
 		addToList(list, 42);
+		// addToList(list, Integer.toString(43));
 
 		// This Java runtime does not throw a ClassCastException until the value
 		// is read and has an invalid type (an int rather than a String).
@@ -56,12 +55,12 @@ class listUtility {
 		}
 
 		// If the addToList() method is legacy code that cannot be changed,
-		// create a checked list view y using the Collections.checkedList() method.
+		// create a checked list view using the Collections.checkedList() method.
 		// This method returns a wrapper collection that performs runtime type checking in
 		// its implementation of the add() method before delegating to the
-		// back-end List<String>.
-		List<String> backlist = new ArrayList<>();
-		List<String> checkedList = Collections.checkedList(backlist, String.class);
+		// backing List<String>.
+		List<String> backingList = new ArrayList<>();
+		List<String> checkedList = Collections.checkedList(backingList, String.class);
 		addToList(checkedList, 42);
 		System.out.println(list.get(0));
 
