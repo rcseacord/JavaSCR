@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,18 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package OBJ11J;
+package exposed;
 
-class UserApp {
-	public static void main(String[] args) {
-		BankOperations bo;
-		try {
-			bo = new BankOperations("Robert");  // step into //$NON-NLS-1$
-		} catch (SecurityException ex) {
-			bo = null;
+class Storage {
+	private static BankOperations bop;
+
+	public static void store(BankOperations bo) {
+		// Store only if it is initialized
+		if (bop == null) {
+			if (bo == null) {
+				System.out.println("Invalid object!"); //$NON-NLS-1$
+				System.exit(1);
+			}
+			bop = bo;
 		}
-
-		Storage.store(bo);
-		System.out.println("Proceed with normal logic"); //$NON-NLS-1$
 	}
 }

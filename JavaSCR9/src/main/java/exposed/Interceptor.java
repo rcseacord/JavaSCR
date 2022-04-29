@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,10 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package OBJ11J;
+package exposed;
 
 // An attacker can exploit this code by extending the bankOperations class 
-// and overriding the finalize() method. 
+// and overriding the finalize method.
 
 public class Interceptor extends BankOperations {
 	private static Interceptor stealInstance = null;

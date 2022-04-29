@@ -45,7 +45,7 @@
         </java>
     </target>
     <target name="AttackerApp">
-        <java classname="OBJ11J.AttackerApp" failonerror="true" fork="yes">
+        <java classname="exposed.AttackerApp" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
@@ -308,7 +308,7 @@
         </java>
     </target>
     <target name="UserApp">
-        <java classname="OBJ11J.UserApp" failonerror="true" fork="yes">
+        <java classname="exposed.UserApp" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

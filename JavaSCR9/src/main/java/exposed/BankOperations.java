@@ -20,23 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package OBJ11J;
+package exposed;
 
-import java.util.Objects;
+class BankOperations {
+  final private String user;
+	// Constructor throws a SecurityException when SSN verification fails.
+	public BankOperations(String user) {
+	  this.user = user;
+		// Perform social security number (SSN) verification  
+		if (!performSSNVerification()) {
+			throw new SecurityException("Access Denied!"); //$NON-NLS-1$
+			// The garbage collector waits to grab the object
+			// reference. However, the object cannot be garbage-collected
+			// until after the finalizer completes its execution.
+		}
+	}
 
-// Invoke class and gain access to restricted features
-class AttackerApp {
+	// Returns true if data entered is valid, else false
+	// Assume that the attacker always enters an invalid SSN
+	private static boolean performSSNVerification() {
+		return false;
+	}
 
-	public static void main(String[] args) {
-		Interceptor i = Interceptor.get(); // Stolen instance
-
-		// Can store the stolen object even though this should have printed
-		// "Invalid Object!"
-		Storage.store(i);
-
-		// Now invoke any instance method of BankOperations class
-		Objects.requireNonNull(i).greet();
-
-		UserApp.main(args); // Invoke the original UserApp
+	public void greet() {
+		System.out.println("Welcome " + this.user); //$NON-NLS-1$
 	}
 }
