@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package OBJ07J;
+package noCopy;
 
 class SensitiveClass {
 	final private char[] filename;
@@ -43,7 +43,7 @@ class SensitiveClass {
 		}
 	}
 
-	// The replace() method will not replace all elements of the array with
+	// The replace method will not replace all elements of the array with
 	// an x when the shared flag is set.
 	final void replace() {
 		if (!this.shared) {
@@ -57,19 +57,17 @@ class SensitiveClass {
 		System.out.println(String.valueOf(this.filename));
 	}
 	
-	// Prevent subclasses from being made cloneable by defining a final clone()
+	// Prevent subclasses from being made cloneable by defining a final clone
 	// method that always fails.
-	/*
-	public final sensitiveClass clone() throws CloneNotSupportedException {
-		throw new CloneNotSupportedException();
-	}
-	*/
+//	public final Object clone() throws CloneNotSupportedException {
+//		throw new CloneNotSupportedException();
+//	}
 
 	public static void main(String[] args) {
-		SensitiveClass ms1 = new SensitiveClass("password.txt"); //$NON-NLS-1$
+		SensitiveClass ms1 = new SensitiveClass("password.txt");
 		String s = ms1.get(); // Returns filename
 		System.out.println(s); // Filename is "file.txt"
-		ms1.replace(); // Attempts to replaces all characters with 'x'
+		ms1.replace(); // Attempts to replace all characters with 'x'
 		ms1.print(); // Filename unchanged
 	}
 }

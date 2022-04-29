@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package OBJ07J;
+package noCopy;
 
 class MalSubclass extends SensitiveClass implements Cloneable {
 	protected MalSubclass(String filename) {
@@ -28,12 +28,12 @@ class MalSubclass extends SensitiveClass implements Cloneable {
 	}
 
 	@Override
-	public MalSubclass clone() { // Well-behaved clone() method
+	public MalSubclass clone() { // Well-behaved clone method
 		MalSubclass s = null;
 		try {
 			s = (MalSubclass) super.clone();
 		} catch (CloneNotSupportedException e) {
-			System.err.println("not cloneable"); //$NON-NLS-1$
+			System.err.println("not cloneable");
 		}
 		return s;
 	}
@@ -42,7 +42,7 @@ class MalSubclass extends SensitiveClass implements Cloneable {
 		// Java's cloning feature provides a way to circumvent the sharing
 		// constraint even though SensitiveClass does not implement the
 		// Cloneable interface.
-		MalSubclass ms1 = new MalSubclass("file.txt"); //$NON-NLS-1$
+		MalSubclass ms1 = new MalSubclass("file.txt");
 		MalSubclass ms2 = ms1.clone(); // Creates a copy by cloning ms1
 		String s = ms1.get(); // Returns filename
 		System.out.println(s); // Filename is "file.txt"
@@ -50,8 +50,7 @@ class MalSubclass extends SensitiveClass implements Cloneable {
 		// true, it is possible to alter the first instance ms1 using the
 		// replace() method.
 		ms2.replace(); // Replaces all characters with 'x'
-		// ms1.get() and ms2.get() will subsequently return filename =
-		// 'xxxxxxxx'
+		// ms1.get and ms2.get now return filename = 'xxxxxxxx'
 		ms1.print(); // Filename becomes 'xxxxxxxx'
 		ms2.print(); // Filename becomes 'xxxxxxxx'
 	}

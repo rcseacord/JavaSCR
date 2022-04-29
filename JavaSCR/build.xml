@@ -185,7 +185,7 @@
         </java>
     </target>
     <target name="MalSubclass">
-        <java classname="OBJ07J.MalSubclass" failonerror="true" fork="yes">
+        <java classname="noCopy.MalSubclass" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
@@ -246,7 +246,7 @@
         </java>
     </target>
     <target name="SensitiveClass">
-        <java classname="OBJ07J.SensitiveClass" failonerror="true" fork="yes">
+        <java classname="noCopy.SensitiveClass" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
