@@ -22,6 +22,8 @@
 
 package noCopy;
 
+import java.util.Arrays;
+
 class SensitiveClass {
 	final private char[] filename;
 	private Boolean shared = false;
@@ -43,13 +45,10 @@ class SensitiveClass {
 		}
 	}
 
-	// The replace method will not replace all elements of the array with
-	// an x when the shared flag is set.
+	// The replace method will not fill the array with x when the shared flag is set.
 	final void replace() {
 		if (!this.shared) {
-			for (int i = 0; i < this.filename.length; i++) {
-				this.filename[i] = 'x';
-			}
+			Arrays.fill(this.filename, 'x');
 		}
 	}
 	
