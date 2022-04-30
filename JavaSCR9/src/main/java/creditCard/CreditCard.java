@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,13 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package MET09J;
+package creditCard;
 
 import com.google.common.testing.EqualsTester;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 final class CreditCard {
   private final int number;
@@ -65,6 +64,7 @@ final class CreditCard {
     // the actual retrieved value is null.
     System.out.println(m.get(new CreditCard(100)));
 
+    // Each group should contain objects that are equal to each other but unequal to the objects in any other group.
     new EqualsTester()
         .addEqualityGroup(cc_a, cc_b)
         .addEqualityGroup(cc_c)

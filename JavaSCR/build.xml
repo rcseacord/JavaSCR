@@ -50,7 +50,7 @@
         </java>
     </target>
     <target name="badCreditCard">
-        <java classname="MET09J.badCreditCard" failonerror="true" fork="yes">
+        <java classname="creditCard.badCreditCard" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
