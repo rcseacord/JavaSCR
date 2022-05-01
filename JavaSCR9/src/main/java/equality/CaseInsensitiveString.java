@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2019 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package MET08J;
+package equality;
 
 // This example defines a CaseInsensitiveString class that
 // includes a String and overrides the equals() method. The CaseInsensitiveString 
@@ -69,10 +69,10 @@ final class caseInsensitiveString {
 
     try {
       EqualsTester et = new EqualsTester()
-          .addEqualityGroup(cis, cis_lc, s)
+          .addEqualityGroup(cis_lc, cis)
           .addEqualityGroup(new caseInsensitiveString("hello, world"), new caseInsensitiveString("Hello, World"))
           .addEqualityGroup(new caseInsensitiveString("CamelCase"), new caseInsensitiveString("camelcase"))
-          .addEqualityGroup(new caseInsensitiveString("Fred"), "fred")
+          .addEqualityGroup(new caseInsensitiveString("Fred"), new caseInsensitiveString("fred"))
           .testEquals();
     }
     catch (NoClassDefFoundError ncdfe) {

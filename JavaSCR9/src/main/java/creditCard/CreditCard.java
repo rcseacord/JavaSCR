@@ -26,6 +26,7 @@ import com.google.common.testing.EqualsTester;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 final class CreditCard {
   private final int number;
@@ -33,18 +34,6 @@ final class CreditCard {
   private CreditCard(int number) {
     this.number = number;
   }
-
-//	  @Override
-//    public boolean equals(Object o) {
-//	    if (o == this) {
-//	      return true;
-//	    }
-//	    if (!(o instanceof badCreditCard)) {
-//	      return false;
-//	    }
-//	    badCreditCard cc = (badCreditCard)o;
-//	    return cc.number == number;
-//	  }
 
   @Override
   public boolean equals(Object o) {

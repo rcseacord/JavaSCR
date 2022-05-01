@@ -75,7 +75,7 @@
         </java>
     </target>
     <target name="caseInsensitiveString">
-        <java classname="MET08J.caseInsensitiveString" failonerror="true" fork="yes">
+        <java classname="equality.caseInsensitiveString" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
@@ -328,12 +328,12 @@
         </java>
     </target>
     <target name="xCard">
-        <java classname="MET08J.xCard" failonerror="true" fork="yes">
+        <java classname="equality.xCard" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
     <target name="xCardGood">
-        <java classname="MET08J.xCardGood" failonerror="true" fork="yes">
+        <java classname="equality.xCardGood" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>
