@@ -33,7 +33,7 @@ import java.util.List;
 class Zoo {
 
   public final String name;
-  public String city;
+  public final String city;
   public List<Animal> animals;
 
   @JsonCreator

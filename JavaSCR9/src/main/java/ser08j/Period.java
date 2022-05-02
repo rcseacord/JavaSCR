@@ -27,8 +27,8 @@ import java.util.Date;
 
 public final class Period implements Serializable {
   private static final long serialVersionUID = 4933289900620142386L;
-  private Date start;
-  private Date end;
+  private final Date start;
+  private final Date end;
 
   /**
    * @param start the beginning of the period

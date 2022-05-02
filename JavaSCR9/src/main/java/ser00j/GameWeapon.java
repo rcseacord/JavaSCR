@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2019 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,15 +27,17 @@ import serial.Serial;
 import java.io.*;
 
 public class GameWeapon implements Serializable {
+  @java.io.Serial
   private static final long serialVersionUID = -2219161247533868418L;
 
-  private String Weapon = "BFG";
+  private final String Weapon = "BFG";
+  @java.io.Serial
   private static final ObjectStreamField[] serialPersistentFields = {
       new ObjectStreamField("ws", WeaponStore.class)
   };
 
   // What happens if transient and serialPersistentFields conflict?
-  /* transient */ private WeaponStore ws;
+  /* transient */ private final WeaponStore ws;
 
   public GameWeapon() {
     ws = new WeaponStore();

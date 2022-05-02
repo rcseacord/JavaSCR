@@ -32,7 +32,7 @@ import java.util.Objects;
 import com.google.common.testing.*;
 
 final class caseInsensitiveString {
-  private String s;
+  private final String s;
 
   private caseInsensitiveString(String s) {
     if (s == null) {

@@ -26,5 +26,5 @@ import java.io.Serializable;
 
 class WeaponStore implements Serializable {
   private static final long serialVersionUID = 828510012637666126L;
-  int numOfWeapons = 10; // Total number of weapons
+  final int numOfWeapons = 10; // Total number of weapons
 }

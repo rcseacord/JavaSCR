@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package IDS01J;
+package normalize;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.regex.Pattern;

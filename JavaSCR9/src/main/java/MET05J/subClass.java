@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,16 @@
 package MET05J;
 
 class subClass extends superClass {
-	private String color = null;
+	private final String color;
 
 	public subClass() {
 		super();
-		this.color = "Red"; //$NON-NLS-1$
+		this.color = "Red";
 	}
 
 	@Override
   public void doLogic() {
-		System.out.println("subclass: color is: " + this.color); //$NON-NLS-1$
+		System.out.println("subclass: color is: " + this.color);
 		// ...
 	}
 }

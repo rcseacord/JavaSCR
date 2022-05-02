@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -104,9 +104,9 @@ class Whole {
   public static void main(String[] args) {
     try {
       Whole a = new Whole(Paths.get("p1"), Paths.get("p2"));
-      System.out.println(a.toString());
+      System.out.println(a);
       Whole b = a.move(a);
-      System.out.println(b.toString());
+      System.out.println(b);
     } 
     catch (IOException e) {
       e.printStackTrace();
