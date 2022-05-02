@@ -283,7 +283,7 @@
         </java>
     </target>
     <target name="TagFilter">
-        <java classname="IDS11J.TagFilter" failonerror="true" fork="yes">
+        <java classname="noncharacter.TagFilter" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

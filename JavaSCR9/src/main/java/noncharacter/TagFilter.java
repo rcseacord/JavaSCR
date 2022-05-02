@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package IDS11J;
+package noncharacter;
 
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
@@ -32,15 +32,15 @@ class TagFilter {
 	private static String filterString(String str) {
 		String s = Normalizer.normalize(str, Form.NFKC);
 
-		// Replaces all noncharacter code points with Unicode U+FFFD
-		s = s.replaceAll("[\\p{Cn}]", "\uFFFD");
-
 		// Validate input
 		Pattern pattern = Pattern.compile("<script>");
 		Matcher matcher = pattern.matcher(s);
 		if (matcher.find()) {
 			throw new IllegalArgumentException("Invalid input");
 		}
+
+		// Remove all noncharacter code points
+		s = s.replaceAll("[\\p{Cn}]", "");
 		return s;
 	}
 
