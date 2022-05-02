@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package str00j;
+package partialRead;
 
 import java.nio.charset.StandardCharsets;
 

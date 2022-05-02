@@ -20,25 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package STR01J;
+package javaChar;
 
 class TrimString {
 
-  public static String trim(String string) {
-    int i = 0;
-    // For each code point in string. The codePoints() method returns
-    // a stream of code point values from this sequence.
-    // Any surrogate pairs encountered in the sequence are combined as
-    // if by Character.toCodePoint and the result is passed to the stream.
-    for (int ch : (Iterable<Integer>)string.codePoints()::iterator) {
-      // determine if code point is character
+  private static String trim(String string) {
+    char ch;
+    int i;
+    for (i = 0; i < string.length(); i += 1) {
+      ch = string.charAt(i);
       if (!Character.isLetter(ch)) {
         break;
       }
-      i++;
     }
-    // offsetByCodePoints returns the ith code point
-    return string.substring(string.offsetByCodePoints(0, i));
+    return string.substring(i);
   }
 
   public static void main(String[] args) {
