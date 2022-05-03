@@ -127,7 +127,7 @@
         </java>
     </target>
     <target name="Formatter">
-        <java classname="IDS06J.Formatter" failonerror="true" fork="yes">
+        <java classname="infoLeak.Formatter" failonerror="true" fork="yes">
             <arg line="&quot;%1$tm %1$te,%1$tY&quot;"/>
             <classpath refid="JavaSCR.classpath"/>
         </java>
@@ -241,7 +241,7 @@
         </java>
     </target>
     <target name="SecureUnzip">
-        <java classname="ids04j.SecureUnzip" failonerror="true" fork="yes">
+        <java classname="bomb.SecureUnzip" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

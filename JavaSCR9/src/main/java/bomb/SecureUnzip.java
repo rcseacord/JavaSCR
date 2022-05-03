@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package ids04j;
+package bomb;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -87,7 +87,7 @@ public class SecureUnzip {
 
   public static void main(String[] args) {
     try {
-      unzip("JavaSCR/src/main/java/ids04j/10GB/10GB.zip");
+      unzip("JavaSCR9/src/main/java/ids04j/10GB/10GB.zip");
     } catch (IOException e) {
       System.err.println("Could not unzip file.");
     }

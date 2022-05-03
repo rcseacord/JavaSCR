@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package IDS06J;
+package infoLeak;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -33,13 +33,13 @@ class Formatter {
 	// but can contain either %1$tm, %1$te or %1$tY as malicious arguments
 	public static void main(String[] args) {
 
-		String argument = "%1$tm %1$te,%1$tY"; //$NON-NLS-1$
+		String argument = "%1$tm %1$te,%1$tY";
 		// First argument prints 05 (May), second prints 23 (day) and third
 		// prints 1995 (year)
-		System.out.format(argument + " did not match! HINT: It was issued on %1$terd of some month%n", c); //$NON-NLS-1$
+		System.out.format(argument + " did not match! HINT: It was issued on %1$terd of some month%n", c);
 
 		// Conversion specifications are now inert
-		System.out.format("%s did not match! HINT: It was issued on %terd of some month%n", argument, c); //$NON-NLS-1$
+		System.out.format("%s did not match! HINT: It was issued on %terd of some month%n", argument, c);
 	}
 
 }
