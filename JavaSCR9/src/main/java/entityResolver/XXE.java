@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2017 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package IDS17J;
+package entityResolver;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -59,32 +59,32 @@ class XXE {
 
 	public static void main(String[] args) throws ParserConfigurationException {
 
-		try (FileInputStream fis = new FileInputStream("JavaSCR/src/main/java/IDS17J/evil.xml")) {
+		try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/entityResolver/evil.xml")) {
 			receiveXMLStreamBad(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {
-			System.err.println(ex);
+			ex.printStackTrace();
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 
 			}
 		}
 
-		try (FileInputStream fis = new FileInputStream("JavaSCR/src/main/java/IDS17J/good.xml")) {
+		try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/entityResolver/good.xml")) {
 			receiveXMLStream(fis, new DefaultHandler());
 		} catch (SAXException | IOException ex) {
-			System.err.println(ex);
+			ex.printStackTrace();
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 
 			}
 		}
 		
-		try (FileInputStream fis = new FileInputStream("JavaSCR/src/main/java/IDS17J/evil.xml")) {
+		try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/entityResolver/evil.xml")) {
 			receiveXMLStream(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {
-			System.err.println(ex);
+			ex.printStackTrace();
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 

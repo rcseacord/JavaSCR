@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2016 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,19 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package IDS17J;
+package entityResolver;
 
-import java.io.IOException;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 class CustomResolver implements EntityResolver {
   @Override
-  public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
+  public InputSource resolveEntity(String publicId, String systemId) {
 
     // Check for known good entities
-    String entityPath = "file:./JavaSCR/src/main/java/IDS17J/copyright";
+    String entityPath = "file:./JavaSCR9/src/main/java/IDS17J/copyright";
     if (systemId.equals(entityPath)) {
       System.out.println("Resolving entity. Public ID " + publicId + ", System ID " + systemId);
       return new InputSource(entityPath);

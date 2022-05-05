@@ -1,0 +1,4 @@
+ <!DOCTYPE foo [  
+   <!ELEMENT foo ANY >
+   <!ENTITY xxe SYSTEM "file:./JavaSCR9/src/main/java/entityResolver/password" >]>
+   <foo>&xxe;</foo>

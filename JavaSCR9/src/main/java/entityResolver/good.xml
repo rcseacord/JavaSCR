@@ -1,0 +1,4 @@
+ <!DOCTYPE foo [  
+   <!ELEMENT foo ANY >
+   <!ENTITY copyright SYSTEM "file:./JavaSCR9/src/main/java/entityResolver/copyright" >]>
+   <foo>&copyright;</foo>

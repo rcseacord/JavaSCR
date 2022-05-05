@@ -1,4 +1,0 @@
- <!DOCTYPE foo [  
-   <!ELEMENT foo ANY >
-   <!ENTITY copyright SYSTEM "file:./JavaSCR/src/main/java/IDS17J/copyright" >]>
-   <foo>&copyright;</foo>
