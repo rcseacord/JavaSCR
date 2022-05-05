@@ -205,7 +205,7 @@
         </java>
     </target>
     <target name="OnlineStore">
-        <java classname="IDS16J.OnlineStore" failonerror="true" fork="yes">
+        <java classname="xml.OnlineStore" failonerror="true" fork="yes">
             <classpath refid="JavaSCR.classpath"/>
         </java>
     </target>

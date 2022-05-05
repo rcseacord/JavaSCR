@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2018 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package IDS16J;
+package xml;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -91,7 +91,7 @@ class OnlineStore {
 				throw s;
 			}
 		};
-		StreamSource ss = new StreamSource(new File("JavaSCR/src/main/java/IDS16J/schema.xsd"));
+		StreamSource ss = new StreamSource(new File("JavaSCR9/src/main/java/IDS16J/schema.xsd"));
 		try {
 			Schema schema = sf.newSchema(ss);
 			SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -117,8 +117,8 @@ class OnlineStore {
 		// Unvalidated input
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
-			createXMLStreamBad(bos, "1"); 
-			createXMLStreamBad(bos, "1</quantity><price>1.0</price><quantity>1"); 
+			createXMLStreamBad(bos, "1"); // valid use case
+			createXMLStreamBad(bos, "1</quantity><price>1.0</price><quantity>1"); // misuse
 		} catch (Exception ex) {
 			System.err.println("thrown exception: " + ex.toString()); 
 			Throwable[] suppressed = ex.getSuppressed();
@@ -130,8 +130,8 @@ class OnlineStore {
 		// Schema validated
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
-			createXMLStreamDTD(bos, "1"); 
-			createXMLStreamDTD(bos, "1</quantity><price>1.0</price><quantity>1"); 
+			createXMLStreamDTD(bos, "1"); // valid use case
+			createXMLStreamDTD(bos, "1</quantity><price>1.0</price><quantity>1"); // misuse
 		} catch (IOException ex) {
 			System.err.println("thrown exception: " + ex.toString()); 
 			Throwable[] suppressed = ex.getSuppressed();
@@ -143,8 +143,10 @@ class OnlineStore {
 		// Schema validation
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
-			createXMLStreamDTD(bos,
-					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100"); 
+			createXMLStreamDTD(
+					bos,
+					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100"
+			); // misuse
 		} catch (IOException ex) {
 			System.err.println("thrown exception: " + ex.toString()); 
 			Throwable[] suppressed = ex.getSuppressed();
@@ -156,8 +158,8 @@ class OnlineStore {
 		// Input validation
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				BufferedOutputStream bos = new BufferedOutputStream(baos)) {
-			createXMLStream(bos, "1"); 
-			createXMLStream(bos, "1</quantity><price>1.0</price><quantity>1"); 
+			createXMLStream(bos, "1"); // valid use case
+			createXMLStream(bos, "1</quantity><price>1.0</price><quantity>1"); // misuse
 		} catch (Exception ex) {
 			System.err.println("thrown exception: " + ex.toString()); 
 			Throwable[] suppressed = ex.getSuppressed();

@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2019 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@ class LogSearch {
     // Construct regex dynamically from user string
     String regex = "(.*? +public\\[\\d+\\] +.*" + search + ".*)";  
     Pattern searchPattern = Pattern.compile(regex);
-    try (FileInputStream fis = new FileInputStream("JavaSCR/src/main/java/IDS08J/log.txt"); FileChannel channel = fis.getChannel()) {
+    try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/IDS08J/log.txt"); FileChannel channel = fis.getChannel()) {
       // Get the file's size and map it into memory
       long size = channel.size();
       final MappedByteBuffer mappedBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, size);
@@ -67,7 +67,7 @@ class LogSearch {
     // Construct regex dynamically from user string
     String regex = "(.*? +public\\[\\d+\\] +.*" + Pattern.quote(search) + ".*)";  
     Pattern searchPattern = Pattern.compile(regex);
-    try (FileInputStream fis = new FileInputStream("JavaSCR/src/main/java/IDS08J/log.txt"); FileChannel channel = fis.getChannel()) {
+    try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/IDS08J/log.txt"); FileChannel channel = fis.getChannel()) {
       // Get the file's size and map it into memory
       long size = channel.size();
       final MappedByteBuffer mappedBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, size);
