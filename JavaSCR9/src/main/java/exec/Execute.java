@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2019 Robert C. Seacord
+// Copyright (c) 2022 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package ids07j;
+package exec;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,7 +47,8 @@ public class Execute {
     String nl = System.getProperty("line.separator");  // retrieve line separator dependent on OS.
     // See what sort of arguments are passed
     System.out.println("[rt.exec] PrintArgs Path with Spaces");
-    String PrintArgs = "C:\\Users\\rseacord\\source\\repos\\PrintArgs\\Release\\PrintArgs.exe ";
+    String PrintArgs = "C:\\Users\\12766\\source\\repos\\PrintArgs\\x64\\Release\\PrintArgs.exe ";
+    // String PrintArgs = "wsl /home/rcs/code/PrintArgs.exe ";
     System.out.println("PrintArgs.exe argument1 \"argument 2\"  \"\\some\\path with\\spaces\"");
     Process proc = rt.exec(PrintArgs + "argument1 \"argument 2\"  \"\\some\\path with\\spaces\"");
     getOutput(proc);
