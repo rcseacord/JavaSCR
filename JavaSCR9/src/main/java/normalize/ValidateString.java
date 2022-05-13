@@ -35,7 +35,7 @@ class ValidateString {
 		Matcher matcher = pattern.matcher(input);
 		if (matcher.find()) {
 			// Found black listed tag
-			throw new IllegalStateException();
+			throw new IllegalArgumentException(input);
 		}
 		System.out.println("valid input");
 
