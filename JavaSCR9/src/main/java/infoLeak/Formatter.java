@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2022 Robert C. Seacord
+// Copyright (c) 2025 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ import java.util.GregorianCalendar;
 
 class Formatter {
 
-	final private static Calendar c = new GregorianCalendar(1995, Calendar.MAY, 23);
+	final private static Calendar c = new GregorianCalendar(2028, Calendar.MAY, 23);
 
 	// args[0] should contain the credit card expiration date
 	// but can contain either %1$tm, %1$te or %1$tY as malicious arguments
@@ -35,7 +35,7 @@ class Formatter {
 
 		String argument = "%1$tm %1$te,%1$tY";
 		// First argument prints 05 (May), second prints 23 (day) and third
-		// prints 1995 (year)
+		// prints 2028 (year)
 		System.out.format(argument + " did not match! HINT: It was issued on %1$terd of some month%n", c);
 
 		// Conversion specifications are now inert

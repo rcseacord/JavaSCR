@@ -30,7 +30,7 @@ class CustomResolver implements EntityResolver {
   public InputSource resolveEntity(String publicId, String systemId) {
 
     // Check for known good entities
-    String entityPath = "file:./JavaSCR9/src/main/java/IDS17J/copyright";
+    String entityPath = "file:./JavaSCR9/src/main/java/entityResolver/copyright";
     if (systemId.equals(entityPath)) {
       System.out.println("Resolving entity. Public ID " + publicId + ", System ID " + systemId);
       return new InputSource(entityPath);

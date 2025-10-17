@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2022 Robert C. Seacord
+// Copyright (c) 2025 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Objects;
+import static java.lang.System.lineSeparator;
 
 public class Execute {
 
@@ -44,7 +45,7 @@ public class Execute {
 
   public static void main(String[] args) throws Exception {
     Runtime rt = Runtime.getRuntime();
-    String nl = System.getProperty("line.separator");  // retrieve line separator dependent on OS.
+    String nl = lineSeparator();  // retrieve line separator dependent on OS.
     // See what sort of arguments are passed
     System.out.println("[rt.exec] PrintArgs Path with Spaces");
     String PrintArgs = "C:\\Users\\12766\\source\\repos\\PrintArgs\\x64\\Release\\PrintArgs.exe ";

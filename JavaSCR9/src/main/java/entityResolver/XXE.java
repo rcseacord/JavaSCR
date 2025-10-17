@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2022 Robert C. Seacord
+// Copyright (c) 2025 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -60,6 +60,7 @@ class XXE {
 	public static void main(String[] args) throws ParserConfigurationException {
 
 		try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/entityResolver/evil.xml")) {
+            // w/o custom resolver allows exploit
 			receiveXMLStreamBad(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {
@@ -71,6 +72,7 @@ class XXE {
 		}
 
 		try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/entityResolver/good.xml")) {
+            // custom resolver allows valid use case
 			receiveXMLStream(fis, new DefaultHandler());
 		} catch (SAXException | IOException ex) {
 			ex.printStackTrace();
@@ -81,6 +83,7 @@ class XXE {
 		}
 		
 		try (FileInputStream fis = new FileInputStream("JavaSCR9/src/main/java/entityResolver/evil.xml")) {
+            // custom resolver prevents exploit
 			receiveXMLStream(fis, new DefaultHandler());
 		} 
 		catch (SAXException | IOException ex) {

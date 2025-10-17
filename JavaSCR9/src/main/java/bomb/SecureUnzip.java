@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 // 
-// Copyright (c) 2022 Robert C. Seacord
+// Copyright (c) 2025 Robert C. Seacord
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,19 +22,16 @@
 
 package bomb;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class SecureUnzip {
   static final int BUFFER = 512;
-  static final int TOOBIG = 0x6400000; // Max size of unzipped data, 100MB
-  static final int TOOMANY = 1024; // Max number of files
+  static final int TOO_BIG = 0x6400000; // Max size of unzipped data, 100MB
+  static final int TOO_MANY = 1024; // Max number of files
 
   private static String validateFilename(String filename, String intendedDir) throws java.io.IOException {
     File f = new File(filename);
@@ -50,10 +47,11 @@ public class SecureUnzip {
   }
 
   public static void unzip(String filename) throws java.io.IOException {
-    try (ZipInputStream zis = new ZipInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
-      ZipEntry entry;
+    try (ZipInputStream zis = new ZipInputStream(Files.newInputStream(Paths.get(filename)))) {
+
       int entries = 0;
       long total = 0;
+      ZipEntry entry;
       while ((entry = zis.getNextEntry()) != null) {
         System.out.println("Extracting: " + entry); 
         int count;
@@ -66,10 +64,10 @@ public class SecureUnzip {
           new File(name).mkdir();
           continue;
         }
-        try (BufferedOutputStream dest = new BufferedOutputStream(new FileOutputStream(name), BUFFER)) {
+        try (BufferedOutputStream dest = new BufferedOutputStream(Files.newOutputStream(Paths.get(name)), BUFFER)) {
           while ((count = zis.read(data, 0, BUFFER)) != -1) {
             total += count;
-            if (total >= TOOBIG) {
+            if (total >= TOO_BIG) {
               throw new IllegalStateException("Data limit exceeded."); 
             }
             dest.write(data, 0, count);
@@ -78,7 +76,7 @@ public class SecureUnzip {
         }
         zis.closeEntry();
         entries++;
-        if (entries > TOOMANY) {
+        if (entries > TOO_MANY) {
           throw new IllegalStateException("File limited exceeded."); 
         }
       }  // end while more zip file entries
@@ -87,7 +85,7 @@ public class SecureUnzip {
 
   public static void main(String[] args) {
     try {
-      unzip("JavaSCR9/src/main/java/bomb/10GB/10GB.zip");
+      unzip("JavaSCR9/src/main/java/bomb/10GB/Exercise 1,2,3.zip");
     } catch (IOException e) {
       System.err.println("Could not unzip file.");
     }
