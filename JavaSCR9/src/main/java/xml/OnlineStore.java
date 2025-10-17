@@ -91,7 +91,7 @@ class OnlineStore {
 				throw s;
 			}
 		};
-		StreamSource ss = new StreamSource(new File("JavaSCR9/src/main/java/IDS16J/schema.xsd"));
+		StreamSource ss = new StreamSource(new File("JavaSCR9\\src\\main\\java\\xml\\schema.xsd"));
 		try {
 			Schema schema = sf.newSchema(ss);
 			SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -120,7 +120,7 @@ class OnlineStore {
 			createXMLStreamBad(bos, "1"); // valid use case
 			createXMLStreamBad(bos, "1</quantity><price>1.0</price><quantity>1"); // misuse
 		} catch (Exception ex) {
-			System.err.println("thrown exception: " + ex.toString()); 
+			System.err.println("thrown exception: " + ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 
@@ -133,7 +133,7 @@ class OnlineStore {
 			createXMLStreamDTD(bos, "1"); // valid use case
 			createXMLStreamDTD(bos, "1</quantity><price>1.0</price><quantity>1"); // misuse
 		} catch (IOException ex) {
-			System.err.println("thrown exception: " + ex.toString()); 
+			System.err.println("thrown exception: " + ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 
@@ -148,7 +148,7 @@ class OnlineStore {
 					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100"
 			); // misuse
 		} catch (IOException ex) {
-			System.err.println("thrown exception: " + ex.toString()); 
+			System.err.println("thrown exception: " + ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 
@@ -161,7 +161,7 @@ class OnlineStore {
 			createXMLStream(bos, "1"); // valid use case
 			createXMLStream(bos, "1</quantity><price>1.0</price><quantity>1"); // misuse
 		} catch (Exception ex) {
-			System.err.println("thrown exception: " + ex.toString()); 
+			System.err.println("thrown exception: " + ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 
@@ -174,7 +174,7 @@ class OnlineStore {
 			createXMLStream(bos, 
 					"0</quantity></item><item><description>Widget</description><price>0</price><quantity>100"); 
 		} catch (Exception ex) {
-			System.err.println("thrown exception: " + ex.toString()); 
+			System.err.println("thrown exception: " + ex);
 			Throwable[] suppressed = ex.getSuppressed();
 			for (Throwable aSuppressed : suppressed) {
 				System.err.println("suppressed exception: " + aSuppressed.toString()); 

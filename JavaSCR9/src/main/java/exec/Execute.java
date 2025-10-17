@@ -46,9 +46,9 @@ public class Execute {
   public static void main(String[] args) throws Exception {
     Runtime rt = Runtime.getRuntime();
     String nl = lineSeparator();  // retrieve line separator dependent on OS.
-    // See what sort of arguments are passed
+    // Examine arguments
     System.out.println("[rt.exec] PrintArgs Path with Spaces");
-    String PrintArgs = "C:\\Users\\12766\\source\\repos\\PrintArgs\\x64\\Release\\PrintArgs.exe ";
+    String PrintArgs = "C:\\Users\\RobertSeacord(Wovenb\\source\\repos\\PrintArgs\\x64\\Debug\\PrintArgs.exe ";
     // String PrintArgs = "wsl /home/rcs/code/PrintArgs.exe ";
     System.out.println("PrintArgs.exe argument1 \"argument 2\"  \"\\some\\path with\\spaces\"");
     Process proc = rt.exec(PrintArgs + "argument1 \"argument 2\"  \"\\some\\path with\\spaces\"");
@@ -57,7 +57,6 @@ public class Execute {
     System.out.println(nl + "+-----------------------------------------------------+" );
 
     System.out.println(nl + "[rt.exec] PrintArgs Nested Quotes");
-    rt = Runtime.getRuntime();
     System.out.println("PrintArgs argument1 \"she said, \"you had me at hello\"\"  \"\\some\\path with\\spaces\"");
     proc = rt.exec(PrintArgs + "argument1 \"she said, \"you had me at hello\"\"  \"\\some\\path with\\spaces\"");
     getOutput(proc);
@@ -65,7 +64,6 @@ public class Execute {
     System.out.println(nl + "+-----------------------------------------------------+" );
 
     System.out.println(nl + "[rt.exec] PrintArgs Unbalanced Quotes");
-    rt = Runtime.getRuntime();
     System.out.println("PrintArgs argument1 \"argument\"2\" argument3 argument4");
     proc = rt.exec(PrintArgs + "argument1 \"argument\"2\" argument3 argument4");
     getOutput(proc);
@@ -73,7 +71,6 @@ public class Execute {
     System.out.println(nl + "+-----------------------------------------------------+" );
 
     System.out.println(nl + "[rt.exec] PrintArgs trailing backslash");
-    rt = Runtime.getRuntime();
     System.out.println("PrintArgs \"\\some\\directory with\\spaces\\\" argument2");
     proc = rt.exec(PrintArgs + "\"\\some\\directory with\\spaces\\\" argument2");
     getOutput(proc);
@@ -93,7 +90,6 @@ public class Execute {
     System.out.println(nl + "[rt.exec] command shell with &calc argument");
     System.out.println("cmd.exe /C dir &calc");
     String dir = "&calc";  // substituted for System.getProperty("dir");
-    rt = Runtime.getRuntime();
     System.out.println("cmd.exe /C dir " + dir);
     proc = rt.exec("cmd.exe /C dir " + dir);
     int result = proc.waitFor();

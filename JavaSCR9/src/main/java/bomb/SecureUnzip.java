@@ -60,19 +60,19 @@ public class SecureUnzip {
         // and that the file is not insanely big
         String name = validateFilename(entry.getName(), "."); 
         if (entry.isDirectory()) {
-          System.out.println("Creating directory " + name); 
-          new File(name).mkdir();
+          System.out.println("Creating directory " + name);
+            if (!new File(name).mkdir()) System.out.println("Failed to create directory" + name);
           continue;
         }
-        try (BufferedOutputStream dest = new BufferedOutputStream(Files.newOutputStream(Paths.get(name)), BUFFER)) {
+        try (BufferedOutputStream destination = new BufferedOutputStream(Files.newOutputStream(Paths.get(name)), BUFFER)) {
           while ((count = zis.read(data, 0, BUFFER)) != -1) {
             total += count;
             if (total >= TOO_BIG) {
               throw new IllegalStateException("Data limit exceeded."); 
             }
-            dest.write(data, 0, count);
+            destination.write(data, 0, count);
           }
-          dest.flush();
+          destination.flush();
         }
         zis.closeEntry();
         entries++;
